@@ -42,6 +42,7 @@ SHARED = {
     "equipment_resale_rate": (0.40, "assumption", "Payment equipment sold at exit, share of cost"),
     "new_premium_price": (10_500, "open", "New Pokemon Premium, pre-tax. Needs a distributor quote"),
     "pokemon_used_price": (8_500, "open", "Used Pokemon Premium, pre-tax. Check current listings"),
+    "pokemon_pro_price": (7_500, "open", "New Pokemon Pro, pre-tax. Needs a distributor quote"),
     "new_shipping": (400, "assumption", "Freight for a new machine"),
     "replacement_price": (7_000, "open", "Each purchased replacement, assumed bought used. Titles not chosen"),
     "used_shipping": (300, "assumption", "Pickup/delivery for a used machine"),
@@ -106,7 +107,8 @@ SCENARIOS = {
 }
 
 EXIT_YEARS = (1, 2, 3)
-COMPARE_COLS = (("O", 1), ("O", 3), ("P", 1), ("P", 3), ("Pu", 1))
+COMPARE_COLS = (("O", 1), ("O", 3), ("P", 1), ("P", 3), ("Pu", 1), ("Pp", 1))
+POKEMON_LINEUPS = ("P", "Pu", "Pp")
 WEEKS_PER_MONTH = 52 / 12
 
 
@@ -130,7 +132,7 @@ def bought(name, kind, price_key, slot, start=0):
 
 
 def lineup(pokemon=None, rotate=None):
-    """pokemon: None (all owned), "new" or "used". rotate: None, "G" (owned guest games) or "R" (buy two used)."""
+    """pokemon: None (all owned), "new", "used" or "pro" (new Pro). rotate: None, "G" (owned guest games) or "R" (buy two used)."""
     r = sv("rotation_month")
     machines = [owned("Star Wars Premium", "value_sw", 1)]
     if pokemon is None:
@@ -142,10 +144,12 @@ def lineup(pokemon=None, rotate=None):
         if rotate == "G":
             machines.append(owned("Bon Jovi LE", "value_bonjovi", 2, start=r))
         return machines
-    price_key = "new_premium_price" if pokemon == "new" else "pokemon_used_price"
+    price_key, kind, label = {"new": ("new_premium_price", "new", "Pokemon Premium (new)"),
+                              "used": ("pokemon_used_price", "used", "Pokemon Premium (used)"),
+                              "pro": ("pokemon_pro_price", "new", "Pokemon Pro (new)")}[pokemon]
     temp_out = r if rotate else None
     machines += [
-        bought(f"Pokemon Premium ({pokemon})", pokemon, price_key, 2),
+        bought(label, kind, price_key, 2),
         owned("Transformers LE", "value_transformers", 3, end=temp_out),
         owned("Dune LE", "value_dune", 4, end=temp_out),
     ]
@@ -163,6 +167,7 @@ LINEUPS = {
     "O+G": ("O, then Bon Jovi (owned) replaces Transformers after 4 months", lineup(rotate="G")),
     "P":   ("Proposal lineup: SW, Pokemon Premium bought new, Transformers, Dune", lineup("new")),
     "Pu":  ("P, but Pokemon Premium bought used", lineup("used")),
+    "Pp":  ("P, but Pokemon Pro bought new instead of Premium", lineup("pro")),
     "P+G": ("P, then Metallica and Bon Jovi (owned) replace Transformers and Dune after 4 months",
             lineup("new", "G")),
     "P+R": ("P, then two purchased used machines replace Transformers and Dune after 4 months",
@@ -424,6 +429,30 @@ def venue_report(venue, results):
     w("Games per machine per day, results including wear.")
     w("")
 
+    w("## What Pokémon has to bring in")
+    w("")
+    base = p["games_per_machine_week"] / 7 * p["machine_slots"]
+    w("The model gives every lineup the same play. If Pokémon draws families who would not otherwise play, "
+      "the Pokémon lineups earn more. This is the extra play needed for each Pokémon lineup to end up level "
+      f"with the all-owned lineup (O), in the middle scenario, including wear. Middle play here is {base:.0f} paid "
+      "games a day across the whole venue.")
+    w("")
+    hdr4 = ["Lineup"] + [f"{y}y exit" for y in EXIT_YEARS]
+    rows = []
+    for lk in POKEMON_LINEUPS:
+        row = [f"**{lk}** {LINEUPS[lk][0]}"]
+        for y in EXIT_YEARS:
+            gap = results[(venue["slug"], "O", "middle", y)]["result_incl_wear"] - \
+                results[(venue["slug"], lk, "middle", y)]["result_incl_wear"]
+            extra = gap / (lp_net_per_game(p) * 365 * y)
+            row.append(f"+{extra:.1f} games/day (+{extra / base:.0%})")
+        rows.append(row)
+    w(table(hdr4, rows))
+    w("")
+    w("Extra paid games per day across the venue, on any machine. The uplift is a test to measure in the pilot, "
+      "not an assumption built into the results above.")
+    w("")
+
     w("## Detail")
     w("")
     for lk, (desc, machines) in LINEUPS.items():
@@ -492,7 +521,7 @@ def comparison_report(venues, results):
     w(table(hdr, rows))
     w("")
     w("Results include wear on owned machines. O = all four machines from the collection; P = proposal lineup "
-      "with Pokémon Premium bought new; Pu = Pokémon Premium bought used. "
+      "with Pokémon Premium bought new; Pu = Pokémon Premium bought used; Pp = Pokémon Pro bought new. "
       "See each venue's page for every lineup, scenario and exit year.")
     w("")
 

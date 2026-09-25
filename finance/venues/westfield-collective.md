@@ -21,6 +21,7 @@ Cash result (−new cash + operating cash + net resale − exit costs) minus val
 | **O+G** O, then Bon Jovi (owned) replaces Transformers after 4 months | −$10,754 ⚠ | −$17,357 ⚠ | −$23,960 ⚠ | −$5,291 ⚠ | −$6,404 ⚠ | −$7,518 ⚠ | $2,028 | $8,242 | $14,455 |
 | **P** Proposal lineup: SW, Pokemon Premium bought new, Transformers, Dune | −$13,923 ⚠ | −$20,396 ⚠ | −$26,766 ⚠ | −$7,821 ⚠ | −$9,210 ⚠ | −$10,395 ⚠ | $390 | $6,295 | $12,302 |
 | **Pu** P, but Pokemon Premium bought used | −$11,557 ⚠ | −$18,086 ⚠ | −$24,509 ⚠ | −$6,061 ⚠ | −$7,172 ⚠ | −$8,245 ⚠ | $1,461 | $7,839 | $14,225 |
+| **Pp** P, but Pokemon Pro bought new instead of Premium | −$12,750 ⚠ | −$18,990 ⚠ | −$25,157 ⚠ | −$6,939 ⚠ | −$8,095 ⚠ | −$9,105 ⚠ | $981 | $7,090 | $13,272 |
 | **P+G** P, then Metallica and Bon Jovi (owned) replace Transformers and Dune after 4 months | −$14,780 ⚠ | −$21,637 ⚠ | −$28,393 ⚠ | −$8,568 ⚠ | −$10,176 ⚠ | −$11,581 ⚠ | −$320 | $5,420 | $11,262 |
 | **P+R** P, then two purchased used machines replace Transformers and Dune after 4 months | −$16,563 ⚠ | −$23,377 ⚠ | −$29,909 ⚠ | −$10,322 ⚠ | −$11,957 ⚠ | −$13,324 ⚠ | −$1,853 | $4,148 | $10,263 |
 
@@ -32,6 +33,7 @@ Cash result (−new cash + operating cash + net resale − exit costs) minus val
 | **O+G** O, then Bon Jovi (owned) replaces Transformers after 4 months | −$8,013 ⚠ | −$11,815 ⚠ | −$15,618 ⚠ | −$3,724 | −$3,238 | −$2,752 | $3,203 | $10,617 | $18,030 |
 | **P** Proposal lineup: SW, Pokemon Premium bought new, Transformers, Dune | −$12,068 ⚠ | −$16,686 ⚠ | −$21,201 ⚠ | −$6,761 ⚠ | −$7,090 ⚠ | −$7,215 ⚠ | $1,185 | $7,885 | $14,687 |
 | **Pu** P, but Pokemon Premium bought used | −$9,702 ⚠ | −$14,376 ⚠ | −$18,944 ⚠ | −$5,001 ⚠ | −$5,052 ⚠ | −$5,065 ⚠ | $2,256 | $9,429 | $16,610 |
+| **Pp** P, but Pokemon Pro bought new instead of Premium | −$10,895 ⚠ | −$15,280 ⚠ | −$19,592 ⚠ | −$5,879 ⚠ | −$5,975 ⚠ | −$5,925 ⚠ | $1,776 | $8,680 | $15,657 |
 | **P+G** P, then Metallica and Bon Jovi (owned) replace Transformers and Dune after 4 months | −$12,668 ⚠ | −$17,286 ⚠ | −$21,801 ⚠ | −$7,361 ⚠ | −$7,690 ⚠ | −$7,815 ⚠ | $585 | $7,285 | $14,087 |
 | **P+R** P, then two purchased used machines replace Transformers and Dune after 4 months | −$15,478 ⚠ | −$21,592 ⚠ | −$27,424 ⚠ | −$9,702 ⚠ | −$10,937 ⚠ | −$11,904 ⚠ | −$1,388 | $4,913 | $11,328 |
 
@@ -47,10 +49,23 @@ Lucky Pigeon nets about $0.50 per paid game at a $0.75 blended price. Monthly op
 | **O+G** | 15.1 | 12.3 | 11.3 | 8.3 | 8.8 | 9.0 |
 | **P** | 18.6 | 14.2 | 12.6 | 11.7 | 10.8 | 10.3 |
 | **Pu** | 16.2 | 12.8 | 11.6 | 9.3 | 9.4 | 9.3 |
+| **Pp** | 17.4 | 13.4 | 12.0 | 10.5 | 10.0 | 9.7 |
 | **P+G** | 19.7 | 14.9 | 13.2 | 12.8 | 11.4 | 10.9 |
 | **P+R** | 22.1 | 16.1 | 14.0 | 15.2 | 12.6 | 11.7 |
 
 Games per machine per day, results including wear.
+
+## What Pokémon has to bring in
+
+The model gives every lineup the same play. If Pokémon draws families who would not otherwise play, the Pokémon lineups earn more. This is the extra play needed for each Pokémon lineup to end up level with the all-owned lineup (O), in the middle scenario, including wear. Middle play here is 31 paid games a day across the whole venue.
+
+| Lineup | 1y exit | 2y exit | 3y exit |
+|---|---:|---:|---:|
+| **P** Proposal lineup: SW, Pokemon Premium bought new, Transformers, Dune | +15.9 games/day (+51%) | +9.0 games/day (+29%) | +6.3 games/day (+20%) |
+| **Pu** P, but Pokemon Premium bought used | +6.2 games/day (+20%) | +3.4 games/day (+11%) | +2.4 games/day (+8%) |
+| **Pp** P, but Pokemon Pro bought new instead of Premium | +11.1 games/day (+35%) | +5.9 games/day (+19%) | +3.9 games/day (+13%) |
+
+Extra paid games per day across the venue, on any machine. The uplift is a test to measure in the pilot, not an assumption built into the results above.
 
 ## Detail
 
@@ -117,6 +132,22 @@ Machines: Star Wars Premium (owned); Pokemon Premium (used) (used); Transformers
 | strong | 1y | −$13,755 | $26,500 | $19,448 | $5,543 | $7,413 | $9,198 | −$600 | $2,256 | −$795 | $1,461 | 400 |
 | strong | 2y | −$13,755 | $26,500 | $38,896 | $11,085 | $14,827 | $8,958 | −$600 | $9,429 | −$1,590 | $7,839 | 764 |
 | strong | 3y | −$13,755 | $26,500 | $58,344 | $16,628 | $22,240 | $8,725 | −$600 | $16,610 | −$2,385 | $14,225 | 1,128 |
+
+### Pp: P, but Pokemon Pro bought new instead of Premium
+
+Machines: Star Wars Premium (owned); Pokemon Pro (new) (new); Transformers LE (owned); Dune LE (owned)
+
+| Scenario | Exit | New cash | Owned value placed | Gross play | Venue receives | Operating cash | Net resale | Exit costs | Cash result | Owned-machine wear | Result incl. wear | Team hours |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| weak | 1y | −$12,785 | $26,500 | $3,484 | $993 | −$3,803 | $6,292 | −$600 | −$10,895 | −$1,855 | −$12,750 ⚠ | 452 |
+| weak | 2y | −$12,785 | $26,500 | $6,968 | $1,986 | −$7,605 | $5,710 | −$600 | −$15,280 | −$3,710 | −$18,990 ⚠ | 868 |
+| weak | 3y | −$12,785 | $26,500 | $10,452 | $2,979 | −$11,408 | $5,201 | −$600 | −$19,592 | −$5,565 | −$25,157 ⚠ | 1,284 |
+| middle | 1y | −$12,785 | $26,500 | $8,580 | $2,445 | $486 | $7,020 | −$600 | −$5,879 | −$1,060 | −$6,939 ⚠ | 348 |
+| middle | 2y | −$12,785 | $26,500 | $17,160 | $4,891 | $972 | $6,438 | −$600 | −$5,975 | −$2,120 | −$8,095 ⚠ | 660 |
+| middle | 3y | −$12,785 | $26,500 | $25,740 | $7,336 | $1,458 | $6,002 | −$600 | −$5,925 | −$3,180 | −$9,105 ⚠ | 972 |
+| strong | 1y | −$12,785 | $26,500 | $19,448 | $5,543 | $7,413 | $7,748 | −$600 | $1,776 | −$795 | $981 | 400 |
+| strong | 2y | −$12,785 | $26,500 | $38,896 | $11,085 | $14,827 | $7,238 | −$600 | $8,680 | −$1,590 | $7,090 | 764 |
+| strong | 3y | −$12,785 | $26,500 | $58,344 | $16,628 | $22,240 | $6,802 | −$600 | $15,657 | −$2,385 | $13,272 | 1,128 |
 
 ### P+G: P, then Metallica and Bon Jovi (owned) replace Transformers and Dune after 4 months
 

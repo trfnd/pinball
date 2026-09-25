@@ -21,6 +21,7 @@ _Last updated: 2026-09-25_
 - Welcoming to families, kids and teens, and casual players, while still appealing to enthusiasts.
 - Payments independent of the venue's checkout, offering both cash and cashless.
 - Four balls per game on harder titles, to improve the first-play experience.
+- Pokémon is seen as the main draw ("the magnet") for families and kids, so the owner wants it in the lineup.
 - Do about half of ongoing repairs personally, plus routine installation.
 
 ## Modeling assumptions (not agreed, not measured)
