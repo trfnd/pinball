@@ -29,15 +29,15 @@ One model, run separately for each venue. Shared inputs cover things that don't 
 
 ## What the placeholder numbers suggest
 
-These are not forecasts. Machine ownership is confirmed. Machine values, prices, venue terms and play volume are not. Figures are for Westfield, which currently uses only default venue inputs.
+These are not forecasts. Machine ownership is confirmed. Pokémon prices come from dealer list prices, and machine values are Pinside median asking prices (via search results, 2026-09-25; asking prices run above sale prices). Venue terms and play volume are unknown. Figures are for Westfield, which currently uses only default venue inputs.
 
 1. **Operating break-even is about 7 paid games per machine per day** (about $435/month in costs at about $0.50 net per game). The middle scenario (7.9/day) only just clears it. Whether a venue works depends on play volume, which is unmeasured.
-2. **Pokémon has to earn back its purchase through extra play.** Without any extra play, buying it moves the middle case from about $2,500–$3,400 lost (all owned) to about $5,000 (used Premium), $5,900 (new Pro) or $6,800–$7,200 (new Premium). Each venue page shows the extra play needed to close that gap. To match the all-owned lineup at a 1-year exit, the Pokémon lineup needs about 20% more play with a used Premium, 35% more with a new Pro, and 51% more with a new Premium. Over three years those fall to about 8%, 13% and 20%. The owner expects Pokémon to be the main draw. That extra play is what the pilot should measure.
+2. **Pokémon has to earn back its purchase through extra play.** Without any extra play, buying it moves the middle case from about $2,500–$3,400 lost (all owned) to about $5,100–$5,200 (used Premium), $5,400 (new Pro) or $6,100–$6,500 (new Premium). To match the all-owned lineup at a 1-year exit, the Pokémon lineup needs about 19% more play with a used Premium, 24% with a new Pro, and 36% with a new Premium. Over three years those fall to about 6%, 7% and 13%. Pokémon holds its value well: used ones ask 91–94% of the new price about 7 months after release. The owner expects Pokémon to be the main draw. That extra play is what the pilot should measure.
 3. **Rent or a monthly minimum hurts quickly.** In a test, $50 rent plus a $150 minimum on three machines raised operating break-even from 7.2 to 9.2 games per machine per day.
-4. **Rotating with owned guest games costs far less than buying replacements.** In the middle case, guest games cost about $350–$1,200 (extra moves plus wear) versus $2,500–$4,700 and about $15,600 of new cash for purchased replacements. The model doesn't count any extra play from fresh games.
-5. **Wear on owned machines** (4% a year in the middle case) is about $1,500 a year on the all-owned lineup. That's roughly three times the middle-case operating surplus.
+4. **Rotating with owned guest games costs far less than buying replacements.** In the middle case, guest games cost about $500–$1,500 (extra moves plus wear on higher-value LEs) versus $2,500–$4,700 and about $15,600 of new cash for purchased replacements. The model doesn't count any extra play from fresh games.
+5. **Wear on owned machines** (4% a year in the middle case) is about $1,700 a year on the all-owned lineup ($41,800 of machines). That's about three and a half times the middle-case operating surplus.
 
 ## Fill these in first
 
-- **Shared:** market values of the owned machines, Pokémon quotes (Premium new and used, Pro new) and resale listings, an insurance quote, and how much wear on collection machines is acceptable.
+- **Shared:** actual sale prices (not asking prices) for the owned machines and Pokémon, a written Pokémon quote, an insurance quote, and how much wear on collection machines is acceptable.
 - **Per venue:** play volume (traffic data), terms (split, rent, minimum), and machine slots.

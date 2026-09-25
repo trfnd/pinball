@@ -40,18 +40,18 @@ SHARED = {
     "entity_setup": (300, "open", "Formation cost; depends on entity and state"),
     "startup_supplies": (400, "assumption", "Spares kit, signs, locks, pricing cards"),
     "equipment_resale_rate": (0.40, "assumption", "Payment equipment sold at exit, share of cost"),
-    "new_premium_price": (10_500, "open", "New Pokemon Premium, pre-tax. Needs a distributor quote"),
-    "pokemon_used_price": (8_500, "open", "Used Pokemon Premium, pre-tax. Check current listings"),
-    "pokemon_pro_price": (7_500, "assumption", "New Pokemon Pro, pre-tax. Owner's figure (2026-09-25); confirm with a written quote"),
+    "new_premium_price": (9_699, "quote", "New Pokemon Premium, pre-tax: Stern MSRP / dealer list price, 2026-09-25"),
+    "pokemon_used_price": (9_100, "assumption", "Used Pokemon Premium: Pinside median asking, past year, via search results 2026-09-25; asking prices run above sale prices (44 listings)"),
+    "pokemon_pro_price": (6_999, "quote", "New Pokemon Pro, pre-tax: dealer list price 2026-09-25 (owner's $7,500 is about this plus tax)"),
     "new_shipping": (400, "assumption", "Freight for a new machine"),
     "replacement_price": (7_000, "open", "Each purchased replacement, assumed bought used. Titles not chosen"),
     "used_shipping": (300, "assumption", "Pickup/delivery for a used machine"),
     "selling_cost_rate": (0.03, "assumption", "Listing/payment costs when selling a purchased machine"),
-    "value_sw": (10_000, "open", "Star Wars: Fall of the Empire Premium with topper/upgrades (confirmed owned; value open)"),
-    "value_transformers": (8_500, "open", "Transformers LE with topper (confirmed owned; value open)"),
-    "value_dune": (8_000, "open", "Dune LE (confirmed owned; value open)"),
-    "value_metallica": (11_000, "open", "Metallica Remastered LE (confirmed owned; value open). Guest game"),
-    "value_bonjovi": (11_000, "open", "Bon Jovi LE (confirmed owned; value open). Guest game"),
+    "value_sw": (9_000, "assumption", "SW: Fall of the Empire Premium: Pinside median asking, past year, via search results 2026-09-25; asking prices run above sale prices ($8,999, 37 listings). Topper/upgrades not included"),
+    "value_transformers": (4_900, "assumption", "Transformers LE: Pinside median asking, past year, via search results 2026-09-25; asking prices run above sale prices. Topper not included"),
+    "value_dune": (13_400, "assumption", "Dune LE (Barrels of Fun): Pinside median asking, past year, via search results 2026-09-25; asking prices run above sale prices (66 listings). New price $11,599"),
+    "value_metallica": (14_500, "assumption", "Metallica Remastered LE: Pinside median asking, past year, via search results 2026-09-25; asking prices run above sale prices. Guest game"),
+    "value_bonjovi": (12_000, "open", "Bon Jovi LE: one used listing at $12,000; new LE $11,999. Guest game"),
     "rotation_month": (4, "assumption", "Guest games or replacements go in ~4 months after opening"),
     "setup_hours": (24, "assumption", "Team hours: install, payment setup, venue onboarding"),
     "rotation_hours": (8, "assumption", "Swap two machines"),
@@ -86,21 +86,21 @@ SCENARIOS = {
     "weak": {
         "maintenance_per_machine_month": 68.75,   # brief's $200/4 machines, plus overruns
         "owner_hours_week": 8,
-        "new_retention": {1: 0.70, 2: 0.62, 3: 0.55},  # resale / pre-tax price
+        "new_retention": {1: 0.75, 2: 0.67, 3: 0.60},  # resale / pre-tax price
         "used_retention_per_year": 0.88,
         "owned_wear_per_year": 0.07,              # extra value lost from public play
     },
     "middle": {
         "maintenance_per_machine_month": 50,      # brief: $200/month for four
         "owner_hours_week": 6,
-        "new_retention": {1: 0.80, 2: 0.72, 3: 0.66},
+        "new_retention": {1: 0.85, 2: 0.77, 3: 0.70},  # Pokemon asks ~91-94% of new after 7 months
         "used_retention_per_year": 0.93,
         "owned_wear_per_year": 0.04,
     },
     "strong": {
         "maintenance_per_machine_month": 56.25,   # more play, more parts
         "owner_hours_week": 7,
-        "new_retention": {1: 0.90, 2: 0.83, 3: 0.77},
+        "new_retention": {1: 0.92, 2: 0.85, 3: 0.79},
         "used_retention_per_year": 0.97,
         "owned_wear_per_year": 0.03,
     },
