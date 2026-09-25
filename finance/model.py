@@ -50,9 +50,11 @@ SHARED = {
     "value_sw": (10_000, "open", "Star Wars: Fall of the Empire Premium with topper/upgrades, if owned"),
     "value_pokemon": (9_500, "open", "Pokemon Premium, if owned"),
     "value_transformers": (8_500, "open", "Transformers LE with topper (confirmed owned; value open)"),
-    "value_dune": (8_000, "open", "Dune (confirmed owned; value open). Proposal calls it Dune LE"),
-    "rotation_month": (4, "assumption", "Purchased replacements go in ~4 months after opening"),
-    "setup_hours": (24, "assumption", "Install, payment setup, venue onboarding"),
+    "value_dune": (8_000, "open", "Dune LE (confirmed owned; value open)"),
+    "value_metallica": (11_000, "open", "Metallica Remastered LE (confirmed owned; value open). Guest game"),
+    "value_bonjovi": (11_000, "open", "Bon Jovi LE (confirmed owned; value open). Guest game"),
+    "rotation_month": (4, "assumption", "Replacements or guest games go in ~4 months after opening"),
+    "setup_hours": (24, "assumption", "Team hours: install, payment setup, venue onboarding"),
     "rotation_hours": (8, "assumption", "Swap two machines"),
     "exit_hours": (12, "assumption", "Remove machines, sell purchased ones"),
     "loss_tolerance": (5_000, "assumption", "Working tolerance after exit (brief). Not a budget"),
@@ -106,6 +108,7 @@ SCENARIOS = {
 }
 
 EXIT_YEARS = (1, 2, 3)
+COMPARE_COLS = (("A", 1), ("A", 3), ("A+G", 3), ("B", 1), ("B", 3))
 WEEKS_PER_MONTH = 52 / 12
 
 
@@ -114,12 +117,13 @@ def sv(key):
 
 
 # ---------------------------------------------------------------------------
-# Lineups. Ownership of SW and Pokemon is open, so each case is modeled.
+# Lineups. Ownership of SW and Pokemon Premium is open, so each case is modeled.
+# rotate: None, "R" (buy two used replacements) or "G" (swap in owned guest games).
 # kind: owned | new | used ; months are [in, out); out=None means until exit.
 # slot: machines in slots beyond the venue's machine_slots are left out.
 # ---------------------------------------------------------------------------
 
-def lineup(sw_owned, pokemon_owned, rotate):
+def lineup(sw_owned, pokemon_owned, rotate=None):
     r = sv("rotation_month")
     temp_out = r if rotate else None
     machines = [
@@ -129,22 +133,34 @@ def lineup(sw_owned, pokemon_owned, rotate):
          "value": sv("value_pokemon"), "upgrades": 0, "in": 0, "out": None},
         {"name": "Transformers LE", "slot": 3, "kind": "owned", "value": sv("value_transformers"),
          "upgrades": 0, "in": 0, "out": temp_out},
-        {"name": "Dune", "slot": 4, "kind": "owned", "value": sv("value_dune"), "upgrades": 0, "in": 0, "out": temp_out},
+        {"name": "Dune LE", "slot": 4, "kind": "owned", "value": sv("value_dune"), "upgrades": 0, "in": 0, "out": temp_out},
     ]
-    if rotate:
+    if rotate == "G":
+        machines += [
+            {"name": "Metallica Remastered LE", "slot": 3, "kind": "owned", "value": sv("value_metallica"),
+             "upgrades": 0, "in": r, "out": None},
+            {"name": "Bon Jovi LE", "slot": 4, "kind": "owned", "value": sv("value_bonjovi"),
+             "upgrades": 0, "in": r, "out": None},
+        ]
+    if rotate == "R":
         for slot in (3, 4):
             machines.append({"name": f"Replacement (slot {slot})", "slot": slot, "kind": "used",
                              "value": sv("replacement_price"), "upgrades": 0, "in": r, "out": None})
     return machines
 
 
+G_DESC = ", then owned guest games (Metallica, Bon Jovi) replace Transformers and Dune after 4 months"
+R_DESC = ", then two purchased used machines replace Transformers and Dune after 4 months"
 LINEUPS = {
-    "A":  ("Owned only: SW and Pokemon already owned", lineup(True, True, False)),
-    "A+R": ("A, plus two purchased used replacements after 4 months", lineup(True, True, True)),
-    "B":  ("Buy Pokemon new; SW owned", lineup(True, False, False)),
-    "B+R": ("B, plus two purchased used replacements after 4 months", lineup(True, False, True)),
-    "C":  ("Buy SW (with upgrades) and Pokemon new", lineup(False, False, False)),
-    "C+R": ("C, plus two purchased used replacements after 4 months", lineup(False, False, True)),
+    "A":   ("Owned only: SW and Pokemon Premium already owned", lineup(True, True)),
+    "A+G": ("A" + G_DESC, lineup(True, True, "G")),
+    "A+R": ("A" + R_DESC, lineup(True, True, "R")),
+    "B":   ("Buy Pokemon Premium new; SW owned", lineup(True, False)),
+    "B+G": ("B" + G_DESC, lineup(True, False, "G")),
+    "B+R": ("B" + R_DESC, lineup(True, False, "R")),
+    "C":   ("Buy SW (with upgrades) and Pokemon Premium new", lineup(False, False)),
+    "C+G": ("C" + G_DESC, lineup(False, False, "G")),
+    "C+R": ("C" + R_DESC, lineup(False, False, "R")),
 }
 
 
@@ -230,8 +246,13 @@ def run(machines, p, exit_year, games_override=None):
             continue
         end = min(end, months)
         years_on = (end - start) / 12
+        if start > 0:
+            hours += sv("rotation_hours") / 2
         if m["kind"] == "owned":
-            new_cash += move                           # to venue
+            if start > 0:
+                rotation_moves += move                 # to venue at rotation
+            else:
+                new_cash += move                       # to venue at opening
             if m["out"] is not None and m["out"] < months:
                 rotation_moves += move                 # home at rotation
             else:
@@ -248,7 +269,6 @@ def run(machines, p, exit_year, games_override=None):
             sale = m["value"] * p["used_retention_per_year"] ** years_on
             resale += sale * (1 - sv("selling_cost_rate"))
             exit_costs += move
-            hours += sv("rotation_hours") / 2
 
     games_month = games_wk * WEEKS_PER_MONTH * slots
     gross_month = games_month * p["price_per_game"]
@@ -275,7 +295,7 @@ def run(machines, p, exit_year, games_override=None):
         "cash_result": cash_result,
         "wear": wear,
         "result_incl_wear": cash_result - wear,
-        "owner_hours": hours,
+        "team_hours": hours,
     }
 
 
@@ -410,7 +430,7 @@ def venue_report(venue, results):
         w("")
         hdr3 = ["Scenario", "Exit", "New cash", "Owned value placed", "Gross play", "Venue receives",
                 "Operating cash", "Net resale", "Exit costs", "Cash result", "Owned-machine wear",
-                "Result incl. wear", "Owner hours"]
+                "Result incl. wear", "Team hours"]
         rows = []
         for sk in SCENARIOS:
             for y in EXIT_YEARS:
@@ -418,7 +438,7 @@ def venue_report(venue, results):
                 rows.append([sk, f"{y}y", money(-r["new_cash"]), money(r["owned_value"]), money(r["gross"]),
                              money(r["venue_receives"]), money(r["operating_cash"]), money(r["resale"]),
                              money(-r["exit_costs"]), money(r["cash_result"]), money(-r["wear"]),
-                             flag(r["result_incl_wear"], tol), f"{r['owner_hours']:,.0f}"])
+                             flag(r["result_incl_wear"], tol), f"{r['team_hours']:,.0f}"])
         w(table(hdr3, rows, ["---", "---"] + ["---:"] * 11))
         w("")
 
@@ -450,7 +470,7 @@ def comparison_report(venues, results):
     w("")
     hdr = ["Venue", "Inputs open / confirmed", "Split (LP)", "Rent + minimum /mo", "Operating costs /mo",
            "Ops break-even (games/machine/day)", "Assumed play (middle)",
-           "A, 1y", "A, 3y", "B, 1y", "B, 3y"]
+           ] + [f"{lk}, {y}y" for lk, y in COMPARE_COLS]
     rows = []
     for v in venues:
         p = params(v, "middle")
@@ -462,10 +482,11 @@ def comparison_report(venues, results):
                      f"{money(p['rent_per_month'])} + {money(p['venue_minimum_per_month'])}",
                      money(monthly_fixed_costs(p)), per_day(ops), f"{p['games_per_machine_week'] / 7:.1f}"]
                     + [flag(results[(v["slug"], lk, "middle", y)]["result_incl_wear"], tol)
-                       for lk in ("A", "B") for y in (1, 3)])
+                       for lk, y in COMPARE_COLS])
     w(table(hdr, rows))
     w("")
-    w("Results include wear on owned machines. A = all four machines already owned; B = Pokémon bought new. "
+    w("Results include wear on owned machines. A = all four machines already owned; B = Pokémon Premium bought new; "
+      "+G = owned guest games swapped in after 4 months. "
       "See each venue's page for every lineup, scenario and exit year.")
     w("")
 
@@ -489,7 +510,7 @@ def comparison_report(venues, results):
     hdr = ["Input"] + list(SCENARIOS)
     rows = [
         ["Maintenance per machine per month"] + [money(s["maintenance_per_machine_month"]) for s in SCENARIOS.values()],
-        ["Owner hours per week"] + [str(s["owner_hours_week"]) for s in SCENARIOS.values()],
+        ["Team hours per week (Ibrahim + Amy)"] + [str(s["owner_hours_week"]) for s in SCENARIOS.values()],
         ["New machine resale / pre-tax price, 1/2/3y"] + ["/".join(f"{x:.0%}" for x in s["new_retention"].values()) for s in SCENARIOS.values()],
         ["Used replacement value kept per year"] + [f"{s['used_retention_per_year']:.0%}" for s in SCENARIOS.values()],
         ["Extra wear on owned machines per year"] + [f"{s['owned_wear_per_year']:.0%}" for s in SCENARIOS.values()],
@@ -504,11 +525,11 @@ def comparison_report(venues, results):
     w("## Not modeled")
     w("")
     w("- Novelty spikes, seasonality and events. Play is flat month to month.")
-    w("- Short guest appearances of owned machines (as in the Westfield proposal): extra moves and wear only, not yet modeled.")
+    w("- Guest games are modeled as one swap at month 4. Repeated short runs would add a move and a few team hours per swap.")
     w("- Income tax, depreciation deductions, and the cost of capital tied up in machines.")
     w("- Theft, vandalism or a major failure beyond the maintenance allowance.")
     w("- Keeping purchased machines at exit instead of selling them (collection value, not cash).")
-    w("- Owner time is counted in hours and not given a dollar value.")
+    w("- Team time (Ibrahim and Amy) is counted in hours, not split between them, and not given a dollar value.")
     w("")
     return "\n".join(lines) + "\n"
 
@@ -534,7 +555,7 @@ def main():
 
     with open(HERE / "scenarios.csv", "w", newline="") as f:
         cols = ["new_cash", "owned_value", "gross", "venue_receives", "lp_income", "op_costs", "operating_cash",
-                "resale", "exit_costs", "cash_result", "wear", "result_incl_wear", "owner_hours"]
+                "resale", "exit_costs", "cash_result", "wear", "result_incl_wear", "team_hours"]
         wr = csv.writer(f)
         wr.writerow(["venue", "lineup", "scenario", "exit_years"] + cols)
         for (slug, lk, sk, y), r in results.items():

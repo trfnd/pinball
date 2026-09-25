@@ -5,12 +5,14 @@ _Last updated: 2026-09-25_
 ## Confirmed facts
 
 - Owner: Ibrahim Turfanda, physician and pinball collector.
+- Amy Bartee is project COO and shares the work (confirmed by owner 2026-09-25). How hours are split is open.
 - No machines ordered or installed for this venture. No venue deal signed.
 - Staff at Westfield Collective seem open to *discussing* the concept. The GM is Angie, and her email address is on file.
 - Early conversations with a few other local breweries. None has agreed to host machines.
 - The Star Wars: Fall of the Empire machine is a **Premium** with topper and LE-level upgrades, not an LE (earlier notes were wrong). It has no bill acceptor.
-- Transformers LE with topper and Dune are in the owner's collection.
-- A one-page proposal and private meeting notes have been prepared.
+- In the owner's collection: Transformers LE with topper, Dune LE, Metallica Remastered LE, Bon Jovi LE.
+- Pokémon Pro (a possible guest game in the proposal) is not owned.
+- A one-page proposal (discussion draft, 2026-09-24, `venues/westfield-collective/2026-09-24-proposal-draft.pdf`) and private meeting notes have been prepared. The proposal does not name a split.
 - Research done: 38 Electric Bat Cast installments, three operator seminars, and the visible text of 253 topics in Pinside's operating/routing section. This informs the approach but does not prove local demand or economics.
 
 ## Owner preferences
@@ -29,13 +31,14 @@ _Last updated: 2026-09-25_
 | Pricing | $1 per game or 3 for $2. Modeled at $1 per paid game, which is an upper bound; 3 for $2 averages about $0.67 per game |
 | Maintenance | $200/month for four machines: $100 parts and consumables + $100 outside labor (2 h × $50/h) |
 | Bill acceptors | $300 each where needed, plus accessories, tax and shipping |
-| Owner time | About 2 visits/week, up to 8 h/week. Untested |
+| Team time | About 2 visits/week, up to 8 h/week, shared by Ibrahim and Amy. Split and total untested |
 | Loss tolerance | Up to $5,000 total after a one-year exit. A working tolerance, not a budget or a guaranteed limit |
 
 ## Proposed lineup (phased, not settled)
 
 - Continuing: Star Wars: Fall of the Empire Premium (with upgrades), Pokémon Premium. **Open: is Pokémon already owned or still to be bought?**
-- Temporary opening games: Transformers LE, Dune. Proposed replacements in Feb/Mar 2027, titles not chosen.
+- Temporary opening games: Transformers LE, Dune LE. Proposed replacements in Feb/Mar 2027, titles not chosen.
+- Possible short-run guest games (proposal): Metallica Remastered LE and Bon Jovi LE from the collection; Pokémon Pro would have to be bought.
 - Opening date: December 2026 has been discussed but not set.
 
 ## Open questions
