@@ -1,0 +1,27 @@
+{
+  "name": "Westfield Collective",
+  "status": "GM (Angie) open to discussing the concept. No meeting held, no terms discussed, nothing agreed.",
+  "notes": [
+    "The 2026-09-24 discussion-draft proposal does not name a split: 'terms agreed together'. 70% is our modeling assumption only.",
+    "The proposal leaves placement, power, access, insurance and service responsibilities to be confirmed before installation.",
+    "The proposal floats short guest appearances (Dune LE, Metallica Remastered LE, Bon Jovi LE, Pokémon Pro) instead of purchased replacements. Not modeled yet.",
+    "Every venue input below is a placeholder until the first meeting and a site walkthrough (see first-meeting-agenda.md)."
+  ],
+  "inputs": {
+    "lp_share":                 {"value": 0.70, "label": "assumption", "note": "Brief's 70/30; not proposed to or discussed with the venue"},
+    "rent_per_month":           {"value": 0,    "label": "open", "note": "Proposal describes revenue share only; venue view unknown"},
+    "venue_minimum_per_month":  {"value": 0,    "label": "open", "note": "Not discussed"},
+    "electricity_per_month":    {"value": 0,    "label": "open", "note": "Proposal: power to be confirmed before installation"},
+    "insurance_per_year":       {"value": 900,  "label": "open", "note": "Proposal: insurance to be confirmed; ask about additional-insured requirement"},
+    "license_per_machine_year": {"value": 50,   "label": "open", "note": "Local licensing not yet checked"},
+    "round_trip_miles":         {"value": 12,   "label": "open", "note": "Distance from home not recorded"},
+    "visits_per_week":          {"value": 2,    "label": "assumption", "note": "Brief: about 2 visits/week"},
+    "machine_slots":            {"value": 4,    "label": "assumption", "note": "Proposal shows a four-game lineup; space not measured"},
+    "moving_per_machine":       {"value": 150,  "label": "open", "note": "Delivery access not yet seen"},
+    "cashless_share":           {"value": 0.50, "label": "assumption", "note": "Proposal: independent cash and card/phone options"},
+    "games_per_machine_week":   {"value": {"weak": 25, "middle": 55, "strong": 110}, "label": "open",
+                                 "note": "No traffic data yet; ask for hourly transaction counts"},
+    "price_per_game":           {"value": {"weak": 0.67, "middle": 0.75, "strong": 0.85}, "label": "assumption",
+                                 "note": "Proposal pricing: $1 per game or $2 for three; family audience likely leans to 3 for $2"}
+  }
+}

@@ -17,7 +17,7 @@ A proposed small pinball business: about four machines placed in an existing ven
 | `project-brief.md` | Current facts, preferences, modeling assumptions and open questions, kept separate |
 | `research/` | Assessments and research notes |
 | `venues/` | One folder per candidate venue: meeting notes, site observations, terms discussed |
-| `finance/` | Scenario models (weak / middle / strong; 1-, 2- and 3-year exits) |
+| `finance/` | Scenario model run per venue (weak / middle / strong; 1-, 2- and 3-year exits) and a venue comparison |
 
 ## Conventions
 

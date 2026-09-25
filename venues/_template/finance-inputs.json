@@ -1,0 +1,26 @@
+{
+  "name": "Venue name",
+  "status": "What has actually happened so far (interest, meeting, walkthrough). Never record a proposal as an agreement.",
+  "notes": [
+    "Copy this file to venues/<venue-slug>/finance-inputs.json, fill in what you know, then run: python3 finance/model.py",
+    "Labels: confirmed (venue said so in writing or on the record), quote (written price), assumption (our guess), open (unknown, placeholder).",
+    "Delete an input to fall back to the model default; the report marks those as '(model default)'."
+  ],
+  "inputs": {
+    "lp_share":                 {"value": 0.70, "label": "open", "note": "Lucky Pigeon share after fees, refunds and chargebacks"},
+    "rent_per_month":           {"value": 0,    "label": "open", "note": "Fixed rent to the venue"},
+    "venue_minimum_per_month":  {"value": 0,    "label": "open", "note": "Guaranteed monthly minimum to the venue"},
+    "electricity_per_month":    {"value": 0,    "label": "open", "note": "Paid by Lucky Pigeon; 0 if the venue covers it"},
+    "insurance_per_year":       {"value": 900,  "label": "open", "note": "Venue requirements, e.g. additional insured"},
+    "license_per_machine_year": {"value": 50,   "label": "open", "note": "Local amusement-device licensing"},
+    "round_trip_miles":         {"value": 12,   "label": "open", "note": "Home to venue and back"},
+    "visits_per_week":          {"value": 2,    "label": "assumption", "note": "Service and collection visits"},
+    "machine_slots":            {"value": 4,    "label": "open", "note": "Machines the space can hold, with room to play"},
+    "moving_per_machine":       {"value": 150,  "label": "open", "note": "Per move; stairs or tight doors raise it"},
+    "cashless_share":           {"value": 0.50, "label": "assumption", "note": "Share of play paid by card/phone"},
+    "games_per_machine_week":   {"value": {"weak": 25, "middle": 55, "strong": 110}, "label": "open",
+                                 "note": "Paid games per machine per week; base on traffic data and observation"},
+    "price_per_game":           {"value": {"weak": 0.67, "middle": 0.75, "strong": 0.85}, "label": "assumption",
+                                 "note": "Blended price; family crowds buying 3 for $2 pull toward $0.67"}
+  }
+}
