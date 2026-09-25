@@ -54,7 +54,7 @@ These are the venue inputs, in rough order of effect on the result:
 | `equipment_resale_rate` | 40% | **assumption** | Payment equipment sold at exit, share of cost |
 | `new_premium_price` | $10,500 | **open** | New Pokemon Premium, pre-tax. Needs a distributor quote |
 | `pokemon_used_price` | $8,500 | **open** | Used Pokemon Premium, pre-tax. Check current listings |
-| `pokemon_pro_price` | $7,500 | **open** | New Pokemon Pro, pre-tax. Needs a distributor quote |
+| `pokemon_pro_price` | $7,500 | **assumption** | New Pokemon Pro, pre-tax. Owner's figure (2026-09-25); confirm with a written quote |
 | `new_shipping` | $400 | **assumption** | Freight for a new machine |
 | `replacement_price` | $7,000 | **open** | Each purchased replacement, assumed bought used. Titles not chosen |
 | `used_shipping` | $300 | **assumption** | Pickup/delivery for a used machine |
