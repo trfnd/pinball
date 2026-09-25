@@ -40,20 +40,18 @@ SHARED = {
     "entity_setup": (300, "open", "Formation cost; depends on entity and state"),
     "startup_supplies": (400, "assumption", "Spares kit, signs, locks, pricing cards"),
     "equipment_resale_rate": (0.40, "assumption", "Payment equipment sold at exit, share of cost"),
-    "new_premium_price": (10_500, "open", "New Stern Premium, pre-tax. Needs a distributor quote"),
+    "new_premium_price": (10_500, "open", "New Pokemon Premium, pre-tax. Needs a distributor quote"),
+    "pokemon_used_price": (8_500, "open", "Used Pokemon Premium, pre-tax. Check current listings"),
     "new_shipping": (400, "assumption", "Freight for a new machine"),
-    "sw_upgrades_cost": (1_500, "assumption", "Topper + LE-level upgrades, only if SW is bought for this venture"),
-    "upgrade_recovery": (0.30, "assumption", "Share of upgrade cost recovered at resale"),
     "replacement_price": (7_000, "open", "Each purchased replacement, assumed bought used. Titles not chosen"),
-    "replacement_shipping": (300, "assumption", "Pickup/delivery for a used machine"),
+    "used_shipping": (300, "assumption", "Pickup/delivery for a used machine"),
     "selling_cost_rate": (0.03, "assumption", "Listing/payment costs when selling a purchased machine"),
-    "value_sw": (10_000, "open", "Star Wars: Fall of the Empire Premium with topper/upgrades, if owned"),
-    "value_pokemon": (9_500, "open", "Pokemon Premium, if owned"),
+    "value_sw": (10_000, "open", "Star Wars: Fall of the Empire Premium with topper/upgrades (confirmed owned; value open)"),
     "value_transformers": (8_500, "open", "Transformers LE with topper (confirmed owned; value open)"),
     "value_dune": (8_000, "open", "Dune LE (confirmed owned; value open)"),
     "value_metallica": (11_000, "open", "Metallica Remastered LE (confirmed owned; value open). Guest game"),
     "value_bonjovi": (11_000, "open", "Bon Jovi LE (confirmed owned; value open). Guest game"),
-    "rotation_month": (4, "assumption", "Replacements or guest games go in ~4 months after opening"),
+    "rotation_month": (4, "assumption", "Guest games or replacements go in ~4 months after opening"),
     "setup_hours": (24, "assumption", "Team hours: install, payment setup, venue onboarding"),
     "rotation_hours": (8, "assumption", "Swap two machines"),
     "exit_hours": (12, "assumption", "Remove machines, sell purchased ones"),
@@ -108,7 +106,7 @@ SCENARIOS = {
 }
 
 EXIT_YEARS = (1, 2, 3)
-COMPARE_COLS = (("A", 1), ("A", 3), ("A+G", 3), ("B", 1), ("B", 3))
+COMPARE_COLS = (("O", 1), ("O", 3), ("P", 1), ("P", 3), ("Pu", 1))
 WEEKS_PER_MONTH = 52 / 12
 
 
@@ -117,50 +115,58 @@ def sv(key):
 
 
 # ---------------------------------------------------------------------------
-# Lineups. Ownership of SW and Pokemon Premium is open, so each case is modeled.
-# rotate: None, "R" (buy two used replacements) or "G" (swap in owned guest games).
+# Lineups. Owned (confirmed): SW Premium, Transformers LE, Dune LE, Metallica Remastered LE,
+# Bon Jovi LE. Pokemon Premium is not owned and would have to be bought.
 # kind: owned | new | used ; months are [in, out); out=None means until exit.
 # slot: machines in slots beyond the venue's machine_slots are left out.
 # ---------------------------------------------------------------------------
 
-def lineup(sw_owned, pokemon_owned, rotate=None):
+def owned(name, key, slot, start=0, end=None):
+    return {"name": name, "slot": slot, "kind": "owned", "value": sv(key), "in": start, "out": end}
+
+
+def bought(name, kind, price_key, slot, start=0):
+    return {"name": name, "slot": slot, "kind": kind, "value": sv(price_key), "in": start, "out": None}
+
+
+def lineup(pokemon=None, rotate=None):
+    """pokemon: None (all owned), "new" or "used". rotate: None, "G" (owned guest games) or "R" (buy two used)."""
     r = sv("rotation_month")
+    machines = [owned("Star Wars Premium", "value_sw", 1)]
+    if pokemon is None:
+        machines += [
+            owned("Transformers LE", "value_transformers", 2, end=r if rotate == "G" else None),
+            owned("Dune LE", "value_dune", 3),
+            owned("Metallica Remastered LE", "value_metallica", 4),
+        ]
+        if rotate == "G":
+            machines.append(owned("Bon Jovi LE", "value_bonjovi", 2, start=r))
+        return machines
+    price_key = "new_premium_price" if pokemon == "new" else "pokemon_used_price"
     temp_out = r if rotate else None
-    machines = [
-        {"name": "Star Wars Premium", "slot": 1, "kind": "owned" if sw_owned else "new",
-         "value": sv("value_sw"), "upgrades": 0 if sw_owned else sv("sw_upgrades_cost"), "in": 0, "out": None},
-        {"name": "Pokemon Premium", "slot": 2, "kind": "owned" if pokemon_owned else "new",
-         "value": sv("value_pokemon"), "upgrades": 0, "in": 0, "out": None},
-        {"name": "Transformers LE", "slot": 3, "kind": "owned", "value": sv("value_transformers"),
-         "upgrades": 0, "in": 0, "out": temp_out},
-        {"name": "Dune LE", "slot": 4, "kind": "owned", "value": sv("value_dune"), "upgrades": 0, "in": 0, "out": temp_out},
+    machines += [
+        bought(f"Pokemon Premium ({pokemon})", pokemon, price_key, 2),
+        owned("Transformers LE", "value_transformers", 3, end=temp_out),
+        owned("Dune LE", "value_dune", 4, end=temp_out),
     ]
     if rotate == "G":
-        machines += [
-            {"name": "Metallica Remastered LE", "slot": 3, "kind": "owned", "value": sv("value_metallica"),
-             "upgrades": 0, "in": r, "out": None},
-            {"name": "Bon Jovi LE", "slot": 4, "kind": "owned", "value": sv("value_bonjovi"),
-             "upgrades": 0, "in": r, "out": None},
-        ]
+        machines += [owned("Metallica Remastered LE", "value_metallica", 3, start=r),
+                     owned("Bon Jovi LE", "value_bonjovi", 4, start=r)]
     if rotate == "R":
-        for slot in (3, 4):
-            machines.append({"name": f"Replacement (slot {slot})", "slot": slot, "kind": "used",
-                             "value": sv("replacement_price"), "upgrades": 0, "in": r, "out": None})
+        machines += [bought(f"Replacement (slot {slot})", "used", "replacement_price", slot, start=r)
+                     for slot in (3, 4)]
     return machines
 
 
-G_DESC = ", then owned guest games (Metallica, Bon Jovi) replace Transformers and Dune after 4 months"
-R_DESC = ", then two purchased used machines replace Transformers and Dune after 4 months"
 LINEUPS = {
-    "A":   ("Owned only: SW and Pokemon Premium already owned", lineup(True, True)),
-    "A+G": ("A" + G_DESC, lineup(True, True, "G")),
-    "A+R": ("A" + R_DESC, lineup(True, True, "R")),
-    "B":   ("Buy Pokemon Premium new; SW owned", lineup(True, False)),
-    "B+G": ("B" + G_DESC, lineup(True, False, "G")),
-    "B+R": ("B" + R_DESC, lineup(True, False, "R")),
-    "C":   ("Buy SW (with upgrades) and Pokemon Premium new", lineup(False, False)),
-    "C+G": ("C" + G_DESC, lineup(False, False, "G")),
-    "C+R": ("C" + R_DESC, lineup(False, False, "R")),
+    "O":   ("All owned: SW, Transformers, Dune, Metallica", lineup()),
+    "O+G": ("O, then Bon Jovi (owned) replaces Transformers after 4 months", lineup(rotate="G")),
+    "P":   ("Proposal lineup: SW, Pokemon Premium bought new, Transformers, Dune", lineup("new")),
+    "Pu":  ("P, but Pokemon Premium bought used", lineup("used")),
+    "P+G": ("P, then Metallica and Bon Jovi (owned) replace Transformers and Dune after 4 months",
+            lineup("new", "G")),
+    "P+R": ("P, then two purchased used machines replace Transformers and Dune after 4 months",
+            lineup("new", "R")),
 }
 
 
@@ -260,12 +266,12 @@ def run(machines, p, exit_year, games_override=None):
             owned_value += m["value"]
             wear += m["value"] * p["owned_wear_per_year"] * years_on
         elif m["kind"] == "new":
-            new_cash += (m["value"] + m["upgrades"]) * (1 + tax) + sv("new_shipping")
-            sale = m["value"] * p["new_retention"][exit_year] + m["upgrades"] * sv("upgrade_recovery")
+            new_cash += m["value"] * (1 + tax) + sv("new_shipping")
+            sale = m["value"] * p["new_retention"][exit_year]
             resale += sale * (1 - sv("selling_cost_rate"))
             exit_costs += move
-        else:  # used replacement
-            new_cash += m["value"] * (1 + tax) + sv("replacement_shipping")
+        else:  # bought used
+            new_cash += m["value"] * (1 + tax) + sv("used_shipping")
             sale = m["value"] * p["used_retention_per_year"] ** years_on
             resale += sale * (1 - sv("selling_cost_rate"))
             exit_costs += move
@@ -323,7 +329,7 @@ def money(x):
 
 
 PERCENT_KEYS = {"lp_share", "cashless_share", "refund_rate", "cashless_fee", "sales_tax",
-                "equipment_resale_rate", "upgrade_recovery", "selling_cost_rate"}
+                "equipment_resale_rate", "selling_cost_rate"}
 PLAIN_KEYS = {"round_trip_miles", "visits_per_week", "machine_slots", "games_per_machine_week",
               "rotation_month", "setup_hours", "rotation_hours", "exit_hours"}
 
@@ -404,7 +410,7 @@ def venue_report(venue, results):
       + (f", plus any shortfall against the {money(p['venue_minimum_per_month'])} venue minimum"
          if p["venue_minimum_per_month"] else "") + ".")
     w("")
-    ops = games_needed(LINEUPS["A"][1], p, 1, 0, key="operating_cash")
+    ops = games_needed(LINEUPS["O"][1], p, 1, 0, key="operating_cash")
     w(f"- Covering operating costs only takes **{per_day(ops)} games per machine per day**. "
       f"This venue's scenarios assume " + ", ".join(
           f"{sk} {params(venue, sk)['games_per_machine_week'] / 7:.1f}" for sk in SCENARIOS) + ".")
@@ -477,7 +483,7 @@ def comparison_report(venues, results):
         inp = v["inputs"]
         n_open = sum(1 for val in inp.values() if val[1] == "open")
         n_conf = sum(1 for val in inp.values() if val[1] in ("confirmed", "quote"))
-        ops = games_needed(LINEUPS["A"][1], p, 1, 0, key="operating_cash")
+        ops = games_needed(LINEUPS["O"][1], p, 1, 0, key="operating_cash")
         rows.append([f"[{v['name']}](venues/{v['slug']}.md)", f"{n_open} / {n_conf}", f"{p['lp_share']:.0%}",
                      f"{money(p['rent_per_month'])} + {money(p['venue_minimum_per_month'])}",
                      money(monthly_fixed_costs(p)), per_day(ops), f"{p['games_per_machine_week'] / 7:.1f}"]
@@ -485,8 +491,8 @@ def comparison_report(venues, results):
                        for lk, y in COMPARE_COLS])
     w(table(hdr, rows))
     w("")
-    w("Results include wear on owned machines. A = all four machines already owned; B = Pokémon Premium bought new; "
-      "+G = owned guest games swapped in after 4 months. "
+    w("Results include wear on owned machines. O = all four machines from the collection; P = proposal lineup "
+      "with Pokémon Premium bought new; Pu = Pokémon Premium bought used. "
       "See each venue's page for every lineup, scenario and exit year.")
     w("")
 
@@ -512,7 +518,7 @@ def comparison_report(venues, results):
         ["Maintenance per machine per month"] + [money(s["maintenance_per_machine_month"]) for s in SCENARIOS.values()],
         ["Team hours per week (Ibrahim + Amy)"] + [str(s["owner_hours_week"]) for s in SCENARIOS.values()],
         ["New machine resale / pre-tax price, 1/2/3y"] + ["/".join(f"{x:.0%}" for x in s["new_retention"].values()) for s in SCENARIOS.values()],
-        ["Used replacement value kept per year"] + [f"{s['used_retention_per_year']:.0%}" for s in SCENARIOS.values()],
+        ["Used machine value kept per year"] + [f"{s['used_retention_per_year']:.0%}" for s in SCENARIOS.values()],
         ["Extra wear on owned machines per year"] + [f"{s['owned_wear_per_year']:.0%}" for s in SCENARIOS.values()],
     ]
     w(table(hdr, rows))

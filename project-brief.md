@@ -10,8 +10,8 @@ _Last updated: 2026-09-25_
 - Staff at Westfield Collective seem open to *discussing* the concept. The GM is Angie, and her email address is on file.
 - Early conversations with a few other local breweries. None has agreed to host machines.
 - The Star Wars: Fall of the Empire machine is a **Premium** with topper and LE-level upgrades, not an LE (earlier notes were wrong). It has no bill acceptor.
-- In the owner's collection: Transformers LE with topper, Dune LE, Metallica Remastered LE, Bon Jovi LE.
-- Pokémon Pro (a possible guest game in the proposal) is not owned.
+- In the owner's collection: Star Wars: Fall of the Empire Premium (with topper and upgrades), Transformers LE with topper, Dune LE, Metallica Remastered LE, Bon Jovi LE.
+- Pokémon is not owned, neither Premium nor Pro. Any Pokémon machine would be a new purchase.
 - A one-page proposal (discussion draft, 2026-09-24, `venues/westfield-collective/2026-09-24-proposal-draft.pdf`) and private meeting notes have been prepared. The proposal does not name a split.
 - Research done: 38 Electric Bat Cast installments, three operator seminars, and the visible text of 253 topics in Pinside's operating/routing section. This informs the approach but does not prove local demand or economics.
 
@@ -36,7 +36,8 @@ _Last updated: 2026-09-25_
 
 ## Proposed lineup (phased, not settled)
 
-- Continuing: Star Wars: Fall of the Empire Premium (with upgrades), Pokémon Premium. **Open: is Pokémon already owned or still to be bought?**
+- Continuing: Star Wars: Fall of the Empire Premium (with upgrades, owned), Pokémon Premium (**not owned; would be bought**, new or used).
+- Alternative with no purchases: Star Wars, Transformers LE, Dune LE and Metallica Remastered LE, with Bon Jovi LE as a guest game.
 - Temporary opening games: Transformers LE, Dune LE. Proposed replacements in Feb/Mar 2027, titles not chosen.
 - Possible short-run guest games (proposal): Metallica Remastered LE and Bon Jovi LE from the collection; Pokémon Pro would have to be bought.
 - Opening date: December 2026 has been discussed but not set.
