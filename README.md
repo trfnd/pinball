@@ -18,18 +18,28 @@ A proposed small pinball business: about four machines placed in an existing ven
 | `research/` | Assessments and research notes |
 | `venues/` | One folder per candidate venue: meeting notes, site observations, terms discussed |
 | `finance/` | Scenario models (weak / middle / strong; 1-, 2- and 3-year exits) |
-| `site/` | Public website for Paw Tap Pinball (pawtappinball.com), published by GitHub Pages |
+| `site/` | Public website for Paw Tap Pinball (pawtappinball.com) |
+| `tools/site/` | The generator for `site/index.html`: page template, traced cat artwork, Indiana map data |
 
 ## Website
 
-`site/index.html` is the whole page: text, styles, the animated cat and the script live in one file, so copy edits happen there. `.github/workflows/pages.yml` publishes the `site/` folder whenever it changes on `main`.
+`site/` holds everything that gets published: `index.html` (text, styles, the animated cat and the script in one file), the playfield photos in `img/`, icons and the share image. `.github/workflows/pages.yml` publishes the folder with GitHub Pages whenever `site/` changes on `main`.
 
-To put it on pawtappinball.com (one-time):
+**Editing.** Change `tools/site/template.html`, then run `python3 tools/site/build.py`, which writes `site/index.html`. Don't edit `site/index.html` directly: the next build overwrites it. The build fills in the cat artwork (`parts.json`, traced from the A1 logo by `trace.py`), the paw-to-ball contact table for the tap animation (`paw_pts.json`), and the Indiana map (`indiana.json`).
 
-1. **Settings → Pages → Build and deployment → Source: GitHub Actions.**
-2. Same page, **Custom domain: `pawtappinball.com`**, then **Enforce HTTPS** once the certificate is issued.
-3. At the domain registrar, add DNS records: four `A` records for `@` pointing to `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`, and a `CNAME` for `www` pointing to `trfnd.github.io`.
-4. Merge the site to `main` (or run the workflow from the Actions tab).
+**Before publishing: this repository is public.** Anyone can read the project brief, the finance notes, the venue agenda and the proposal draft. GitHub Pages on a free plan only publishes from public repositories. Either make this repository private and publish the site from a separate public repository that holds only `site/` and the workflow, or keep the site here and move the private notes out.
+
+**Going live on pawtappinball.com (one-time).** The domain is registered at Porkbun and currently points to another host, a ChatGPT site behind Cloudflare, with `www` on a separate CNAME. Email for the domain runs on Google Workspace.
+
+1. In the GitHub repository that will publish the site: **Settings → Pages → Build and deployment → Source: GitHub Actions**, then run the workflow once from the Actions tab.
+2. Same page: **Custom domain: `pawtappinball.com`**. (With Actions deployments GitHub ignores the `site/CNAME` file, so this setting is what counts.)
+3. Remove `pawtappinball.com` from the custom-domain settings of the current ChatGPT site.
+4. In Porkbun DNS, **replace** the web records:
+   - Delete the current `A` records for `@` and the `CNAME` for `www`.
+   - Add four `A` records for `@`: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`.
+   - Add a `CNAME` for `www` pointing to `<github-user>.github.io` (for this repository, `trfnd.github.io`).
+   - **Leave the `MX` and `TXT` records alone.** They carry the Google Workspace email and domain verification.
+5. When the certificate is issued (minutes to a day), turn on **Enforce HTTPS** on the Pages settings page. Check that both `pawtappinball.com` and `www.pawtappinball.com` load the new site.
 
 ## Conventions
 
