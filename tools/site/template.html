@@ -78,14 +78,15 @@
 
   /* Navigation: sits on the orange hero, turns cream after it */
   .nav { position: fixed; inset: 0 0 auto 0; z-index: 50; padding-top: env(safe-area-inset-top, 0px); transition: background-color .3s ease, border-color .3s ease; border-bottom: 1px solid transparent; }
-  .nav:not(.solid) { background: var(--orange); --mark-accent: var(--cream); --mark-shine: 0; }
+  .nav { background: var(--cream); }
+  .js .nav:not(.solid) { background: var(--orange); --mark-accent: var(--cream); --mark-shine: 0; }
   .nav.solid { background: var(--cream); border-bottom-color: var(--line); }
   .nav-inner { height: var(--nav-h); display: flex; align-items: center; justify-content: space-between; gap: 16px; }
   .brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); }
   .brand svg { width: 50px; height: 34px; flex: none; }
   .word { font: 400 1.35rem/1 var(--logo); letter-spacing: .01em; display: grid; }
   .word b { font-weight: 400; color: var(--orange-deep); transition: color .3s ease; }
-  .nav:not(.solid) .word b { color: var(--cream); }
+  .js .nav:not(.solid) .word b { color: var(--cream); }
   .word small { font: 800 .62rem/1 var(--sans); letter-spacing: .38em; margin-top: 4px; }
   .nav-links { display: flex; align-items: center; gap: clamp(14px, 2.2vw, 30px); list-style: none; margin: 0; padding: 0; font-weight: 600; font-size: .95rem; }
   .nav-links a:not(.pill-link) { text-decoration: none; padding: 6px 0; background: linear-gradient(currentColor, currentColor) 0 100% / 0 1.5px no-repeat; transition: background-size .25s ease; }
@@ -139,8 +140,9 @@
     .hero-copy { gap: 16px; }
     .scene-wrap { align-self: center; width: min(100%, 640px); justify-self: center; }
   }
-  @media (max-width: 900px) and (max-height: 720px) { .hero-copy .actions { display: none; } }
-  @media (max-width: 900px) and (max-height: 680px) { .lede { font-size: 1rem; line-height: 1.45; } .hero-copy { gap: 12px; } }
+  @media (max-width: 900px) and (max-height: 720px) { .js:not(.static) .hero-copy .actions { display: none; } }
+  @media (max-width: 900px) and (max-height: 680px) { .js:not(.static) .lede { font-size: 1rem; line-height: 1.45; } .js:not(.static) .hero-copy { gap: 12px; } }
+  .clip-top .scene { clip-path: inset(0 -100vw -100vh -100vw); }
   @media (max-width: 520px) { .stage-foot { font-size: .66rem; letter-spacing: .12em; flex-wrap: wrap; row-gap: 6px; } .stage-foot > * { white-space: nowrap; } }
 
   /* Marquee */
@@ -165,8 +167,9 @@
 
   /* Playfield photo strip with parallax */
   .photos { background: var(--night); padding: 10px max(10px, env(safe-area-inset-right, 0px)) 10px max(10px, env(safe-area-inset-left, 0px)); display: grid; grid-template-columns: 1fr 1.4fr 1.25fr; gap: 10px; }
-  .ph { margin: 0; overflow: hidden; position: relative; height: clamp(280px, 32vw, 460px); background: #000; }
-  .ph img { position: absolute; left: 0; top: -9%; width: 100%; height: 118%; object-fit: cover; display: block; will-change: transform; }
+  .ph { margin: 0; overflow: hidden; position: relative; height: clamp(280px, 32vw, 460px); background: var(--night); }
+  .ph img { position: absolute; left: 0; top: -9%; width: 100%; height: 118%; object-fit: cover; display: block; }
+  .js:not(.static) .ph img { will-change: transform; }
   .ph.wide img { top: 0; height: 100%; }
   .photo-credit { background: var(--night); color: var(--night-soft); font-size: .8rem; padding: 2px max(16px, env(safe-area-inset-right, 0px)) 16px max(16px, env(safe-area-inset-left, 0px)); margin: 0; }
   @media (max-width: 760px) {
@@ -180,7 +183,7 @@
   .map-fig svg { display: block; width: 100%; height: auto; overflow: visible; }
   .map-fig text { font-family: var(--sans); }
   .towns { font-weight: 700; font-size: clamp(1.05rem, 1.4vw, 1.2rem); margin-top: 4px; }
-  .towns span { font-weight: 500; color: var(--ink-soft); }
+  .towns .more { font-weight: 500; color: var(--ink-soft); }
 
   /* How we operate (dark) */
   .night { background: var(--night); color: var(--cream); }
@@ -192,9 +195,8 @@
   .roles li { border-top: 1.5px solid var(--night-line); padding-top: 18px; display: grid; gap: 10px; align-content: start; }
   .roles .eyebrow { color: var(--orange); }
   .roles p:not(.eyebrow) { color: var(--night-soft); }
-  .your-part { margin-top: clamp(40px, 5vw, 64px); border: 1.5px solid var(--night-line); border-radius: 999px; padding: 18px 28px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px; font-size: 1.05rem; }
+  .your-part { margin-top: clamp(40px, 5vw, 64px); border: 1.5px solid var(--night-line); border-radius: 32px; padding: 18px 28px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px; font-size: 1.05rem; }
   .your-part .eyebrow { color: var(--orange); }
-  @media (max-width: 640px) { .your-part { border-radius: 24px; } }
 
   /* Business model */
   .steps { list-style: none; margin: clamp(48px, 6vw, 80px) 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(24px, 3vw, 48px); counter-reset: step; }
@@ -228,15 +230,16 @@
   .nb { white-space: nowrap; }
 
   @media (max-width: 420px) { .foot { display: grid; grid-template-columns: 1fr auto; gap: 10px 16px; } .foot > * { white-space: nowrap; } }
+  @media (max-width: 340px) { .foot { letter-spacing: .06em; column-gap: 12px; } }
   @media (max-height: 520px) and (min-aspect-ratio: 4/3) { .stage-inner { grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; } .scene-wrap { width: auto; } }
 
   /* Static hero: no JavaScript, reduced motion, or a screen too short for the pinned scene */
   html:not(.js) .stage-inner, .static .stage-inner { height: auto; min-height: 0; padding-bottom: 40px; row-gap: 24px; padding-top: calc(var(--nav-h) + env(safe-area-inset-top, 0px) + 40px); }
   html:not(.js) .stage-foot .hint, .static .stage-foot .hint { display: none; }
   html:not(.js) .copy-btn { display: none; }
-  .static .scene { cursor: default; }
+  html:not(.js) .scene, .static .scene { cursor: default; }
   @media (prefers-reduced-motion: reduce) { .nav-links a, .pill-link, .talk { transition: none; } }
-  @media (forced-colors: active) { .hero { forced-color-adjust: none; } }
+  @media (forced-colors: active) { .scene-wrap { forced-color-adjust: none; } }
 </style>
 </head>
 <body>
@@ -277,7 +280,7 @@
 
 <header class="nav" id="nav">
   <nav class="wrap nav-inner" aria-label="Main">
-    <a class="brand" href="#top" aria-label="Paw Tap Pinball, back to top">
+    <a class="brand" href="#main" aria-label="Paw Tap Pinball, back to top">
       <svg aria-hidden="true"><use href="#mark"/></svg>
       <span class="word" aria-hidden="true"><span>PAW <b>TAP</b></span><small>PINBALL</small></span>
     </a>
@@ -316,17 +319,17 @@
             <g id="flipper" transform="translate(502 502) rotate(-17.5)">
               <use href="#flipOuter" fill="#161614"/><use href="#flipInner" fill="#E8480C"/><circle r="22" fill="#161614"/>
             </g>
-            <g id="arm" transform="rotate(-18 452 328)"><g clip-path="url(#clipArm)"><use href="#catShape" fill="#161614"/></g></g>
-            <g id="head">
+            <g id="arm" transform="rotate(0 452 328)"><g clip-path="url(#clipArm)"><use href="#catShape" fill="#161614"/></g></g>
+            <g id="head" transform="rotate(4.77 418 248)">
               <circle cx="585" cy="262" r="8" fill="#FFF7EA"/>
               <g clip-path="url(#clipHead)"><use href="#catShape" fill="#161614"/></g>
               <use href="#catDetails" fill="#FF661B"/>
               <circle cx="538.6" cy="219.2" r="33.5" fill="#FFFFFF"/>
-              <g id="pupil" transform="translate(545 229)"><circle id="pupil-c" r="19" fill="#161614"/><circle cx="-6" cy="-7" r="4.5" fill="#FFFFFF"/></g>
+              <g id="pupil" transform="translate(547.6 226.7)"><circle id="pupil-c" r="19.8" fill="#161614"/><circle cx="-6" cy="-7" r="4.5" fill="#FFFFFF"/></g>
               <ellipse class="lid" cx="538.6" cy="219.2" rx="36" ry="37" fill="#161614"/>
             </g>
-            <g id="ball" transform="translate(744 372)">
-              <g id="streaks" opacity="0" stroke="#161614" stroke-width="9" stroke-linecap="round"><path d="M-23 -86L-8 -56"/><path d="M-36 -63L-23 -42"/></g>
+            <g id="ball" transform="translate(828 512) scale(1.3)">
+              <g id="streaks" opacity="1" stroke="#161614" stroke-width="9" stroke-linecap="round"><path d="M-23 -86L-8 -56"/><path d="M-36 -63L-23 -42"/></g>
               <circle r="38" fill="url(#steel)"/>
             </g>
           </svg>
@@ -364,9 +367,9 @@
   </section>
 
   <div class="photos" id="photos">
-    <figure class="ph"><img src="img/dune.webp" alt="Dune pinball playfield: sculpted desert rocks and a sandworm under wire ramps" width="1000" height="599" loading="lazy" decoding="async" data-speed="-0.12"></figure>
-    <figure class="ph wide"><img src="img/pokemon.webp" alt="Pok&eacute;mon pinball playfield: a Meowth figure in front, with Pikachu behind a wire ramp" width="876" height="552" loading="lazy" decoding="async" data-speed="0"></figure>
-    <figure class="ph"><img src="img/metallica.webp" alt="Metallica pinball playfield lit in blue and purple, with a glowing skeleton figure" width="1600" height="1068" loading="lazy" decoding="async" data-speed="-0.08"></figure>
+    <figure class="ph"><img src="img/dune.webp" alt="Dune pinball playfield: sculpted desert rocks and a sandworm under wire ramps" width="1000" height="599" loading="lazy" data-speed="-0.12"></figure>
+    <figure class="ph wide"><img src="img/pokemon.webp" alt="Pok&eacute;mon pinball playfield: a Meowth figure in front, with Pikachu behind a wire ramp" width="876" height="552" loading="lazy" data-speed="0"></figure>
+    <figure class="ph"><img src="img/metallica.webp" alt="Metallica pinball playfield lit in blue and purple, with a glowing skeleton figure" width="1600" height="1068" loading="lazy" data-speed="-0.08"></figure>
   </div>
   <p class="photo-credit">Playfield photos: Dune supplied by Ibrahim Turfanda. Pok&eacute;mon and Metallica courtesy of Stern Pinball, used with permission. Paw Tap Pinball is independent of Stern.</p>
 
@@ -387,7 +390,7 @@
         <p class="eyebrow">Where we are</p>
         <h2 id="indiana-h">Central <em>Indiana.</em></h2>
         <div class="copy"><p>We&rsquo;re based here and talking with venues in and around Indianapolis.</p></div>
-        <p class="towns">Indianapolis, Westfield, Carmel, <span class="nb">Zionsville <span>and nearby</span></span></p>
+        <p class="towns">Indianapolis, Westfield, Carmel, <span class="nb">Zionsville <span class="more">and nearby</span></span></p>
       </div>
     </div>
   </section>
@@ -396,7 +399,7 @@
     <div class="wrap">
       <p class="eyebrow">How we operate</p>
       <h2 id="how-h" style="margin-top:22px"><span class="line">You bring the place.</span> <em class="line">We bring the play.</em></h2>
-      <ul class="roles">
+      <ul class="roles" role="list">
         <li><p class="eyebrow">Machines</p><p>We supply the games, deliver them and set them up.</p></li>
         <li><p class="eyebrow">Upkeep</p><p>Maintenance, repairs, player support and refunds are on us.</p></li>
         <li><p class="eyebrow">Payments</p><p>Guests pay at the machine by cash, card or phone, separate from your checkout.</p></li>
@@ -410,7 +413,7 @@
     <div class="wrap">
       <p class="eyebrow">Business model</p>
       <h2 id="model-h" style="margin-top:22px"><span class="line">We fund it.</span> <em class="line">You get a share.</em></h2>
-      <ol class="steps">
+      <ol class="steps" role="list">
         <li class="step"><h3>Guests play</h3><p>Guests pay per game at the machine.</p></li>
         <li class="step"><h3>We share</h3><p>Play revenue is split on terms we agree in writing before anything is installed.</p></li>
         <li class="step"><h3>We review</h3><p>After the first operating period, we look at play, reliability and guest feedback together.</p></li>
@@ -439,7 +442,7 @@
   <span>Paw Tap Pinball</span>
   <span class="nb">&copy;&nbsp;2026</span>
   <span>Central Indiana, USA</span>
-  <a href="#top">Back to top <span aria-hidden="true">&uarr;</span></a>
+  <a href="#main">Back to top <span aria-hidden="true">&uarr;</span></a>
 </footer>
 
 <script>
@@ -454,18 +457,18 @@
   var easeOut = function (t) { return 1 - Math.pow(1 - t, 3); };
   var easeIn = function (t) { return t * t * t; };
 
-  var hero = $("hero"), stage = hero.querySelector(".stage"), stageInner = hero.querySelector(".stage-inner"), sceneWrap = hero.querySelector(".scene-wrap");
+  var hero = $("hero"), stage = hero.querySelector(".stage"), stageInner = hero.querySelector(".stage-inner"), sceneWrap = hero.querySelector(".scene-wrap"), heroCopy = hero.querySelector(".hero-copy");
   var scene = $("scene"), nav = $("nav"), hint = $("hint"), marquee = $("marquee");
   var arm = $("arm"), flipper = $("flipper"), ball = $("ball"), streaks = $("streaks"), pupil = $("pupil"), pupilC = $("pupil-c"), tailWag = $("tail-wag"), head = $("head");
 
   /* ---------- The cat pats the ball off the flipper in three taps, watches it fall, then a new ball drops in ---------- */
   var PIV = { x: 502, y: 502 }, R = 38, EYE = { x: 538.6, y: 219.2, r: 33.5 }, SH = " 452 328", HEAD = { x: 418, y: 248 };
-  var FLIP = -17.5, RAISED = -27;
+  var FLIP = -17.5, RAISED = -27, REACH = -50;
   var CONTACT = /*CONTACT*/;
-  var PHI = [-70, -59, -48, -38], PHI_LEAVE = -22;
+  var PHI = [-72, -56, -41, -28], PHI_LEAVE = -25;
   var TAPS = [[0.05, 0.10, 0.13, 0.18], [0.18, 0.23, 0.26, 0.31]];
   var T3 = [0.31, 0.36, 0.39], P_OFF = 0.45, P_GONE = 0.70;
-  var P_LIFT = [0.72, 0.84], P_NEW = [0.74, 0.86], P_SETTLE = 0.93;
+  var P_LIFT = [0.72, 0.80], P_NEW = [0.74, 0.86], P_SETTLE = 0.93, P_READY = [0.88, 0.97];
   var fallY = 1400, topY = -300;
 
   function contactAt(phi) {
@@ -487,33 +490,34 @@
       var t = TAPS[i], a = PHI[i], b = PHI[i + 1];
       if (p < t[0]) break;
       if (p < t[1]) { phi = a; arm = RAISED + (contactAt(a) - RAISED) * easeIn(seg(p, t[0], t[1])); }
-      else if (p < t[2]) { var u = easeOut(seg(p, t[1], t[2])); phi = a + (b - a) * u; arm = contactAt(phi); jig = 2.5 * Math.sin(Math.PI * u); }
-      else { var v = seg(p, t[2], t[3]); phi = b; arm = contactAt(b) + (RAISED - contactAt(b)) * easeOut(v); wob = 3.5 * (1 - v) * Math.sin(v * Math.PI * 3); }
+      else if (p < t[2]) { var u = easeOut(seg(p, t[1], t[2])); phi = a + (b - a) * u; arm = contactAt(phi); }
+      else { var v = seg(p, t[2], t[3]); phi = b; arm = contactAt(b) + (RAISED - contactAt(b)) * easeOut(v); }
     }
     if (p >= T3[0]) {
       if (p < T3[1]) { phi = PHI[2]; arm = RAISED + (contactAt(PHI[2]) - RAISED) * easeIn(seg(p, T3[0], T3[1])); }
       else {
-        if (p < T3[2]) { var u3 = easeOut(seg(p, T3[1], T3[2])); phi = PHI[2] + (PHI[3] - PHI[2]) * u3; jig = 2.5 * Math.sin(Math.PI * u3); }
+        if (p < T3[2]) { var u3 = easeOut(seg(p, T3[1], T3[2])); phi = PHI[2] + (PHI[3] - PHI[2]) * u3; }
         else if (p < P_OFF) { var r = seg(p, T3[2], P_OFF); phi = PHI[3] + (PHI_LEAVE - PHI[3]) * r * r; }
         else { phi = PHI_LEAVE; free = p - P_OFF; }
         var c = free == null ? contactAt(phi) : null;
         arm = c == null || free != null ? 0 : Math.min(c, 0);
       }
     }
-    // "One more game?": the paw lifts off the flipper and a new ball drops onto the tip
-    if (p >= P_LIFT[0]) arm = RAISED * ease(seg(p, P_LIFT[0], P_LIFT[1]));
+    // "One more game?": the paw reaches up out of the way, a new ball drops onto the tip, then the paw settles ready
+    if (p >= P_LIFT[0]) arm = REACH * ease(seg(p, P_LIFT[0], P_LIFT[1])) + (RAISED - REACH) * ease(seg(p, P_READY[0], P_READY[1]));
+    var dx = 0;
     if (p >= P_NEW[0]) {
       var perchY = perch(PHI[0], FLIP).y, w = seg(p, P_NEW[0], P_NEW[1]);
-      if (w < 1) drop = (topY - perchY) * (1 - w * w);
+      if (w < 1) { drop = (topY - perchY) * (1 - w * w); dx = 70 * (1 - w); }
       else { var s = seg(p, P_NEW[1], P_SETTLE); drop = -26 * Math.abs(Math.sin(Math.PI * 2 * s)) * (1 - s); }
       free = null; phi = PHI[0];
     }
-    return { arm: arm, phi: phi + wob, jig: jig, free: free, drop: drop };
+    return { arm: arm, phi: phi + wob, jig: jig, free: free, drop: drop, dx: dx };
   }
 
   function ballAt(ps) {
     var flip = FLIP + ps.jig;
-    if (ps.drop != null) { var d = perch(PHI[0], flip); d.y += ps.drop; d.falling = ps.drop < -40; d.dir = 90; return d; }
+    if (ps.drop != null) { var d = perch(ps.phi, flip); d.y += ps.drop; d.x += ps.dx || 0; d.falling = ps.drop < -40; d.dir = ps.dx ? 100 : 90; return d; }
     if (ps.free == null) return perch(ps.phi, flip);
     var start = perch(PHI_LEAVE, FLIP), a = PHI_LEAVE * Math.PI / 180;
     var speed = 2 * (PHI_LEAVE - PHI[3]) / (P_OFF - T3[2]) * Math.PI / 180 * 71;
@@ -525,7 +529,7 @@
   var tapStart = -1;
   function clickPat(now) {
     if (tapStart < 0) return 0;
-    var t = (now - tapStart) / 650;
+    var t = Math.max(0, (now - tapStart) / 650);
     if (t >= 1) { tapStart = -1; return 0; }
     return t;
   }
@@ -565,11 +569,15 @@
     var ps = pose(p), ct = clickPat(now);
     if (ct) {
       var pulse = Math.sin(Math.PI * Math.min(ct * 2, 1));
-      var perched = (ps.free == null && ps.drop == null && p < T3[0]) || (ps.drop != null && p >= P_SETTLE);
+      var perched = (ps.free == null && ps.drop == null && p < T3[1]) || (ps.drop != null && p >= P_READY[1]);
+      var pushing = ps.free == null && ps.drop == null && p >= T3[1] && p < P_OFF;
       if (perched) {
+        // pat: the paw comes down onto the ball; the ball only nudges while the paw is on it
         var c = contactAt(ps.phi);
         if (c != null) ps.arm += (c - ps.arm) * pulse;
-        if (ct > 0.5) ps.phi += 3 * (1 - ct) * Math.sin((ct - 0.5) * Math.PI * 6);
+        if (pulse > 0.8) ps.phi += 2 * (pulse - 0.8) / 0.2;
+      } else if (pushing) {
+        // the paw is already on the ball: nothing to add
       } else if (ps.free != null && p < P_LIFT[0]) {
         ps.arm += 6 * pulse; ps.jig += 7.8 * pulse;   // paw presses the flipper and the flipper gives with it
       } else {
@@ -583,33 +591,53 @@
     ball.setAttribute("transform", "translate(" + b.x.toFixed(1) + " " + b.y.toFixed(1) + ")");
     streaks.setAttribute("opacity", b.falling ? "1" : "0");
     streaks.setAttribute("transform", b.falling ? "rotate(" + (b.dir - 62).toFixed(1) + ")" : "");
-    var look = gone ? ballAt({ free: P_GONE - P_OFF, jig: 0, drop: null }) : b;
+    var look = b;
+    if (p >= P_LIFT[0] && p < P_LIFT[1] + 0.02) {
+      // ease the gaze from where the old ball went up to the incoming one
+      var old = ballAt({ free: P_GONE - P_OFF, jig: 0, drop: null }), k = ease(seg(p, P_LIFT[0], P_LIFT[1] + 0.02));
+      var tgt = ps.drop != null ? { x: b.x, y: Math.max(b.y, -60) } : { x: perch(PHI[0], FLIP).x + 70, y: -60 };
+      look = { x: old.x + (tgt.x - old.x) * k, y: old.y + (tgt.y - old.y) * k };
+    } else if (gone) look = ballAt({ free: P_GONE - P_OFF, jig: 0, drop: null });
     var ex = excitement(p);
-    var nod = !b.falling ? 2.2 * clamp((ps.arm - RAISED) / 12, 0, 1) : 0;
+    var nod = ps.drop == null ? 2.2 * clamp((ps.arm - RAISED) / 12, 0, 1) * (1 - seg(p, P_OFF, P_OFF + 0.04)) : 0;
     place(look.x, look.y, tiltFor(look.x, look.y) + nod, Math.max(ex, ct ? 1 - ct : 0));
     tailWag.setAttribute("transform", "rotate(" + (ex * 3 * Math.sin(p * 80)).toFixed(2) + " 130 476)");
     hero.classList.toggle("dropped", p > 0.47);
     var hintOn = p < 0.08;
     hint.style.opacity = String(1 - seg(p, 0.02, 0.08));
+    hint.style.visibility = hintOn ? "" : "hidden";
     hint.tabIndex = hintOn ? 0 : -1;
   }
 
+  function firstBelowHero() {
+    var el = hero.nextElementSibling;
+    return el ? { el: el, top: el.getBoundingClientRect().top } : null;
+  }
   function measure() {
     // a pinned hero only works when its content fits the screen: shrink the cat a little if needed, otherwise show it static
-    root.classList.remove("static");
-    sceneWrap.style.maxWidth = "";
-    var over = stageInner.scrollHeight - stage.clientHeight;
-    if (!still.matches && over > 8) {
-      var target = sceneWrap.getBoundingClientRect().width - (over + 12) * 924 / 600;
-      if (target >= 240) { sceneWrap.style.maxWidth = Math.floor(target) + "px"; over = stageInner.scrollHeight - stage.clientHeight; }
+    var wasStatic = isStatic(), anchor = hero.getBoundingClientRect().bottom < 0 ? firstBelowHero() : null;
+    if (still.matches) root.classList.add("static");
+    else {
+      root.classList.remove("static");
+      sceneWrap.style.maxWidth = "";
+      var over = stageInner.scrollHeight - stage.clientHeight;
+      if (over > 8) {
+        var target = sceneWrap.getBoundingClientRect().width - (over + 12) * 924 / 600;
+        if (target >= 240) { sceneWrap.style.maxWidth = Math.floor(target) + "px"; over = stageInner.scrollHeight - stage.clientHeight; }
+      }
+      if (over > 8) { root.classList.add("static"); sceneWrap.style.maxWidth = ""; }
     }
-    if (still.matches || over > 8) { root.classList.add("static"); sceneWrap.style.maxWidth = ""; }
+    // keep the reader's place when the hero switches between pinned and static
+    if (anchor && wasStatic !== isStatic()) window.scrollTo({ top: window.scrollY + anchor.el.getBoundingClientRect().top - anchor.top, behavior: "instant" });
     heroTotal = hero.offsetHeight - stage.offsetHeight;
-    var sr = scene.getBoundingClientRect(), st = stage.getBoundingClientRect();
+    var sr = scene.getBoundingClientRect(), st = stage.getBoundingClientRect(), cr = heroCopy.getBoundingClientRect();
     if (!sr.width) return;
     var k = 924 / sr.width, top = sr.top - st.top;
+    // stacked layouts: the new ball enters from the top edge of the scene instead of falling through the text
+    var stacked = sr.top >= cr.bottom - 4;
+    sceneWrap.classList.toggle("clip-top", stacked);
     fallY = (window.innerHeight - top) * k + 90;
-    topY = -top * k - 90;
+    topY = stacked ? -(R + 20) : -top * k - 90;
   }
   function isStatic() { return root.classList.contains("static"); }
 
