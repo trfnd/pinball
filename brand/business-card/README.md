@@ -1,6 +1,6 @@
 # Paw Tap digital business card
 
-Built 2026-09-26 in the style of logo direction **A1, "The gentle drop"** (the black cat tapping an orange flipper). The mark in `paw-tap-mark.svg` is a simplified vector redraw for the card. It is a concept, not approved artwork.
+Built 2026-09-26 around logo direction **A1, "The gentle drop"** (the black cat tapping an orange flipper). `paw-tap-logo-a1.png` is the original concept image with its background made transparent. It is a concept, not approved artwork.
 
 | File | What it's for |
 |---|---|
