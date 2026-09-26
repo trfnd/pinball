@@ -91,7 +91,7 @@
   @media (max-width: 900px) { .nav-links li:not(:last-child) { display: none; } }
 
   /* Hero: pinned orange stage; scrolling drives the cat, the flipper and the ball */
-  .hero { position: relative; height: 210vh; height: 210svh; background: var(--orange); }
+  .hero { position: relative; height: 250vh; height: 250svh; background: var(--orange); }
   .stage { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; }
   @supports (overflow: clip) { .stage { overflow: visible; overflow-x: clip; } }
   .stage-inner {
@@ -125,7 +125,7 @@
   .stage-foot .hint { transition: opacity .3s ease; }
 
   @media (max-width: 900px), (max-aspect-ratio: 4/5) {
-    .hero { height: 190vh; height: 190svh; }
+    .hero { height: 230vh; height: 230svh; }
     .stage-inner { grid-template-columns: 1fr; grid-template-rows: auto 1fr auto; align-items: start; row-gap: 8px; padding-top: calc(var(--nav-h) + env(safe-area-inset-top, 0px) + 8px); }
     .hero-copy { gap: 16px; }
     .scene-wrap { align-self: center; width: min(100%, 640px); justify-self: center; }
@@ -238,7 +238,8 @@
     <path id="catDetails" d="M580.0 269.6C579.3 269.1 578.3 267.5 578.3 267.0C578.3 266.5 579.5 266.6 580.0 267.2C580.7 268.1 582.4 267.5 584.0 265.7C584.5 265.2 585.0 264.7 585.2 264.6C585.9 264.3 587.0 262.3 587.0 261.3C587.0 260.0 584.3 257.0 583.1 257.0C582.3 257.0 581.2 256.1 581.5 255.6C581.8 255.2 583.5 255.3 584.0 255.8C584.2 256.1 584.8 256.3 585.4 256.4C589.4 257.1 589.9 257.4 591.2 259.8C591.8 261.1 591.8 261.4 590.9 262.4C590.4 262.9 590.0 263.6 589.8 264.0C589.7 264.3 589.3 264.7 589.0 264.8C588.7 264.9 587.7 265.7 586.8 266.5C585.9 267.3 585.0 268.0 584.6 268.0C584.3 268.0 584.0 268.1 584.0 268.3C584.0 268.8 581.9 270.0 581.1 270.0C580.8 270.0 580.2 269.8 580.0 269.6ZM582.8 131.8C582.4 131.4 582.0 130.9 582.0 130.7C582.0 130.3 572.8 121.0 572.5 121.0C572.2 121.0 570.6 119.7 568.4 117.6C567.4 116.7 566.6 116.0 566.4 116.0C565.9 116.0 563.3 113.5 563.3 113.0C563.3 112.3 569.9 105.7 571.7 104.5C572.3 104.2 573.3 103.4 574.0 102.7C574.6 102.1 575.9 101.1 576.8 100.5C577.8 99.9 579.1 98.9 579.8 98.2C580.4 97.5 581.2 97.0 581.4 97.0C581.7 97.0 582.3 96.5 582.8 96.0C583.4 95.5 584.0 95.0 584.3 95.0C584.6 95.0 585.2 94.7 585.5 94.3C585.9 93.9 587.0 93.2 588.0 92.7C589.0 92.2 589.9 91.7 589.9 91.6C590.0 91.4 590.8 90.9 591.7 90.5C592.6 90.0 593.4 89.5 593.5 89.3C593.6 89.2 594.0 89.0 594.3 89.0C594.6 89.0 595.2 88.6 595.7 88.1C596.7 87.1 599.2 86.5 599.9 87.1C600.5 87.5 600.1 94.5 599.5 95.6C599.2 96.0 599.0 96.7 599.0 97.3C599.0 97.8 598.8 98.4 598.5 98.7C598.2 98.9 598.0 99.7 598.0 100.9C598.0 102.2 597.9 102.7 597.5 102.9C597.2 103.0 597.0 103.4 597.0 103.8C597.0 104.2 596.8 104.9 596.6 105.3C596.3 105.8 596.0 106.9 595.9 107.7C595.8 108.6 595.3 110.0 594.8 110.8C594.4 111.7 594.0 112.7 594.0 113.0C594.0 113.4 593.6 114.5 593.0 115.5C592.4 116.5 592.0 117.6 592.0 118.0C592.0 118.4 591.6 119.5 591.0 120.5C590.4 121.5 590.0 122.6 590.0 122.8C590.0 123.0 589.8 123.4 589.5 123.7C589.2 123.9 589.0 124.3 589.0 124.7C589.0 125.0 588.8 125.4 588.5 125.7C588.2 125.9 588.0 126.4 588.0 126.9C588.0 127.3 587.8 127.8 587.6 127.9C587.0 128.3 586.0 130.2 586.0 131.0C586.0 131.6 584.7 132.7 584.0 132.7C583.8 132.7 583.3 132.3 582.8 131.8ZM512.2 101.3C512.1 101.1 511.2 101.0 510.4 101.0C509.4 101.0 508.6 100.8 508.4 100.5C508.2 100.3 507.2 100.0 506.3 99.9C505.4 99.8 504.4 99.6 504.2 99.4C504.0 99.2 502.2 99.0 500.2 98.9C498.2 98.8 496.4 98.6 496.2 98.4C495.6 97.8 481.2 97.9 480.7 98.5C480.4 98.8 479.2 99.0 476.4 99.1C472.1 99.3 468.4 99.9 467.6 100.6C467.3 100.9 466.5 101.0 465.6 100.9L464.2 100.8L464.1 99.1C464.0 97.3 464.9 95.0 465.7 95.0C465.9 95.0 466.0 94.6 466.0 94.2C466.0 93.7 466.2 93.2 466.5 93.1C466.8 93.0 467.0 92.7 467.0 92.3C467.0 92.0 467.2 91.6 467.5 91.3C467.8 91.1 468.0 90.6 468.0 90.3C468.0 90.0 468.1 89.6 468.3 89.5C468.5 89.4 469.1 88.4 469.6 87.2C470.2 86.1 470.8 84.9 471.1 84.7C471.4 84.5 472.0 83.6 472.4 82.8C472.8 82.0 473.3 81.2 473.5 81.1C473.8 81.0 474.0 80.7 474.0 80.4C474.0 80.1 474.4 79.3 475.0 78.7C475.6 78.1 476.0 77.4 476.0 77.2C476.0 77.0 476.4 76.3 477.0 75.7C477.6 75.1 478.0 74.4 478.0 74.2C478.0 74.0 478.7 73.1 479.5 72.3C480.3 71.4 481.0 70.4 481.2 70.0C481.3 69.7 482.0 68.7 482.7 68.0C483.4 67.2 484.0 66.4 484.0 66.2C484.0 66.0 485.3 64.4 487.0 62.7C488.7 61.0 490.0 59.4 490.0 59.2C490.0 58.8 501.8 47.0 502.3 47.0C502.4 47.0 503.5 46.1 504.7 45.0C505.9 43.9 507.0 43.0 507.2 43.0C507.4 43.0 508.1 42.5 508.7 42.0C509.3 41.4 510.3 40.7 510.8 40.4C511.4 40.1 512.0 39.7 512.3 39.5C512.5 39.2 513.0 39.0 513.3 39.0C513.6 39.0 514.2 38.6 514.7 38.2C516.3 36.4 517.7 37.4 518.1 40.8C518.2 42.1 518.4 44.1 518.6 45.2C519.0 47.7 519.1 68.6 518.6 71.0C518.5 72.0 518.2 75.0 518.0 77.6C517.8 80.3 517.6 82.6 517.4 82.8C517.2 83.0 517.0 84.2 516.9 85.6C516.8 86.9 516.5 88.3 516.4 88.6C516.2 89.0 516.0 90.4 516.0 91.8C516.0 93.5 515.9 94.4 515.5 94.6C515.3 94.8 515.0 95.8 514.9 96.7C514.8 97.7 514.5 98.6 514.3 98.8C514.2 99.0 514.0 99.5 514.0 100.0C514.0 101.3 512.7 102.2 512.2 101.3Z"/>
     <path id="flipOuter" d="M4.9 -52.8L221 -32.9A33 33 0 0 1 221 32.9L4.9 52.8A53 53 0 1 1 4.9 -52.8Z"/>
     <path id="flipInner" d="M3.5 -37.8L219.7 -17.9A18 18 0 0 1 219.7 17.9L3.5 37.8A38 38 0 1 1 3.5 -37.8Z"/>
-    <clipPath id="clipBody"><path clip-rule="evenodd" d="M0 -200H1000V800H0Z M470 289L500 301L540 308L600 308L790 300L790 448L600 448L432 378Z M10 225L215 225L200 275L184 290L158 305L143 320L134 335L128 350L122 370L120 395L121 410L123 425L131 447L127 506L10 525Z"/></clipPath>
+    <clipPath id="clipBody"><path clip-rule="evenodd" d="M0 -200H1000V800H0Z M470 289L500 301L540 308L600 308L790 300L790 448L600 448L432 378Z M10 225L215 225L200 275L184 290L158 305L143 320L134 335L128 350L122 370L120 395L121 410L123 425L131 447L127 506L10 525Z M353 195L300 195L300 -10L660 -10L660 280L600 300L540 302L500 297L473 288Z"/></clipPath>
+    <clipPath id="clipHead"><path d="M353 195L300 195L300 -10L660 -10L660 280L600 300L540 302L500 297L473 288Z M353 195L473 288L446 308L392 270Z"/></clipPath>
     <clipPath id="clipArm"><path d="M466 286L500 297L540 304L600 304L794 296L794 452L600 452L428 382L402 352L418 288Z"/></clipPath>
     <clipPath id="clipTail"><path d="M10 225L215 225L200 275L184 290L158 305L143 320L134 335L128 350L122 370L120 395L121 410L123 425L131 447L127 506L10 525Z M127 444L180 438L184 508L123 509Z"/></clipPath>
     <radialGradient id="steel" cx="38%" cy="32%" r="72%" fx="32%" fy="26%">
@@ -300,15 +301,19 @@
             <use href="#catFill" fill="#FFF7EA" clip-path="url(#clipBody)"/>
             <g class="tail"><g id="tail-wag"><g clip-path="url(#clipTail)"><use href="#catShape" fill="#161614"/></g></g></g>
             <g clip-path="url(#clipBody)"><use href="#catShape" fill="#161614"/></g>
-            <use href="#catDetails" fill="#FF661B"/>
-            <circle cx="538.6" cy="219.2" r="33.5" fill="#FFFFFF"/>
-            <g id="pupil" transform="translate(537 234)"><circle id="pupil-c" r="16" fill="#161614"/><circle cx="-5" cy="-6" r="4" fill="#FFFFFF"/></g>
-            <ellipse class="lid" cx="538.6" cy="219.2" rx="36" ry="37" fill="#161614"/>
             <g id="flipper" transform="translate(502 502) rotate(-17.5)">
               <use href="#flipOuter" fill="#161614"/><use href="#flipInner" fill="#E8480C"/><circle r="22" fill="#161614"/>
             </g>
-            <g id="arm" transform="rotate(-16 452 328)"><g clip-path="url(#clipArm)"><use href="#catShape" fill="#161614"/></g></g>
-            <g id="ball" transform="translate(520 405)">
+            <g id="arm" transform="rotate(-18 452 328)"><g clip-path="url(#clipArm)"><use href="#catShape" fill="#161614"/></g></g>
+            <g id="head">
+              <circle cx="585" cy="262" r="8" fill="#FFF7EA"/>
+              <g clip-path="url(#clipHead)"><use href="#catShape" fill="#161614"/></g>
+              <use href="#catDetails" fill="#FF661B"/>
+              <circle cx="538.6" cy="219.2" r="33.5" fill="#FFFFFF"/>
+              <g id="pupil" transform="translate(545 229)"><circle id="pupil-c" r="16" fill="#161614"/><circle cx="-5" cy="-6" r="4" fill="#FFFFFF"/></g>
+              <ellipse class="lid" cx="538.6" cy="219.2" rx="36" ry="37" fill="#161614"/>
+            </g>
+            <g id="ball" transform="translate(744 372)">
               <g id="streaks" opacity="0" stroke="#161614" stroke-width="9" stroke-linecap="round"><path d="M-23 -86L-8 -56"/><path d="M-36 -63L-23 -42"/></g>
               <circle r="38" fill="url(#steel)"/>
             </g>
@@ -449,44 +454,71 @@
   var easeOut = function (t) { return 1 - Math.pow(1 - t, 3); };
 
   var hero = $("hero"), scene = $("scene"), nav = $("nav"), hint = $("hint"), marquee = $("marquee");
-  var arm = $("arm"), flipper = $("flipper"), ball = $("ball"), streaks = $("streaks"), pupil = $("pupil"), pupilC = $("pupil-c"), tailWag = $("tail-wag");
+  var arm = $("arm"), flipper = $("flipper"), ball = $("ball"), streaks = $("streaks"), pupil = $("pupil"), pupilC = $("pupil-c"), tailWag = $("tail-wag"), head = $("head");
 
-  /* ---------- The cat paws the flipper, the ball rolls off, the cat's eye follows it ---------- */
-  var PIV = { x: 502, y: 502 }, R = 38, EYE = { x: 538.6, y: 219.2, r: 33.5 }, ARM_PIV = " 452 328";
-  var FLIP_REST = -17.5, FLIP_DOWN = 0, S0 = 46, S_TIP = 224;
-  var P_TAP = 0.16, P_DROP = 0.22, P_ROLL = 0.19, P_LEAVE = 0.38, P_GONE = 0.62;
+  /* ---------- The cat pats the ball off the flipper, three taps, and watches it fall ---------- */
+  var PIV = { x: 502, y: 502 }, R = 38, EYE = { x: 538.6, y: 219.2, r: 33.5 }, SH = " 452 328", HEAD = { x: 418, y: 248 };
+  var FLIP = -17.5, RAISED = -27;
+  var CONTACT = {"from":-75,"step":0.5,"th":[-15.25,-15.2,-15.2,-15.15,-15.15,-15.1,-15.05,-15.05,-15.0,-14.95,-14.9,-14.85,-14.8,-14.75,-14.7,-14.65,-14.55,-14.5,-14.45,-14.35,-14.3,-14.2,-14.15,-14.05,-13.95,-13.85,-13.8,-13.7,-13.6,-13.5,-13.4,-13.3,-13.2,-13.1,-13.0,-12.85,-12.75,-12.65,-12.55,-12.4,-12.3,-12.2,-12.05,-11.9,-11.8,-11.65,-11.5,-11.35,-11.25,-11.1,-10.95,-10.75,-10.6,-10.45,-10.3,-10.1,-9.95,-9.8,-9.6,-9.45,-9.25,-9.05,-8.9,-8.7,-8.55,-8.4,-8.2,-8.05,-7.85,-7.7,-7.5,-7.3,-7.1,-6.9,-6.7,-6.5,-6.3,-6.1,-5.85,-5.65,-5.4,-5.15,-4.9,-4.6,-4.35,-4.15,-3.9,-3.65,-3.4,-3.15,-2.85,-2.55,-2.2,-1.85,-1.35,-0.65,-0.2,0.3,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]};
+  var PHI = [-70, -59, -48, -38], PHI_LEAVE = -22;
+  var TAPS = [[0.05, 0.10, 0.13, 0.18], [0.18, 0.23, 0.26, 0.31]];
+  var T3 = [0.31, 0.36, 0.39], P_OFF = 0.45, P_GONE = 0.70;
   var fallY = 1400;
 
-  function half(s) { return 52.8 - (s - 4.9) * (19.9 / 216.1); }
-  function onFlipper(s, deg) {
-    var a = deg * Math.PI / 180, c = Math.cos(a), n = Math.sin(a), ly = -(half(s) + R);
-    return { x: PIV.x + c * s - n * ly, y: PIV.y + n * s + c * ly };
+  function easeIn(t) { return t * t * t; }
+  function contactAt(phi) {
+    var i = (phi - CONTACT.from) / CONTACT.step, i0 = Math.floor(i), f = i - i0;
+    var a = CONTACT.th[i0], b = CONTACT.th[i0 + 1];
+    if (a == null || b == null) return null;
+    return a + (b - a) * f;
   }
-  function flipAngle(p) {
-    var d = FLIP_DOWN - FLIP_REST;
-    return FLIP_REST + d * easeOut(seg(p, P_TAP, P_DROP)) - d * ease(seg(p, 0.56, 0.7));
+  function perch(phi, flip) {
+    var a = flip * Math.PI / 180, b = phi * Math.PI / 180;
+    return { x: PIV.x + 221 * Math.cos(a) + 71 * Math.cos(b), y: PIV.y + 221 * Math.sin(a) + 71 * Math.sin(b) };
   }
-  function armAngle(p) {
-    return -16 + 16 * ease(seg(p, 0.02, P_TAP)) + 12 * easeOut(seg(p, P_TAP, P_DROP)) - 26 * ease(seg(p, P_DROP, 0.32)) + 14 * ease(seg(p, 0.56, 0.72));
+  function excitement(p) { return ease(seg(p, 0.03, 0.1)) * (1 - ease(seg(p, 0.7, 0.86))); }
+
+  /* Where everything is at scroll progress p: arm angle, ball perch angle, flipper dip, wobble */
+  function pose(p) {
+    var arm = RAISED, phi = PHI[0], jig = 0, wob = 0, free = null;
+    for (var i = 0; i < TAPS.length; i++) {
+      var t = TAPS[i], a = PHI[i], b = PHI[i + 1], from = RAISED;
+      if (p < t[0]) break;
+      if (p < t[1]) { phi = a; arm = from + (contactAt(a) - from) * easeIn(seg(p, t[0], t[1])); }
+      else if (p < t[2]) { var u = easeOut(seg(p, t[1], t[2])); phi = a + (b - a) * u; arm = contactAt(phi); jig = 2.5 * Math.sin(Math.PI * u); }
+      else { var v = seg(p, t[2], t[3]); phi = b; arm = contactAt(b) + (RAISED - contactAt(b)) * easeOut(v); wob = 3.5 * (1 - v) * Math.sin(v * Math.PI * 3); }
+    }
+    if (p >= T3[0]) {
+      var from3 = RAISED;
+      if (p < T3[1]) { phi = PHI[2]; arm = from3 + (contactAt(PHI[2]) - from3) * easeIn(seg(p, T3[0], T3[1])); }
+      else {
+        if (p < T3[2]) { var u3 = easeOut(seg(p, T3[1], T3[2])); phi = PHI[2] + (PHI[3] - PHI[2]) * u3; jig = 2.5 * Math.sin(Math.PI * u3); }
+        else if (p < P_OFF) { var r = seg(p, T3[2], P_OFF); phi = PHI[3] + (PHI_LEAVE - PHI[3]) * r * r; }
+        else { phi = PHI_LEAVE; free = p - P_OFF; }
+        var c = free == null ? contactAt(phi) : null;
+        arm = c == null ? 0 : Math.min(c, 0);
+        if (free != null || c == null) arm = 0;
+      }
+    }
+    return { arm: arm, phi: phi + wob, jig: jig, free: free };
   }
-  function roll(u) { return 0.35 * u + 0.65 * u * u; }
-  function ballPose(p, ang) {
-    if (p <= P_LEAVE) return onFlipper(S0 + (S_TIP - S0) * roll(seg(p, P_ROLL, P_LEAVE)), ang);
-    var start = onFlipper(S_TIP, FLIP_DOWN), t = p - P_LEAVE, T = P_GONE - P_LEAVE;
-    var speed = (S_TIP - S0) * 1.65 / (P_LEAVE - P_ROLL);
-    var a = (FLIP_DOWN + 5.3) * Math.PI / 180, vx = speed * Math.cos(a), vy = speed * Math.sin(a);
+
+  function ballAt(ps) {
+    var flip = FLIP + ps.jig;
+    if (ps.free == null) { var q = perch(ps.phi, flip); q.fall = 0; return q; }
+    var start = perch(PHI_LEAVE, FLIP), a = PHI_LEAVE * Math.PI / 180;
+    var speed = 2 * (PHI_LEAVE - PHI[3]) / (P_OFF - T3[2]) * Math.PI / 180 * 71;
+    var vx = -Math.sin(a) * speed, vy = Math.cos(a) * speed, T = P_GONE - P_OFF, t = ps.free;
     var g = 2 * (fallY - start.y - vy * T) / (T * T);
     return { x: start.x + vx * t, y: start.y + vy * t + 0.5 * g * t * t, fall: t, dir: Math.atan2(vy + g * t, vx) * 180 / Math.PI };
   }
-  function excitement(p) { return ease(seg(p, 0.13, 0.22)) * (1 - ease(seg(p, 0.62, 0.82))); }
 
   var tapStart = -1;
-  function tapOffset(now) {
-    if (tapStart < 0) return null;
-    var t = (now - tapStart) / 700;
-    if (t >= 1) { tapStart = -1; return null; }
-    var press = Math.sin(Math.PI * Math.min(t * 2.2, 1));
-    return { arm: 9 * press, flip: 7 * press, hop: -26 * Math.sin(Math.PI * t), buzz: Math.sin(Math.PI * t) };
+  function clickPat(now) {
+    if (tapStart < 0) return 0;
+    var t = (now - tapStart) / 650;
+    if (t >= 1) { tapStart = -1; return 0; }
+    return t;
   }
 
   function heroProgress() {
@@ -494,41 +526,59 @@
     return total > 0 ? clamp(-r.top / total, 0, 1) : 1;
   }
 
-  function lookAt(bx, by, dilate) {
-    var pr = 16 + 4 * dilate, dx = bx - EYE.x, dy = by - EYE.y, d = Math.sqrt(dx * dx + dy * dy) || 1;
+  function place(bx, by, tilt, dilate) {
+    // head turns toward the ball; the pupil points at it inside the tilted head
+    head.setAttribute("transform", "rotate(" + tilt.toFixed(2) + " " + HEAD.x + " " + HEAD.y + ")");
+    var a = -tilt * Math.PI / 180, x = bx - HEAD.x, y = by - HEAD.y;
+    var lx = HEAD.x + x * Math.cos(a) - y * Math.sin(a), ly = HEAD.y + x * Math.sin(a) + y * Math.cos(a);
+    var pr = 16 + 4 * dilate, dx = lx - EYE.x, dy = ly - EYE.y, d = Math.sqrt(dx * dx + dy * dy) || 1;
     var off = (EYE.r - pr - 2) * Math.min(1, d / 40);
     pupil.setAttribute("transform", "translate(" + (EYE.x + dx / d * off).toFixed(1) + " " + (EYE.y + dy / d * off).toFixed(1) + ")");
     pupilC.setAttribute("r", pr.toFixed(1));
   }
+  function tiltFor(bx, by) {
+    var ang = Math.atan2(by - EYE.y, bx - EYE.x) * 180 / Math.PI;
+    return clamp(1.5 + (ang - 36) * 0.3, -3, 9);
+  }
 
   function drawStill() {
-    flipper.setAttribute("transform", "translate(502 502) rotate(" + FLIP_REST + ")");
-    arm.setAttribute("transform", "rotate(0" + ARM_PIV + ")");
+    flipper.setAttribute("transform", "translate(502 502) rotate(" + FLIP + ")");
+    arm.setAttribute("transform", "rotate(0" + SH + ")");
     ball.setAttribute("transform", "translate(828 512) scale(1.3)");
     ball.style.display = "";
     streaks.setAttribute("opacity", "1");
     streaks.setAttribute("transform", "");
     tailWag.setAttribute("transform", "");
-    lookAt(828, 512, 0.4);
+    place(828, 512, tiltFor(828, 512), 0.4);
     hero.classList.remove("dropped");
   }
 
   function drawScene(p, now) {
-    var off = tapOffset(now);
-    var fa = flipAngle(p) + (off ? off.flip : 0), aa = armAngle(p) + (off ? off.arm : 0);
-    flipper.setAttribute("transform", "translate(502 502) rotate(" + fa.toFixed(2) + ")");
-    arm.setAttribute("transform", "rotate(" + aa.toFixed(2) + ARM_PIV + ")");
-    var bp = ballPose(p, fa), hop = off && p < P_ROLL ? off.hop : 0;
+    var ps = pose(p), ct = clickPat(now);
+    if (ct) {
+      var pulse = Math.sin(Math.PI * Math.min(ct * 2, 1));
+      if (ps.free == null && p < T3[0]) {
+        var c = contactAt(ps.phi);
+        if (c != null) ps.arm += (c - ps.arm) * pulse;
+        if (ct > 0.5) ps.phi += 3 * (1 - ct) * Math.sin((ct - 0.5) * Math.PI * 6);
+      } else {
+        ps.arm += 6 * pulse; ps.jig += 3 * pulse;
+      }
+    }
+    flipper.setAttribute("transform", "translate(502 502) rotate(" + (FLIP + ps.jig).toFixed(2) + ")");
+    arm.setAttribute("transform", "rotate(" + ps.arm.toFixed(2) + SH + ")");
+    var b = ballAt(ps);
     ball.style.display = p > P_GONE + 0.03 ? "none" : "";
-    ball.setAttribute("transform", "translate(" + bp.x.toFixed(1) + " " + (bp.y + hop).toFixed(1) + ")");
-    streaks.setAttribute("opacity", bp.fall ? clamp(bp.fall / 0.03, 0, 1).toFixed(2) : "0");
-    streaks.setAttribute("transform", bp.fall ? "rotate(" + (bp.dir - 62).toFixed(1) + ")" : "");
-    var ex = excitement(p), buzz = off ? off.buzz : 0;
-    var look = p > P_GONE ? ballPose(P_GONE, FLIP_DOWN) : { x: bp.x, y: bp.y + hop };
-    lookAt(look.x, look.y, Math.max(ex, buzz));
-    tailWag.setAttribute("transform", "rotate(" + ((ex * 7 + buzz * 5) * Math.sin(p * 70 + (now || 0) / 90 * buzz)).toFixed(2) + " 130 476)");
-    hero.classList.toggle("dropped", p > 0.44 && p < 0.97);
-    hint.style.opacity = String(1 - seg(p, 0.02, 0.1));
+    ball.setAttribute("transform", "translate(" + b.x.toFixed(1) + " " + b.y.toFixed(1) + ")");
+    streaks.setAttribute("opacity", b.fall ? clamp(b.fall / 0.03, 0, 1).toFixed(2) : "0");
+    streaks.setAttribute("transform", b.fall ? "rotate(" + (b.dir - 62).toFixed(1) + ")" : "");
+    var look = p > P_GONE ? ballAt({ free: P_GONE - P_OFF, jig: 0 }) : b;
+    var ex = excitement(p);
+    var nod = ps.free == null && p < P_OFF ? 2.2 * clamp((ps.arm - RAISED) / 12, 0, 1) : 0;
+    place(look.x, look.y, tiltFor(look.x, look.y) + nod, Math.max(ex, ct ? 1 - ct : 0));
+    tailWag.setAttribute("transform", "rotate(" + (ex * 7 * Math.sin(p * 80)).toFixed(2) + " 130 476)");
+    hero.classList.toggle("dropped", p > 0.47 && p < 0.97);
+    hint.style.opacity = String(1 - seg(p, 0.02, 0.08));
   }
 
   function measureFall() {
