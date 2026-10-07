@@ -8,7 +8,9 @@
   <meta name="robots" content="noindex,nofollow" />
   <link rel="stylesheet" href="assets/course.css" />
   <link rel="stylesheet" href="assets/extra.css" />
+  <link rel="stylesheet" href="assets/learn.css" />
   <script>
+    /* gate guard — redirect before paint if the course wasn't entered */
     (function () {
       var K = 'lemonade.gate.participant';
       try {
@@ -28,190 +30,453 @@
       <p class="module-id">Module 09 · Part 2 — Agents &amp; systems</p>
       <h1 class="question">How do you trust what you can't watch?</h1>
 
+      <div class="bigidea">
+        <p class="bi-k">The big idea</p>
+        <p class="bi-v">Reliability isn't something a model has. It's something you design around it.</p>
+      </div>
+      <div class="meta-chips">
+        <span class="chip">About 25 minutes</span>
+        <span class="chip">Claude open in another tab</span>
+      </div>
+
       <div class="frame-row">
-        <div class="k">Scenario</div>
-        <div class="v">Your weekly recap now runs itself. But you won't be watching every run. So you build the recap two ways — once plainly, once with an independent check — and decide which you'd actually hand to someone else.</div>
+        <div class="k">The situation</div>
+        <div class="v">Your weekly recap now runs without you. Before you hand it off, you'll produce it two ways — plain, and with an independent check — and decide which one you'd trust to someone else.</div>
       </div>
       <div class="frame-row">
-        <div class="k">Your role</div>
-        <div class="v">The one who signs off. You decide what gets checked, against what, and who answers when it's wrong.</div>
+        <div class="k">Your part</div>
+        <div class="v">You're the one who signs off. You decide what gets checked, against what — and you answer for what goes out.</div>
       </div>
       <div class="frame-row">
-        <div class="k">What you'll practice</div>
-        <div class="v">Designing reliability into the work — and learning the six shapes agents get put together in.</div>
+        <div class="k">You'll learn</div>
+        <div class="v">How to design checks into AI work — and the six shapes that teams of AI helpers come in.</div>
       </div>
 
       <div class="frame-row tool">
         <div class="k">Tool</div>
-        <div class="v">Claude — one plain run, one with a verifier.</div>
+        <div class="v">Claude — a normal chat works. If yours can start helpers (Claude Cowork or Claude Code), the checker can get its own desk.</div>
       </div>
       <div class="inputs" style="margin-top:22px;border-bottom:none;padding-bottom:0;">
-        <p class="inputs-intro">Carry forward:</p>
+        <p class="inputs-intro">You'll bring two things into the chat:</p>
         <div class="folder-block">
-          <div class="file-row"><span class="fname">your week of books</span><span class="fdesc">the closed ledger from Module 06, errors and all</span></div>
-          <div class="file-row"><span class="fname">the recap task</span><span class="fdesc">"summarize the week: sales, costs, what stood out"</span></div>
+          <div class="folder-head">
+            <span class="folder-name">your week of books</span>
+          </div>
+          <p class="fdesc" style="margin:0;">The six days of sales notes from Module 06 — the $32 Saturday and the 45-lemon Thursday included. They're reprinted in Step 1, ready to copy.</p>
+        </div>
+        <div class="folder-block">
+          <div class="folder-head">
+            <span class="folder-name">the recap task</span>
+          </div>
+          <p class="fdesc" style="margin:0;">"Summarize the week: total sales, total costs, and anything that stood out."</p>
         </div>
         <details class="how">
-          <summary>Don't have the ledger handy?</summary>
-          <div class="how-body">
-            Any week of numbers works — reuse Module 06's, or paste a few days of sales and costs. The point is the <em>check</em>, not the data.
+          <summary>Where do I find them?</summary>
+          <div class="how-body" style="word-break:break-word;">
+            If your Module 06 chat is still open, keep going there — the notes and cost sheet are already in it. Starting fresh? Paste the notes from Step 1 and attach ingredient_and_supply_costs.xlsx from your course files. The data matters less than the check.
           </div>
         </details>
       </div>
+
+      <dl class="terms">
+        <p class="t-head">Words to know</p>
+        <dt>Verifier</dt>
+        <dd>A separate pass whose only job is to try to prove the work wrong. Not a second author — a fact-checker.</dd>
+        <dt>Pattern</dt>
+        <dd>A reusable way of arranging AI helpers for a kind of job. Like a recipe for teamwork: the same shape works on many different tasks.</dd>
+        <dt>Accountable</dt>
+        <dd>The named person who answers for the result. Not "the team," not "the tool" — one person who knows it's them.</dd>
+      </dl>
     </section>
 
     <!-- ── WORK (middle) ────────────────────────────────────── -->
     <section class="col work">
       <div class="inner">
         <p class="scene">
-          A recap is easy to produce and easy to get quietly wrong — a number transposed, a bad day
-          averaged away, the $32 Saturday from Module 06 smoothed over. If you're going to hand this
-          off and stop watching, "it looks right" isn't enough. You need a run that catches its own
-          mistakes before they reach anyone who matters.
+          Every Monday, someone needs one short note: what came in, what went out, what stood out. A
+          recap is easy to produce — and easy to get quietly wrong. A number transposed. The $32
+          Saturday smoothed over. Thursday's 45 lemons explained by a reason nobody wrote down. Soon
+          you won't be reading every run. If you're going to stop watching, "it looks right" isn't
+          enough.
         </p>
 
-        <div class="activity">
-          <h4><span class="step-n">1</span>Produce it the plain way</h4>
-          <p>One pass, straight through:</p>
+        <div class="factbar">
+          <div class="fact"><div class="fact-n">$1,757</div><div class="fact-l">cash counted over six days</div></div>
+          <div class="fact"><div class="fact-n">$32</div><div class="fact-l">Saturday's gap between cups sold and cash</div></div>
+          <div class="fact"><div class="fact-n">45</div><div class="fact-l">lemons on Thursday — other days, 30 or 32</div></div>
+          <div class="fact"><div class="fact-n">6</div><div class="fact-l">shapes that teams of AI helpers come in</div></div>
         </div>
+
+        <!-- Step 1 -->
+        <h2 class="sec"><span class="sec-kicker">Step 1 · Try it</span>Make the recap two ways</h2>
+        <p class="body">
+          Open Claude. If your Module 06 chat is still open, keep going there. If not, start a fresh
+          chat, attach the cost sheet, and paste in the week's notes:
+        </p>
+        <div class="sample-prompt">Lakeside Lemonade — sales notes, one week
+Small cup $4 · Large cup $5
+
+Tue — slow, cloudy. Small 22, large 15. Cash counted $163. Lemons bought 30.
+Wed — pickup rush ~3pm. Small 31, large 18. Cash counted $214. Lemons bought 30.
+Thu — hot!! Small 36, large 25. Cash counted $269. Lemons bought 45.
+Fri — soccer tourney setup. Small 38, large 30. Cash counted $302. Lemons bought 32.
+Sat — SLAMMED — rough count. Small ~58, large ~56. Cash counted $480. Lemons bought 30.
+Sun — market day, Hansen busy. Small 41, large 33. Cash counted $329. Lemons bought 30.</div>
+
+        <p class="body">First, the plain way — one pass, the way most people would ask:</p>
         <div class="code-prompt">Summarize this week of lemonade books: total sales, total costs,
 and anything that stood out.</div>
+        <p class="body">
+          It will probably come back tidy and finished. Hold that thought. Now ask again, in the same
+          chat, with a check built in. Click each highlighted part to see what it does, then copy it
+          into Claude:
+        </p>
 
-        <div class="activity">
-          <h4><span class="step-n">2</span>Produce it again, with a verifier that tries to break it</h4>
-          <p>Now put an independent check between the work and you:</p>
+        <div class="annotated">
+          <div class="sample-prompt ap-body"><span class="ap-seg" data-ap="1">Do this in two roles</span> <span class="ap-seg" data-ap="2">that don't see each other's reasoning.</span>
+WRITER: produce the weekly recap from the books.
+VERIFIER: <span class="ap-seg" data-ap="3">take ONLY the writer's recap and the raw books,</span> and <span class="ap-seg" data-ap="4">try to prove it wrong — recompute the totals, check every day adds up, and flag anything smoothed over.</span>
+<span class="ap-seg" data-ap="5">Then show me the recap, the verifier's findings, and what changed because of them.</span></div>
+          <p class="ap-hint">Click a highlighted part to see why it's there.</p>
+          <div class="ap-callout"></div>
+          <ol class="ap-notes">
+            <li data-ap="1"><b>Two roles.</b> One makes the recap, one checks it — a writer and an editor. Different jobs notice different things.</li>
+            <li data-ap="2"><b>Blind to each other.</b> The heart of it. A checker who has read the writer's reasoning tends to find it convincing. One who hasn't must work it out fresh.</li>
+            <li data-ap="3"><b>Only the recap and the raw data.</b> The verifier checks against the notes themselves. If the recap says $480 for Saturday, it goes back to the cup counts and does the sum.</li>
+            <li data-ap="4"><b>"Try to prove it wrong."</b> A reviewer asked to approve usually approves. One asked to find a problem looks harder — and the three named checks say where to start.</li>
+            <li data-ap="5"><b>Show what changed.</b> You see the verifier's work, not just its verdict. That's what lets you sign off.</li>
+          </ol>
         </div>
-        <div class="sample-prompt">Do it in two roles that don't see each other's reasoning.
- • WRITER: produce the weekly recap from the books.
- • VERIFIER: take ONLY the writer's recap and the raw books, and try to
-   prove it wrong — recompute the totals, check every day reconciles, flag
-   anything smoothed over or unsupported.
-Then show me: the recap, the verifier's findings, and what changed because
-of them.</div>
+
+        <p class="body">
+          In a normal chat, one Claude plays both roles, so the wall between them is thin — it still
+          tends to catch more than "look it over." In Claude Cowork or Claude Code, ask for the verifier
+          as a separate helper. <strong>For a truly blind check,</strong> give a fresh chat only the recap
+          and the raw notes. It can't agree with reasoning it never saw.
+        </p>
+
+        <p class="body">Then compare your two recaps:</p>
+        <div class="tabs">
+          <div class="tab-bar">
+            <button class="tab" data-tab="a">Plain recap</button>
+            <button class="tab active" data-tab="b">Checked recap</button>
+          </div>
+          <div class="tab-panel" data-panel="a">
+            <div class="claude-out">
+              <div class="co-head">Claude · sample response</div>
+              <div class="co-body">
+                <p><b>This week at Lakeside Lemonade</b></p>
+                <ul>
+                  <li>Total sales: $1,757 from 403 cups (226 small, 177 large)</li>
+                  <li>Total costs: $167.42 — lemons $135.19, cups $32.23</li>
+                  <li>Profit: $1,589.58</li>
+                </ul>
+                <p><b>What stood out:</b> Saturday was the best day by far at $480. Thursday's heat lifted sales, and you stocked up with 45 lemons to keep up. A strong week overall.</p>
+              </div>
+            </div>
+            <p>Every sum is right. But Saturday's cups add up to $512, not $480, and nothing says so. Thursday got a reason nobody wrote down.</p>
+          </div>
+          <div class="tab-panel" data-panel="b">
+            <div class="claude-out">
+              <div class="co-head">Claude · sample response</div>
+              <div class="co-body">
+                <h5>Recap</h5>
+                <ul>
+                  <li>Sales: $1,757 cash counted, from 403 cups. The cups add up to $1,789 — see Saturday.</li>
+                  <li>Costs recorded: $167.42 for lemons and cups. Sugar and ice aren't in the notes.</li>
+                </ul>
+                <h5>Verifier's findings</h5>
+                <ul>
+                  <li><span class="flag">Saturday is $32 short.</span> 58 small × $4 + 56 large × $5 = $512. The box held $480. The writer used $480 without saying so.</li>
+                  <li><span class="flag">Thursday's 45 lemons are unexplained.</span> Every other day bought 30 or 32. The writer said you "stocked up" for the heat. The notes don't say that.</li>
+                  <li>The other five days check out to the dollar.</li>
+                </ul>
+                <h5>What changed</h5>
+                <ul>
+                  <li>Saturday shows both numbers, flagged for you to decide.</li>
+                  <li>Thursday's made-up reason is gone. It's now a question for you.</li>
+                  <li>"Profit" became "sales minus lemons and cups."</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="co-verdict">What to notice: same Claude, same notes. The second recap isn't smarter — it was checked against the raw numbers by a pass whose only job was to find the problem. Yours may catch both problems, one, or neither. Runs differ; that's why you design the check.</p>
+
+        <!-- Step 2 -->
+        <h2 class="sec"><span class="sec-kicker">Step 2 · What's going on</span>Why "check your own work" isn't enough</h2>
+        <p class="body">
+          You've probably missed a typo in your own writing that a colleague spotted in seconds. When
+          you reread your own work, you read what you <em>meant</em> to write. Claude has a similar
+          habit. Ask it to check the recap it just wrote, and it rereads reasons it already found
+          convincing. It tends to agree with itself.
+        </p>
+        <p class="body">
+          A separate verifier never saw those reasons. It gets only the recap and the raw notes, so it
+          can't take anything on trust. It has to redo Saturday's sum — and that's when $512 meets $480.
+        </p>
+        <p class="body">
+          Think of an editor and a fact-checker who haven't seen each other's notes. They don't share
+          blind spots, so each catches what the other misses. Many fields already work this way for
+          numbers that matter: someone who didn't produce them recomputes the key ones from the source.
+        </p>
 
         <div class="concept-intro">
-          <p class="ci-label">The real lesson of Part 2</p>
+          <p class="ci-label">The idea at the center of this module</p>
           <h3>Reliability is designed</h3>
           <p>
             A better model doesn't make the work reliable. What makes it reliable is how the work is
             <strong>set up around</strong> the model: who does which part, what gets checked, against
             what, and who signs off. That has to be designed <em>before</em> the work starts — not
-            bolted on after something goes wrong.
+            added after something goes wrong.
+          </p>
+          <p>
+            Between your two runs, the model didn't change. The setup did.
+            <strong>Reliability isn't something a model has. It's something you design around it.</strong>
           </p>
         </div>
 
-        <!-- ── The six-pattern swarm grid (centrepiece) ── -->
-        <p class="label" style="margin-top:8px;">Six shapes agents get put together in</p>
-        <p class="activity" style="margin-bottom:12px;">
-          You've now built two of these yourself. There's a small, reusable family — each one fits a
-          different job. The skill isn't knowing a model; it's choosing the shape.
+        <!-- Step 3 -->
+        <h2 class="sec"><span class="sec-kicker">Step 3 · Click and learn</span>The six shapes</h2>
+        <p class="body">
+          You've built two already. Teams of AI helpers come in a small family of shapes — patterns you
+          can reuse. The skill is picking the right one. Open each card.
         </p>
 
-        <div class="swarm-grid">
-          <div class="swarm-card">
-            <div class="sc-name">1 · Classify-and-act</div>
-            <svg viewBox="0 0 140 54" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <circle cx="13" cy="27" r="5"/><line x1="18" y1="27" x2="43" y2="27"/>
-              <rect x="45" y="20" width="14" height="14" rx="1" transform="rotate(45 52 27)"/>
-              <line x1="63" y1="27" x2="82" y2="11"/><line x1="63" y1="27" x2="82" y2="27"/><line x1="63" y1="27" x2="82" y2="43"/>
-              <rect x="82" y="6" width="18" height="10" rx="2"/><rect x="82" y="22" width="18" height="10" rx="2"/><rect x="82" y="38" width="18" height="10" rx="2"/>
-            </svg>
-            <p class="sc-for">Sort each item into a bucket, then take the matching action. Triage, routing, closing the books. <em>You met this in Module 06.</em></p>
-          </div>
+        <div class="xgrid">
+          <details class="xcard">
+            <summary>
+              <span class="xc-title">1 · Classify-and-act<span class="xc-tag">Met in M06</span></span>
+              <span class="xc-fig"><svg viewBox="0 0 140 54" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <circle cx="13" cy="27" r="5"/><line x1="18" y1="27" x2="43" y2="27"/>
+                <rect x="45" y="20" width="14" height="14" rx="1" transform="rotate(45 52 27)"/>
+                <line x1="63" y1="27" x2="82" y2="11"/><line x1="63" y1="27" x2="82" y2="27"/><line x1="63" y1="27" x2="82" y2="43"/>
+                <rect x="82" y="6" width="18" height="10" rx="2"/><rect x="82" y="22" width="18" height="10" rx="2"/><rect x="82" y="38" width="18" height="10" rx="2"/>
+              </svg></span>
+              <span class="xc-line">Sort each item into a bucket, then act on it — like a mailroom.</span>
+            </summary>
+            <div class="xcard-more">
+              <h5>Use it when</h5>
+              <p>There are lots of items, and each needs one of a few responses.</p>
+              <h5>At the stand</h5>
+              <p>Sort each line of the notes into sale, cost or "ask me" — then book it.</p>
+              <h5>At work</h5>
+              <p>Routing emails, tickets or invoices. A first sort of abstracts into include, exclude and "not sure."</p>
+              <h5>Watch out for</h5>
+              <p>Always keep an "unsure — ask a human" bucket, or odd items get forced into the nearest one.</p>
+              <h5>How to ask</h5>
+              <div class="sample-prompt">Label each line SALE, COST or ASK ME. Book the sales and costs. List every ASK ME line for me — don't guess.</div>
+            </div>
+          </details>
 
-          <div class="swarm-card built">
-            <div class="sc-name">2 · Fan-out-and-synthesize <span class="sc-built">· Built · M07</span></div>
-            <svg viewBox="0 0 140 54" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <circle cx="12" cy="27" r="5"/>
-              <line x1="17" y1="27" x2="39" y2="12"/><line x1="17" y1="27" x2="40" y2="27"/><line x1="17" y1="27" x2="39" y2="42"/>
-              <circle cx="46" cy="12" r="5"/><circle cx="46" cy="27" r="5"/><circle cx="46" cy="42" r="5"/>
-              <line x1="51" y1="12" x2="86" y2="27"/><line x1="52" y1="27" x2="86" y2="27"/><line x1="51" y1="42" x2="86" y2="27"/>
-              <circle cx="93" cy="27" r="6"/>
-            </svg>
-            <p class="sc-for">Split into parallel specialists, then one reconciles them. Research, a go/no-go, anything with genuinely distinct parts.</p>
-          </div>
+          <details class="xcard built">
+            <summary>
+              <span class="xc-title">2 · Fan-out-and-synthesize<span class="xc-tag">You built this · M07</span></span>
+              <span class="xc-fig"><svg viewBox="0 0 140 54" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <circle cx="12" cy="27" r="5"/>
+                <line x1="17" y1="27" x2="39" y2="12"/><line x1="17" y1="27" x2="40" y2="27"/><line x1="17" y1="27" x2="39" y2="42"/>
+                <circle cx="46" cy="12" r="5"/><circle cx="46" cy="27" r="5"/><circle cx="46" cy="42" r="5"/>
+                <line x1="51" y1="12" x2="86" y2="27"/><line x1="52" y1="27" x2="86" y2="27"/><line x1="51" y1="42" x2="86" y2="27"/>
+                <circle cx="93" cy="27" r="6"/>
+              </svg></span>
+              <span class="xc-line">Split a big question into parts, work them side by side, pull them together — one cook per station, one head chef.</span>
+            </summary>
+            <div class="xcard-more">
+              <h5>Use it when</h5>
+              <p>A big question has genuinely different parts.</p>
+              <h5>At the stand</h5>
+              <p>The second-stand decision: demand, costs, competition, risks, then one go/no-go.</p>
+              <h5>At work</h5>
+              <p>Vendor due diligence, a market scan, a literature summary with one helper per question.</p>
+              <h5>Watch out for</h5>
+              <p>A synthesis that smooths over disagreements — often where the real decision lives. And extra cost: every helper works on its own.</p>
+              <h5>How to ask</h5>
+              <div class="sample-prompt">Run this as four separate workstreams: demand, costs, competition, risks. Then give me one recommendation, and say where they disagreed.</div>
+            </div>
+          </details>
 
-          <div class="swarm-card built">
-            <div class="sc-name">3 · Adversarial verification <span class="sc-built">· Built · M09</span></div>
-            <svg viewBox="0 0 140 54" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <rect x="7" y="20" width="18" height="14" rx="2"/>
-              <line x1="25" y1="27" x2="44" y2="12"/><line x1="25" y1="27" x2="45" y2="27"/><line x1="25" y1="27" x2="44" y2="42"/>
-              <circle cx="50" cy="12" r="5"/><circle cx="50" cy="27" r="5"/><circle cx="50" cy="42" r="5"/>
-              <line x1="55" y1="12" x2="86" y2="27"/><line x1="55" y1="27" x2="86" y2="27"/><line x1="55" y1="42" x2="86" y2="27"/>
-              <circle cx="94" cy="27" r="7"/><path d="M90.5 27 l2.5 2.6 l4.5 -5.4" stroke-width="1.6"/>
-            </svg>
-            <p class="sc-for">Independent reviewers, blind to each other, try to prove the work wrong before you trust it. High-stakes checks.</p>
-          </div>
+          <details class="xcard built">
+            <summary>
+              <span class="xc-title">3 · Adversarial verification<span class="xc-tag">You built this · M09</span></span>
+              <span class="xc-fig"><svg viewBox="0 0 140 54" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <rect x="7" y="20" width="18" height="14" rx="2"/>
+                <line x1="25" y1="27" x2="44" y2="12"/><line x1="25" y1="27" x2="45" y2="27"/><line x1="25" y1="27" x2="44" y2="42"/>
+                <circle cx="50" cy="12" r="5"/><circle cx="50" cy="27" r="5"/><circle cx="50" cy="42" r="5"/>
+                <line x1="55" y1="12" x2="86" y2="27"/><line x1="55" y1="27" x2="86" y2="27"/><line x1="55" y1="42" x2="86" y2="27"/>
+                <circle cx="94" cy="27" r="7"/><path d="M90.5 27 l2.5 2.6 l4.5 -5.4" stroke-width="1.6"/>
+              </svg></span>
+              <span class="xc-line">A separate checker, blind to the writer's thinking, tries to prove the work wrong.</span>
+            </summary>
+            <div class="xcard-more">
+              <h5>Use it when</h5>
+              <p>A mistake would be costly, and you won't be watching.</p>
+              <h5>At the stand</h5>
+              <p>The recap that goes to an investor every Monday.</p>
+              <h5>At work</h5>
+              <p>Financial figures, contracts, anything published — any number in a report that came from a table.</p>
+              <h5>Watch out for</h5>
+              <p>A verifier that sees the writer's reasoning tends to agree with it. Keep it blind: only the output and the raw data.</p>
+              <h5>How to ask</h5>
+              <div class="sample-prompt">WRITER: draft it. VERIFIER: see only the draft and the source, and try to prove it wrong. Show me what changed.</div>
+            </div>
+          </details>
 
-          <div class="swarm-card">
-            <div class="sc-name">4 · Generate-and-filter</div>
-            <svg viewBox="0 0 140 54" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <circle cx="11" cy="9" r="3"/><circle cx="11" cy="20" r="3"/><circle cx="11" cy="31" r="3"/><circle cx="11" cy="42" r="3"/><circle cx="11" cy="51" r="3"/>
-              <line x1="20" y1="7" x2="66" y2="23"/><line x1="20" y1="53" x2="66" y2="33"/>
-              <line x1="66" y1="23" x2="66" y2="33"/>
-              <line x1="66" y1="28" x2="88" y2="28"/>
-              <circle cx="96" cy="22" r="4"/><circle cx="96" cy="34" r="4"/>
-            </svg>
-            <p class="sc-for">Produce many candidates, then filter hard to the few good ones. Naming, designs, a wall of options.</p>
-          </div>
+          <details class="xcard">
+            <summary>
+              <span class="xc-title">4 · Generate-and-filter</span>
+              <span class="xc-fig"><svg viewBox="0 0 140 54" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <circle cx="11" cy="9" r="3"/><circle cx="11" cy="20" r="3"/><circle cx="11" cy="31" r="3"/><circle cx="11" cy="42" r="3"/><circle cx="11" cy="51" r="3"/>
+                <line x1="20" y1="7" x2="66" y2="23"/><line x1="20" y1="53" x2="66" y2="33"/>
+                <line x1="66" y1="23" x2="66" y2="33"/>
+                <line x1="66" y1="28" x2="88" y2="28"/>
+                <circle cx="96" cy="22" r="4"/><circle cx="96" cy="34" r="4"/>
+              </svg></span>
+              <span class="xc-line">Make lots of options, then filter hard to the few good ones.</span>
+            </summary>
+            <div class="xcard-more">
+              <h5>Use it when</h5>
+              <p>You need options, and quantity helps you find quality.</p>
+              <h5>At the stand</h5>
+              <p>Thirty names for a strawberry-basil lemonade, filtered to three against your brand rules.</p>
+              <h5>At work</h5>
+              <p>Subject lines, product names, workshop ideas, talk titles.</p>
+              <h5>Watch out for</h5>
+              <p>The filter is only as good as your criteria. Write them down first — before you fall for an option.</p>
+              <h5>How to ask</h5>
+              <div class="sample-prompt">Give me 30 names for a strawberry-basil lemonade. Filter them against these rules: [your rules]. Show me the best 3 and why each survived.</div>
+            </div>
+          </details>
 
-          <div class="swarm-card">
-            <div class="sc-name">5 · Tournament</div>
-            <svg viewBox="0 0 140 54" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <circle cx="11" cy="8" r="3"/><circle cx="11" cy="22" r="3"/><circle cx="11" cy="36" r="3"/><circle cx="11" cy="50" r="3"/>
-              <path d="M14 8 H40 V22 H14 M27 15 H52"/>
-              <path d="M14 36 H40 V50 H14 M27 43 H52"/>
-              <circle cx="58" cy="15" r="3.5"/><circle cx="58" cy="43" r="3.5"/>
-              <path d="M62 15 H92 V43 H62 M77 29 H108"/>
-              <circle cx="116" cy="29" r="5"/>
-            </svg>
-            <p class="sc-for">Compare candidates head-to-head in rounds until one wins. Picking the single best of many.</p>
-          </div>
+          <details class="xcard">
+            <summary>
+              <span class="xc-title">5 · Tournament</span>
+              <span class="xc-fig"><svg viewBox="0 0 140 54" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <circle cx="11" cy="8" r="3"/><circle cx="11" cy="22" r="3"/><circle cx="11" cy="36" r="3"/><circle cx="11" cy="50" r="3"/>
+                <path d="M14 8 H40 V22 H14 M27 15 H52"/>
+                <path d="M14 36 H40 V50 H14 M27 43 H52"/>
+                <circle cx="58" cy="15" r="3.5"/><circle cx="58" cy="43" r="3.5"/>
+                <path d="M62 15 H92 V43 H62 M77 29 H108"/>
+                <circle cx="116" cy="29" r="5"/>
+              </svg></span>
+              <span class="xc-line">Compare candidates head to head, round by round, until one wins — a bake-off.</span>
+            </summary>
+            <div class="xcard-more">
+              <h5>Use it when</h5>
+              <p>You need the single best of many, and judging them all at once is hard.</p>
+              <h5>At the stand</h5>
+              <p>The best of twelve chalkboard designs, compared two at a time.</p>
+              <h5>At work</h5>
+              <p>Choosing among proposals or designs.</p>
+              <h5>Watch out for</h5>
+              <p>Keep the criteria fixed every round. The order of pairings can tilt the result, so try a second order.</p>
+              <h5>How to ask</h5>
+              <div class="sample-prompt">Compare these designs two at a time against the same three criteria. Winners go to the next round. Show me every round.</div>
+            </div>
+          </details>
 
-          <div class="swarm-card">
-            <div class="sc-name">6 · Loop-until-done</div>
-            <svg viewBox="0 0 140 54" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <circle cx="44" cy="27" r="9"/>
-              <path d="M44 9 A18 18 0 1 0 60 20"/>
-              <path d="M60 20 l1.5 -6 l-6 1.5" stroke-width="1.6"/>
-              <line x1="53" y1="27" x2="86" y2="27"/>
-              <circle cx="96" cy="27" r="7"/><path d="M92.5 27 l2.5 2.6 l4.5 -5.4" stroke-width="1.6"/>
-            </svg>
-            <p class="sc-for">Repeat until a stated condition is met. Cleanups, "keep going until every test passes."</p>
-          </div>
+          <details class="xcard">
+            <summary>
+              <span class="xc-title">6 · Loop-until-done</span>
+              <span class="xc-fig"><svg viewBox="0 0 140 54" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <circle cx="44" cy="27" r="9"/>
+                <path d="M44 9 A18 18 0 1 0 60 20"/>
+                <path d="M60 20 l1.5 -6 l-6 1.5" stroke-width="1.6"/>
+                <line x1="53" y1="27" x2="86" y2="27"/>
+                <circle cx="96" cy="27" r="7"/><path d="M92.5 27 l2.5 2.6 l4.5 -5.4" stroke-width="1.6"/>
+              </svg></span>
+              <span class="xc-line">Repeat until a stated condition is met — "keep stirring until it thickens."</span>
+            </summary>
+            <div class="xcard-more">
+              <h5>Use it when</h5>
+              <p>There's a clear finish line you can check.</p>
+              <h5>At the stand</h5>
+              <p>Keep reconciling until every day's cash matches its counts — or list what can't be reconciled.</p>
+              <h5>At work</h5>
+              <p>Cleaning a spreadsheet. Fixing until every check passes.</p>
+              <h5>Watch out for</h5>
+              <p>Always set a stop rule ("stop after 5 tries and tell me what's left"), or it may "finish" by fudging — nudging Saturday's count until the cash fits.</p>
+              <h5>How to ask</h5>
+              <div class="sample-prompt">Reconcile each day's cash against its cup counts until every day matches. Stop after 5 tries and list what's left. Never change a number just to make it fit.</div>
+            </div>
+          </details>
+        </div>
+
+        <!-- Step 4 -->
+        <h2 class="sec"><span class="sec-kicker">Step 4 · Click and learn</span>Match the job to the shape</h2>
+        <p class="body">Six jobs at the stand. Which shape fits each one?</p>
+        <div class="sorter" data-choices="a:Classify-and-act|b:Fan-out|c:Verify|d:Generate-and-filter|e:Tournament|f:Loop-until-done">
+          <div class="sort-item" data-answer="a"><p class="sort-text">400 customer emails — complaints, catering requests and spam. Each needs a different reply.</p><template class="fb">Lots of items, a few kinds of reply: sort, then act. Keep a bucket for "not sure — a person reads this," so an odd email never gets a canned answer.</template></div>
+          <div class="sort-item" data-answer="b"><p class="sort-text">Should we open a second stand? Demand, costs, competition, risks.</p><template class="fb">A big question with genuinely different parts. It's the one you built in Module 07: a helper per part, then a synthesis that says where they disagree.</template></div>
+          <div class="sort-item" data-answer="c"><p class="sort-text">The cash recap goes to your investor every Monday. One wrong number is a real problem.</p><template class="fb">Costly if wrong, and you won't read every run. That's the job for a blind verifier — the one you just built.</template></div>
+          <div class="sort-item" data-answer="d"><p class="sort-text">You need a name for the new strawberry-basil lemonade.</p><template class="fb">You need options, and the first idea is rarely the best. Make thirty, then filter hard against rules you wrote down first.</template></div>
+          <div class="sort-item" data-answer="e"><p class="sort-text">Twelve chalkboard designs. You need the single best one.</p><template class="fb">Twelve at once is too many to judge well. Two at a time, against the same criteria, round by round — like a bake-off.</template></div>
+          <div class="sort-item" data-answer="f"><p class="sort-text">Fix the price spreadsheet until every row adds up.</p><template class="fb">A clear finish line you can check: every row adds up. Loop until done — with a stop rule, so it can't "finish" by quietly changing a number.</template></div>
         </div>
 
         <p class="note-line">
-          How do you decide which to use? Match the shape to the job — one item to route (1), a big
-          question with distinct parts (2), a result you can't afford to get wrong (3), a space to
-          explore (4), one best pick (5), or a target to grind toward (6). None of it is the model.
-          It's the design around it.
+          <strong>How do you decide which design to use?</strong> Start with the job, not the tool. Lots
+          of items, a few kinds of response? Classify and act. A big question with different parts? Fan
+          out. Need options? Generate and filter — or a tournament for the single best. A finish line you
+          can check? Loop. And if a mistake would be costly and no one's watching, add a verifier to any
+          of them.
         </p>
+
+        <!-- Step 5 -->
+        <h2 class="sec"><span class="sec-kicker">Step 5 · Think it through</span>Who answers for it?</h2>
+        <p class="body">
+          A verifier finds problems. It can't decide what they mean — was Saturday a miscount, or
+          missing cash? Someone has to make that call.
+        </p>
+        <div class="reveal">
+          <p class="reveal-k">Make a guess</p>
+          <p class="reveal-q">In your organization, who would answer for it if an AI tool quietly got something wrong?</p>
+          <textarea class="reveal-guess" placeholder="Your guess (just for you)…"></textarea>
+          <button class="reveal-btn">Reveal</button>
+          <div class="reveal-body" hidden>
+            <p><strong>Often, nobody has been named.</strong> Not on purpose — it just never came up. One
+            person set the tool up, another used it, a third received the result. Each can fairly assume
+            catching mistakes was someone else's job. That gap is the real risk.</p>
+            <p>So naming an owner is part of the design, done <em>before</em> the first run: one person who
+            sees the flags, decides what they mean, and can stop the recap going out. At the stand, that's
+            you. At work, ask out loud — and make sure the person knows it's them.</p>
+          </div>
+        </div>
+
+        <div class="quiz">
+          <p class="quiz-k">Quick check</p>
+          <p class="quiz-q">You ask Claude to double-check its own recap and it says "All correct." How much should that reassure you?</p>
+          <div class="quiz-opts">
+            <button class="quiz-opt">A lot — it checked.<template class="fb">It checked its own reasoning, which it already found convincing. Like proofreading your own essay, it reads what it meant to write. A self-check can wave the $32 gap straight through.</template></button>
+            <button class="quiz-opt" data-correct="true">A little — a separate verifier that sees only the output and the raw data is much stronger.<template class="fb">A self-check catches some slips, like a typo in a total. But it shares the writer's blind spots. A verifier that starts from the recap and the raw notes has to redo the sums itself — that's what makes it strong.</template></button>
+            <button class="quiz-opt">Not at all — AI checks are useless.<template class="fb">That's too far. Checks by AI can catch a lot. What matters is how the check is set up: separate, blind to the writer, and working from the source.</template></button>
+          </div>
+        </div>
 
         <!-- ── Checkpoint ── -->
         <div class="checkpoint">
           <p class="label">Checkpoint</p>
           <p class="check-q">
-            Could you hand the verified recap to someone to run without you — and name the one check
-            that would catch the mistake before it reached them?
+            Could you hand the checked recap to someone to run without you — and name the one check that
+            would catch a mistake before it reached them?
           </p>
           <div class="check-choices">
-            <button class="check-btn" data-action="pass">Yes — I can name the check</button>
-            <button class="check-btn ghost" data-action="stuck">Not yet</button>
+            <button class="check-btn" data-action="pass">Yes — and I can name the check</button>
+            <button class="check-btn ghost" data-action="stuck">Not yet — I'm not sure what the check is</button>
           </div>
 
           <div class="helper" id="helper">
-            <p class="help-q">Make the check real</p>
+            <p class="help-q">That's a good question to be stuck on. Here's a nudge.</p>
             <div class="help-choice">
               <button class="help-btn" data-toggle="h1">Design the one check that matters</button>
               <div class="help-body" id="h1">
-                <p>Ask for the single verification that would have caught Module 06's errors:</p>
+                <p>Keep the same chat going and ask:</p>
                 <div class="sample-prompt">What's the ONE check that, if it ran every time, would have caught
-the $32 Saturday and the 45-lemon day on its own? Write it as a rule the
-verifier runs before any recap is released.</div>
+the $32 Saturday and the 45-lemon day on its own? Write it as a rule
+the verifier runs before any recap goes out.</div>
                 <p class="skill-note">
-                  A check you can state in one sentence — and that would have caught the last real
-                  mistake — is worth more than a verifier that "looks it over."
+                  The two problems need different checks. Saturday fails a sum. Thursday adds up — it's
+                  just unlike the other days. A good rule covers both. If your verifier caught neither,
+                  run it again in a fresh chat with only the recap and the raw notes.
                 </p>
               </div>
             </div>
@@ -220,19 +485,67 @@ verifier runs before any recap is released.</div>
 
         <p class="check-confirmed">A recap you'd trust unwatched — because the check is designed in, not hoped for.</p>
 
+        <!-- ── After the checkpoint ── -->
         <div class="post-checkpoint">
+          <details class="deep">
+            <summary>Under the hood, in plain English</summary>
+            <div class="deep-body">
+              <p>
+                <strong>Why independence matters.</strong> When one Claude writes and checks, the check
+                shares the writer's blind spots: whatever made a wrong number look right the first time
+                is still there. A separate verifier, holding only the output and the raw data, can't
+                borrow the writer's confidence.
+              </p>
+              <p>
+                <strong>Check against the source.</strong> "Does this seem right?" tests whether the recap
+                sounds plausible. Recomputing Saturday from the cup counts tests whether it <em>is</em> right.
+              </p>
+              <p>
+                <strong>A verifier can miss things too.</strong> Thursday's 45 lemons break no sum, so
+                "does it add up?" sails right past them. The checks you name decide what gets caught.
+              </p>
+              <p>
+                <strong>Design who signs off.</strong> A named person reads the flags, knows it's their
+                call, and can hold the recap back. The verifier finds problems. A person decides.
+              </p>
+            </div>
+          </details>
+
+          <div class="transfer">
+            <p class="tr-label">Try it at work</p>
+            <p>
+              Pick one AI task you'd love to hand off. Which of the six shapes fits it, and
+              <strong>where would the check go?</strong>
+            </p>
+            <p>
+              A literature summary for a grant aims page is a fan-out; the check confirms every claim against the paper it cites. A report drafted from a
+              data listing needs a verifier that recomputes the key counts from the listing, not the
+              draft. A protocol or SOP checked for internal consistency can loop until every date, number
+              and definition in the summary matches the body — with a stop rule.
+            </p>
+            <p>
+              Two rules travel with every shape. Only give AI tools material you're allowed to use in
+              them — anything confidential or identifiable stays in the systems approved for it. And a
+              qualified person still signs off. A verifier makes their job easier; it doesn't replace them.
+            </p>
+          </div>
+
           <div class="takeaway">
-            <p><strong>Reliability is designed.</strong> The verified recap isn't more trustworthy
-            because the model got smarter — it's trustworthy because you put an independent check
-            between the work and the world, and decided who signs off.</p>
-            <p>And when it does go wrong one day: <em>someone</em> answers for it. Part of designing
-            the system is naming who — before you need to.</p>
+            <p><strong>Reliability isn't something a model has. It's something you design around it.</strong>
+            The checked recap is better not because the model got smarter, but because you put an
+            independent check between the work and the world — and decided who signs off.</p>
+            <p>None of this is technical. It's how careful teams already work: divide the job sensibly,
+            check what matters against the source, and name who answers for it.</p>
+            <p>The people who'll do well with AI aren't the ones with the fanciest model — they're the
+            ones who design the work well. That can be you.</p>
+            <p>Next, the Finale: you'll turn all of this into a short deployment brief for your own world.</p>
           </div>
 
           <div class="closing-call">
             <p class="cc-label">Before you move on →</p>
-            <p>Answer the three <strong>reflections</strong>. Next is the Finale: you'll turn all of
-            this into a short deployment brief for your own world.</p>
+            <p>Take two minutes for the three <strong>reflections</strong> on the right. They're your
+            takeaway from this module, and they become part of your final report. When you're done,
+            look up — your facilitator will bring the room together for a short debrief.</p>
           </div>
         </div>
       </div>
@@ -245,23 +558,23 @@ verifier runs before any recap is released.</div>
 
         <div class="reflect-q">
           <p class="q-text">You produced the recap two ways. Which version would you trust enough to hand to someone else to run without you watching — and why?</p>
-          <p class="q-hint">Plain run, or the one with the verifier?</p>
-          <textarea rows="4" placeholder="Your answer…"></textarea>
+          <p class="q-hint">Plain or checked? Say what made the difference — what the check caught, or what it let you see.</p>
+          <textarea rows="4" placeholder="In your own words…"></textarea>
         </div>
 
         <div class="reflect-q">
           <p class="q-text">In your organization, who would answer for it if an AI tool quietly got something wrong and no one caught it — and does that person know it's them?</p>
-          <p class="q-hint">Name the role, honestly.</p>
-          <textarea rows="4" placeholder="Your answer…"></textarea>
+          <p class="q-hint">A role is fine if a name feels awkward. If the honest answer is "nobody," write that — it's worth knowing.</p>
+          <textarea rows="4" placeholder="In your own words…"></textarea>
         </div>
 
         <div class="reflect-q">
           <p class="q-text">Pick one real task you'd hand to an AI agent. What's the one check you'd build in so a mistake gets caught before it reaches anyone who matters?</p>
-          <p class="q-hint">One task, one concrete check.</p>
-          <textarea rows="4" placeholder="Your answer…"></textarea>
+          <p class="q-hint">One task, one check. A good check fits in a sentence: "Before it goes out, recompute this from that."</p>
+          <textarea rows="4" placeholder="In your own words…"></textarea>
         </div>
 
-        <p class="can-say">You can now say: reliability is something you design around the model, not something you hope the model has.</p>
+        <p class="can-say">You can now say: reliability is something I design around the model — and I know the six shapes to choose from.</p>
       </div>
     </section>
   </main>
@@ -272,6 +585,7 @@ verifier runs before any recap is released.</div>
   <script src="assets/registry.js"></script>
   <script src="assets/chrome.js"></script>
   <script src="assets/sync.js"></script>
+  <script src="assets/learn.js"></script>
   <script src="assets/course.js"></script>
 </body>
 </html>

@@ -8,7 +8,9 @@
   <meta name="robots" content="noindex,nofollow" />
   <link rel="stylesheet" href="assets/course.css" />
   <link rel="stylesheet" href="assets/extra.css" />
+  <link rel="stylesheet" href="assets/learn.css" />
   <script>
+    /* gate guard — redirect before paint if the course wasn't entered */
     (function () {
       var K = 'lemonade.gate.participant';
       try {
@@ -28,65 +30,348 @@
       <p class="module-id">Module 10 · Part 2 — Finale</p>
       <h1 class="question">Where does this land in your world?</h1>
 
+      <div class="bigidea">
+        <p class="bi-k">The big idea</p>
+        <p class="bi-v">The lemonade stand was practice. The real skill is knowing what it would take to trust AI with something that matters — and you now do.</p>
+      </div>
+      <div class="meta-chips">
+        <span class="chip">About 30 minutes</span>
+        <span class="chip">Your own work, in your own words</span>
+      </div>
+
       <div class="frame-row">
-        <div class="k">Scenario</div>
-        <div class="v">The lemonade stand was practice. The last step is to turn everything you've done into a short, honest brief for bringing AI into something real — your own work.</div>
+        <div class="k">The situation</div>
+        <div class="v">The stand is built. The last step is to turn everything you've practiced into a short, honest brief for bringing AI into your real work.</div>
       </div>
       <div class="frame-row">
-        <div class="k">Your role</div>
-        <div class="v">The person who'd actually have to answer for it. Not a pitch — a plan you'd defend.</div>
+        <div class="k">Your part</div>
+        <div class="v">The person who'd have to answer for it. Not a pitch — a plan you'd defend.</div>
       </div>
       <div class="frame-row">
-        <div class="k">What you'll produce</div>
-        <div class="v">Five short answers about your world, and one report — the whole course, in your words — handed in to the founder.</div>
+        <div class="k">You'll produce</div>
+        <div class="v">Five short answers about your own work, and one report — the whole course, in your words — handed in.</div>
       </div>
 
       <div class="frame-row tool">
-        <div class="k">The brief, in five parts</div>
-        <div class="v">the problem · the data · the human checkpoint · the owner · who loses</div>
+        <div class="k">Tool</div>
+        <div class="v">Your own judgment. Claude, if you'd like a thinking partner.</div>
       </div>
       <div class="inputs" style="margin-top:22px;border-bottom:none;padding-bottom:0;">
         <p class="inputs-intro">You've already got what you need:</p>
         <div class="folder-block">
-          <div class="file-row"><span class="fname">everything you wrote</span><span class="fdesc">ten modules of reflections, saved as you went</span></div>
-          <div class="file-row"><span class="fname">your own context</span><span class="fdesc">the work only you know from the inside</span></div>
+          <div class="folder-head">
+            <span class="folder-name">Everything you wrote</span>
+          </div>
+          <p class="fdesc" style="margin:0;">Your reflections from every module, saved as you went. They come together in your report at the end.</p>
         </div>
+        <div class="folder-block">
+          <div class="folder-head">
+            <span class="folder-name">Your own context</span>
+          </div>
+          <p class="fdesc" style="margin:0;">The work only you know from the inside — what's slow, what's risky, and who does it today.</p>
+        </div>
+        <details class="how">
+          <summary>Can I talk it through with Claude?</summary>
+          <div class="how-body">
+            Yes, if you like — Step 3 has a prompt for it. Describe your work in general terms. Keep anything confidential, and anything that could identify a person, out of tools your organization hasn't approved for it.
+          </div>
+        </details>
       </div>
+
+      <dl class="terms">
+        <p class="t-head">Words to know</p>
+        <dt>Demo</dt>
+        <dd>Something that works once, while you watch. Your launch page in Module 05 was a good one.</dd>
+        <dt>Deployment</dt>
+        <dd>Something people rely on every day, when you're not watching.</dd>
+        <dt>Owner</dt>
+        <dd>The named person who keeps it working and answers for it. A person, not "the team."</dd>
+      </dl>
     </section>
 
     <!-- ── WORK (middle) ────────────────────────────────────── -->
     <section class="col work">
       <div class="inner">
         <p class="scene">
-          You've prompted, placed, priced, branded, launched, built, delegated, split, packaged, and
-          verified — on a stand that sells cold lemonade on a hot day. None of that was really about
-          lemonade. It was about the moves that matter when AI meets real work. So: your work. Where
-          would you actually bring this in, and what would have to be true for you to trust it?
+          At the start of this course you typed "Give me some customer personas" and got back the Busy
+          Parent. Since then you've found the soccer field and the waterfront, priced a cup against
+          Hansen's $6, and given the stand a voice and a page. You handed Claude a week of messy books —
+          a Saturday $32 short, 45 lemons nobody explained. You split a big question across a team,
+          bottled your method, and built a check that works when you're not watching. None of that was
+          really about lemonade. So: your work. Where would you actually bring this in — and what would
+          have to be true for you to trust it?
         </p>
 
-        <p class="activity">
-          Answer the five parts of the brief on the right — short is fine, honest is the point.
-          They map to the hardest questions the course raised: what's the real problem, where does
-          the data live, where does a human have to stay in the loop, who owns it, and who could
-          lose if it goes wrong. Together they're your deployment brief.
+        <!-- Look back -->
+        <h2 class="sec"><span class="sec-kicker">Look back · What you now carry</span>Nine ideas you didn't have when you started</h2>
+        <p class="body">
+          Here's what you take out of the room. Each one came from a module where you did the thing,
+          not just read about it.
+        </p>
+
+        <div class="factbar">
+          <div class="fact"><div class="fact-n">01</div><div class="fact-l">Brief Claude like a new colleague.</div></div>
+          <div class="fact"><div class="fact-n">02</div><div class="fact-l">Your local knowledge is the context it lacks.</div></div>
+          <div class="fact"><div class="fact-n">03</div><div class="fact-l">Make it ask first. A citation shows where, not why.</div></div>
+          <div class="fact"><div class="fact-n">04</div><div class="fact-l">A Skill is a method. Your corrections are the edge.</div></div>
+          <div class="fact"><div class="fact-n">05</div><div class="fact-l">You can take an idea to something real.</div></div>
+          <div class="fact"><div class="fact-n">06</div><div class="fact-l">When AI acts, ask what it decided.</div></div>
+          <div class="fact"><div class="fact-n">07</div><div class="fact-l">Split big questions, then synthesize.</div></div>
+          <div class="fact"><div class="fact-n">08</div><div class="fact-l">Bottle your method. Keep your judgment.</div></div>
+          <div class="fact"><div class="fact-n">09</div><div class="fact-l">Reliability is designed.</div></div>
+        </div>
+
+        <p class="body">
+          <strong>That's a lot. You did all of it.</strong> If a few of these still feel shaky, that's
+          normal. They get steadier every time you use them.
+        </p>
+
+        <div class="reveal">
+          <p class="reveal-k">Make a guess</p>
+          <p class="reveal-q">Before you look: what do all nine ideas have in common?</p>
+          <textarea class="reveal-guess" placeholder="Your guess (just for you)…"></textarea>
+          <button class="reveal-btn">Reveal</button>
+          <div class="reveal-body" hidden>
+            <p>Not one is about a feature, a model or a setting. Each is about something
+            <strong>you</strong> did: the brief you wrote, the knowledge you brought, the question you
+            asked, the check you designed, the sign-off you kept.</p>
+            <p>Claude did a lot of the work. You're what made it worth trusting. That's why these ideas
+            travel so well to your own job.</p>
+          </div>
+        </div>
+
+        <!-- Step 1 -->
+        <h2 class="sec"><span class="sec-kicker">Step 1 · Demo vs. deployment</span>Working once isn't the same as working every day</h2>
+        <p class="body">
+          Here's a distinction that matters more than any model or feature. Think about cooking dinner
+          for friends. You taste as you go and fix things on the fly. If the sauce splits, you laugh and
+          order pizza. It only has to work once, and you're right there the whole time.
+        </p>
+        <p class="body">
+          Now think about running a restaurant. The same dish goes out every night, cooked by people you
+          trained, on nights you're not in the kitchen. Someone checks every plate before it leaves, and
+          someone's name is on the door. The recipe might be identical. <strong>Everything around it is
+          different.</strong>
         </p>
 
         <div class="concept-intro">
-          <p class="ci-label">What you're really writing</p>
-          <h3>A plan someone would have to answer for</h3>
+          <p class="ci-label">A helpful way to think about it</p>
+          <h3>A demo works while you watch. A deployment works when you don't.</h3>
           <p>
-            Anyone can be excited about AI. The useful thing is a brief that names the problem worth
-            solving, respects where the data really lives, keeps a human at the checkpoint that
-            matters, puts a name on the owner, and is honest about who bears the risk. That's the
-            difference between a demo and a deployment.
+            Most of what you built in this course was a demo — and good ones. Module 09 was your first
+            step past that: a check that runs without you, and a person who signs off.
+          </p>
+          <p>
+            A demo isn't a lesser thing. <strong>Most of what you do with Claude should stay a
+            demo:</strong> a draft you read, a summary you check. Today's brief is for the moment other
+            people start to depend on it.
           </p>
         </div>
 
-        <!-- ── Hand-in ── -->
-        <div class="save" style="margin-top:36px;">
-          <div class="k">Hand in your report</div>
-          <div class="body">When your five answers are in, put the whole course together and send it to the founder.</div>
+        <div class="quiz">
+          <p class="quiz-k">Quick check</p>
+          <p class="quiz-q">Which of these makes something a deployment rather than a demo?</p>
+          <div class="quiz-opts">
+            <button class="quiz-opt">It worked perfectly the first time you showed it.<template class="fb">That's a great demo. A deployment has to keep working on the hundredth day, on documents nobody has tried yet, when you're not in the room.</template></button>
+            <button class="quiz-opt">It runs on the newest, most capable model.<template class="fb">Remember Module 09: a better model doesn't make the work reliable. How the work is set up around the model does.</template></button>
+            <button class="quiz-opt" data-correct="true">People rely on it when you're not watching, and someone is named to keep it right.<template class="fb">That's the line. Once people depend on it without you in the room, it needs checks that work without you — and a person whose job it is to keep it right.</template></button>
+            <button class="quiz-opt">Everyone at the team meeting liked it.<template class="fb">Being liked is a good start. But being seen once isn't being relied on. The question is what happens on an ordinary Tuesday, when nobody's watching.</template></button>
+          </div>
         </div>
+
+        <details class="deep">
+          <summary>Under the hood, in plain English</summary>
+          <div class="deep-body">
+            <p>
+              Why would something that worked in the demo stop working later? Usually nothing breaks.
+              It <strong>drifts</strong> — slowly moves away from the conditions it was built for.
+            </p>
+            <p>
+              <strong>The model changes.</strong> AI companies update their models, and a new version
+              may handle your task a little differently. <strong>The inputs change.</strong> A new
+              template or a renamed section, and the instructions were written for the old one.
+              <strong>The people change.</strong> The builder moves on. The checker starts to trust it
+              and checks a little less — not from carelessness, but because it's usually right.
+            </p>
+            <p>
+              None of this means AI can't be trusted. It means a deployment needs someone watching —
+              which is why two of your five parts are about people.
+            </p>
+          </div>
+        </details>
+
+        <!-- Step 2 -->
+        <h2 class="sec"><span class="sec-kicker">Step 2 · Your brief</span>Your deployment brief, in five parts</h2>
+        <p class="body">
+          A good deployment brief is short — a page, not a pitch deck. It answers five questions, and
+          each one is a place where good ideas quietly fail. Open each card for what to think about,
+          what a strong answer sounds like, and the trap most people fall into.
+        </p>
+
+        <div class="concept-intro">
+          <p class="ci-label">One example, all the way through</p>
+          <h3>A long protocol, checked for consistency</h3>
+          <p>
+            A study team wants AI to help draft a long protocol and check it for internal consistency.
+            Does the schedule of assessments match the text? Do the eligibility criteria match the
+            population described?
+          </p>
+          <p>
+            It's a grown-up version of Modules 06 and 09: hand Claude a long document, ask what it found
+            and what it decided, and build a check you can trust when you're not watching.
+          </p>
+        </div>
+
+        <div class="xgrid">
+          <details class="xcard"><summary><span class="xc-title">1 · The problem<span class="xc-tag">From Module 01</span></span>
+            <span class="xc-line">A real, painful, frequent problem — not "use AI."</span></summary>
+            <div class="xcard-more">
+              <h5>Think about</h5>
+              <p>What goes wrong often enough that people groan when it comes round again? Can you
+              describe it without the word "AI"? If not, you may be starting from the tool.</p>
+              <h5>A strong answer sounds like…</h5>
+              <p>For our study team: every time the protocol is amended, someone spends days checking
+              that the schedule of assessments, the visit descriptions and the eligibility section still
+              agree. Mismatches still slip through and come back later as queries.</p>
+              <h5>Common trap</h5>
+              <p>"We should use AI for protocols." That's a wish, not a problem. Remember Module 01:
+              nothing got useful until Claude knew what the work was <em>for</em>.</p>
+            </div></details>
+
+          <details class="xcard"><summary><span class="xc-title">2 · The data<span class="xc-tag">From Module 02</span></span>
+            <span class="xc-line">Where it lives, who controls it, what you're allowed to use — and what's missing.</span></summary>
+            <div class="xcard-more">
+              <h5>Think about</h5>
+              <p>Which documents does the work need? Where do they live, and who controls them? Which
+              tools are approved for that material? What does the work depend on that was never
+              written down?</p>
+              <h5>A strong answer sounds like…</h5>
+              <p>For our study team: the current draft, the previous version and our template, all in our
+              document system. A draft protocol can be confidential, so we'd only use a tool our
+              organization has approved for it. No participant data is needed — this checks the
+              document, not anyone's records. Missing: why some visit windows were chosen. That lives in
+              two people's heads.</p>
+              <h5>Common trap</h5>
+              <p>Treating "it's on the shared drive" as "we can use it" — or pasting a confidential
+              draft into whatever tool happens to be open. Check what's approved first.</p>
+            </div></details>
+
+          <details class="xcard"><summary><span class="xc-title">3 · The human checkpoint<span class="xc-tag">From Modules 06 &amp; 09</span></span>
+            <span class="xc-line">The moment a suggestion becomes a decision. A person stays there.</span></summary>
+            <div class="xcard-more">
+              <h5>Think about</h5>
+              <p>Where does Claude's output stop being a suggestion and start changing something real?
+              Who is qualified to make that call, and what do they check it against?</p>
+              <h5>A strong answer sounds like…</h5>
+              <p>For our study team: Claude flags possible mismatches and never edits the protocol
+              itself. A named team member checks every flag against the source and decides. The usual
+              qualified reviewers still sign off before anything goes to an ethics committee or
+              regulator. The AI adds a check. It doesn't replace one.</p>
+              <h5>Common trap</h5>
+              <p>One tired signature at the very end, on something too long to really read. Or reading
+              a clean report as "nothing's wrong." In Module 06, Claude quietly assumed a $0 starting
+              balance. A check only finds what it was set up to look for.</p>
+            </div></details>
+
+          <details class="xcard"><summary><span class="xc-title">4 · The owner<span class="xc-tag">From Modules 04 &amp; 09</span></span>
+            <span class="xc-line">Named, with the authority and the time. Still there after the first demo.</span></summary>
+            <div class="xcard-more">
+              <h5>Think about</h5>
+              <p>Who notices when it starts to drift? Who updates it when the template changes? Who can
+              say "stop using it"? Do they actually have time for this?</p>
+              <h5>A strong answer sounds like…</h5>
+              <p>For our study team: our protocol lead owns it, with a named backup. They update the
+              checklist when the template changes, re-test it on a past protocol where we already know
+              the answers, and can switch it off. The time is part of their job, not squeezed into
+              evenings.</p>
+              <h5>Common trap</h5>
+              <p>"The team will own it." If everyone owns it, nobody does. And whoever built the exciting
+              demo isn't automatically the owner — enthusiasm isn't the same as time.</p>
+            </div></details>
+
+          <details class="xcard"><summary><span class="xc-title">5 · Who loses<span class="xc-tag">From Modules 03 &amp; 08</span></span>
+            <span class="xc-line">Whose job, budget or standing changes — and how they'll be heard.</span></summary>
+            <div class="xcard-more">
+              <h5>Think about</h5>
+              <p>Who does this work today? Whose expertise was the thing everyone relied on? Who will
+              spend more time checking, not less? Whose budget pays?</p>
+              <h5>A strong answer sounds like…</h5>
+              <p>For our study team: the two colleagues who do the check by hand today. Their know-how
+              becomes the checklist, so they help write it and review its first runs, and their judgment
+              stays the final word. Reviewers will spend time on false alarms at first, and we'll count
+              that checking as real work.</p>
+              <h5>Common trap</h5>
+              <p>Answering "nobody." Every change moves something. Write the experts out, and you lose
+              the judgment that makes the check worth trusting. As you saw in Module 08, a Skill holds
+              conclusions, not the judgment behind them.</p>
+            </div></details>
+        </div>
+
+        <p class="body">
+          Notice what the strong answers share. They name people and places, not "the team" and "the
+          system." And they're honest about what's missing and who it costs. That's a plan you could
+          defend.
+        </p>
+
+        <div class="quiz">
+          <p class="quiz-k">Quick check</p>
+          <p class="quiz-q">In the protocol example, where does the human checkpoint belong?</p>
+          <div class="quiz-opts">
+            <button class="quiz-opt">At the very end, when one person approves the finished protocol.<template class="fb">That sign-off matters, and it stays. But one approval at the end of a long document is easy to rubber-stamp. The checkpoint comes earlier — at each flag, where a suggestion would turn into a change.</template></button>
+            <button class="quiz-opt" data-correct="true">Wherever a flag would change the document: a qualified person checks it against the source and decides, before the usual review and sign-off.<template class="fb">The AI suggests. A person decides. And the usual qualified review still happens before anything goes to an ethics committee or regulator. A check is added; nothing is taken away.</template></button>
+            <button class="quiz-opt">Nowhere, once a verifier like the one in Module 09 has run.<template class="fb">A verifier makes the work more reliable. It doesn't make anyone's decision for them. In Module 09 you built the check — and still decided who signs off.</template></button>
+          </div>
+        </div>
+
+        <p class="body">
+          <strong>Now write yours.</strong> The five boxes on the right are your brief. Pick one real
+          problem from your own work and give each part a few sentences. Short is fine. Honest is the
+          point. General terms are enough — no confidential details needed.
+        </p>
+
+        <!-- Step 3 -->
+        <h2 class="sec"><span class="sec-kicker">Step 3 · Pressure-test it</span>Ask Claude to question your plan, not write it</h2>
+        <p class="body">
+          Optional, and worth it. Once each box has a first answer, let Claude play the skeptical
+          colleague. Click each highlighted part to see why it's there — then copy it into Claude.
+        </p>
+
+        <div class="annotated">
+          <div class="sample-prompt ap-body"><span class="ap-seg" data-ap="1">I'm writing a short brief about bringing AI into one part of my work.</span>
+<span class="ap-seg" data-ap="2">Here's the work, in general terms: [what the task is, how often it
+comes round, and why it's painful — no confidential details, nothing
+that could identify a person].</span>
+
+<span class="ap-seg" data-ap="3">Don't write the brief for me. Interview me instead, one question
+at a time,</span> <span class="ap-seg" data-ap="4">covering five parts: the problem, the data, the human
+checkpoint, the owner, and who loses.</span>
+
+<span class="ap-seg" data-ap="5">When we're done, act as a skeptical colleague: name the two weakest
+spots in my plan, and the question I'm least ready to answer.</span></div>
+          <p class="ap-hint">Click a highlighted part to see why it's there.</p>
+          <div class="ap-callout"></div>
+          <ol class="ap-notes">
+            <li data-ap="1"><b>What it's for.</b> As in Module 01. Claude now knows this is a plan someone will have to defend, not a brainstorm.</li>
+            <li data-ap="2"><b>What to use — safely.</b> General terms are plenty here. Keep anything confidential or identifiable out of tools your organization hasn't approved for it.</li>
+            <li data-ap="3"><b>Make it ask first.</b> Module 03's habit. If Claude writes the brief, it will sound confident and generic. The thinking has to be yours — you're the one who'll answer for it.</li>
+            <li data-ap="4"><b>The shape of the conversation.</b> Naming the five parts keeps the interview on what matters, not on which tool to buy.</li>
+            <li data-ap="5"><b>A check that tries to break it.</b> A small Module 09. Ask for weak spots, not reassurance — Claude tends to be encouraging unless you ask it not to be.</li>
+          </ol>
+        </div>
+
+        <p class="body">
+          If Claude asks something you can't answer yet, that isn't a failure. It's the part of the plan
+          you'd need to learn before anyone relies on it. "We don't know yet" is an honest answer —
+          write it down.
+        </p>
+
+        <!-- Step 4 -->
+        <h2 class="sec"><span class="sec-kicker">Step 4 · Hand it in</span>Hand in your report</h2>
+        <p class="body">
+          When your five answers are in, gather it all up. This puts every reflection you wrote into one
+          report — <em>"The whole course, in your words."</em> If you have a minute, read it back. It's a
+          record of how your thinking moved, module by module.
+        </p>
 
         <div class="save-progress handin" id="handin">
           <p class="sp-blurb">
@@ -111,10 +396,49 @@
           </p>
         </div>
 
-        <div class="closing-call" style="margin-top:28px;">
+        <!-- Before you go -->
+        <h2 class="sec"><span class="sec-kicker">Before you go</span>The tools will change. Your habits won't.</h2>
+        <p class="body">
+          AI will keep changing. Models will get more capable, and some of what you clicked today may
+          look different before long. That's fine. You didn't learn a set of buttons.
+        </p>
+        <p class="body">
+          You learned habits, and they won't go out of date. <strong>Brief it like a new colleague.
+          Bring the knowledge only you have. When it acts, ask what it decided. Design the checks before
+          you need them. Name the owner.</strong> None of these depends on a particular model. They're
+          how careful people have always handed off important work — now with a new kind of colleague.
+        </p>
+
+        <div class="transfer">
+          <p class="tr-label">Try it at work</p>
+          <p>
+            <strong>One step for Monday.</strong> Pick one task you'll do this week anyway — a summary of
+            a few papers, a section of a report, a check of a long document against its template. Do it
+            once with Claude, with a proper brief and "ask me questions before you start." Use an
+            approved tool, and only material you're allowed to use there. You stay the one who decides.
+          </p>
+          <p>
+            Then ask yourself: <em>would I trust this if I weren't watching?</em> If the answer is "not
+            yet," your five answers from today show you what's missing.
+          </p>
+        </div>
+
+        <div class="takeaway">
+          <p><strong>The lemonade stand was practice.</strong> The real skill is knowing what it would
+          take to trust AI with something that matters — and you now do. You can tell a demo from a
+          deployment, and you know the five questions to ask before anyone relies on one.</p>
+          <p>You started this course typing "Give me some customer personas." You're finishing with a
+          plan you'd put your name to. None of it was technical. It was judgment — what to ask, what to
+          bring, what to check, and who answers. You had that when you walked in. Now you know where
+          it goes.</p>
+        </div>
+
+        <div class="closing-call">
           <p class="cc-label">One more, if you like →</p>
-          <p>There's a short <strong>Bonus</strong> on bringing agents into your real tools — and the
-          one rule that keeps that safe.</p>
+          <p>First, make sure all five boxes on the right are filled in and your report is handed in.
+          When you're done, look up — your facilitator will bring the room together for a short
+          debrief. After that, there's a short <strong>Bonus</strong> on bringing agents into your real
+          tools — and what to decide before one touches real data.</p>
         </div>
       </div>
     </section>
@@ -126,35 +450,35 @@
 
         <div class="reflect-q">
           <p class="q-text">In your world — the problem</p>
-          <p class="q-hint">What real problem would you actually point AI at? Why that one?</p>
-          <textarea rows="5" placeholder="Your answer…"></textarea>
+          <p class="q-hint">What real, frequent problem would you point AI at — and can you describe it without using the word "AI"?</p>
+          <textarea rows="4" placeholder="In your own words…"></textarea>
         </div>
 
         <div class="reflect-q">
           <p class="q-text">In your world — the data</p>
-          <p class="q-hint">Where does the relevant information live, who controls it, and what are you allowed to use?</p>
-          <textarea rows="5" placeholder="Your answer…"></textarea>
+          <p class="q-hint">Where does the information live, who controls it, what are you allowed to use — and what's missing?</p>
+          <textarea rows="4" placeholder="In your own words…"></textarea>
         </div>
 
         <div class="reflect-q">
           <p class="q-text">In your world — the human checkpoint</p>
-          <p class="q-hint">Where must a person stay in the loop — the moment a suggestion becomes a decision?</p>
-          <textarea rows="5" placeholder="Your answer…"></textarea>
+          <p class="q-hint">At what moment does a suggestion become a decision — and who is qualified to make it?</p>
+          <textarea rows="4" placeholder="In your own words…"></textarea>
         </div>
 
         <div class="reflect-q">
           <p class="q-text">In your world — the owner</p>
-          <p class="q-hint">Who owns this after the first demo — with the authority and time to keep it right?</p>
-          <textarea rows="5" placeholder="Your answer…"></textarea>
+          <p class="q-hint">Who keeps it working after the first demo — and do they have the authority and the time?</p>
+          <textarea rows="4" placeholder="In your own words…"></textarea>
         </div>
 
         <div class="reflect-q">
           <p class="q-text">In your world — who loses</p>
-          <p class="q-hint">Whose job, budget, or standing changes — and how will you keep them heard?</p>
-          <textarea rows="5" placeholder="Your answer…"></textarea>
+          <p class="q-hint">Whose job, budget or standing changes — and how will they be heard?</p>
+          <textarea rows="4" placeholder="In your own words…"></textarea>
         </div>
 
-        <p class="can-say">You can now say: you can tell a demo from a deployment — and write the brief for one.</p>
+        <p class="can-say">You can now say: I can tell a demo from a deployment — and write the brief for one.</p>
       </div>
     </section>
   </main>
@@ -167,6 +491,7 @@
   <script src="assets/sync.js"></script>
   <script src="assets/pdf.js"></script>
   <script src="assets/handin.js"></script>
+  <script src="assets/learn.js"></script>
   <script src="assets/course.js"></script>
 </body>
 </html>

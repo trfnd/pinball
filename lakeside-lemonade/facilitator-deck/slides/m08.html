@@ -1,0 +1,29 @@
+<section id="m08" data-transition="fade" style="background:#FAF9F5;color:#141413;font-family:'DM Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:36px">
+<p style="font-size:24px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#A24D2E">08 · Skill · Description + Discernment</p>
+<h2 style="font-family:'Source Serif 4', Georgia, serif;font-size:72px;font-weight:500;line-height:1.1;color:#141413">A Skill is an onboarding guide Claude reads only when it needs it.</h2>
+<div style="display:flex;gap:48px;align-items:stretch">
+<div style="flex:1.85;display:flex;flex-direction:column;gap:24px">
+<p style="font-size:32px;line-height:1.4;color:#4F4D47"><span style="color:#141413"><b>What it is:</b></span> a folder of instructions, plus optional scripts and reference files. Building one "is like putting together an onboarding guide for a new hire."</p>
+<p style="font-size:32px;line-height:1.4;color:#4F4D47"><span style="color:#141413"><b>Test where you know the answer:</b></span> write three test cases first: one that should trigger it, one that shouldn't, one edge case.</p>
+<p style="font-size:32px;line-height:1.4;color:#4F4D47"><span style="color:#141413"><b>It holds conclusions, not judgment:</b></span> keep the SOP as the source of truth, name an owner, and re-test when the SOP or the model changes.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:20px;background:#D97757;border-radius:24px;padding:40px">
+<p style="font-size:24px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#141413">Discuss · pairs · 4 min</p>
+<p style="font-family:'Source Serif 4', Georgia, serif;font-size:44px;line-height:1.2;color:#141413">Which part of your method could you write down today?</p>
+<p style="font-size:24px;line-height:1.45;color:#141413">And which part only shows up when something unusual happens? Who owns the Skill when the SOP changes?</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:620px;font-size:24px;color:#73706A">Lakeside Lemonade · Debrief</p>
+<p style="position:absolute;right:128px;bottom:64px;width:1020px;font-size:24px;color:#73706A;text-align:right">Anthropic: Agent Skills · Skill authoring best practices · Improving skill-creator</p>
+<aside>Anthropic defines Agent Skills as "organized folders of instructions, scripts, and resources that agents can discover and load dynamically." Its analogy suits anyone who has written an SOP: building one "is like putting together an onboarding guide for a new hire." Skills load like a well-organized manual: only the name and short description sit in context until the Skill is needed; then the main file loads, then any extra files. That is Module 02's attention budget in practice. Use prose for flexible guidance, code for exact checks, reference files for look-up. In regulated setups, skills may be off until an admin turns them on.
+
+Testing: Anthropic's authoring guidance says "Create evaluations BEFORE writing extensive documentation," starting with at least three scenarios; enterprise guidance asks for 3 to 5 queries per Skill, covering should-trigger, shouldn't-trigger and ambiguous cases. Skill-creator can now run tests and blind comparisons with and without the Skill, because "testing turns a skill that seems to work into one you know works." Anthropic notes "most authors are subject matter experts, not engineers" — this room. Example (ours): a house-style protocol reviewer, tested on past drafts whose issues you already logged.
+
+Security: install Skills only from trusted sources, and review even a colleague's Skill before turning it on.
+
+Discussion: pairs, 4 minutes. A Skill is like a recipe card: anyone can follow it, but it holds the recipe, not the cook's instincts. Push on ownership: the SOP stays the controlled source of truth; keep the Skill in step with it and re-test when either changes. Anthropic describes its own sample protocol-drafting skill as "a starting point to customize for your own use cases."
+
+Sources: https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills ; https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices ; https://platform.claude.com/docs/en/agents-and-tools/agent-skills/enterprise ; https://claude.com/blog/improving-skill-creator-test-measure-and-refine-agent-skills ; https://claude.com/resources/tutorials/how-to-use-the-clinical-trial-protocol-draft-generation-sample-skill-with-claude
+
+Timing: 7 minutes.</aside>
+</section>

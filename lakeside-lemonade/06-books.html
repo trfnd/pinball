@@ -8,6 +8,7 @@
   <meta name="robots" content="noindex,nofollow" />
   <link rel="stylesheet" href="assets/course.css" />
   <link rel="stylesheet" href="assets/extra.css" />
+  <link rel="stylesheet" href="assets/learn.css" />
   <script>
     /* gate guard — redirect before paint if the course wasn't entered */
     (function () {
@@ -29,118 +30,410 @@
       <p class="module-id">Module 06 · Part 2 — Agents &amp; systems</p>
       <h1 class="question">What happens when AI stops answering and starts doing?</h1>
 
+      <div class="bigidea">
+        <p class="bi-k">The big idea</p>
+        <p class="bi-v">When Claude starts doing the work, the question changes from “Is this right?” to “What did it decide for me?”</p>
+      </div>
+      <div class="meta-chips">
+        <span class="chip">About 20 minutes</span>
+        <span class="chip">Claude with access to your files (e.g. Claude Cowork)</span>
+      </div>
+
       <div class="frame-row">
-        <div class="k">Scenario</div>
-        <div class="v">A week of messy sales notes and receipts has to become closed books — not advice about how to do bookkeeping, but the actual closed ledger.</div>
+        <div class="k">The situation</div>
+        <div class="v">A week of scribbled sales notes has to become closed books. Not advice on how to do bookkeeping — the actual ledger: what came in, what went out, what's left in the box.</div>
       </div>
       <div class="frame-row">
-        <div class="k">Your role</div>
-        <div class="v">You set the task, decide what access to hand over, and name the one call you want checked with you first.</div>
+        <div class="k">Your part</div>
+        <div class="v">You choose the task, how much access Claude gets, and the one call it must bring back to you.</div>
       </div>
       <div class="frame-row">
-        <div class="k">What you'll practice</div>
-        <div class="v">Watching the same Claude move from answering to acting — and catching the decisions it makes where your instructions run out.</div>
+        <div class="k">You'll learn</div>
+        <div class="v">How an agent differs from a chat — and how to spot the decisions it makes where your instructions stop.</div>
       </div>
 
       <div class="frame-row tool">
         <div class="k">Tool</div>
-        <div class="v">Claude as an agent, with your files.</div>
+        <div class="v">Claude with access to a folder of your files — for example, Claude Cowork. A normal chat with the files attached works too.</div>
       </div>
       <div class="inputs" style="margin-top:22px;border-bottom:none;padding-bottom:0;">
-        <p class="inputs-intro">Hand the agent this folder:</p>
+        <p class="inputs-intro">You'll hand Claude two files, in a fresh folder with nothing else in it:</p>
         <div class="folder-block">
           <div class="folder-head">
-            <span class="folder-name">week_of_sales</span>
-            <span class="folder-purpose">the raw week</span>
+            <span class="folder-name">this week's sales notes</span>
           </div>
-          <div class="file-row">
-            <span class="fname">daily sales notes</span>
-            <span class="fdesc">scribbled cup counts and cash totals, one per day</span>
+          <p class="fdesc" style="margin:0;">Six days of scribbled cup counts, cash totals and lemon buys. They're printed in Step 1, ready to copy.</p>
+        </div>
+        <div class="folder-block">
+          <div class="folder-head">
+            <span class="folder-name" style="word-break:break-word;">ingredient_and_supply_costs.xlsx</span>
           </div>
-          <div class="file-row">
-            <span class="fname">ingredient_and_supply_costs.xlsx</span>
-            <span class="fdesc">to book costs against</span>
-          </div>
+          <p class="fdesc" style="margin:0;">The cost sheet from Module 03, so the week's costs can be booked against real prices.</p>
         </div>
         <details class="how">
-          <summary>Not sure what to hand over?</summary>
+          <summary>Where do I find them?</summary>
           <div class="how-body">
-            Give Claude the whole <code>week_of_sales</code> folder and let it read the daily notes and
-            the cost sheet itself — don't paste them in one at a time. The point is that it works from
-            your files, not from a description of them.
+            The cost sheet is in your course files. For the sales notes, copy the block in Step 1 into a plain text file and save it next to the cost sheet. Make a new folder just for these two files, then give Claude access to that folder only. No agent access today? Attach both files to a normal chat instead — you'll still see every rung.
           </div>
         </details>
       </div>
+
+      <dl class="terms">
+        <p class="t-head">Words to know</p>
+        <dt>Agent</dt>
+        <dd>Claude with permission to actually do things — open files, make changes — not just talk about them.</dd>
+        <dt>Access</dt>
+        <dd>What you let it see and touch. One small folder is a lot less than your whole computer.</dd>
+        <dt>Log</dt>
+        <dd>A step-by-step record of what was actually done: which file, what changed, from what to what.</dd>
+        <dt>Reconcile</dt>
+        <dd>Check that two records that should agree actually do — here, the cups sold and the cash in the box.</dd>
+      </dl>
     </section>
 
     <!-- ── WORK (middle) ────────────────────────────────────── -->
     <section class="col work">
       <div class="inner">
         <p class="scene">
-          It's the same Claude on all three rungs — what changes is what you hand it, and how much of
-          the job it finishes without you. Hidden in the week are two problems: Saturday's cash came up
-          $32 short of the cups sold, and one day lists 45 lemons when every other day shows about 30.
-          Will your run catch them?
+          Six days of selling, one notebook, and a pen that was running out by Saturday. Tuesday
+          says "slow, cloudy." Saturday says "SLAMMED — rough count." Now the week has to become
+          closed books: what came in, what went out, what's left in the box. You'll use the same
+          Claude all module long — what changes is what you hand it. And somewhere in these notes,
+          two problems are hiding: one day's cash doesn't match the cups sold, and one day's lemons
+          don't match the rest of the week. Will your run catch them?
         </p>
 
-        <p class="activity" style="margin-bottom:12px;">
-          Three ways to ask the same Claude about the same week. Watch what each one actually leaves you
-          holding.
+        <div class="factbar">
+          <div class="fact"><div class="fact-n">6</div><div class="fact-l">days of scribbled sales notes</div></div>
+          <div class="fact"><div class="fact-n">$4 · $5</div><div class="fact-l">small cup and large cup</div></div>
+          <div class="fact"><div class="fact-n">2</div><div class="fact-l">problems hiding in the week</div></div>
+          <div class="fact"><div class="fact-n">?</div><div class="fact-l">starting cash — it isn't written down anywhere</div></div>
+        </div>
+
+        <!-- Step 1 -->
+        <h2 class="sec"><span class="sec-kicker">Step 1 · Try it</span>Climb three rungs with the same Claude</h2>
+        <p class="body">
+          First, make a new folder with just two things in it: the cost sheet from your course files,
+          and the notes below, copied into a plain text file.
+        </p>
+        <div class="sample-prompt">Lakeside Lemonade — sales notes, one week
+Small cup $4 · Large cup $5
+
+Tue — slow, cloudy. Small 22, large 15. Cash counted $163. Lemons bought 30.
+Wed — pickup rush ~3pm. Small 31, large 18. Cash counted $214. Lemons bought 30.
+Thu — hot!! Small 36, large 25. Cash counted $269. Lemons bought 45.
+Fri — soccer tourney setup. Small 38, large 30. Cash counted $302. Lemons bought 32.
+Sat — SLAMMED — rough count. Small ~58, large ~56. Cash counted $480. Lemons bought 30.
+Sun — market day, Hansen busy. Small 41, large 33. Cash counted $329. Lemons bought 30.</div>
+        <p class="body">
+          The small folder is on purpose. An agent can only touch what you give it access to — so
+          give it this folder, not your whole computer.
+        </p>
+        <p class="body">
+          Now work through the three tabs in order. <strong>Run each prompt in Claude before you read
+          what we saw.</strong> Yours will look different. Watch for the pattern, not the exact words.
         </p>
 
-        <div class="rungs">
-          <div class="rung">
-            <div class="rn">Ask how<span class="tag">Answer</span></div>
-            <p>“How would I close the books for a week of lemonade sales?” You get a tidy explanation. Nothing is done.</p>
+        <div class="tabs">
+          <div class="tab-bar">
+            <button class="tab active" data-tab="r1">1 · Ask</button>
+            <button class="tab" data-tab="r2">2 · Ask it to do it</button>
+            <button class="tab" data-tab="r3">3 · Let it act, then check</button>
           </div>
-          <div class="rung">
-            <div class="rn">Ask it to do it<span class="tag">Act</span></div>
-            <p>“Close the books for this week.” It produces a ledger — and makes calls you never specified: a $0 starting balance, one row per cup size, how to handle a day that doesn't reconcile.</p>
+
+          <div class="tab-panel" data-panel="r1">
+            <p><b>What you type</b> — a question, with nothing attached:</p>
+            <div class="code-prompt">How would I close the books for a week of lemonade sales?</div>
+            <p><b>What happens</b></p>
+            <div class="claude-out">
+              <div class="co-head">Claude · sample response</div>
+              <div class="co-body">
+                <p>Closing the books means making sure every dollar is accounted for. Here's a simple way:</p>
+                <ul>
+                  <li>Total each day's sales by cup size.</li>
+                  <li>List what you spent: lemons, sugar, cups, ice.</li>
+                  <li>Count the cash and compare it with what your sales say you should have.</li>
+                  <li>Look into any difference before you move on.</li>
+                  <li>Write a one-page summary: money in, money out, cash on hand.</li>
+                </ul>
+                <p>Would you like a simple template you can fill in?</p>
+              </div>
+            </div>
+            <p class="co-verdict">What to watch: good advice, clearly written — and nothing has happened. Your notes are still notes. Claude answered a question. It didn't do a job.</p>
           </div>
-          <div class="rung">
-            <div class="rn">Let it act, then audit<span class="tag">Act + check</span></div>
-            <p>Give it the files, let it flag anything inconsistent, and ask it to keep a log of what it changed.</p>
+
+          <div class="tab-panel" data-panel="r2">
+            <p><b>What you type</b> — attach (or paste) the notes and the cost sheet, then just this:</p>
+            <div class="code-prompt">Close the books for this week.</div>
+            <p><b>What happens</b></p>
+            <div class="claude-out">
+              <div class="co-head">Claude · sample response</div>
+              <div class="co-body">
+                <p><b>Week closed.</b> Here's your summary:</p>
+                <ul>
+                  <li>Cups sold: 403 (226 small, 177 large)</li>
+                  <li>Sales, cash counted: $1,757.00</li>
+                  <li>Lemons: 197 at $0.69 each (GreenLeaf, bag of 8): $135.19</li>
+                  <li>Cups: 403 at $0.08 each (12 oz plastic): $32.23</li>
+                  <li>Starting cash: $0.00</li>
+                  <li><b>Profit for the week: $1,589.58</b></li>
+                </ul>
+                <p>Everything is accounted for. Want this as a spreadsheet?</p>
+              </div>
+            </div>
+            <p class="co-verdict">What to watch: it looks finished — and it's full of calls you never made. It used Saturday's cash instead of what the cups add up to, without saying the two disagree. It picked a lemon price and a cup. It started from $0. It booked Thursday's 45 lemons without a blink.</p>
+          </div>
+
+          <div class="tab-panel" data-panel="r3">
+            <p><b>What you type</b> — give Claude the folder itself, and a job with a check built in:</p>
+            <div class="code-prompt">You can see a folder with this week's sales notes and our cost sheet.
+Close the books for this week and save the ledger as a new file.
+Don't edit the original notes.
+Flag anything that doesn't reconcile, and keep a log of every change you make.</div>
+            <p><b>What happens</b></p>
+            <div class="claude-out">
+              <div class="co-head">Claude · sample response</div>
+              <div class="co-body">
+                <p>I've closed the books and saved two new files in your folder: <b>week_ledger.xlsx</b> and <b>change_log.txt</b>. I didn't edit your notes.</p>
+                <p><b>Needs your attention</b></p>
+                <ul>
+                  <li><span class="flag">Saturday doesn't reconcile.</span> 58 small and 56 large should bring in $512. Cash counted is $480 — $32 short. The note says "rough count." I've used $480 in the ledger for now.</li>
+                </ul>
+                <p><b>Log (first steps)</b></p>
+                <ul>
+                  <li>Read the sales notes (6 days) and the cost sheet (Ingredients and Supplies tabs).</li>
+                  <li>Created week_ledger.xlsx, one row per day and cup size.</li>
+                  <li>Booked lemons at the GreenLeaf bag price, $0.69 each.</li>
+                </ul>
+              </div>
+            </div>
+            <p class="co-verdict">What to watch: much better — a flag, a log, and files you can open. But look at what it didn't say. Saturday is flagged; Thursday's 45 lemons aren't. Nothing about Thursday fails to add up — it's just odd. Yours may catch both, one, or neither. Runs differ, which is why you check.</p>
+            <p>In a normal chat, you may get a table or a download instead of saved files. Same lesson.</p>
           </div>
         </div>
 
-        <div class="activity">
-          <h4><span class="step-n">1</span>Run it, then interrogate it</h4>
-          <p>Give it the files and ask for the job done — the closed ledger, not a how-to:</p>
-        </div>
-        <div class="code-prompt">Close the books for this week from these daily notes and the cost sheet.
-Flag anything that doesn't reconcile.</div>
+        <p class="body">
+          Same Claude, all three rungs — hold onto what changed between them. And keep your rung 3
+          answer open: you're about to check it.
+        </p>
 
-        <div class="activity">
-          <h4><span class="step-n">2</span>Ask what it decided</h4>
-          <p>An agent won't volunteer the calls it made along the way. So ask — and ask for what you can check, not just an explanation:</p>
-        </div>
-        <div class="sample-prompt">What calls did you have to make to close these books that I didn't tell
-you how to handle? List each one and what you assumed. Then show me the
-files you started from and a log of every change you made.</div>
+        <!-- Step 2 -->
+        <h2 class="sec"><span class="sec-kicker">Step 2 · What's going on</span>Where instructions stop, it decides</h2>
+        <p class="body">
+          On rungs 2 and 3, the gaps in your instructions didn't go away. Claude filled them —
+          quickly, quietly, and in a tidy format that made them easy to miss.
+        </p>
+        <p class="body">
+          That isn't a fault. An agent is built to finish the job rather than come back with
+          questions. Where your instructions stop, it makes the call itself. For routine work, that's
+          the whole point: <strong>nobody wants to be asked how to book a bag of sugar.</strong> The
+          risk is in the places where your business does things its own way, for reasons that were
+          never written down.
+        </p>
 
         <div class="concept-intro">
-          <p class="ci-label">The part to watch</p>
-          <h3>Where instructions stop, it decides</h3>
+          <p class="ci-label">A helpful way to think about it</p>
+          <h3>A house-sitter with your keys</h3>
           <p>
-            An agent tries to finish the job rather than come back with questions. Where your
-            instructions run out, it makes the call itself. For routine work that's the point — nobody
-            wants to be asked how to book a bag of sugar. The risk is exactly where your business does
-            things its own way, for reasons that were never written down. And when you ask an agent what
-            it decided, it writes an explanation afterwards — it doesn't keep a record. So ask for what
-            you can check: the files it started from, and a log of what it changed.
+            You leave a note: water the plants, feed the cat. Then a pipe starts dripping. A good
+            house-sitter doesn't phone you — they put a bowl under it and carry on. That's why you
+            asked them.
+          </p>
+          <p>
+            But suppose they call a plumber they know, and your building has its own rules about
+            repairs. Nobody wrote that down. <strong>The keys are what make a house-sitter useful —
+            and why it matters what they decide while you're away.</strong>
           </p>
         </div>
 
-        <p class="note-line">
-          This is the first agent pattern — classify-and-act: sort each line into the right bucket, then
-          take the matching action. You'll meet the whole family of patterns in Module 09.
+        <p class="body">
+          Your own work is full of unwritten rules like that: which total is the official one, which
+          odd values you query rather than correct, which version of a long document is the master. A
+          new colleague learns them over months. An agent meets them mid-job — and picks something.
         </p>
+        <p class="body">
+          So the question you ask changes. When Claude only answered, you asked: <strong>is this
+          right?</strong> Now that it acts, there's a second, better question: <strong>what did it
+          decide for me?</strong>
+        </p>
+        <p class="note-line">
+          This kind of job has a name: <strong>classify-and-act</strong>. Sort each line into a bucket —
+          a sale, a cost, or "ask me" — then do the matching thing. That third bucket is the one you
+          design. You'll meet more patterns like this in Module 09.
+        </p>
+
+        <!-- Step 3 -->
+        <h2 class="sec"><span class="sec-kicker">Step 3 · Click and learn</span>The ledger hunt</h2>
+        <p class="body">
+          Here's the week, exactly as scribbled. Before you trust your agent's flags, find the problems
+          yourself — it's the only way to know whether its list is complete. Click any cash or lemon
+          number to check it. <strong>Two numbers are real problems.</strong>
+        </p>
+        <div class="finder" data-label="Problems found:">
+          <div style="overflow-x:auto;width:0;min-width:100%;">
+            <table class="ledger">
+              <thead>
+                <tr>
+                  <th>Day</th>
+                  <th>Note</th>
+                  <th style="text-align:right;">Small $4</th>
+                  <th style="text-align:right;">Large $5</th>
+                  <th style="text-align:right;">Cash counted</th>
+                  <th style="text-align:right;">Lemons bought</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Tue</td>
+                  <td class="note">slow, cloudy</td>
+                  <td class="num">22</td>
+                  <td class="num">15</td>
+                  <td class="num" data-miss="Checks out. 22 small × $4 = $88, plus 15 large × $5 = $75. That's $163. ✓">$163</td>
+                  <td class="num" data-miss="In line with the week. Most days bought 30 lemons. ✓">30</td>
+                </tr>
+                <tr>
+                  <td>Wed</td>
+                  <td class="note">pickup rush ~3pm</td>
+                  <td class="num">31</td>
+                  <td class="num">18</td>
+                  <td class="num" data-miss="Checks out. 31 × $4 = $124, plus 18 × $5 = $90. That's $214. ✓">$214</td>
+                  <td class="num" data-miss="Checks out. 30 lemons, same as Tuesday. ✓">30</td>
+                </tr>
+                <tr>
+                  <td>Thu</td>
+                  <td class="note">hot!!</td>
+                  <td class="num">36</td>
+                  <td class="num">25</td>
+                  <td class="num" data-miss="Checks out. 36 × $4 = $144, plus 25 × $5 = $125. That's $269. ✓">$269</td>
+                  <td class="num" data-hit="&lt;b&gt;Unusual, and unexplained.&lt;/b&gt; Every other day bought 30 or 32 lemons. Thursday's 45 is half again as many. The note says &quot;hot!!&quot; — but Friday sold more cups on 32 lemons, and Saturday sold far more on 30. It might be real, or a slip of the pen. Nothing in the notes says which. And nothing here fails to add up, so a check for things that &quot;don't reconcile&quot; can sail right past it.">45</td>
+                </tr>
+                <tr>
+                  <td>Fri</td>
+                  <td class="note">soccer tourney setup</td>
+                  <td class="num">38</td>
+                  <td class="num">30</td>
+                  <td class="num" data-miss="Checks out. 38 × $4 = $152, plus 30 × $5 = $150. That's $302. ✓">$302</td>
+                  <td class="num" data-miss="Two more than usual on a busy day. Nothing odd here. ✓">32</td>
+                </tr>
+                <tr>
+                  <td>Sat</td>
+                  <td class="note">SLAMMED — rough count</td>
+                  <td class="num" data-miss="Rough — and the note says so. A rough count isn't a problem on its own. The trouble shows up when you compare it with the cash. Try the cash.">~58</td>
+                  <td class="num" data-miss="Also rough, and also honest about it. Compare the counts with the cash to see what's going on.">~56</td>
+                  <td class="num" data-hit="&lt;b&gt;$32 short.&lt;/b&gt; 58 small × $4 = $232, plus 56 large × $5 = $280. That's $512. The box held $480. Maybe the count was off — the note does say &quot;rough count.&quot; Maybe change went wrong, or cash went missing. Nobody knows yet. That's exactly why this needs a flag, not a quiet fix.">$480</td>
+                  <td class="num" data-miss="Checks out. 30 lemons, same as most days. ✓">30</td>
+                </tr>
+                <tr>
+                  <td>Sun</td>
+                  <td class="note">market day, Hansen busy</td>
+                  <td class="num">41</td>
+                  <td class="num">33</td>
+                  <td class="num" data-miss="Checks out. 41 × $4 = $164, plus 33 × $5 = $165. That's $329. ✓">$329</td>
+                  <td class="num" data-miss="Checks out. 30 lemons, in line with the week. ✓">30</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="finder-bar"><span class="finder-status"></span><button class="reveal-btn finder-show">Show me</button></div>
+          <div class="finder-msg"></div>
+          <div class="finder-done" hidden>
+            <strong>You found both.</strong> Notice they're two different kinds of problem. Saturday
+            doesn't add up — a simple check catches that. Thursday adds up fine; it's just odd, and
+            only someone comparing the days would notice. Many runs quietly "fix" Saturday, or pick one
+            number without saying so. You want a flag, not a patch.
+          </div>
+        </div>
+        <p class="body">
+          Now compare with your rung 3 run. Did it flag Saturday? Did it mention Thursday? If it
+          changed or chose a number, did it tell you?
+        </p>
+
+        <!-- Step 4 -->
+        <h2 class="sec"><span class="sec-kicker">Step 4 · Ask it</span>The calls it made</h2>
+        <p class="body">Go back to the same chat and ask Claude this:</p>
+        <div class="code-prompt">What calls did you have to make to close these books that I didn't tell you how to handle?</div>
+
+        <div class="reveal">
+          <p class="reveal-k">Make a guess</p>
+          <p class="reveal-q">Before you read its answer: what do you think it decided on its own?</p>
+          <textarea class="reveal-guess" placeholder="Your guess (just for you)…"></textarea>
+          <button class="reveal-btn">Reveal</button>
+          <div class="reveal-body" hidden>
+            <p>Here's what runs usually own up to. How many did you guess?</p>
+            <ul class="body">
+              <li><strong>One row per cup size.</strong> The notes gave small and large counts, so it made a line for each. Sensible — still a choice.</li>
+              <li><strong>Which Saturday number to trust.</strong> The cash ($480) or the rough count ($512). Either way, one number lost — often without a word.</li>
+              <li><strong>A $0 starting balance.</strong> The starting cash isn't written anywhere, so it assumed none. The cost sheet even lists a $40 starter float. If you had one, your ending cash is off by $40.</li>
+              <li><strong>45 lemons are real.</strong> Booked at face value. Nothing told it to question them.</li>
+            </ul>
+            <p>Some of these are fine for it to decide. Some were never its call.</p>
+          </div>
+        </div>
+
+        <div class="concept-intro">
+          <p class="ci-label">One more thing to know</p>
+          <h3>The account and the record</h3>
+          <p>
+            When you ask an agent what it decided, it writes an explanation afterwards. It doesn't
+            keep a record. The explanation is usually close — but it's a summary, and summaries tidy
+            things up and leave things out.
+          </p>
+          <p>
+            Think of someone telling you how a trip went, versus handing you the receipts. Or a
+            report's summary, versus the audit trail behind it. <strong>So ask for what you can check:
+            the files it started from, and a log of what it changed.</strong>
+          </p>
+        </div>
+
+        <p class="body">If your run didn't keep a log, ask for one now:</p>
+        <div class="sample-prompt">Show me the files you started from, and a step-by-step log of every
+change you made: the original value, the new value, and why.</div>
+
+        <p class="body">
+          When the original class was asked whether they caught Claude making a decision for them,
+          here's some of what came back:
+        </p>
+        <div class="voices">
+          <p class="v-head">From the class</p>
+          <blockquote class="voice">"i am not a specialist on accounting so probably not or i would have spent a lot of hours...."<span class="voice-who">— a participant</span></blockquote>
+          <blockquote class="voice">"It also flagged off items that it found was inconsistent for me to see"<span class="voice-who">— a participant</span></blockquote>
+          <blockquote class="voice">"I didn’t specify the starting point so Claude assumed $0."<span class="voice-who">— a participant</span></blockquote>
+        </div>
+        <p class="body">
+          Look at the first one. When a job sits outside what you know well, you can't spot the calls
+          by reading the result. That's exactly when asking for them matters most.
+        </p>
+
+        <!-- Step 5 -->
+        <h2 class="sec"><span class="sec-kicker">Step 5 · Quick check</span>Its call, or yours?</h2>
+        <p class="body">
+          An agent makes dozens of small calls on a job like this. Most should be its own. A few
+          should come back to you. Sort these:
+        </p>
+        <div class="sorter" data-choices="a:Fine on its own|b:Check with me first">
+          <div class="sort-item" data-answer="a"><p class="sort-text">Book a $5.49 bag of lemons as a cost.</p><template class="fb">Routine. This is the "bag of sugar" kind of decision — nobody wants to be asked.</template></div>
+          <div class="sort-item" data-answer="b"><p class="sort-text">Change Saturday's total so it matches the cup counts.</p><template class="fb">That changes the record to hide a gap. Something real happened on Saturday — a miscount, wrong change, or missing cash — and only you can find out which.</template></div>
+          <div class="sort-item" data-answer="a"><p class="sort-text">Round to the nearest cent.</p><template class="fb">Routine, and easy to see in the ledger. No judgment involved.</template></div>
+          <div class="sort-item" data-answer="b"><p class="sort-text">Decide what the starting cash was.</p><template class="fb">It isn't written anywhere, so any answer is a guess — and that guess changes your ending cash. This one is yours.</template></div>
+          <div class="sort-item" data-answer="a"><p class="sort-text">Label each line as a sale or a cost.</p><template class="fb">This is the "classify" in classify-and-act — exactly what it's good at. The labels are right there in the ledger, so a mistake is easy to spot.</template></div>
+          <div class="sort-item" data-answer="b"><p class="sort-text">Delete a day that looks like a duplicate.</p><template class="fb">Deleting is hard to see afterwards and hard to undo. Looking like a duplicate isn't the same as being one. Ask first.</template></div>
+        </div>
+
+        <div class="quiz">
+          <p class="quiz-k">Quick check</p>
+          <p class="quiz-q">The agent gives you a neat explanation of what it did. What is that explanation?</p>
+          <div class="quiz-opts">
+            <button class="quiz-opt">A complete record of every step it took.<template class="fb">It reads like one, but it was written afterwards. A summary can leave things out or tidy them up. For a real record, ask for the log.</template></button>
+            <button class="quiz-opt" data-correct="true">A summary written afterwards — helpful, but not a record.<template class="fb">Treat it like someone telling you how their day went: useful, and usually close. For anything that matters, ask for the log — the files it started from and what it changed.</template></button>
+            <button class="quiz-opt">Proof that the books are right.<template class="fb">A clear explanation can sit on top of a wrong number. The explanation tells you what it thinks it did. The log and the files tell you what it actually did.</template></button>
+          </div>
+        </div>
 
         <!-- ── Checkpoint ── -->
         <div class="checkpoint">
           <p class="label">Checkpoint</p>
           <p class="check-q">
-            Did your run catch BOTH problems — Saturday's $32 shortfall and the 45-lemon day?
+            Did your run catch both problems — Saturday's $32 gap and the 45-lemon day?
           </p>
           <div class="check-choices">
             <button class="check-btn" data-action="pass">Caught both</button>
@@ -148,38 +441,100 @@ files you started from and a log of every change you made.</div>
           </div>
 
           <div class="helper" id="helper">
-            <p class="help-q">Make it check its own work</p>
+            <p class="help-q">That's common — especially the lemons. Here's a nudge.</p>
             <div class="help-choice">
-              <button class="help-btn" data-toggle="h1">Force a reconciliation</button>
+              <button class="help-btn" data-toggle="h1">Make it check, not fix</button>
               <div class="help-body" id="h1">
-                <p>Add this and run it again — it makes the checking explicit instead of hoped for:</p>
-                <div class="sample-prompt">For each day, reconcile cups sold against cash taken, and flag any
-input that's an outlier versus the other days. Show your working,
-don't just fix it silently.</div>
+                <p>Keep the same chat going and add this:</p>
+                <div class="sample-prompt">For each day, check cups sold against cash taken, and flag any number that looks unusual compared with the other days. Show your working — don't fix anything without telling me.</div>
                 <p class="skill-note">
-                  An agent that quietly “fixes” a $32 gap is more dangerous than one that flags it. You
-                  want the flag, not the patch.
+                  Two checks are hiding in that prompt. "Cups against cash" catches Saturday, where the
+                  numbers don't add up. "Unusual compared with the other days" catches Thursday, where
+                  nothing fails to add up — it's just odd. You want the flag, not the patch.
+                </p>
+              </div>
+            </div>
+            <div class="help-choice">
+              <button class="help-btn" data-toggle="h2">It flagged Saturday, but "fixed" it anyway</button>
+              <div class="help-body" id="h2">
+                <p>Ask it to put the choice back in your hands:</p>
+                <div class="sample-prompt">Undo any change you made to Saturday's numbers. Show both figures side by side — what the cup counts add up to, and the cash counted — and mark the day "needs checking" until I decide.</div>
+                <p class="skill-note">
+                  This is the "ask me" bucket from classify-and-act. Deciding what goes in it is your job.
                 </p>
               </div>
             </div>
           </div>
         </div>
 
-        <p class="check-confirmed">Books closed — and you know which calls were yours and which were the agent's.</p>
+        <p class="check-confirmed">Both problems flagged — and you know which calls were yours and which were the agent's.</p>
 
         <!-- ── After the checkpoint ── -->
         <div class="post-checkpoint">
+          <details class="deep">
+            <summary>Under the hood, in plain English</summary>
+            <div class="deep-body">
+              <p>
+                An <strong>agent</strong> is Claude plus three things: <strong>tools</strong> (ways to
+                act — open a file, write a file, do a calculation), <strong>permission</strong> to use
+                them, and a <strong>loop</strong>: look, act, look again, until it judges the job done.
+                Picture the house-sitter walking from room to room.
+              </p>
+              <p>
+                Because it's built to finish, it fills gaps itself instead of stopping to ask. For
+                routine steps, that's a gift. Where your team does things its own way, it's a guess.
+                And an agent isn't more careful than a chat — its guesses just land in your files,
+                where they're harder to spot than on a screen.
+              </p>
+              <p>
+                Two habits keep it useful and safe. First, give it <strong>the least access the job
+                needs</strong>: one folder, not your whole drive; a copy, not the master; read-only when
+                reading is all it has to do. Second, <strong>ask for logs</strong>: the files it started
+                from and every change it made. Its explanation afterwards is a summary. The log is what
+                you can check.
+              </p>
+            </div>
+          </details>
+
+          <div class="transfer">
+            <p class="tr-label">Try it at work</p>
+            <p>
+              Pick a repeating task you'd love to hand off. Before you give it to an agent, write down
+              three things: <strong>what it needs to see</strong>,
+              <strong>what it may change</strong>, and <strong>the one decision it must bring back to
+              you</strong>.
+            </p>
+            <p>
+              Say it's checking a long draft — a protocol section, an SOP, a report — for internal
+              consistency. It sees a copy of the draft and the template. It may add comments, but not
+              change the text. And it brings back every place where two parts disagree — a visit window
+              in a table that doesn't match the one in the text, say — because deciding which is right
+              is your call.
+            </p>
+            <p>
+              One rule that doesn't bend: only hand an agent material you're allowed to use in that
+              tool. Anything confidential or identifiable stays in the systems approved for it, and a
+              qualified person still signs off on the result.
+            </p>
+          </div>
+
           <div class="takeaway">
-            <p>The difference between answering and acting is <strong>access</strong> — and the decisions
-            that come with it. An agent finishes the job; the judgment calls it makes where your
-            instructions stop are the thing to watch, and the only defence is asking for what you can
-            check.</p>
+            <p><strong>When Claude starts doing the work, the question changes — from "Is this right?"
+            to "What did it decide for me?"</strong> You asked it today, and you got real answers: a $0
+            starting balance, a choice about Saturday, 45 lemons taken at face value.</p>
+            <p>And you saw what keeps it honest: only the access the job needs, a flag instead of a
+            patch, and a log — not just an explanation. None of that is technical. It's what a good
+            manager asks when someone new finishes their first big job: "Walk me through it. What did
+            you have to decide?" You already know that question. Now you know to ask it of Claude.</p>
+            <p>Next, you'll hand Claude a bigger job, split across several workers at once. This habit
+            comes with you.</p>
           </div>
 
           <div class="closing-call">
             <p class="cc-label">Before you move on →</p>
-            <p>Answer the three <strong>reflections</strong> on the right while it's fresh. They're your
-            takeaway from this module, and they go into your final report.</p>
+            <p>Take two minutes for the three <strong>reflections</strong> on the right. They're your
+            takeaway from this module, and they become part of your final report. When you're done,
+            look up — your facilitator will bring the room together for a short debrief.</p>
           </div>
         </div>
       </div>
@@ -192,23 +547,23 @@ don't just fix it silently.</div>
 
         <div class="reflect-q">
           <p class="q-text">It was the same Claude on all three rungs. In your own words — what did you have to give it to turn it from something that answers into something that acts?</p>
-          <p class="q-hint">What changed between the rungs?</p>
-          <textarea rows="4" placeholder="Your answer…"></textarea>
+          <p class="q-hint">Think about what changed between the tabs: what you handed it, what you let it touch, and how you phrased the job.</p>
+          <textarea rows="4" placeholder="In your own words…"></textarea>
         </div>
 
         <div class="reflect-q">
-          <p class="q-text">Did you catch Claude making a decision for you — a judgment call you never spelled out? If you're not sure, ask it directly: “what calls did you have to make to close these books?” Then look at its answer — would you have made them the same way?</p>
-          <p class="q-hint">Name one call it made.</p>
-          <textarea rows="5" placeholder="Your answer…"></textarea>
+          <p class="q-text">Did you catch Claude making a decision for you — a judgment call you never spelled out? If you’re not sure, ask it directly: "what calls did you have to make to close these books?" Then look at its answer — would you have made them the same way?</p>
+          <p class="q-hint">Name one call it made — the starting cash, Saturday's total, the lemons — and say whether it was its call to make.</p>
+          <textarea rows="5" placeholder="In your own words…"></textarea>
         </div>
 
         <div class="reflect-q">
           <p class="q-text">Think of a task that repeats in your real work. What access and what permission would you have to hand an agent for it to actually do that task — and what's the one decision you'd want it to check with you first?</p>
-          <p class="q-hint">Be concrete about the access.</p>
-          <textarea rows="5" placeholder="Your answer…"></textarea>
+          <p class="q-hint">Be concrete: which folder or documents, whether it may change anything, and the one call that stays yours.</p>
+          <textarea rows="5" placeholder="In your own words…"></textarea>
         </div>
 
-        <p class="can-say">You can now say: the difference between answering and acting is access — and the decisions that come with it.</p>
+        <p class="can-say">You can now say: when AI acts, I know to ask what it decided — and to ask for a log, not just an explanation.</p>
       </div>
     </section>
   </main>
@@ -219,6 +574,7 @@ don't just fix it silently.</div>
   <script src="assets/registry.js"></script>
   <script src="assets/chrome.js"></script>
   <script src="assets/sync.js"></script>
+  <script src="assets/learn.js"></script>
   <script src="assets/course.js"></script>
 </body>
 </html>

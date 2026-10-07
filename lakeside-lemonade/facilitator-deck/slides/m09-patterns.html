@@ -1,0 +1,49 @@
+<section id="m09-patterns" data-transition="fade" style="background:#F0EEE6;color:#141413;font-family:'DM Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:36px">
+<p style="font-size:24px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#A24D2E">09 · Trust · The six patterns, in your work</p>
+<h2 style="font-family:'Source Serif 4', Georgia, serif;font-size:72px;font-weight:500;line-height:1.1;color:#141413">Six shapes for a team of AI helpers.</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px">
+<div style="display:flex;flex-direction:column;gap:8px;background:#FFFFFF;border:1px solid #E3DED1;border-radius:20px;padding:28px">
+<h3 style="font-size:32px;font-weight:700;line-height:1.3;color:#141413">Classify and act</h3>
+<p style="font-size:24px;line-height:1.4;color:#A24D2E">≈ Routing</p>
+<p style="font-size:24px;line-height:1.4;color:#4F4D47">Sort site questions by type; a person confirms the category.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;background:#FFFFFF;border:3px solid #D97757;border-radius:20px;padding:28px">
+<h3 style="font-size:32px;font-weight:700;line-height:1.3;color:#141413">Fan out, synthesize</h3>
+<p style="font-size:24px;line-height:1.4;color:#A24D2E">≈ Parallelization, orchestrator-workers</p>
+<p style="font-size:24px;line-height:1.4;color:#4F4D47">Separate consistency passes, then one merged review.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;background:#FFFFFF;border:3px solid #D97757;border-radius:20px;padding:28px">
+<h3 style="font-size:32px;font-weight:700;line-height:1.3;color:#141413">Independent check</h3>
+<p style="font-size:24px;line-height:1.4;color:#A24D2E">≈ Voting, independent evaluators</p>
+<p style="font-size:24px;line-height:1.4;color:#4F4D47">A blind pass recomputes every number from the source tables.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;background:#FFFFFF;border:1px solid #E3DED1;border-radius:20px;padding:28px">
+<h3 style="font-size:32px;font-weight:700;line-height:1.3;color:#141413">Generate and filter</h3>
+<p style="font-size:24px;line-height:1.4;color:#A24D2E">≈ Several attempts, then a hard filter</p>
+<p style="font-size:24px;line-height:1.4;color:#4F4D47">Ten plain-language consent drafts, filtered on reading level and required elements.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;background:#FFFFFF;border:1px solid #E3DED1;border-radius:20px;padding:28px">
+<h3 style="font-size:32px;font-weight:700;line-height:1.3;color:#141413">Tournament</h3>
+<p style="font-size:24px;line-height:1.4;color:#A24D2E">≈ Blind head-to-head comparison</p>
+<p style="font-size:24px;line-height:1.4;color:#4F4D47">Lay summaries compared in pairs against a written rubric.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;background:#FFFFFF;border:1px solid #E3DED1;border-radius:20px;padding:28px">
+<h3 style="font-size:32px;font-weight:700;line-height:1.3;color:#141413">Loop until done</h3>
+<p style="font-size:24px;line-height:1.4;color:#A24D2E">≈ Evaluator-optimizer, with a stop rule</p>
+<p style="font-size:24px;line-height:1.4;color:#4F4D47">Check a draft against a reporting checklist, three rounds at most.</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:760px;font-size:24px;color:#73706A">Orange border: built in the workshop (M07, M09)</p>
+<p style="position:absolute;right:128px;bottom:64px;width:880px;font-size:24px;color:#73706A;text-align:right">Our adaptation of Anthropic's "Building effective agents"</p>
+<aside>Be clear this mapping is our adaptation, not Anthropic's. Anthropic's "Building effective agents" names five workflow patterns — prompt chaining, routing, parallelization (sectioning and voting), orchestrator-workers and evaluator-optimizer — plus autonomous agents.
+
+Classify-and-act matches routing: "Routing classifies an input and directs it to a specialized followup task." Fan-out matches parallelization by sectioning, or orchestrator-workers when the parts aren't known in advance. Independent checking matches voting with independent evaluators. Loop-until-done matches evaluator-optimizer, where "one LLM call generates a response while another provides evaluation and feedback in a loop," plus a stopping condition. Generate-and-filter and tournament aren't named there; the closest Anthropic material is running a prompt several times and comparing results ("Reduce hallucinations"), and skill-creator's blind comparators that "judge outputs without knowing which is which." The pattern your teams probably use most — outline, then check, then write — is prompt chaining.
+
+The examples are ours. Evaluator-optimizer fits where Anthropic says it does, "when we have clear evaluation criteria": reading level, required consent elements, a reporting checklist. For voting, ask the same question ("which criteria could two sites read differently?") in three fresh chats, and review first what at least two flag. Every final decision stays with the study team; text for an ethics committee still gets human review and, where applicable, input from patient partners. Approved tools and non-confidential or de-identified material only.
+
+Ask: "Which pattern would you try first, and on which document?"
+
+Sources: https://www.anthropic.com/engineering/building-effective-agents ; https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/reduce-hallucinations ; https://claude.com/blog/improving-skill-creator-test-measure-and-refine-agent-skills
+
+Timing: 5 minutes.</aside>
+</section>

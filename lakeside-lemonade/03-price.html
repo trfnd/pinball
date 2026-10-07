@@ -8,6 +8,7 @@
   <meta name="robots" content="noindex,nofollow" />
   <link rel="stylesheet" href="assets/course.css" />
   <link rel="stylesheet" href="assets/extra.css" />
+  <link rel="stylesheet" href="assets/learn.css" />
   <script>
     /* gate guard — redirect before paint if the course wasn't entered */
     (function () {
@@ -29,113 +30,324 @@
       <p class="module-id">Module 03 · Part 1 — Build the business</p>
       <h1 class="question">What do you charge per cup?</h1>
 
+      <div class="bigidea">
+        <p class="bi-k">The big idea</p>
+        <p class="bi-v">A confident number isn't the same as a right one. The best answers start with good questions — and you're the one who answers them.</p>
+      </div>
+      <div class="meta-chips">
+        <span class="chip">About 20 minutes</span>
+        <span class="chip">Claude open in another tab</span>
+        <span class="chip">2 files</span>
+      </div>
+
       <div class="frame-row">
-        <div class="k">Scenario</div>
-        <div class="v">You have a full cost sheet — ingredients, supplies, permits — and a survey of every other drink in town. Somewhere between what a cup costs you and what the next vendor charges is your price.</div>
+        <div class="k">The situation</div>
+        <div class="v">You have a full cost sheet — ingredients, supplies, permits — and a survey of every drink sold in town. Somewhere between what a cup costs you and what everyone else charges is your price.</div>
       </div>
       <div class="frame-row">
-        <div class="k">Your role</div>
-        <div class="v">You hold the targets: the profit you want, the cup size, how sweet, cash or card.</div>
+        <div class="k">Your part</div>
+        <div class="v">You hold the targets: how much profit you want, what size cup, how sweet, cash or card. Claude can do the math — once it knows what you want.</div>
       </div>
       <div class="frame-row">
-        <div class="k">What you'll practice</div>
-        <div class="v">Letting the model ask you the right questions before it runs — and reading its citations critically.</div>
+        <div class="k">You'll learn</div>
+        <div class="v">How to get Claude to ask before it answers — and how to read a citation with a raised eyebrow.</div>
       </div>
 
       <div class="frame-row tool">
         <div class="k">Tool</div>
-        <div class="v">Claude — with the cost sheet and the competitor survey.</div>
+        <div class="v">Claude — a normal chat window, with both files attached.</div>
       </div>
       <div class="inputs" style="margin-top:22px;border-bottom:none;padding-bottom:0;">
-        <p class="inputs-intro">Bring these two files into the chat:</p>
+        <p class="inputs-intro">You'll bring two files into the chat:</p>
         <div class="folder-block">
           <div class="folder-head">
-            <span class="folder-name">pricing_inputs</span>
-            <span class="folder-purpose">two workbooks</span>
+            <span class="folder-name" style="word-break:break-word;">ingredient_and_supply_costs.xlsx</span>
           </div>
-          <div class="file-row">
-            <span class="fname">ingredient_and_supply_costs.xlsx</span>
-            <span class="fdesc">lemons, sugar, ice, cups, permits, plus recipe yields</span>
+          <p class="fdesc" style="margin:0;">Lemons, sugar, water, ice, cups, permits and insurance — plus notes on how many cups a batch really makes.</p>
+        </div>
+        <div class="folder-block">
+          <div class="folder-head">
+            <span class="folder-name" style="word-break:break-word;">competitor_beverage_pricing.xlsx</span>
           </div>
-          <div class="file-row">
-            <span class="fname">competitor_beverage_pricing.xlsx</span>
-            <span class="fdesc">40 drinks across 8 vendors — Hansen's $6, gas-station soda $1</span>
-          </div>
+          <p class="fdesc" style="margin:0;">More than 40 drinks from 8 vendors around town, from Hansen's $6 cup to the gas station's $1 refill.</p>
         </div>
         <details class="how">
-          <summary>Don't know where to find them?</summary>
+          <summary>Where do I find them?</summary>
           <div class="how-body">
-            Both files are in your course files, next to this handout. Drag <code>ingredient_and_supply_costs.xlsx</code> and <code>competitor_beverage_pricing.xlsx</code> straight into the Claude chat.
+            They're in your course files. In Claude, click the paperclip (or drag both files into the chat). If a spreadsheet won't attach, open it, copy everything on each sheet, and paste it in — one sheet at a time is fine.
           </div>
         </details>
       </div>
+
+      <dl class="terms">
+        <p class="t-head">Words to know</p>
+        <dt>Clarifying question</dt>
+        <dd>A question Claude asks before it answers, so it doesn't have to guess.</dd>
+        <dt>Assumption</dt>
+        <dd>Something treated as true without anyone checking or agreeing to it — like "the water is free."</dd>
+        <dt>Citation</dt>
+        <dd>Where a number came from: the file, the sheet, the row. Like a receipt, it shows where — not why.</dd>
+        <dt>Price floor</dt>
+        <dd>The lowest price where you still don't lose money on each cup.</dd>
+      </dl>
     </section>
 
     <!-- ── WORK (middle) ────────────────────────────────────── -->
     <section class="col work">
       <div class="inner">
         <p class="scene">
-          Numbers everywhere, and none of them obvious. Lemons run from $0.79 a piece at the
-          grocery down to $0.40 in a food-service case. Hansen anchors the top at $6; the
-          gas-station $1 soda refill sits at the floor. Janelle, from the interviews, basically
-          handed you a step function: at $2 she buys daily, at $3 she rations it to Fridays, at $4
-          it's a once-a-week treat. Your price lives somewhere inside all of that.
+          Numbers everywhere, and none of them obvious. A lemon costs $0.79 at GreenLeaf Grocery,
+          or $0.40 in a case of 95 from the restaurant-supply store. Hansen anchors the top of the
+          market at $6 a cup; the gas station's $1 fountain refill sits at the bottom. And Janelle,
+          from the interviews, all but handed you a pricing chart: $2 and she buys every day, $3
+          only on Fridays, $4 as a once-a-week treat. Your price is in there somewhere.
         </p>
 
-        <div class="activity">
-          <h4><span class="step-n">1</span>Ask for a number, cold</h4>
-          <p>Bring in both workbooks and ask the way most people would:</p>
+        <div class="factbar">
+          <div class="fact"><div class="fact-n">40+</div><div class="fact-l">drinks from 8 vendors in the price survey</div></div>
+          <div class="fact"><div class="fact-n">$0.40–0.79</div><div class="fact-l">for one lemon, depending on where you buy it</div></div>
+          <div class="fact"><div class="fact-n">$1–$6</div><div class="fact-l">from the gas-station refill to Hansen's cup</div></div>
+          <div class="fact"><div class="fact-n">$105</div><div class="fact-l">permit plus insurance at most public corners</div></div>
         </div>
+
+        <!-- Step 1 -->
+        <h2 class="sec"><span class="sec-kicker">Step 1 · Try it</span>Ask for a number, the usual way</h2>
+        <p class="body">Open a new chat in Claude, attach both spreadsheets, and ask what most people would ask:</p>
         <div class="code-prompt">Here's my cost sheet and a competitor survey. What should I charge per cup?</div>
-        <p class="activity">
-          You'll get a number, and it'll sound sure of itself. But to produce it, Claude had to
-          quietly decide a cup size, a sweetness, that your water is free from the tap, and a
-          margin — none of which you told it. A confident figure, built on four guesses you never
-          saw.
-        </p>
+        <p class="body">You'll get an answer in seconds, and it will sound sure of itself. Something like this:</p>
 
-        <div class="activity">
-          <h4><span class="step-n">2</span>Make it ask first</h4>
-          <p>Before it calculates anything, make it surface the decisions it would otherwise make for you:</p>
+        <div class="claude-out">
+          <div class="co-head">Claude · sample response</div>
+          <div class="co-body">
+            <p>Based on your cost sheet and the competitor survey, I'd recommend <b>$3.50 for a 12 oz cup</b>.</p>
+            <p><b>Cost per cup: about $0.67</b></p>
+            <ul>
+              <li>Lemons: $0.45 (about 1.1 lemons at $0.40 each)</li>
+              <li>Sugar: $0.02</li>
+              <li>Water: $0.00</li>
+              <li>Ice: $0.11</li>
+              <li>Cup and napkin: $0.09</li>
+            </ul>
+            <p>At $3.50, that's about $2.83 profit per cup — an 81% margin. It matches the bakery's 12 oz house lemonade and sits well below Hansen's $6, so you'll look like good value.</p>
+          </div>
         </div>
-        <div class="sample-prompt">Before you calculate anything, ask me the questions you need answered to price
-a cup of lemonade from these two files — target profit, per-cup or by-size,
-which sourcing scenario, cash or card, which corner. Then stop and wait for my
-answers.</div>
+        <p class="co-verdict">What to notice: it sounds certain, and the math adds up. But to get there, Claude quietly decided a lot of things for you — and none of those decisions are on the page.</p>
 
-        <p class="activity">
-          Now it comes back with questions instead of a number. Answer them — these are your
-          targets, not its:
+        <div class="reveal">
+          <p class="reveal-k">Make a guess</p>
+          <p class="reveal-q">Before you look: how many decisions did Claude make for you in that answer, without asking?</p>
+          <textarea class="reveal-guess" placeholder="Your guess (just for you)…"></textarea>
+          <button class="reveal-btn">Reveal</button>
+          <div class="reveal-body" hidden>
+            <p><b>At least eight.</b></p>
+            <p>
+              1. A 12 oz cup — you never said a size.<br />
+              2. Restaurant-supply lemons — a 20-minute drive.<br />
+              3. Costco ice, without the $65 membership.<br />
+              4. Free tap water.<br />
+              5. ¾ of a lemon per 8 oz, straight from the book.<br />
+              6. No permit ($30) or insurance ($75).<br />
+              7. No card fees (Square takes 2.6% + $0.10 a swipe).<br />
+              8. No cooler, juicer, table or sign.
+            </p>
+            <p>Every one of them is reasonable. Not one of them shows up in the answer unless you go looking.</p>
+          </div>
+        </div>
+
+        <p class="body">If yours looked like this, that's normal. <strong>Almost everyone gets a tidy number on the first try.</strong> The question is whose number it is.</p>
+
+        <!-- Step 2 -->
+        <h2 class="sec"><span class="sec-kicker">Step 2 · What's going on</span>Why Claude answers instead of asking</h2>
+        <p class="body">
+          Claude is built to be helpful, and in most chats that means answering right away. So
+          when something is missing, Claude fills the gap with a sensible default and keeps going.
+          Tap water is free, so: tap water. The cheapest lemons are $0.40, so: $0.40 lemons. Each
+          choice makes sense alone. Together, they add up to a plan you never agreed to.
         </p>
-        <div class="sample-prompt">Good. Now: cup size 12 oz, mid-tier sourcing, mostly card, the waterfront
-corner, and I want at least $1.50 profit per cup. Compute my cost-per-cup and
-the price FLOOR, then recommend a price. Cite the file and cell behind every
-number, and list each assumption you made that I didn't give you.</div>
-
-        <p class="activity">
-          You get a cost-per-cup, a floor, and a recommended price — each one traced back to a
-          cell you can open, and a short list of the things it assumed on its own. That last list
-          is the part worth reading twice.
+        <p class="body">
+          Think of a good contractor. Before building your kitchen, they ask how you cook, who
+          lives there, and what you want to spend. Skip the questions, and you might get a lovely
+          kitchen — for somebody else. A doctor asks about symptoms before prescribing for the
+          same reason. The questions aren't a delay. They're how the answer becomes yours.
         </p>
 
         <div class="concept-intro">
-          <p class="ci-label">Read the citation twice</p>
-          <h3>A citation shows where — not why</h3>
+          <p class="ci-label">A helpful way to think about it</p>
+          <h3>A confident number isn't the same as a right one</h3>
           <p>
-            A citation tells you which file a number came from. It doesn't tell you why that number
-            was chosen. The cost sheet quietly lets you assume free tap water, which swings your
-            margin a lot. A note says to treat the $1 soda refill as the lowest price you compete
-            with — with no reason given. Claude will cite both perfectly. Someone still has to
-            decide whether they're right, and count that checking as real work.
+            Claude writes the same way whether it's working from your decisions or its own
+            guesses — the number looks just as sure either way. That's not something to fear. It's
+            just something to know.
           </p>
+          <p>
+            The good news: no special setting or clever trick is needed. <strong>You can simply ask
+            Claude to ask first.</strong> The best answers start with good questions — and you're the
+            one who answers them.
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <h2 class="sec"><span class="sec-kicker">Step 3 · Try it again</span>Ask Claude to ask you first</h2>
+        <p class="body">Start a fresh chat, attach both files again, and try this instead. Click each highlighted part to see what it does — then copy it into Claude.</p>
+
+        <div class="annotated">
+          <div class="sample-prompt ap-body"><span class="ap-seg" data-ap="1">Before you calculate anything,</span> <span class="ap-seg" data-ap="2">ask me the questions you need
+answered to price a cup of lemonade from these two files</span> — <span class="ap-seg" data-ap="3">for
+example: target profit, per cup or by size, which suppliers, cash or
+card, which corner.</span> <span class="ap-seg" data-ap="4">Then stop and wait for my answers.</span></div>
+          <p class="ap-hint">Click a highlighted part to see why it's there.</p>
+          <div class="ap-callout"></div>
+          <ol class="ap-notes">
+            <li data-ap="1"><b>Order matters.</b> Putting this first means the questions come <em>before</em> the math. Tucked at the end, it may arrive after Claude has started answering.</li>
+            <li data-ap="2"><b>Turns guesses into choices.</b> Every question Claude asks is a decision it would otherwise have made quietly for you. Now you make it — out loud, on the page.</li>
+            <li data-ap="3"><b>A head start.</b> A few examples show the kind of questions you mean. Claude will usually add good ones of its own, like tap or filtered water, or which days you'll sell.</li>
+            <li data-ap="4"><b>Stop and wait.</b> Without this line, Claude often asks its questions and then answers them itself in the same reply — right back where you started.</li>
+          </ol>
+        </div>
+
+        <p class="body">This time Claude comes back with questions, not a number. Answer them in your own words — they're your targets, not Claude's. Then compare:</p>
+        <div class="tabs">
+          <div class="tab-bar">
+            <button class="tab active" data-tab="a">What Claude asked</button>
+            <button class="tab" data-tab="b">After you answer</button>
+          </div>
+          <div class="tab-panel" data-panel="a">
+            <div class="claude-out">
+              <div class="co-head">Claude · sample response</div>
+              <div class="co-body">
+                <p>Happy to. A few questions first, so I'm not guessing:</p>
+                <p>
+                  1. Is your target profit per cup or per day — and roughly how much?<br />
+                  2. Are you pricing one size or several?<br />
+                  3. Which suppliers? Restaurant-supply lemons are cheapest ($0.40) but a 20-minute drive away.<br />
+                  4. Tap or filtered water? Tap is free; filtered is $1.43–$1.69 a gallon.<br />
+                  5. Which days? The farmers market sells lemons by the crate ($0.44 each), but it's only open Sat–Sun.<br />
+                  6. Which corner? The $30 permit and $75 insurance depend on the location.<br />
+                  7. Will you take cards? Square charges 2.6% + $0.10 per swipe.<br />
+                  8. How many cups this season? That's how I'll spread one-time costs, like the table.
+                </p>
+                <p>I'll wait for your answers before I calculate anything.</p>
+              </div>
+            </div>
+          </div>
+          <div class="tab-panel" data-panel="b">
+            <p><b>Example answers</b> (yours can differ): 12 oz, one size. Soccer field edge, weekends. Restaurant-supply lemons and sugar. Filtered water. About 60% paying by card. At least $1.50 profit a cup. About 1,500 cups this season.</p>
+            <div class="claude-out">
+              <div class="co-head">Claude · sample response</div>
+              <div class="co-body">
+                <p><b>Cost of one 12 oz cup: $0.81</b></p>
+                <ul>
+                  <li>Lemons $0.45 — 1.125 lemons at $0.40 each (¾ lemon per 8 oz). <span class="cite">ingredient_and_supply_costs.xlsx › Ingredients; Recipe Yield Notes</span></li>
+                  <li>Sugar $0.02 — $0.59/lb; 1 cup of sugar makes about 16 eight-oz cups. <span class="cite">› Ingredients; Recipe Yield Notes</span></li>
+                  <li>Filtered water $0.12 — $1.69 a gallon. <span class="cite">› Ingredients</span></li>
+                  <li>Ice $0.15 — one 10 lb bag per 30 eight-oz cups, at $0.30/lb. <span class="cite">› Recipe Yield Notes; Ingredients</span></li>
+                  <li>Cup $0.07 — 12 oz paper cold cup. <span class="cite">› Supplies &amp; One-Time Costs</span></li>
+                </ul>
+                <p><b>One-time costs: $291.93 ÷ 1,500 cups = $0.19 a cup.</b> Permit $30 and insurance $75 (both required at the soccer field), plus cooler, juicer, pitchers, cash box, table and sign. <span class="cite">› Supplies &amp; One-Time Costs</span></p>
+                <p><b>Card fees:</b> 2.6% + $0.10 on 60% of sales. <span class="cite">› Supplies &amp; One-Time Costs</span></p>
+                <p><b>Price floor: about $1.09.</b> To clear $1.50 profit you need at least $2.61. <b>I'd suggest $3.00</b> — about $1.88 profit a cup, with room for the yield gap the workbook warns about.</p>
+                <p><b>Assumptions I made that you didn't give me:</b></p>
+                <ul>
+                  <li>About 9 oz of water in a 12 oz cup — the workbook doesn't say.</li>
+                  <li>Ice from GreenLeaf, in 20 lb bags.</li>
+                  <li>No straws or napkins.</li>
+                  <li>You don't already own a table.</li>
+                  <li>The book yield — real batches often run 10–20% lower.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="co-verdict">What to notice: same files, same Claude. This time every number points back to a sheet, and the guesses are out in the open where you can see them.</p>
+
+        <p class="body">If your answer doesn't show where each number came from — or only names the file — send this in the same chat:</p>
+        <div class="sample-prompt">For every number you used, tell me the file, the sheet and the row it
+came from. Then list each assumption you made that I didn't give you —
+even the small ones.</div>
+        <p class="body">That list of assumptions is the part worth reading twice. It's where your price is most likely to be wrong.</p>
+
+        <!-- Step 4 -->
+        <h2 class="sec"><span class="sec-kicker">Step 4 · Click and learn</span>Play with the price</h2>
+        <p class="body">
+          This calculator runs on the same cost workbook you gave Claude. Each setting is a
+          question Claude should ask before suggesting a price — so as you click, you're answering
+          them yourself. Nothing breaks. Try these:
+        </p>
+        <ol class="body">
+          <li>Switch the <strong>water</strong> from tap to filtered. Watch the cost per cup, and the note below it.</li>
+          <li>Switch the <strong>corner</strong> to City Park, and read the note that appears.</li>
+          <li>Drag <strong>your price</strong> up and down, and watch who in the interviews says yes.</li>
+        </ol>
+
+        <div id="priceCalc"></div>
+
+        <p class="body">
+          Who says yes is worth a closer look. Here's what the people from the interviews said
+          they'd pay. Same drink — look how far apart they are.
+        </p>
+
+        <div class="ranges">
+          <p class="rg-title">Same lemonade, very different prices</p>
+          <div class="range-row"><span class="rr-name">Megan</span><span class="rr-track"><span class="rr-bar" style="left:42.9%;width:28.6%"></span></span><span class="rr-val">$3–5</span></div>
+          <div class="range-row"><span class="rr-name">Marcus</span><span class="rr-track"><span class="rr-bar" style="left:14.3%;width:57.1%"></span></span><span class="rr-val">under $5</span></div>
+          <div class="range-row"><span class="rr-name">Janelle</span><span class="rr-track"><span class="rr-bar" style="left:28.6%;width:28.6%"></span></span><span class="rr-val">$2–4</span></div>
+          <div class="range-row"><span class="rr-name">Jamie &amp; Alex</span><span class="rr-track"><span class="rr-bar" style="left:64.3%;width:7.1%"></span></span><span class="rr-val">$4.50–5</span></div>
+          <div class="range-row"><span class="rr-name">Brian <small>weekends</small></span><span class="rr-track"><span class="rr-bar" style="left:42.9%;width:14.3%"></span></span><span class="rr-val">$3–4</span></div>
+          <div class="range-row"><span class="rr-name">Tyler &amp; friends <small>shared</small></span><span class="rr-track"><span class="rr-bar" style="left:28.6%;width:14.3%"></span></span><span class="rr-val">$2–3</span></div>
+          <div class="range-row"><span class="rr-name">Hal &amp; Doris</span><span class="rr-track"><span class="rr-bar" style="left:14.3%;width:21.4%"></span></span><span class="rr-val">$1–2.50</span></div>
+          <div class="range-row"><span class="rr-name">Priya <small>at a stand</small></span><span class="rr-track"><span class="rr-bar" style="left:28.6%;width:0%"></span></span><span class="rr-val">$2 · $6 mkt</span></div>
+          <div class="range-row"><span class="rr-name">Sam</span><span class="rr-track"><span class="rr-bar" style="left:28.6%;width:0%"></span></span><span class="rr-val">$2</span></div>
+          <div class="range-row"><span class="rr-name">Rebecca <small>party volume</small></span><span class="rr-track"><span class="rr-bar" style="left:21.4%;width:0%"></span></span><span class="rr-val">$1.50</span></div>
+          <div class="range-row"><span class="rr-name">Derek <small>sugar-free only</small></span><span class="rr-track"><span class="rr-bar no" style="left:42.9%;width:14.3%"></span></span><span class="rr-val">$3–4</span></div>
+          <div class="rr-axis"><span></span><span class="rr-ticks"><span style="left:0%">$0</span><span style="left:14.3%">$1</span><span style="left:28.6%">$2</span><span style="left:42.9%">$3</span><span style="left:57.1%">$4</span><span style="left:71.4%">$5</span><span style="left:85.7%">$6</span><span style="left:100%">$7</span></span><span></span></div>
+          <p class="rg-note">Around town: Hansen's classic cup is $6 at the farmers market, Joe's Coffee Shop strawberry lemonade is $4.75, and the gas station's fountain refill is $1. Derek's bar is grey: he won't buy regular lemonade at any price.</p>
+        </div>
+
+        <p class="body">
+          <strong>Context matters as much as the drink.</strong> The interview team noticed it too.
+          Priya pays $6 at the market, where it's part of her Sunday ritual — and about $2 at a
+          street stand. Marcus is fine under $5 at the playground and says no at $6. That's why
+          "Which corner?" is a pricing question, not just a location question.
+        </p>
+
+        <!-- Step 5 -->
+        <h2 class="sec"><span class="sec-kicker">Step 5 · Quick check</span>Make sure it clicked</h2>
+        <div class="quiz-grid">
+          <div class="quiz">
+            <p class="quiz-k">Quick check</p>
+            <p class="quiz-q">The cost workbook lists tap water as free. Why does that matter for your price?</p>
+            <div class="quiz-opts">
+              <button class="quiz-opt">It doesn't — water is a tiny cost either way.<template class="fb">It's bigger than it looks. Filtered water from GreenLeaf adds about 12 cents to a 12 oz cup. Over 1,500 cups, that's close to $180 — real money for a summer stand.</template></button>
+              <button class="quiz-opt" data-correct="true">It's a hidden choice that moves your margin — and Claude usually assumes it without asking.<template class="fb">Tap or filtered is a real decision about taste and cost. The workbook even calls filtered water a "hedge against tap-water taste complaints." When Claude picks tap without asking, that decision disappears from view.</template></button>
+              <button class="quiz-opt">Tap water isn't safe to use, so the number is wrong.<template class="fb">The workbook says Lakeside's tap water is safe to drink and commonly used by local food vendors. Using it is fine. What matters is that <em>you</em> chose it.</template></button>
+            </div>
+          </div>
+          <div class="quiz">
+            <p class="quiz-k">Quick check</p>
+            <p class="quiz-q">Claude cites competitor_beverage_pricing.xlsx for treating $1 as your lowest competitor price. What does that citation prove?</p>
+            <div class="quiz-opts">
+              <button class="quiz-opt">That $1 is the right price to compete against.<template class="fb">The citation can't tell you that. It only shows the number is in the file. Whether a $1 soda refill really competes with fresh lemonade is a judgment call.</template></button>
+              <button class="quiz-opt" data-correct="true">Where the number came from — not whether it's right to use it.<template class="fb">The survey notes say to treat the $1 refill as the floor, but give no reason why it's the right comparison. They also mention that, in practice, the gas station hands out a fresh cup. A citation is like a receipt: it shows where, not why.</template></button>
+              <button class="quiz-opt">That Claude checked the price with the gas station.<template class="fb">Claude can only read what's in the file. It can't walk over to the gas station. The people who collected the prices are the ones who know how they were gathered.</template></button>
+            </div>
+          </div>
+          <div class="quiz">
+            <p class="quiz-k">Quick check</p>
+            <p class="quiz-q">Which costs do teams most often forget?</p>
+            <div class="quiz-opts">
+              <button class="quiz-opt">Lemons.<template class="fb">Lemons are the cost everyone thinks of first. They're right at the top of the sheet.</template></button>
+              <button class="quiz-opt">Cups and napkins.<template class="fb">They're small and easy to miss, but most people remember you need something to pour into.</template></button>
+              <button class="quiz-opt" data-correct="true">Permits and insurance.<template class="fb">Next to the $75 insurance line, the workbook says it plainly: "Many teams forget this." They're one-time costs, so they don't show up in a cost-per-cup unless you spread them across the season.</template></button>
+            </div>
+          </div>
         </div>
 
         <!-- ── Checkpoint ── -->
         <div class="checkpoint">
           <p class="label">Checkpoint</p>
           <p class="check-q">
-            Can you point to the one assumption in Claude's price that, if it's wrong, would blow up
-            your margin?
+            Can you name the one assumption in your price that, if it's wrong, would hurt your
+            margin most?
           </p>
           <div class="check-choices">
             <button class="check-btn" data-action="pass">Yes — I found it</button>
@@ -143,37 +355,99 @@ number, and list each assumption you made that I didn't give you.</div>
           </div>
 
           <div class="helper" id="helper">
-            <p class="help-q">Find the load-bearing assumption</p>
+            <p class="help-q">That's an honest answer — and a good place to start.</p>
             <div class="help-choice">
-              <button class="help-btn" data-toggle="h1">Pressure-test the price</button>
+              <button class="help-btn" data-toggle="h1">Ask Claude to find it for you</button>
               <div class="help-body" id="h1">
-                <p>Make Claude show you which assumption the price actually leans on:</p>
-                <div class="sample-prompt">Which single assumption, if wrong, moves my profit the most? Show the price
-with tap water vs. filtered, and with 1/2 vs. 3/4 of a lemon per cup.</div>
+                <p>Keep the same chat going and add this:</p>
+                <div class="sample-prompt">Which single assumption, if wrong, moves my profit the most? Show the
+price with tap vs. filtered water, and with ½ vs ¾ of a lemon per cup.</div>
                 <p class="skill-note">
-                  Water and lemons-per-cup are the quiet ones. The recipe-yield tab even warns the
-                  real batch runs 10–20% off the book yield.
+                  Water and lemons per cup are the quiet ones. The yield notes also warn that real
+                  batches run 10–20% off the book yield — one test batch tells you more than any formula.
+                </p>
+              </div>
+            </div>
+            <div class="help-choice">
+              <button class="help-btn" data-toggle="h2">Find it with the calculator</button>
+              <div class="help-body" id="h2">
+                <p>
+                  Scroll up to the calculator. Change one setting at a time and watch the price
+                  floor. Whichever moves it most is the assumption to double-check.
                 </p>
               </div>
             </div>
           </div>
         </div>
 
-        <p class="check-confirmed">A price you can defend — floor, number, and the assumption it rests on.</p>
+        <p class="check-confirmed">A price you can defend — the floor, the number, and the assumption it rests on.</p>
 
         <!-- ── After the checkpoint ── -->
         <div class="post-checkpoint">
+          <details class="deep">
+            <summary>Under the hood, in plain English</summary>
+            <div class="deep-body">
+              <p>
+                <strong>Why Claude answers instead of asking.</strong> Helpful usually means
+                answering, so Claude fills gaps with sensible defaults. For a birthday card, that's
+                exactly what you want. For a price, those defaults are your business decisions.
+              </p>
+              <p>
+                <strong>Why "show your sources" helps — but doesn't settle it.</strong> Citations
+                make guessing easy to spot. But a citation shows which file a number came from, not
+                why that number was chosen. The survey notes say to treat the $1 gas-station refill
+                as the lowest price you compete with, and give no reason. Claude would cite that note
+                perfectly. Whether a soda refill really competes with your lemonade is still your call.
+              </p>
+              <p>
+                <strong>Who checks the work.</strong> Only a few people know how each file was built
+                and why. AI produces analysis faster than they can check it. So someone has to decide
+                which work gets checked — and count that checking as real work. In your own job,
+                that's whoever knows why a cut-off was set where it is, or why a dataset was trimmed
+                the way it was.
+              </p>
+            </div>
+          </details>
+
+          <div class="voices">
+            <p class="v-head">From the class</p>
+            <blockquote class="voice">"Claude assumed tap water would be used… tap was ultimately assumed without much discussion. This influences the margin significantly."<span class="voice-who">— a participant</span></blockquote>
+          </div>
+
+          <div class="transfer">
+            <p class="tr-label">Try it at work</p>
+            <p>
+              Next time you ask Claude for any number — a budget, a forecast, a quote, a timeline —
+              start with one line: <strong>"Before you answer, ask me what you need to know."</strong>
+              Then answer its questions yourself.
+            </p>
+            <p>
+              It works for long documents too. Drafting a protocol section or an SOP? Ask Claude
+              for its questions first: who it's for, what's already decided, what it must not
+              change. Often the questions are the most useful part.
+            </p>
+            <p>
+              When Claude cites a source, spot-check one or two, and ask why that number was the
+              right one. The usual rules still apply: confidential or identifiable data goes only
+              into tools your organization has approved for it, and the final sign-off stays with
+              the qualified person who owns the work.
+            </p>
+          </div>
+
           <div class="takeaway">
-            <p>The questions a model asks first are part of the answer. Clarifying up front is what
-            stands between you and a confident, wrong number.</p>
-            <p>And a cited figure still needs a human to decide it was the right figure. The
-            citation points at a cell; it doesn't tell you the cell was correct.</p>
+            <p><strong>The questions are part of the answer.</strong> Same two files, same Claude.
+            The first time, it guessed for you. The second time, it asked — and the price became yours.</p>
+            <p>A citation tells you <em>where</em> a number came from, not <em>why</em> it was the right
+            one. Deciding that is the checking that matters — and you just did it.</p>
+            <p>None of this needed formulas. It needed you to know what you want, and to say so —
+            a skill you already have.</p>
           </div>
 
           <div class="closing-call">
             <p class="cc-label">Before you move on →</p>
-            <p>Answer the three <strong>reflections</strong> on the right while it's fresh. They're
-            your takeaway from this module, and they go into your final report.</p>
+            <p>Take two minutes for the three <strong>reflections</strong> on the right. They're your
+            takeaway from this module, and they become part of your final report. When you're done,
+            look up — your facilitator will bring the room together for a short debrief.</p>
           </div>
         </div>
       </div>
@@ -186,23 +460,23 @@ with tap water vs. filtered, and with 1/2 vs. 3/4 of a lemon per cup.</div>
 
         <div class="reflect-q">
           <p class="q-text">What clarifying questions did Claude ask you before it started?</p>
-          <p class="q-hint">List the ones that mattered.</p>
-          <textarea rows="3" placeholder="In a sentence or two…"></textarea>
+          <p class="q-hint">List the ones you remember. Did any of them surprise you?</p>
+          <textarea rows="3" placeholder="In your own words…"></textarea>
         </div>
 
         <div class="reflect-q">
           <p class="q-text">Were those good questions to ask? How would the output have been worse if Claude had just skipped them and guessed?</p>
-          <p class="q-hint">Picture the version with no questions.</p>
-          <textarea rows="4" placeholder="Your answer…"></textarea>
+          <p class="q-hint">Picture the no-questions version. Which guess would have cost you the most?</p>
+          <textarea rows="4" placeholder="In your own words…"></textarea>
         </div>
 
         <div class="reflect-q">
           <p class="q-text">Anything in the cost sheet that surprised you, or looked worth a closer look?</p>
-          <p class="q-hint">A number, a note, a gap.</p>
-          <textarea rows="3" placeholder="Your answer…"></textarea>
+          <p class="q-hint">A number, a note, something missing. The small print often says the most.</p>
+          <textarea rows="3" placeholder="In your own words…"></textarea>
         </div>
 
-        <p class="can-say">You can now say: the questions a model asks first are part of the answer.</p>
+        <p class="can-say">You can now say: I can get Claude to ask before it answers — and I know a citation shows where, not why.</p>
       </div>
     </section>
   </main>
@@ -213,6 +487,7 @@ with tap water vs. filtered, and with 1/2 vs. 3/4 of a lemon per cup.</div>
   <script src="assets/registry.js"></script>
   <script src="assets/chrome.js"></script>
   <script src="assets/sync.js"></script>
+  <script src="assets/learn.js"></script>
   <script src="assets/course.js"></script>
 </body>
 </html>

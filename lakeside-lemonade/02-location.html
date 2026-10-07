@@ -8,6 +8,7 @@
   <meta name="robots" content="noindex,nofollow" />
   <link rel="stylesheet" href="assets/course.css" />
   <link rel="stylesheet" href="assets/extra.css" />
+  <link rel="stylesheet" href="assets/learn.css" />
   <script>
     /* gate guard — redirect before paint if the course wasn't entered */
     (function () {
@@ -29,134 +30,432 @@
       <p class="module-id">Module 02 · Part 1 — Build the business</p>
       <h1 class="question">Which corner gets the stand?</h1>
 
+      <div class="bigidea">
+        <p class="bi-k">The big idea</p>
+        <p class="bi-v">Claude can only see what's on the map and in the chat. What you know that was never written down is now more valuable, not less.</p>
+      </div>
+      <div class="meta-chips">
+        <span class="chip">About 20 minutes</span>
+        <span class="chip">Claude open in another tab</span>
+      </div>
+
       <div class="frame-row">
-        <div class="k">Scenario</div>
-        <div class="v">Eight possible spots sit across the Lakeside neighborhood — the soccer field, the waterfront path, the school at pickup, the farmers market, the commercial strip, the city park, and two quiet residential streets. Only one is your opening corner.</div>
+        <div class="k">The situation</div>
+        <div class="v">The Lakeside map has eight numbered corners where a stand could go. You only get one opening corner.</div>
       </div>
       <div class="frame-row">
-        <div class="k">Your role</div>
-        <div class="v">You know this neighborhood. Claude only knows what you tell it and what's on the map.</div>
+        <div class="k">Your part</div>
+        <div class="v">You know this neighborhood. Claude only knows what you tell it.</div>
       </div>
       <div class="frame-row">
-        <div class="k">What you'll practice</div>
-        <div class="v">Giving the model the local knowledge that was never written down — and keeping the final call for yourself.</div>
+        <div class="k">You'll learn</div>
+        <div class="v">How to hand Claude the local knowledge that isn't written anywhere — and keep the final call for yourself.</div>
       </div>
 
       <div class="frame-row tool">
         <div class="k">Tool</div>
-        <div class="v">Claude — with the neighborhood map and your Module 01 personas.</div>
+        <div class="v">Claude — a fresh chat, so it starts with nothing but the map.</div>
       </div>
       <div class="inputs" style="margin-top:22px;border-bottom:none;padding-bottom:0;">
-        <p class="inputs-intro">Bring these into the chat:</p>
+        <p class="inputs-intro">You'll bring two things into the chat:</p>
         <div class="folder-block">
           <div class="folder-head">
             <span class="folder-name">neighborhood_map.png</span>
-            <span class="folder-purpose">8 numbered corners</span>
           </div>
-          <div class="file-row">
-            <span class="fname">map of Lakeside</span>
-            <span class="fdesc">the 8 candidate locations, numbered 1–8, with a legend</span>
+          <p class="fdesc" style="margin:0;">The map of Lakeside with the eight numbered corners. It's the same map you'll explore on this page.</p>
+        </div>
+        <div class="folder-block">
+          <div class="folder-head">
+            <span class="folder-name">your three personas</span>
           </div>
-          <div class="file-row">
-            <span class="fname">your 3 personas</span>
-            <span class="fdesc">from Module 01</span>
-          </div>
+          <p class="fdesc" style="margin:0;">The customer sketches you made with Claude in Module 01.</p>
         </div>
         <details class="how">
-          <summary>Don't know where to find these?</summary>
+          <summary>Where do I find them?</summary>
           <div class="how-body">
-            The map is on this page — click it to zoom. Bring your personas in from the last chat.
+            The map is in your course files, or you can <a href="assets/map.png" target="_blank" rel="noopener">open it here</a> and save it. In Claude, click the paperclip (or drag the file into the chat). For the personas, go back to your Module 01 chat and copy them. If you can't find them, carry on anyway — the answers will just be a little less tailored.
           </div>
         </details>
       </div>
+
+      <dl class="terms">
+        <p class="t-head">Words to know</p>
+        <dt>Local knowledge</dt>
+        <dd>What you know from being there — who shows up at 3pm, who already sells what, which rule has a catch. It's rarely written down.</dd>
+        <dt>Assumption</dt>
+        <dd>A gap Claude fills with a reasonable guess, often without saying so.</dd>
+        <dt>Context</dt>
+        <dd>Everything Claude knows about your situation (you met this in Module 01). In a new chat, that's only what you put there.</dd>
+      </dl>
     </section>
 
     <!-- ── WORK (middle) ────────────────────────────────────── -->
     <section class="col work">
       <div class="inner">
-        <figure class="lift">
-          <a class="lift-frame" id="mapFrame" role="button" tabindex="0" aria-label="Expand the neighborhood map">
-            <img src="assets/map.png" alt="Lakeside neighborhood map with 8 numbered candidate stand locations" />
-          </a>
-          <figcaption>The eight candidate corners. Click to zoom.</figcaption>
-        </figure>
-        <div class="lift-backdrop" id="mapBackdrop"></div>
-        <div class="lift-stage" id="mapLifted"><img src="assets/map.png" alt="Lakeside neighborhood map, enlarged" /></div>
-
         <p class="scene">
-          Eight corners, eight different afternoons. Thirsty kids pour off the soccer field
-          (location 2) the moment a game ends, and their parents will pay for cold-and-now. The
-          waterfront path runs with joggers and walkers all week, and nobody out there sells a
-          cold drink. School pickup is a daily, price-sensitive crush. And at the farmers market,
-          Hansen already owns Sunday at $6 a cup. The map in front of you shows roads and foot
-          traffic — it shows none of that.
+          Eight numbered corners, and you can only open at one. There's the edge of the soccer field,
+          where Megan's twins finish their Saturday-morning game "parched." There's the waterfront
+          path, where Hansen — your competition — quietly says nobody sells cold lemonade on hot
+          afternoons. There's the school gate at 3pm, and a commercial strip already full of cold
+          drinks. The map shows roads and buildings. It doesn't show any of that.
         </p>
 
-        <div class="activity">
-          <h4><span class="step-n">1</span>Ask for the best corner, cold</h4>
-          <p>Open Claude, drop in the map, and ask it flat — the way most people would start:</p>
+        <div class="factbar">
+          <div class="fact"><div class="fact-n">8</div><div class="fact-l">numbered corners on the map</div></div>
+          <div class="fact"><div class="fact-n">1</div><div class="fact-l">opening corner — and it's your call</div></div>
+          <div class="fact"><div class="fact-n">6</div><div class="fact-l">corners that need a $30 town permit</div></div>
+          <div class="fact"><div class="fact-n">12</div><div class="fact-l">interviews from Module 01, most of them on these corners</div></div>
         </div>
+
+        <!-- Step 1 -->
+        <h2 class="sec"><span class="sec-kicker">Step 1 · Explore</span>Walk the neighborhood first</h2>
+        <p class="body">
+          Before you ask Claude anything, take a walk. Click each numbered corner on the map. You'll
+          see who's around, who already sells drinks, what the town requires, and when it's busy —
+          the things you'd learn from a few afternoons of standing there.
+        </p>
+        <p class="body">
+          At the bottom of each card, in red, is <strong>what the map can't tell you</strong>. Keep an
+          eye on those. Visiting all eight takes about four minutes.
+        </p>
+
+        <div class="hotspot-map">
+          <div class="hm-stage">
+            <img src="assets/map.png" alt="Illustrated map of the Lakeside neighborhood with eight numbered candidate corners: a community center, a soccer field across from Lincoln Elementary, City Park, a commercial strip, a waterfront path, a grocery store lot, and two residential streets." />
+            <button class="hotspot" data-spot="1" data-x="38.9" data-y="89.9" aria-label="Corner 1, Community Center">1</button>
+            <button class="hotspot" data-spot="2" data-x="49.1" data-y="26.2" aria-label="Corner 2, soccer field edge">2</button>
+            <button class="hotspot" data-spot="3" data-x="84.0" data-y="26.9" aria-label="Corner 3, City Park">3</button>
+            <button class="hotspot" data-spot="4" data-x="33.3" data-y="45.7" aria-label="Corner 4, commercial strip">4</button>
+            <button class="hotspot" data-spot="5" data-x="82.2" data-y="53.6" aria-label="Corner 5, waterfront path">5</button>
+            <button class="hotspot" data-spot="6" data-x="37.5" data-y="67.3" aria-label="Corner 6, grocery store parking lot">6</button>
+            <button class="hotspot" data-spot="7" data-x="9.1" data-y="21.4" aria-label="Corner 7, residential street, north-west">7</button>
+            <button class="hotspot" data-spot="8" data-x="65.8" data-y="93.1" aria-label="Corner 8, residential street, south">8</button>
+          </div>
+          <p class="hm-status"><span class="hm-count"></span><span>Click a numbered corner</span></p>
+          <div class="hm-panel"><p class="hm-sub">Click any numbered corner to see what's there — and what the map can't tell you.</p></div>
+          <div class="hm-data">
+            <div data-spot="1">
+              <h4>1 · Community Center</h4>
+              <p class="hm-sub">A town building with a parking lot, at the south end of the neighborhood.</p>
+              <div class="hm-grid">
+                <div><b>Who's around</b>Event-goers. Rebecca, a kids' party planner, was met in the lot.</div>
+                <div><b>Already selling drinks</b>A vending machine — out of order both survey weekends.</div>
+                <div><b>Permit &amp; insurance</b>Both required — it's town property ($30 permit, $75 insurance).</div>
+                <div><b>Best times</b>Only when there's an event on.</div>
+              </div>
+              <p class="hm-quote">"Honestly the bigger ask is the dispensers — if you brought the dispenser AND filled it I'd pay a premium for that, like $80 for a party setup." — Rebecca, party planner</p>
+              <p class="hm-blind">What the map can't tell you: it's quiet unless there's an event. The real opportunity here may be party orders, not walk-up sales — a different business.</p>
+            </div>
+            <div data-spot="2">
+              <h4>2 · Soccer field edge</h4>
+              <p class="hm-sub">Beside the soccer field, across the street from Lincoln Elementary School.</p>
+              <div class="hm-grid">
+                <div><b>Who's around</b>Soccer families like Megan and her twins. Parents like Janelle at 3pm school pickup.</div>
+                <div><b>Already selling drinks</b>The ice-cream truck roams nearby (lemon slushie, $4.50). Some parents bring a cooler.</div>
+                <div><b>Permit &amp; insurance</b>Both required ($30 permit, $75 insurance).</div>
+                <div><b>Best times</b>Right after games — mostly weekend mornings. Pickup only while school is in.</div>
+              </div>
+              <p class="hm-quote">"Oh, instantly. My twins finish their game and they are parched." — Megan, soccer parent</p>
+              <p class="hm-blind">What the map can't tell you: Janelle was interviewed in the <b>last week of school</b>. In summer, the 3pm pickup crowd disappears.</p>
+            </div>
+            <div data-spot="3">
+              <h4>3 · City Park</h4>
+              <p class="hm-sub">Playground, swings and a gazebo in the north-east corner.</p>
+              <div class="hm-grid">
+                <div><b>Who's around</b>Parents with young kids. Marcus comes with his two, two or three times a week in summer.</div>
+                <div><b>Already selling drinks</b>No vendor found. Marcus brings juice boxes from the grocery store.</div>
+                <div><b>Permit &amp; insurance</b>Insurance required ($75). The permit note never names corner 3 — but says only 7 and 8 are exempt. So: permit ($30) needed too.</div>
+                <div><b>Best times</b>Summer weekdays, and "weekends always," says Marcus.</div>
+              </div>
+              <p class="hm-quote">"My kids would make me buy. That's the whole equation." — Marcus, dad at the playground</p>
+              <p class="hm-blind">What the map can't tell you: where the shade falls, how long families stay — and the permit trap.</p>
+            </div>
+            <div data-spot="4">
+              <h4>4 · Commercial strip</h4>
+              <p class="hm-sub">Sidewalk by Joe's Coffee Shop, the bakery, a bookstore and a boutique. Bus stop nearby.</p>
+              <div class="hm-grid">
+                <div><b>Who's around</b>Commuters like Brian. Teens like Tyler, who split one cup ($2–3). Brunch couples like Jamie and Alex ($4.50–5 if it's fresh).</div>
+                <div><b>Already selling drinks</b>Joe's strawberry lemonade $4.75 (16 oz). Bakery lemonade $3.50 (12 oz, from concentrate). Weekend café cart: hibiscus cooler $5.</div>
+                <div><b>Permit &amp; insurance</b>Permit required ($30). Insurance ($75) <em>may</em> be — the property owner decides.</div>
+                <div><b>Best times</b>Weekend late mornings. Weekdays are coffee time.</div>
+              </div>
+              <p class="hm-quote">"On a weekday? No. I need caffeine, not sugar." — Brian, commuter at the bus stop</p>
+              <p class="hm-blind">What the map can't tell you: the weekday crowd wants caffeine; the weekend crowd is different. And the shop owners may not want a stand on their sidewalk.</p>
+            </div>
+            <div data-spot="5">
+              <h4>5 · Waterfront path</h4>
+              <p class="hm-sub">The path along the water, next to where the ice-cream truck parks.</p>
+              <div class="hm-grid">
+                <div><b>Who's around</b>Walkers, cyclists, joggers like Derek (wants sugar-free), retirees like Hal and Doris (low price ceiling).</div>
+                <div><b>Already selling drinks</b>The ice-cream truck: lemon slushie $4.50, bottled water $2.50. Nobody sells cold lemonade.</div>
+                <div><b>Permit &amp; insurance</b>Both required ($30 permit, $75 insurance).</div>
+                <div><b>Best times</b>Hot afternoons, says Hansen. Early mornings for joggers.</div>
+              </div>
+              <p class="hm-quote">"Nobody is doing iced lemonade for hot afternoons on the waterfront. That's where the demand is and it's wide open." — Hansen, who runs the $6 stand at the farmers market</p>
+              <p class="hm-blind">What the map can't tell you: how busy it really is on a hot afternoon — both interviews here were in the morning. And the best tip came from a competitor. Worth checking yourself.</p>
+            </div>
+            <div data-spot="6">
+              <h4>6 · GreenLeaf Grocery parking lot</h4>
+              <p class="hm-sub">The grocery store lot, with the QuickStop gas station across the street.</p>
+              <div class="hm-grid">
+                <div><b>Who's around</b>Shoppers in cars. Cyclists like Sam refill bottles at the gas station.</div>
+                <div><b>Already selling drinks</b>GreenLeaf: store-brand lemonade, 52 oz for $2.50 (cheapest in town by the ounce); single Simply bottles $2.49. QuickStop: $1 refills.</div>
+                <div><b>Permit &amp; insurance</b>Permit required ($30). Insurance ($75) <em>may</em> be — the store decides.</div>
+                <div><b>Best times</b>Whenever people shop. Handy for restocking ice and lemons.</div>
+              </div>
+              <p class="hm-quote">"If the stand was right here on the route and I was already off the bike, maybe. Two bucks. Cold. In and out." — Sam, cyclist, at the gas station across the street</p>
+              <p class="hm-blind">What the map can't tell you: shoppers come to buy and leave — and cheaper lemonade is right inside. The store may also say no.</p>
+            </div>
+            <div data-spot="7">
+              <h4>7 · Residential street (north-west)</h4>
+              <p class="hm-sub">A quiet row of houses near the school and the bus stop.</p>
+              <div class="hm-grid">
+                <div><b>Who's around</b>Neighbors, mostly.</div>
+                <div><b>Already selling drinks</b>No one.</div>
+                <div><b>Permit &amp; insurance</b>Neither needed — one of two exempt corners.</div>
+                <div><b>Best times</b>No crowd to plan around.</div>
+              </div>
+              <p class="hm-blind">What the map can't tell you: almost no one walks past. Cheapest to run — but cheap isn't the same as good.</p>
+            </div>
+            <div data-spot="8">
+              <h4>8 · Residential street (south)</h4>
+              <p class="hm-sub">Houses along the south edge of the neighborhood.</p>
+              <div class="hm-grid">
+                <div><b>Who's around</b>Neighbors. Very little foot traffic.</div>
+                <div><b>Already selling drinks</b>No one.</div>
+                <div><b>Permit &amp; insurance</b>Neither needed — the other exempt corner.</div>
+                <div><b>Best times</b>No rush at any hour.</div>
+              </div>
+              <p class="hm-blind">What the map can't tell you: a quiet street saves $105 in permit and insurance — and costs you almost every customer.</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="body">
+          One spot you won't find on the list: the farmers market, between corners 5 and 6. It's open
+          weekends only, and Hansen already sells hand-squeezed lemonade there at $6 a cup. That's his turf.
+        </p>
+
+        <!-- Step 2 -->
+        <h2 class="sec"><span class="sec-kicker">Step 2 · Try it</span>Guess first, then ask Claude cold</h2>
+        <p class="body">
+          You've now seen more of Lakeside than Claude will. Before you open the chat, make a quick guess.
+        </p>
+
+        <div class="reveal">
+          <p class="reveal-k">Make a guess</p>
+          <p class="reveal-q">With only the map and no other context, which corner do you think Claude will pick?</p>
+          <textarea class="reveal-guess" placeholder="Your guess (just for you)…"></textarea>
+          <button class="reveal-btn">Reveal</button>
+          <div class="reveal-body" hidden>
+            <p><b>Most of the time: corner 4, the commercial strip.</b> From the map alone, that's a
+            sensible choice. Claude sees shops, a café and a bus stop, and assumes foot traffic. It's
+            doing its best with a drawing.</p>
+            <p>But that corner has the most drink competition in town: Joe's strawberry lemonade at
+            $4.75, the bakery's lemonade at $3.50, and a weekend cart selling a $5 hibiscus cooler. And
+            the weekday crowd wants coffee. As Brian put it: "I need caffeine, not sugar."</p>
+          </div>
+        </div>
+
+        <p class="body">
+          Now check. Open <strong>a new chat</strong> in Claude — a fresh one, so it doesn't remember
+          Module 01 — attach the map, and ask the way most people would:
+        </p>
         <div class="code-prompt">Here's a map of 8 possible locations for a lemonade stand.
 Which location is best?</div>
-        <p class="activity">
-          It will answer, and the answer will sound reasonable. But all it has is the map, so it
-          rewards foot traffic and picks something plausible — blind to who's actually there at
-          3pm and to who already owns the corner.
+        <p class="body">You'll get a confident answer in seconds. It will probably look something like this:</p>
+
+        <div class="claude-out">
+          <div class="co-head">Claude · sample response</div>
+          <div class="co-body">
+            <p><b>Recommended: Location 4, the commercial strip.</b></p>
+            <ul>
+              <li><b>High foot traffic</b> — the shops, café and bakery bring a steady stream of visitors.</li>
+              <li><b>Near cafés</b> — people already come here for food and drinks.</li>
+              <li><b>Visible</b> — a central street, with a bus stop close by.</li>
+            </ul>
+            <p><b>Runner-up: Location 6</b>, the grocery store lot — plenty of parking and regular shoppers.</p>
+          </div>
+        </div>
+        <p class="co-verdict">What to notice: every reason comes from the drawing. "Near cafés" is counted as a plus, when it's really the competition. There's nothing about who's there on a weekday, what they already drink, or what a permit costs. And nothing says "I'm guessing."</p>
+
+        <p class="body">
+          Yours may pick a different corner — answers vary a little each time. Look at the
+          <em>reasons</em> it gives, and ask where each one came from.
         </p>
 
-        <div class="activity">
-          <h4><span class="step-n">2</span>Hand it what only you know</h4>
-          <p>Bring your three personas back in, add the local facts, and ask it to rank with reasons:</p>
-        </div>
-        <div class="sample-prompt">Rank these 8 corners for my OPENING lemonade stand. Use my three personas
-and these local facts:
- • Soccer field (2): packed weekend mornings, kids parched after games; parents pay up for cold-and-now.
- • Waterfront path (5): joggers and walkers all week; nobody sells cold lemonade here today.
- • School pickup (near 2): daily crowd, very price-sensitive; busy ~3pm on schooldays only.
- • Farmers market (near 6): Hansen already sells hand-squeezed at $6 Sat/Sun — his turf.
- • Residential streets (7, 8): no permit needed, but almost no passersby.
-Give me the top 2 with the trade-offs, and then tell me what local knowledge
-you're still missing that would change the ranking.</div>
-
-        <p class="activity">
-          Now the ranking comes back reasoned — it can weigh the soccer field's cold-and-now
-          crowd against Hansen's hold on the market, and it can name what it still doesn't know.
-          Same map as a minute ago; what changed is everything you handed it.
+        <!-- Step 3 -->
+        <h2 class="sec"><span class="sec-kicker">Step 3 · What's going on</span>Claude can only see what you show it</h2>
+        <p class="body">
+          Picture a GPS that only knows the roads you've shown it. Ask for the fastest way across town
+          and it will give you a route — calmly, turn by turn. It has no idea the bridge is closed this
+          week, because nobody told it. The GPS isn't bad. Its map is missing something.
+        </p>
+        <p class="body">
+          Claude works the same way. It reasons from what it can see. When a fact is missing, it
+          doesn't stop and wait. It fills the gap with a reasonable <strong>assumption</strong> — shops
+          mean shoppers, a bus stop means foot traffic — and carries on. And here's the part worth
+          remembering: <strong>it sounds just as sure when it's assuming as when it knows.</strong>
+        </p>
+        <p class="body">
+          This isn't only a lemonade problem. Every workplace runs on knowledge nobody wrote down. A
+          study protocol says what will happen and when. It doesn't say that one site always starts
+          late, that sign-ups dip every August, or why the last amendment was really needed. A new
+          colleague would miss all of that on their first day. So does Claude.
         </p>
 
         <div class="concept-intro">
-          <p class="ci-label">Why your head still matters</p>
+          <p class="ci-label">A new way to see it</p>
           <h3>Local knowledge still matters</h3>
           <p>
-            Much of what a corner is really like was never written down — who's there at 3pm, who
-            already owns Sunday, where a permit is or isn't needed. Claude can only work with what
-            you give it. That part has to come from you.
+            Much of what is needed for decision making was never written down: AI can only work with
+            what you give it. That knowledge has to come from you.
           </p>
+          <p>
+            Claude can only see what's on the map and in the chat. So what you know that was never
+            written down is now <strong>more</strong> valuable, not less — it's the part Claude can't
+            get anywhere else.
+          </p>
+        </div>
+
+        <!-- Step 4 -->
+        <h2 class="sec"><span class="sec-kicker">Step 4 · Try it again</span>Hand Claude what only you know</h2>
+        <p class="body">
+          Here's the same question with your local knowledge added — most of it from the corner cards
+          you just explored. Click each highlighted part to see what it does. Then copy it into the
+          same chat, paste your three personas at the bottom, and send.
+        </p>
+
+        <div class="annotated">
+          <div class="sample-prompt ap-body"><span class="ap-seg" data-ap="1">I'm choosing ONE opening corner for my lemonade stand in Lakeside this
+summer. My three customer personas are pasted at the end of this message.</span>
+
+<span class="ap-seg" data-ap="2">Here's what I know about the 8 corners that isn't on the map:
+ • 1 Community Center: only busy when there's an event.
+ • 2 Soccer field: games are mostly weekend mornings; parents say the
+   kids are "parched" after. My 3pm school-pickup interview was in the
+   last week of school.
+ • 3 City Park: families 2–3 times a week in summer, weekends always.
+ • 4 Commercial strip: Joe's strawberry lemonade $4.75, bakery lemonade
+   $3.50, weekend cart hibiscus cooler $5. Weekday commuters want
+   coffee, not sugar.
+ • 5 Waterfront path: walkers, cyclists, a jogger who only wants
+   sugar-free, retirees who'd pay very little. The ice-cream truck
+   sells a $4.50 lemon slushie; nobody sells cold lemonade.
+ • 6 Grocery lot: the store sells the cheapest lemonade in town.
+ • 7 and 8 Residential: no permit or insurance, almost no passers-by.
+ • Permits ($30) are needed everywhere except 7 and 8. Insurance ($75)
+   at 1, 2, 3 and 5 — and maybe at 4 and 6.</span>
+
+<span class="ap-seg" data-ap="3">Rank all 8 corners for my customers, best to worst, one line each.</span>
+<span class="ap-seg" data-ap="4">For your top 2, give me the trade-offs: who I'd reach, who I'd miss,
+and what could go wrong.</span>
+<span class="ap-seg" data-ap="5">Then tell me: what local knowledge are you still missing that would
+change the ranking?</span>
+<span class="ap-seg" data-ap="6">If you're assuming something I didn't tell you, say so.</span></div>
+          <p class="ap-hint">Click a highlighted part to see why it's there.</p>
+          <div class="ap-callout"></div>
+          <ol class="ap-notes">
+            <li data-ap="1"><b>Your customers.</b> Without personas, "best corner" quietly means "busiest corner." With them, it means "where my people actually are."</li>
+            <li data-ap="2"><b>What only you know.</b> The heart of it. None of these facts is on the map — they came from interviews, from walking around, and from reading the fine print twice. Plain bullet points are fine.</li>
+            <li data-ap="3"><b>A ranking, not one answer.</b> All eight in order shows how Claude is weighing things — so you can point to exactly where you disagree.</li>
+            <li data-ap="4"><b>Trade-offs.</b> Every corner wins some customers and loses others. Asking for trade-offs keeps the decision with you: Claude lays out the choice; you make it.</li>
+            <li data-ap="5"><b>What are you missing?</b> This invites Claude to say where its picture is thin. It often names something you know but forgot to mention.</li>
+            <li data-ap="6"><b>Say when you're guessing.</b> Claude sounds the same whether it knows or assumes. This asks it to label the difference, so you know what to check.</li>
+          </ol>
+        </div>
+
+        <p class="body">Run it and compare the two answers:</p>
+        <div class="tabs">
+          <div class="tab-bar">
+            <button class="tab" data-tab="a">Without local knowledge</button>
+            <button class="tab active" data-tab="b">With local knowledge</button>
+          </div>
+          <div class="tab-panel" data-panel="a">
+            <p><b>Top pick: 4, the commercial strip.</b> "High foot traffic, near cafés, visible." Runner-up: 6, the grocery lot.</p>
+            <p>Every reason comes from the drawing. None tells you who is actually there, when, or what they already drink.</p>
+          </div>
+          <div class="tab-panel" data-panel="b">
+            <div class="claude-out">
+              <div class="co-head">Claude · sample response</div>
+              <div class="co-body">
+                <p><b>1. Waterfront path (5)</b> — Walkers and cyclists, and no one selling cold lemonade; the truck's $4.50 slushie is the closest thing. <i>Trade-off:</i> joggers want sugar-free and the retirees will pay very little. <i>I'm assuming</i> afternoon foot traffic is steady — nobody has checked that yet.</p>
+                <p><b>2. Soccer field (2), weekend mornings</b> — Post-game parents buying for the whole family. <i>Trade-off:</i> the 3pm pickup crowd will likely vanish in summer, since that interview was the last week of school. Plan around game times, not pickup.</p>
+                <p><b>3. City Park (3)</b> — Families several times a week. Note: your permit rule exempts only 7 and 8, so the park needs the $30 permit as well as insurance.</p>
+                <p><b>4. Commercial strip (4)</b> — Good weekend customers, but three nearby drinks already sell for $3.50–$5, and weekdays belong to coffee.</p>
+                <p><b>5–8.</b> Grocery lot (cheaper lemonade inside), Community Center (events only — maybe a party-order lead), residential streets (cheap, but quiet).</p>
+                <p><b>Still missing:</b> Where is the shade at corner 5 on a hot afternoon? When does the league play in July? Would the truck driver or the shop owners object to a stand nearby?</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="co-verdict">What to notice: the commercial strip dropped from first to fourth. Claude didn't get smarter — it finally knew what you know. It caught the summer problem and the permit trap, and labeled its own guess. Your ranking may differ; the reasons are what matter.</p>
+
+        <p class="body">
+          Same map, same corners, same Claude. What changed is what you told it. And the final call
+          is still yours: Claude ranked the corners; you choose one. <strong>Pick your corner now and
+          jot it down</strong> — you'll need it for the reflections.
+        </p>
+
+        <!-- Step 5 -->
+        <h2 class="sec"><span class="sec-kicker">Step 5 · Quick check</span>Make sure it clicked</h2>
+        <p class="body">Three quick questions — each about something that never shows up on a map.</p>
+        <div class="quiz-grid">
+          <div class="quiz">
+            <p class="quiz-k">Quick check</p>
+            <p class="quiz-q">Janelle was interviewed at school pickup in the last week of school. Why does that matter for corner 2?</p>
+            <div class="quiz-opts">
+              <button class="quiz-opt">It doesn't — a busy pickup is a busy pickup.<template class="fb">It was busy on that day. But your stand opens in summer, when the school is closed and there's no pickup at all.</template></button>
+              <button class="quiz-opt" data-correct="true">In summer, school's out — the 3pm pickup crowd goes away.<template class="fb">The interview was real and accurate on the day it happened. It just describes a different season from the one you're planning for. That's a common trap anywhere information is gathered at one time and used at another — and neither Claude nor the map would catch it unless you said so.</template></button>
+              <button class="quiz-opt">The end-of-year excitement made her overstate what she'd buy.<template class="fb">Maybe a little. But the bigger issue isn't her answer — it's that the whole 3pm crowd disappears once school ends.</template></button>
+            </div>
+          </div>
+          <div class="quiz">
+            <p class="quiz-k">Quick check</p>
+            <p class="quiz-q">The permit note names corners 1, 2, 4, 5 and 6 — and says only 7 and 8 are exempt. Does City Park (corner 3) need a permit?</p>
+            <div class="quiz-opts">
+              <button class="quiz-opt">No — it isn't on the list.<template class="fb">That's the easy misreading. "Only 7 and 8 are exempt" means every other corner needs one, named or not. Read the note twice.</template></button>
+              <button class="quiz-opt" data-correct="true">Yes — if only 7 and 8 are exempt, corner 3 needs one too.<template class="fb">Read the note twice. Corner 3 is never named, but the word "only" covers it. It's exactly the kind of detail that slips past a quick read — by a person or by Claude. A useful habit with any rule: ask what it says about the cases it doesn't name.</template></button>
+              <button class="quiz-opt">Only if it also needs insurance.<template class="fb">Permits and insurance are separate requirements. (As it happens, corner 3 needs both: the $30 permit and $75 insurance.)</template></button>
+            </div>
+          </div>
+          <div class="quiz">
+            <p class="quiz-k">Quick check</p>
+            <p class="quiz-q">Claude recommends a corner you know is wrong for your customers. What's the best next move?</p>
+            <div class="quiz-opts">
+              <button class="quiz-opt">Start a new chat and ask again until it picks the right one.<template class="fb">A new chat starts from zero, so you'd lose everything you've already told it. The missing piece isn't luck. It's your knowledge.</template></button>
+              <button class="quiz-opt" data-correct="true">Tell it what you know, and ask it to rank again.<template class="fb">Claude's pick was reasonable for what it knew. Add the missing fact — "school's out for the summer" — and ask it to re-rank and say what changed. That's a normal conversation, not a failure.</template></button>
+              <button class="quiz-opt">Decide AI isn't useful for this kind of decision.<template class="fb">The reasoning was fine. The information was thin. Give it what you know, and it becomes a useful thinking partner — while the decision stays with you.</template></button>
+            </div>
+          </div>
         </div>
 
         <!-- ── Checkpoint ── -->
         <div class="checkpoint">
           <p class="label">Checkpoint</p>
           <p class="check-q">
-            Did your final pick come from the map and the numbers alone — or from something you
-            know that never made it into the chat?
+            Did your final pick come from the map alone — or from something you know that never made
+            it into the chat?
           </p>
           <div class="check-choices">
-            <button class="check-btn" data-action="pass">It came from what I know</button>
-            <button class="check-btn ghost" data-action="stuck">I just took Claude's pick</button>
+            <button class="check-btn" data-action="pass">I added what I know</button>
+            <button class="check-btn ghost" data-action="stuck">I just went with Claude's pick</button>
           </div>
 
           <div class="helper" id="helper">
-            <p class="help-q">Surface what it assumed</p>
+            <p class="help-q">That's normal — Claude's pick sounds convincing. Here's a nudge.</p>
             <div class="help-choice">
-              <button class="help-btn" data-toggle="h1">Make its assumptions visible</button>
+              <button class="help-btn" data-toggle="h1">Make Claude show its guesses</button>
               <div class="help-body" id="h1">
-                <p>Ask it this, then read the list against what you know:</p>
+                <p>Keep the same chat going and add this:</p>
                 <div class="sample-prompt">List every assumption you made about these corners that I did NOT
-tell you. Mark the ones that, if wrong, would change your top pick.</div>
+tell you. Mark the ones that would change your top pick if they're wrong.</div>
+                <p>Read the list against what you saw on the map cards. Every assumption you can correct is local knowledge you're adding.</p>
                 <p class="skill-note">
-                  Hansen flat-out said he'd never sell at the soccer field or the school — wrong
-                  customer for him, perfect for you. That kind of read isn't on the map.
+                  One more thing you know: Hansen said he'd never sell at the soccer field or the
+                  school — "Wrong customer, wrong vibe." That's true for his $6 hand-squeezed cup. It
+                  might be exactly the right customer for you. Knowing whose advice fits whose
+                  business is local knowledge too.
                 </p>
               </div>
             </div>
@@ -167,17 +466,67 @@ tell you. Mark the ones that, if wrong, would change your top pick.</div>
 
         <!-- ── After the checkpoint ── -->
         <div class="post-checkpoint">
+          <details class="deep">
+            <summary>Under the hood, in plain English</summary>
+            <div class="deep-body">
+              <p>
+                Claude doesn't see the street. It sees what's in the chat: your words, and — when you
+                attach one — a picture. From the map it saw buildings, roads and labels, and it reasoned
+                from those: shops mean shoppers, shoppers mean sales. A sensible guess. Still a guess.
+              </p>
+              <p>
+                The facts that decide this choice are a different kind of knowledge. There's a name for
+                it: <strong>tacit knowledge</strong> — things you know but have never written down. Who
+                shows up at 3pm. Where the shade falls. That the school empties out in June. You don't
+                think of it as information, because it lives in your head. To Claude, it doesn't exist
+                until you type it.
+              </p>
+              <p>
+                When something's missing, Claude fills the gap with the most likely answer and keeps
+                going, in the same steady tone. Usually that's helpful — you don't want twenty
+                questions before every reply. But it means the gaps stay invisible unless you ask.
+                <strong>"What are you assuming?"</strong> makes them visible. Claude can read every
+                document you give it. It can't read what nobody wrote down.
+              </p>
+            </div>
+          </details>
+
+          <div class="transfer">
+            <p class="tr-label">Try it at work</p>
+            <p>
+              Before your next decision with AI, <strong>write down three things you know about the
+              situation that aren't in any document. Paste them in first.</strong>
+            </p>
+            <p>
+              Say you're asking Claude to help plan a study timeline or draft a protocol section. The
+              documents tell it the aims and eligibility criteria. They don't say that a key colleague is
+              away all August, that last year's similar mailing got few replies, or that the review
+              committee always asks about missing data. Three plain lines like that can change the
+              plan. Then ask, "What are you assuming that I haven't told you?"
+            </p>
+            <p>
+              Two habits to keep: share only what your organization has approved for the tool you're
+              using (local knowledge rarely needs names or patient details), and keep the final
+              sign-off with the person qualified to give it.
+            </p>
+          </div>
+
           <div class="takeaway">
-            <p><strong>AI is only as good as the context you bring it.</strong> You compared
-            Claude's pick with your own, and the difference was the local knowledge you added.</p>
-            <p>A convincing ranking built on what it could see is still blind to what it couldn't.</p>
+            <p><strong>Claude can only see what's on the map and in the chat.</strong> The rest — who's
+            there at 3pm, which rule to read twice, whose advice fits whose business — lives with you.
+            That's why what you know that was never written down is now <em>more</em> valuable, not less.</p>
+            <p>You did the important part just now: you noticed what was missing and said it out loud.
+            That's the skill. Your experience is the part AI can't download — and every time you put it
+            into words, Claude becomes a more useful partner.</p>
+            <p>Hold onto your corner. Next you'll set a price — and where you stand changes what people
+            will pay.</p>
           </div>
 
           <div class="closing-call">
             <p class="cc-label">Before you move on →</p>
-            <p>Answer the three <strong>reflections</strong> on the right while your corner is
-            fresh in mind. They're your takeaway from this module, and they go into your final
-            report.</p>
+            <p>Take a few minutes for the three <strong>reflections</strong> on the right. They're your
+            takeaway from this module, and they become part of your final report. When you're done,
+            look up — your facilitator will bring the room together for a short debrief.</p>
           </div>
         </div>
       </div>
@@ -190,23 +539,23 @@ tell you. Mark the ones that, if wrong, would change your top pick.</div>
 
         <div class="reflect-q">
           <p class="q-text">Which corner did you choose — and did it match Claude's pick?</p>
-          <p class="q-hint">Name the spot and whether you agreed.</p>
-          <textarea rows="3" placeholder="In a sentence or two…"></textarea>
+          <p class="q-hint">Name your corner and Claude's first pick. If they differ, what made the difference?</p>
+          <textarea rows="3" placeholder="In your own words…"></textarea>
         </div>
 
         <div class="reflect-q">
           <p class="q-text">What did you know about these corners that never made it into the chat?</p>
-          <p class="q-hint">The local detail that tipped it.</p>
-          <textarea rows="3" placeholder="Your answer…"></textarea>
+          <p class="q-hint">Something from the map cards, or just a hunch from experience. Small details count.</p>
+          <textarea rows="3" placeholder="In your own words…"></textarea>
         </div>
 
         <div class="reflect-q">
           <p class="q-text">In the era of AI, do people still need to build their own expertise — and how?</p>
-          <p class="q-hint">Your honest take.</p>
-          <textarea rows="4" placeholder="Your answer…"></textarea>
+          <p class="q-hint">There's no right answer. You might think about how you built your own — and what AI changes about that.</p>
+          <textarea rows="4" placeholder="In your own words…"></textarea>
         </div>
 
-        <p class="can-say">You can now say: the model is only as good as the context you bring it.</p>
+        <p class="can-say">You can now say: Claude is only as good as the context I bring — and my local knowledge is part of that context.</p>
       </div>
     </section>
   </main>
@@ -217,6 +566,7 @@ tell you. Mark the ones that, if wrong, would change your top pick.</div>
   <script src="assets/registry.js"></script>
   <script src="assets/chrome.js"></script>
   <script src="assets/sync.js"></script>
+  <script src="assets/learn.js"></script>
   <script src="assets/course.js"></script>
 </body>
 </html>

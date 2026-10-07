@@ -8,6 +8,7 @@
   <meta name="robots" content="noindex,nofollow" />
   <link rel="stylesheet" href="assets/course.css" />
   <link rel="stylesheet" href="assets/extra.css" />
+  <link rel="stylesheet" href="assets/learn.css" />
   <script>
     /* gate guard — redirect before paint if the course wasn't entered */
     (function () {
@@ -29,137 +30,399 @@
       <p class="module-id">Module 08 · Part 2 — Agents &amp; systems</p>
       <h1 class="question">Can you bottle what you know?</h1>
 
+      <div class="bigidea">
+        <p class="bi-k">The big idea</p>
+        <p class="bi-v">A Skill can carry your method anywhere. Your judgment is what makes it worth carrying — and some of it won't fit in the bottle.</p>
+      </div>
+      <div class="meta-chips">
+        <span class="chip">About 20 minutes</span>
+        <span class="chip">Claude (with a skill-creator, if you have one)</span>
+      </div>
+
       <div class="frame-row">
-        <div class="k">Scenario</div>
-        <div class="v">There's a thing you do the same way every time — say, your weekly stand recap. You're going to package it into a Skill so anyone, or an agent, can run it the way you would.</div>
+        <div class="k">The situation</div>
+        <div class="v">Every week you do your stand recap the same way: add it up, see what stood out, decide what to watch. Now you'll package it as a Skill, so anyone — or an agent — can run it your way.</div>
       </div>
       <div class="frame-row">
-        <div class="k">Your role</div>
-        <div class="v">You supply the expertise. The Skill only carries what you manage to put in it.</div>
+        <div class="k">Your part</div>
+        <div class="v">You supply the expertise. Claude will do most of the writing, but the Skill only carries what you put in.</div>
       </div>
       <div class="frame-row">
-        <div class="k">What you'll practice</div>
-        <div class="v">Writing a Skill from your own method — and finding exactly where your judgment refuses to fit in the box.</div>
+        <div class="k">You'll learn</div>
+        <div class="v">How to write a Skill, test it on a case where you already know the answer, and see which parts of your judgment won't travel.</div>
       </div>
 
       <div class="frame-row tool">
         <div class="k">Tool</div>
-        <div class="v">Claude, with a skill-creator.</div>
+        <div class="v">Claude. If yours has a skill-creator — a ready-made Skill for writing Skills — use it. If not, a normal chat works too.</div>
       </div>
       <div class="inputs" style="margin-top:22px;border-bottom:none;padding-bottom:0;">
-        <p class="inputs-intro">Bring these into the chat:</p>
+        <p class="inputs-intro">You'll bring two things into the chat:</p>
         <div class="folder-block">
           <div class="folder-head">
-            <span class="folder-name">your_method</span>
-            <span class="folder-purpose">what you repeat</span>
+            <span class="folder-name">A task you repeat</span>
           </div>
-          <div class="file-row">
-            <span class="fname">a task you do often</span>
-            <span class="fdesc">the weekly recap, a pricing check, an outreach note</span>
+          <p class="fdesc" style="margin:0;">Here, it's your weekly stand recap. You'll just describe how you do it — no file needed.</p>
+        </div>
+        <div class="folder-block">
+          <div class="folder-head">
+            <span class="folder-name">One worked example</span>
           </div>
-          <div class="file-row">
-            <span class="fname">one worked example</span>
-            <span class="fdesc">a case where you already know the right answer</span>
-          </div>
+          <p class="fdesc" style="margin:0;">A case where you already know the right answer. Here, it's the week of sales notes from Module 06. It's printed in Step 3, ready to copy.</p>
         </div>
         <details class="how">
-          <summary>Don't have these ready?</summary>
+          <summary>No skill-creator? Not sure where Skills live?</summary>
           <div class="how-body">
-            You don't need a file. Describe the task to Claude in your own words — what you do, in what order, and why. Then bring one example you can grade it against: a case where you already know the right answer.
+            You don't need anything special today. Ask Claude to write the Skill as a short instruction file right in the chat. To run it, paste it at the top of a new chat with the week's notes and say "Follow this Skill." For this exercise that works the same way — a Skill is written instructions Claude follows. If you'd like to install it properly later, your facilitator can show you where Skills are switched on in Claude's settings.
           </div>
         </details>
       </div>
+
+      <dl class="terms">
+        <p class="t-head">Words to know</p>
+        <dt>Skill</dt>
+        <dd>A short, written method Claude can follow — like a recipe card. You used someone else's in Module 04. Today you write your own.</dd>
+        <dt>Test case</dt>
+        <dd>An example where you already know the right answer, used to check a Skill. If the Skill gets it wrong, you've found what it's missing.</dd>
+        <dt>Tacit knowledge</dt>
+        <dd>Things you know how to do but would struggle to write down — like knowing a cake is done by the smell.</dd>
+      </dl>
     </section>
 
     <!-- ── WORK (middle) ────────────────────────────────────── -->
     <section class="col work">
       <div class="inner">
         <p class="scene">
-          In Module 04 you ran someone else's Skill. Now you write one. Claude does almost all
-          the mechanical work — the structure, the wording, the steps. And it's still only as
-          good as the expertise you put in, because a Skill holds your conclusions, not the
-          judgment that produced them.
+          In Module 04 you used someone else's Skill — a branding expert's method in a box. Now you
+          write one. Every Sunday you sit down with the week's notes and do the same thing: add it up,
+          see what stood out, decide what to watch. In Module 06, you found a Saturday that
+          came up $32 short and a Thursday with 45 lemons when most days had about 30. Claude will do
+          most of the writing today. The Skill will still only be as good as what you know.
         </p>
 
-        <div class="activity">
-          <h4><span class="step-n">1</span>Draft the Skill</h4>
-          <p>Open Claude with the skill-creator and describe the recap you run every week — in what order, and what you're looking for each time. Then ask it to build the Skill:</p>
+        <div class="factbar">
+          <div class="fact"><div class="fact-n">403</div><div class="fact-l">cups sold in the week you already checked</div></div>
+          <div class="fact"><div class="fact-n">$32</div><div class="fact-l">Saturday's gap between cups sold and cash counted</div></div>
+          <div class="fact"><div class="fact-n">45</div><div class="fact-l">lemons bought on Thursday — about 30 on a normal day</div></div>
+          <div class="fact"><div class="fact-n">?</div><div class="fact-l">how much of your judgment will fit in the file</div></div>
         </div>
-        <div class="code-prompt">Help me turn my weekly lemonade-stand recap into a reusable Skill: the steps I follow, what goes in, what comes out.</div>
-        <p class="activity">
-          In a minute you'll have a tidy Skill — named steps, an input list, a clean output
-          format. It looks finished. It isn't tested yet.
+
+        <p class="body">That week will be your test. You already know what's wrong with it — so you'll know right away whether your Skill does.</p>
+
+        <!-- Step 1 -->
+        <h2 class="sec"><span class="sec-kicker">Step 1 · Draft it</span>Let Claude interview you</h2>
+        <p class="body">Open Claude (with the skill-creator, if you have it) and type:</p>
+        <div class="code-prompt">Help me turn my weekly lemonade-stand recap into a reusable Skill: the steps I follow, what goes in, and what comes out. Ask me questions first.</div>
+        <p class="body">
+          Claude will ask how you do your recap. Answer the way you'd explain it to a new helper. If you
+          need something to say, here's how ours goes:
+        </p>
+        <ul class="body">
+          <li>Add up the cups and cash for each day, and for the week.</li>
+          <li>Pick the best day and the worst day.</li>
+          <li>Work out what each cup cost us, using the cost sheet.</li>
+          <li>Name one thing to watch next week.</li>
+        </ul>
+        <p class="body">A few questions later, you'll have a draft. It will probably look something like this:</p>
+
+        <div class="claude-out">
+          <div class="co-head">Claude · sample response</div>
+          <div class="co-body">
+            <p>Here's a first draft of your Skill, saved as <b>SKILL.md</b>:</p>
+            <p><b>name:</b> weekly-stand-recap<br /><b>description:</b> Turns a week of lemonade-stand sales notes into a one-page recap. Use when someone shares daily cup counts and cash totals.</p>
+            <p><b>Goes in:</b> the week's sales notes (cups by size, cash counted, lemons bought) and the cost sheet.</p>
+            <p><b>Steps</b></p>
+            <ul>
+              <li>Total the cups and cash for each day, and for the week.</li>
+              <li>Name the best day and the worst day.</li>
+              <li>Work out the cost per cup from the cost sheet.</li>
+              <li>End with one thing to watch next week.</li>
+            </ul>
+            <p><b>Comes out:</b> a short table, then three sentences anyone can read in a minute.</p>
+          </div>
+        </div>
+        <p class="co-verdict">What to notice: it's short, clear, and every line is right. It looks finished. But it has never been run on a real week — so nobody knows yet what it misses.</p>
+
+        <p class="body">
+          That's a Skill: not code, just plain instructions with a name and a description, so Claude
+          knows when to use it. <strong>Don't polish it yet.</strong> The useful work starts when you test it.
         </p>
 
-        <div class="activity">
-          <h4><span class="step-n">2</span>Test it where you know the answer</h4>
-          <p>Hand it a week you've already reviewed in your own head — one where you already know what the right recap looks like:</p>
-        </div>
-        <div class="sample-prompt">Here's a real week I've already reviewed myself. Run the Skill on it and show
-the output. Then I'll tell you where it's wrong — and each correction is a
-piece of my judgment the Skill was missing. Fold those in and show me the
-diff.</div>
-        <p class="activity">
-          The output will be close, but not right. Every place it's wrong is a place your
-          judgment lived and the Skill didn't — so each correction you make is a piece of you
-          the box left out.
+        <!-- Step 2 -->
+        <h2 class="sec"><span class="sec-kicker">Step 2 · What's going on</span>A recipe card, not the cook</h2>
+        <p class="body">
+          Think of a family recipe card: "Bake 40 minutes." Anyone can follow it. But the person who
+          wrote it bakes until it smells done, and adds a splash of milk when the dough feels stiff.
+          None of that is on the card.
+        </p>
+        <p class="body">
+          A Skill is the card. It carries your steps well. What it can't carry on its own is the cook —
+          the instinct that says "that number looks off." That's <strong>tacit knowledge</strong>: things
+          you know how to do but would struggle to write down.
+        </p>
+        <p class="body">
+          You've seen this at work. A written procedure tells a new colleague which steps to run. It
+          doesn't tell them the moment a result looks wrong. That still comes from someone who has done
+          it a hundred times.
         </p>
 
         <div class="concept-intro">
-          <p class="ci-label">The limit</p>
+          <p class="ci-label">Worth knowing before you share a Skill</p>
           <h3>What a skill can't hold</h3>
+          <p>A Skill holds your <strong>conclusions</strong>, not the judgment behind them.</p>
           <p>
-            A Skill holds your conclusions, not the judgment behind them. Your price was right
-            for your corner that summer — written down, it quietly becomes the price for everyone,
-            everywhere. Watch what gets left out when you compress a method into steps. Some of
-            what you know can be bottled. Some of it can't, no matter how carefully you try.
+            Your price was right for your corner that summer. Written down, it becomes the price for
+            everyone, everywhere. The Skill doesn't know it was a hot July on the waterfront. It only
+            knows the number.
           </p>
+          <p>And not everything you know can be written down.</p>
+        </div>
+
+        <p class="body">
+          So: <strong>a Skill can carry your method anywhere. Your judgment is what makes it worth
+          carrying — and some of it won't fit in the bottle.</strong> The way to find out which parts fit
+          is to test it.
+        </p>
+
+        <!-- Step 3 -->
+        <h2 class="sec"><span class="sec-kicker">Step 3 · Test it</span>Grade it on a week you've already judged</h2>
+        <p class="body">You already have a good <strong>test case</strong>: the week from Module 06. Copy it into the chat:</p>
+        <div class="sample-prompt">Lakeside Lemonade — sales notes, one week
+Small cup $4 · Large cup $5
+
+Tue — slow, cloudy. Small 22, large 15. Cash counted $163. Lemons bought 30.
+Wed — pickup rush ~3pm. Small 31, large 18. Cash counted $214. Lemons bought 30.
+Thu — hot!! Small 36, large 25. Cash counted $269. Lemons bought 45.
+Fri — soccer tourney setup. Small 38, large 30. Cash counted $302. Lemons bought 32.
+Sat — SLAMMED — rough count. Small ~58, large ~56. Cash counted $480. Lemons bought 30.
+Sun — market day, Hansen busy. Small 41, large 33. Cash counted $329. Lemons bought 30.</div>
+        <p class="body">Then send this. Click each highlighted part to see why it's there:</p>
+
+        <div class="annotated">
+          <div class="sample-prompt ap-body"><span class="ap-seg" data-ap="1">Here's a real week I've already reviewed myself.</span> <span class="ap-seg" data-ap="2">Run the Skill on it and show me the output. Then I'll tell you where it's wrong</span> — <span class="ap-seg" data-ap="3">each correction is a piece of my judgment the Skill was missing.</span> <span class="ap-seg" data-ap="4">Add those to the Skill and show me what changed.</span></div>
+          <p class="ap-hint">Click a highlighted part to see why it's there.</p>
+          <div class="ap-callout"></div>
+          <ol class="ap-notes">
+            <li data-ap="1"><b>A known answer.</b> The whole trick. If you don't already know the right answer, you can't tell whether the Skill got it right — it sounds just as sure either way.</li>
+            <li data-ap="2"><b>You're the grader.</b> Claude runs the method; you judge the result. Claude doesn't know what you know about this week.</li>
+            <li data-ap="3"><b>Corrections are judgment.</b> Each "no, that's wrong" isn't a complaint about one week. It's a rule you've been carrying in your head.</li>
+            <li data-ap="4"><b>Show what changed.</b> So you can check each rule went in the way you meant — and nothing else quietly changed.</li>
+          </ol>
+        </div>
+
+        <p class="body">The first run will probably look something like this:</p>
+        <div class="claude-out">
+          <div class="co-head">Claude · sample response</div>
+          <div class="co-body">
+            <p><b>Weekly recap · Tuesday to Sunday</b></p>
+            <ul>
+              <li>Cups sold: 403 · Cash: $1,757</li>
+              <li>Best day: Saturday — 114 cups, $480</li>
+              <li>Worst day: Tuesday — 37 cups, $163</li>
+              <li>Cost per cup: about $0.42 (lemons and cups, from the cost sheet)</li>
+            </ul>
+            <p><b>One thing to watch:</b> Saturday was your biggest day by far. Bring extra cups and ice next weekend.</p>
+          </div>
+        </div>
+        <p class="co-verdict">What to notice: it reads like a finished recap. But you know this week. It used Saturday's $480 without mentioning that the cups add up to $512. It skipped Thursday's 45 lemons. And it dropped every note — "hot!!", "soccer tourney setup" — so the best day has no reason attached.</p>
+
+        <p class="body">
+          Now be the grader. Tell Claude each of those misses in your own words — and what you'd want
+          done instead. Then compare the Skill before and after:
+        </p>
+
+        <div class="tabs">
+          <div class="tab-bar">
+            <button class="tab" data-tab="a">Before testing</button>
+            <button class="tab active" data-tab="b">After your corrections</button>
+          </div>
+          <div class="tab-panel" data-panel="a">
+            <div class="sample-prompt">Steps
+1. Total the cups and cash for each day, and for the week.
+2. Name the best day and the worst day.
+3. Work out the cost per cup from the cost sheet.
+4. End with one thing to watch next week.</div>
+            <p>Four tidy steps — and blind to everything you caught in Module 06.</p>
+          </div>
+          <div class="tab-panel" data-panel="b">
+            <div class="sample-prompt"><b>Check first
+- For each day, compare the cash with cups × price. If cash and cup counts disagree by more than $10, flag it — never pick one silently.
+- If a day's lemons are far from the usual (about 30), ask why before booking them.</b>
+
+Steps
+1. Total the cups and cash for each day, and for the week.
+2. <b>Note the weather and any event (games, market) next to each day.</b>
+3. Name the best day and the worst day<b>, and what was going on</b>.
+4. Work out the cost per cup from the cost sheet.
+5. End with one thing to watch next week.
+
+<b>Not your call — hand these back to the owner
+- Whether a gap is a miscount or missing cash.</b></div>
+            <p>New lines are in bold. Each one is a correction you made.</p>
+          </div>
+        </div>
+        <p class="co-verdict">What to notice: the Skill didn't get smarter on its own — you put your judgment in, one correction at a time. And look at the last section. You can't write down how to tell a miscount from missing cash. But you can write down that it isn't the Skill's call — the next best thing to bottling it.</p>
+
+        <p class="body">Run the updated Skill on the same week. If it flags Saturday, asks about Thursday and notes each day's weather or event, it passes.</p>
+
+        <!-- Step 4 -->
+        <h2 class="sec"><span class="sec-kicker">Step 4 · Click and learn</span>What bottles, and what won't travel</h2>
+        <p class="body">
+          Some of what you know fits on the card. Some fits partly. Some won't travel at all. Sort these
+          seven things from running the stand — there's room to disagree with us.
+        </p>
+        <div class="sorter" data-choices="a:Bottles well|b:Partly|c:Won't travel">
+          <div class="sort-item" data-answer="a"><p class="sort-text">Our weekly recap: totals, best and worst day, cost per cup, one flag.</p><template class="fb">Clear steps, a clear result, and you can test it on a week you've already checked. This is exactly what Skills are good for.</template></div>
+          <div class="sort-item" data-answer="a"><p class="sort-text">Checking that the cash matches the cup counts before the recap goes out.</p><template class="fb">It's a rule with arithmetic in it: cups times price should equal the cash. Write it down once and it gets checked every time — even on a Saturday when you're too tired to.</template></div>
+          <div class="sort-item" data-answer="b"><p class="sort-text">Writing the weekend chalkboard specials in our voice.</p><template class="fb">A voice guide and a few past examples help a lot — that's what your brand book from Module 04 is for. But whether a line is actually good is a matter of taste, and taste stays yours.</template></div>
+          <div class="sort-item" data-answer="b"><p class="sort-text">Pricing a new drink from the cost sheet.</p><template class="fb">The method travels: work out the cost per cup, add a margin, check what's nearby. The right price doesn't. It depends on the corner and the season — a school gate and the farmers market are different worlds.</template></div>
+          <div class="sort-item" data-answer="c"><p class="sort-text">Knowing a soccer game is about to end from how the parking lot looks.</p><template class="fb">You learned this by standing there, week after week. There's no rule you could write that would work for someone who has never seen that lot.</template></div>
+          <div class="sort-item" data-answer="c"><p class="sort-text">Sensing when Hansen is about to change his price.</p><template class="fb">Hansen moves his price by about 50 cents from one weekend to the next, depending on what lemons cost him. Seeing it coming is a feel for one person and one market. Real knowledge — and it lives in your head.</template></div>
+          <div class="sort-item" data-answer="c"><p class="sort-text">Deciding to pack up early when the sky looks wrong.</p><template class="fb">You could write "pack up if it rains." But the real call happens before the rain, from a sky you've learned to read. That's tacit knowledge: useful, real, and very hard to put on a card.</template></div>
+        </div>
+
+        <p class="body">
+          The "won't travel" items have something in common: they come from being there, many times,
+          paying attention. That isn't a flaw in Skills. It's where a lot of your value lives. An earlier
+          class didn't agree on what that means:
+        </p>
+
+        <div class="voices">
+          <p class="v-head">From the class</p>
+          <blockquote class="voice">"worth more, because i cannot articulate all of it"<span class="voice-who">— a participant</span></blockquote>
+          <blockquote class="voice">"Something different… now your knowledge can be commoditized"<span class="voice-who">— a participant</span></blockquote>
+          <blockquote class="voice">"It’s just easier to bottle it down"<span class="voice-who">— a participant</span></blockquote>
+        </div>
+
+        <p class="body">
+          All three can be true at once. A Skill makes your method easier to share — and easier to copy.
+          It can't copy the part you couldn't put into words. Now try the same move on your own work:
+        </p>
+        <div class="sample-prompt">Help me turn [a task I do the same way every time] into a Skill. Ask me how I do it, step by step, and what good looks like. Then write it up, and test it on this example where I already know the answer: [example].</div>
+        <p class="body">
+          Use an example you're allowed to share. Never paste confidential or patient-identifiable
+          information into a tool your organization hasn't approved for it. A made-up or already-public
+          example works fine for testing.
+        </p>
+
+        <!-- Step 5 -->
+        <h2 class="sec"><span class="sec-kicker">Step 5 · Quick check</span>Make sure it clicked</h2>
+        <div class="quiz-grid">
+          <div class="quiz">
+            <p class="quiz-k">Quick check</p>
+            <p class="quiz-q">Your Skill priced a cup at $4 for your waterfront corner in July. A friend uses it for a stand at the school gate in September. What's the risk?</p>
+            <div class="quiz-opts">
+              <button class="quiz-opt">None. If the Skill worked for you, it will work for them.<template class="fb">It worked for your corner, your customers and your month. The Skill doesn't know any of that. It only knows "$4."</template></button>
+              <button class="quiz-opt" data-correct="true">The Skill carries your conclusion, not the judgment behind it. At the school gate, the right price might be closer to $2.<template class="fb">Janelle, a pickup parent, said $2 a cup means every day, and $4 means a once-a-week treat. Your $4 was a good answer to a different question. A better Skill carries the method — and says when the answer needs a local check.</template></button>
+              <button class="quiz-opt">Claude will notice the new corner and change the price on its own.<template class="fb">Only if the Skill tells it to ask. A Skill follows what's written. If "$4" is written, "$4" is what travels.</template></button>
+              <button class="quiz-opt">The friend will get a random price, because AI is unpredictable.<template class="fb">Claude will follow the Skill quite faithfully. The problem isn't randomness. It's that the Skill faithfully repeats a price that was only right for you.</template></button>
+            </div>
+          </div>
+          <div class="quiz">
+            <p class="quiz-k">Quick check</p>
+            <p class="quiz-q">You've written a Skill for a task you know well. What's the best way to know it's good before you share it?</p>
+            <div class="quiz-opts">
+              <button class="quiz-opt">Ask Claude whether the Skill is good.<template class="fb">Claude can tell you whether it's clear and complete. It can't check it against what you know. Only a known answer can do that.</template></button>
+              <button class="quiz-opt">Make sure it reads clearly and covers every step.<template class="fb">Clear is good — but almost every draft reads clearly. The first recap in Step 3 read nicely and still missed a $32 gap.</template></button>
+              <button class="quiz-opt" data-correct="true">Test it on cases where you already know the right answer.<template class="fb">That's what you did with the week from Module 06. Every miss shows you a piece of judgment to add — or a call the Skill should hand back to a person.</template></button>
+              <button class="quiz-opt">Share it widely and see whether anyone complains.<template class="fb">Then you find out late, from someone who trusted it. Test first, on cases you've already judged yourself.</template></button>
+            </div>
+          </div>
         </div>
 
         <!-- ── Checkpoint ── -->
         <div class="checkpoint">
           <p class="label">Checkpoint</p>
           <p class="check-q">
-            Did your Skill pass the week you'd already judged yourself — and what did you have to
-            add to make it pass?
+            Did your Skill pass the week you'd already judged yourself — and what did you have to add
+            to make it pass?
           </p>
           <div class="check-choices">
-            <button class="check-btn" data-action="pass">It passed once I added my judgment</button>
-            <button class="check-btn ghost" data-action="stuck">It still gets my case wrong</button>
+            <button class="check-btn" data-action="pass">Yes — it passed once I added my judgment</button>
+            <button class="check-btn ghost" data-action="stuck">Not yet — it still gets my week wrong</button>
           </div>
 
           <div class="helper" id="helper">
-            <p class="help-q">Find the missing judgment</p>
+            <p class="help-q">That's normal. Finding what's missing is the exercise.</p>
             <div class="help-choice">
-              <button class="help-btn" data-toggle="h1">Name what it can't see</button>
+              <button class="help-btn" data-toggle="h1">Find the judgment the Skill is missing</button>
               <div class="help-body" id="h1">
-                <p>Put your output next to your corrected version and ask:</p>
-                <div class="sample-prompt">Compare your output to my corrected version. What piece of judgment did I apply
-that isn't written anywhere in the Skill? State it as a rule — and tell me if
-it even CAN be stated as a rule.</div>
+                <p>Put the Skill's output next to your own corrected version, then ask:</p>
+                <div class="sample-prompt">Compare your output to my corrected version. What piece of judgment did I use that isn't written anywhere in the Skill? Write it as a rule — and tell me honestly if it can't be written as a rule.</div>
                 <p class="skill-note">
-                  The corrections are the expertise. If a correction can't be written as a rule,
-                  that's the part of you that doesn't travel.
+                  Your corrections are the expertise. If one can't be written as a rule, write down that
+                  it's your call — and have the Skill hand it back to you.
                 </p>
+              </div>
+            </div>
+            <div class="help-choice">
+              <button class="help-btn" data-toggle="h2">Claude says the Skill already handles it</button>
+              <div class="help-body" id="h2">
+                <p>Point to the exact miss, with the numbers:</p>
+                <div class="sample-prompt">Saturday's cups add up to $512 and the box held $480. Your recap didn't mention it. Add a rule so it always would, then run it on this week again.</div>
+                <p class="skill-note">"It's wrong" is hard to act on. "It missed the $32 gap" is a rule waiting to be written.</p>
               </div>
             </div>
           </div>
         </div>
 
-        <p class="check-confirmed">A Skill that runs your method — plus a clear-eyed list of what it still can't carry.</p>
+        <p class="check-confirmed">A Skill that runs your recap your way — and a clear list of what it still can't carry.</p>
 
         <!-- ── After the checkpoint ── -->
         <div class="post-checkpoint">
+          <details class="deep">
+            <summary>Under the hood, in plain English</summary>
+            <div class="deep-body">
+              <p>
+                A Skill is a short instruction file — often called SKILL.md — sometimes with examples or
+                templates attached. At the top are a name and a description. When your request matches
+                the description, Claude opens the Skill and follows it, the way you'd pull the right
+                recipe card from the box.
+              </p>
+              <p>
+                Because it's just a file, anyone can share it — a colleague, or an agent running with
+                nobody watching. That's why the testing matters. You trust a Skill not because it sounds
+                confident (Claude sounds confident either way), but because you watched it get cases right
+                that you'd already judged. It doesn't learn on its own, so when something changes — a new
+                corner, a new season — test it again.
+              </p>
+            </div>
+          </details>
+
+          <div class="transfer">
+            <p class="tr-label">Try it at work</p>
+            <p>
+              Name <strong>one thing you could bottle this week</strong>: a task with steps you could
+              teach a new colleague. Checking a long document for internal consistency (do the summary
+              numbers match the tables?), the order you review a data listing in, the structure of an SOP.
+              Then test it on an old document you've already reviewed yourself.
+            </p>
+            <p>
+              And name <strong>one thing only you can do</strong>: knowing which reviewer will push back,
+              and on what, or spotting the result that's technically fine but doesn't look right. Both
+              matter. Bottle the first; protect time for the second.
+            </p>
+            <p>
+              As always: approved tools only for confidential or identifiable data, and a qualified
+              person's sign-off on anything that matters. A Skill carries a method, not a signature.
+            </p>
+          </div>
+
           <div class="takeaway">
-            <p><strong>In the era of AI your hard-won expertise is worth more, not less</strong> —
-            it's the scarce input a Skill can't generate on its own. But some of it won't fit in
-            the box. Knowing which is which is its own kind of expertise.</p>
+            <p><strong>Your expertise is worth more now, not less.</strong> Claude wrote almost every
+            word of your Skill. But every rule that made it right — flag the gap, ask about the lemons,
+            note the weather — came from you. That's the input a Skill can't generate on its own.</p>
+            <p>Some of what you know won't fit in the bottle at all: the parking lot, the sky, Hansen's
+            next move. That isn't a failure. It's the part of the work that still needs you.</p>
+            <p>Hold onto your Skill. In the next module, you'll build a check around it, so you can
+            trust it to run when you're not watching.</p>
           </div>
 
           <div class="closing-call">
             <p class="cc-label">Before you move on →</p>
-            <p>Answer the three <strong>reflections</strong> on the right while it's fresh. They're
-            your takeaway from this module, and they go into your final report.</p>
+            <p>Take two minutes for the three <strong>reflections</strong> on the right. They're your
+            takeaway from this module, and they become part of your final report. When you're done,
+            look up — your facilitator will bring the room together for a short debrief.</p>
           </div>
         </div>
       </div>
@@ -172,23 +435,23 @@ it even CAN be stated as a rule.</div>
 
         <div class="reflect-q">
           <p class="q-text">Claude did almost all the work here — yet the skill was only as good as the expertise you put in. In the era of AI, is your own hard-won expertise worth more, less, or just something different?</p>
-          <p class="q-hint">Argue your side.</p>
-          <textarea rows="4" placeholder="Your answer…"></textarea>
+          <p class="q-hint">There's no right answer. Pick a side and say why — the three quotes in Step 4 might help you decide.</p>
+          <textarea rows="4" placeholder="In your own words…"></textarea>
         </div>
 
         <div class="reflect-q">
           <p class="q-text">Name one thing you know how to do that would package well into a skill — and one that wouldn't, no matter how you tried. What's the difference between them?</p>
-          <p class="q-hint">Two examples, one contrast.</p>
-          <textarea rows="4" placeholder="Your answer…"></textarea>
+          <p class="q-hint">Think back to the sorter. What made something bottle well, and what made it stay with you?</p>
+          <textarea rows="4" placeholder="In your own words…"></textarea>
         </div>
 
         <div class="reflect-q">
-          <p class="q-text">Whose expertise on your team — yours, or someone else's — is locked in one head and should travel? Name it.</p>
-          <p class="q-hint">Be specific about whose, and what.</p>
-          <textarea rows="3" placeholder="Your answer…"></textarea>
+          <p class="q-text">Whose expertise on your team — yours, or someone else’s — is locked in one head and should travel? Name it.</p>
+          <p class="q-hint">A role and a task is plenty — for example, "the way our most experienced colleague checks a report before it goes out."</p>
+          <textarea rows="3" placeholder="In your own words…"></textarea>
         </div>
 
-        <p class="can-say">You can now say: a Skill moves your method; your judgment is what makes it worth moving.</p>
+        <p class="can-say">You can now say: I can bottle a method into a Skill — and I know which parts of my judgment won't fit.</p>
       </div>
     </section>
   </main>
@@ -199,6 +462,7 @@ it even CAN be stated as a rule.</div>
   <script src="assets/registry.js"></script>
   <script src="assets/chrome.js"></script>
   <script src="assets/sync.js"></script>
+  <script src="assets/learn.js"></script>
   <script src="assets/course.js"></script>
 </body>
 </html>

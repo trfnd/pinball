@@ -1,0 +1,26 @@
+{
+  "v": 4,
+  "createdOnFiles": { "v": 1, "at": "2026-10-07T20:40:00Z" },
+  "lists": "css",
+  "title": "Lakeside Lemonade — Facilitator Debrief Deck",
+  "cover": "open-01-cover",
+  "order": [
+    "open-01-cover", "lens",
+    "m01", "m01-practice", "m02", "m03", "m04", "m05",
+    "checkpoint",
+    "part2", "m06", "m07", "m08", "m09", "m09-patterns", "m10", "bonus",
+    "close", "credits"
+  ],
+  "sections": {
+    "opening": { "description": "The workshop rhythm, the ground rules, and the four Ds lens for the whole day", "start": "open-01-cover" },
+    "part1": { "description": "Part 1 debriefs: working with Claude, one module at a time", "start": "m01" },
+    "checkpoint": { "description": "Checkpoint: the jagged frontier and your own delegation map", "start": "checkpoint" },
+    "part2": { "description": "Part 2 debriefs: agents, teams of agents, trust and deployment", "start": "part2" },
+    "closing": { "description": "Four questions to take back, where to keep learning, and credits", "start": "close" }
+  },
+  "faces": {
+    "source-serif-4": { "family": "Source Serif 4", "href": "https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@300..700&display=swap" },
+    "dm-sans": { "family": "DM Sans", "href": "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400..700&display=swap" }
+  },
+  "designSystems": []
+}

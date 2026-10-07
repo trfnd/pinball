@@ -1,0 +1,30 @@
+<section id="bonus" data-transition="fade" style="background:#FAF9F5;color:#141413;font-family:'DM Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:36px">
+<p style="font-size:24px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#A24D2E">Bonus · Access · Diligence</p>
+<h2 style="font-family:'Source Serif 4', Georgia, serif;font-size:72px;font-weight:500;line-height:1.1;color:#141413">Access is where the risk comes from. Decide it first.</h2>
+<div style="display:flex;gap:48px;align-items:stretch">
+<div style="flex:1.85;display:flex;flex-direction:column;gap:24px">
+<p style="font-size:32px;line-height:1.4;color:#4F4D47"><span style="color:#141413"><b>It inherits your permissions:</b></span> a connected tool lets Claude "access and potentially modify data within that service."</p>
+<p style="font-size:32px;line-height:1.4;color:#4F4D47"><span style="color:#141413"><b>Read, do, check:</b></span> the narrowest access that does the job; approval for anything that changes things; a record, and stop if it drifts.</p>
+<p style="font-size:32px;line-height:1.4;color:#4F4D47"><span style="color:#141413"><b>Prompt injection is phishing aimed at the AI.</b></span> It needs untrusted content and the power to act at once. Remove either one.</p>
+<p style="font-size:32px;line-height:1.4;color:#4F4D47"><span style="color:#141413"><b>Health data:</b></span> agreements must be switched on, and some features fall outside them.</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:20px;background:#D97757;border-radius:24px;padding:40px">
+<p style="font-size:24px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#141413">Discuss · groups · 4 min</p>
+<p style="font-family:'Source Serif 4', Georgia, serif;font-size:44px;line-height:1.2;color:#141413">For one tool: what may it read, do alone, and how will you check?</p>
+<p style="font-size:24px;line-height:1.45;color:#141413">Where does untrusted content enter your work? Practice first in a dedicated folder of public or de-identified documents.</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:620px;font-size:24px;color:#73706A">Lakeside Lemonade · Debrief</p>
+<p style="position:absolute;right:128px;bottom:64px;width:1020px;font-size:24px;color:#73706A;text-align:right">MCP docs · Anthropic Help Center · Prompt injection defenses</p>
+<aside>Connectors run on the Model Context Protocol, whose documentation describes it as "like a USB-C port for AI applications." The catch, from Anthropic's Help Center: "Claude inherits each person's permissions from the connected service," and "When connecting to a service, you're granting Claude permission to access and potentially modify data within that service based on your account permissions. Only connect services you trust and need for your workflows." On Team and Enterprise plans, admins can set each action to Always allow, Needs approval or Blocked. Warn about "approval fatigue": clicking approve on everything stops being real oversight, so set clear boundaries instead.
+
+Prompt injection, plainly: "adversarial instructions hidden within the content that AI models process" — Anthropic compares it to phishing. The Cowork guidance gives the most useful rule: an attack needs two things at the same time — Claude reading content from outside your trusted boundary, and Claude being able to act. Remove either and the risk drops. So a session that reads vendor PDFs or web pages shouldn't also be able to send email or edit the shared drive. Anthropic's internal tests show successful attacks falling (23.6% to 11.2% in the August 2025 pilot, about 1% in November 2025, under 0.08% more recently), but setups differ, so they're not comparable or real-world guarantees; Anthropic says "No browser agent is immune to prompt injection" and "A 1% attack success rate... still represents meaningful risk."
+
+Health data — confirm with your privacy office before presenting, because coverage changes: "Standard Claude Enterprise plans do not include BAA coverage without action from a Primary Owner." Even with a BAA, data sent through connectors to third parties isn't covered, and some features (including beta features and Claude in Chrome) are excluded. Anthropic advised "avoiding use of Claude in Chrome for sites that involve financial, legal, medical, or other types of sensitive information." In practice: keep browser agents away from data-capture systems, safety databases and patient portals; practice in a dedicated folder with backups.
+
+Discussion: groups, 4 minutes, on the last line.
+
+Sources: https://modelcontextprotocol.io/docs/getting-started/intro ; https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities ; https://support.claude.com/en/articles/13364135-use-claude-cowork-safely ; https://www.anthropic.com/research/prompt-injection-defenses ; https://www.anthropic.com/news/claude-for-chrome ; https://support.claude.com/en/articles/8114513-business-associate-agreements-baa-for-commercial-customers ; https://www.anthropic.com/engineering/claude-code-sandboxing
+
+Timing: 8 minutes.</aside>
+</section>

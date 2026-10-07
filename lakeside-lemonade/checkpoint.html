@@ -8,7 +8,9 @@
   <meta name="robots" content="noindex,nofollow" />
   <link rel="stylesheet" href="assets/course.css" />
   <link rel="stylesheet" href="assets/extra.css" />
+  <link rel="stylesheet" href="assets/learn.css" />
   <script>
+    /* gate guard — redirect before paint if the course wasn't entered */
     (function () {
       var K = 'lemonade.gate.participant';
       try {
@@ -25,96 +27,382 @@
   <main>
     <!-- ── FRAME (left) ─────────────────────────────────────── -->
     <section class="col frame">
-      <p class="module-id">Checkpoint · Between the parts</p>
+      <p class="module-id">Checkpoint · Between Part 1 and Part 2</p>
       <h1 class="question">What would you build for your own life?</h1>
+
+      <div class="bigidea">
+        <p class="bi-k">The big idea</p>
+        <p class="bi-v">You don't need permission, a plan, or a technical background to start. Pick something small and true — and make it.</p>
+      </div>
+      <div class="meta-chips">
+        <span class="chip">About 20–30 minutes</span>
+        <span class="chip">Your idea, your rules</span>
+      </div>
 
       <div class="frame-row">
         <div class="k">Where you are</div>
-        <div class="v">Part 1 is done. You ran the whole shape — customer, corner, price, brand, launch — on a lemonade stand. Before Part 1 turns into Part 2 (agents and systems), run it on something that's actually yours.</div>
+        <div class="v">Part 1 is done. You ran the whole pattern — customer, corner, price, brand, launch — on a lemonade stand, and ended with a page people can see.</div>
       </div>
       <div class="frame-row">
-        <div class="k">Your role</div>
-        <div class="v">Builder. No case, no files from us — your idea, your knowledge, your call on when it's good enough.</div>
+        <div class="k">Your part</div>
+        <div class="v">Builder. Your idea, your knowledge, and your call on when it's good enough. Claude does the typing.</div>
       </div>
       <div class="frame-row">
-        <div class="k">Time</div>
-        <div class="v">About 20–30 minutes. One sitting. Don't over-scope it.</div>
+        <div class="k">You'll learn</div>
+        <div class="v">How to size a first build so you can finish it today — and how to brief Claude on something only you understand.</div>
       </div>
 
       <div class="frame-row tool">
         <div class="k">Tool</div>
-        <div class="v">Claude — however you like to work with it.</div>
+        <div class="v">Claude — a normal chat window. Ask it to build something, and a page appears next to the chat.</div>
       </div>
       <div class="inputs" style="margin-top:22px;border-bottom:none;padding-bottom:0;">
-        <p class="inputs-intro">Pick one of four:</p>
+        <p class="inputs-intro">Nothing from us this time. You bring:</p>
         <div class="folder-block">
-          <div class="file-row"><span class="fname">Sparks joy</span><span class="fdesc">a small delight, for you or someone you know</span></div>
-          <div class="file-row"><span class="fname">Makes life easier</span><span class="fdesc">a nuisance you'd happily never do by hand again</span></div>
-          <div class="file-row"><span class="fname">Answers a question</span><span class="fdesc">something you've wondered and could show</span></div>
-          <div class="file-row"><span class="fname">Feels like magic</span><span class="fdesc">a thing you didn't think you could make</span></div>
+          <div class="folder-head">
+            <span class="folder-name">one small idea of your own</span>
+          </div>
+          <p class="fdesc" style="margin:0;">Pick a direction in Step 1: something that sparks joy, makes your life easier, answers a question, or feels like magic.</p>
         </div>
         <details class="how">
-          <summary>Directions adapted from…</summary>
+          <summary>Where do these directions come from?</summary>
           <div class="how-body">
-            Karen Brennan's <em>Vibe Coding</em> course, Harvard Graduate School of Education.
+            Directions adapted from Karen Brennan's Vibe Coding course, Harvard Graduate School of Education.
           </div>
         </details>
       </div>
+
+      <dl class="terms">
+        <p class="t-head">Words to know</p>
+        <dt>Scope</dt>
+        <dd>How big the thing is. For today: small enough to finish in one sitting.</dd>
+        <dt>Build loop</dt>
+        <dd>Build, look, say what's off, repeat. Each round gets a little closer to what you pictured.</dd>
+        <dt>Vibe coding</dt>
+        <dd>Describing what you want in plain words and letting AI write the code. You judge the result, not the code.</dd>
+      </dl>
     </section>
 
     <!-- ── WORK (middle) ────────────────────────────────────── -->
     <section class="col work">
       <div class="inner">
         <p class="scene">
-          You just took a project from nothing to a shareable website, with AI, in five short
-          steps. That pattern wasn't about lemonade. It's about <em>you</em> being able to make a
-          real thing out of an idea now — so make one. Not for a grade. Because you can.
+          Five modules ago you had twelve interviews and a map with eight numbered corners. Now you have
+          a customer, a corner, a price, a voice — and a page people can see. That was never really
+          about lemonade. It was about taking an idea from nothing to something real. Now make something
+          for you. Not for a grade — just because you can.
         </p>
 
-        <div class="activity">
-          <h4><span class="step-n">1</span>Choose something small and true</h4>
+        <div class="factbar">
+          <div class="fact"><div class="fact-n">4</div><div class="fact-l">directions to choose from</div></div>
+          <div class="fact"><div class="fact-n">1</div><div class="fact-l">small thing, finished today</div></div>
+          <div class="fact"><div class="fact-n">0</div><div class="fact-l">lines of code you need to write</div></div>
+          <div class="fact"><div class="fact-n">2+</div><div class="fact-l">rounds, usually, before it feels right</div></div>
+        </div>
+
+        <p class="body">
+          A rough plan: five minutes to choose and size an idea, a few on your brief, then fifteen or so
+          building. Before you start, jot down the first reflection on the right: <strong>what you're
+          going to build</strong>.
+        </p>
+
+        <!-- Step 1 -->
+        <h2 class="sec"><span class="sec-kicker">Step 1 · Choose</span>Pick a direction</h2>
+        <p class="body">
+          There's no right answer. Open the four directions below and notice which one makes you think,
+          "Oh — I know exactly what I'd make." The best first builds are oddly specific: a thing only
+          your family needs, a question you keep wondering about. <strong>Specific beats
+          impressive.</strong>
+        </p>
+
+        <div class="xgrid">
+          <details class="xcard"><summary><span class="xc-title">Something that sparks joy</span>
+            <span class="xc-line">A small delight, for you or someone you love.</span></summary>
+            <div class="xcard-more">
+              <h5>Idea starters</h5>
+              <ul>
+                <li>An interactive birthday card, full of jokes only your family will get</li>
+                <li>A page that turns your kids' chores into a points game</li>
+                <li>A trivia quiz about your family, for the next holiday dinner</li>
+              </ul>
+              <h5>A starter prompt</h5>
+              <div class="sample-prompt">I want to build a small interactive birthday card for [who it's for]. It opens like a real card and shows our family's inside jokes: [your jokes]. Build a first version I can look at, then we'll improve it together.</div>
+            </div></details>
+
+          <details class="xcard"><summary><span class="xc-title">Something that makes your life easier</span>
+            <span class="xc-line">A small chore you'd happily never do by hand again.</span></summary>
+            <div class="xcard-more">
+              <h5>Idea starters</h5>
+              <ul>
+                <li>A packing list builder for family trips: pick the trip, get the list</li>
+                <li>A weekly dinner planner that also writes the shopping list</li>
+                <li>A page that splits shared costs fairly after a group holiday</li>
+              </ul>
+              <h5>A starter prompt</h5>
+              <div class="sample-prompt">I want to build a small packing list builder for my family's trips. I pick the trip and the nights, and it gives me a checklist. Here's what you need to know that you can't guess: [who's coming, what we always forget]. Build a first version I can look at, then we'll improve it together.</div>
+            </div></details>
+
+          <details class="xcard"><summary><span class="xc-title">Something that answers a question</span>
+            <span class="xc-line">Something you've wondered about, made so you can see the answer.</span></summary>
+            <div class="xcard-more">
+              <h5>Idea starters</h5>
+              <ul>
+                <li>A tiny tool that answers "how much do we really spend on takeout?"</li>
+                <li>A page that shows how a small daily habit adds up over a year</li>
+                <li>An interactive explainer of something you know well — like why a small sample can fool you</li>
+              </ul>
+              <h5>A starter prompt</h5>
+              <div class="sample-prompt">I want to build a small tool that answers one question: how much do we really spend on takeout? I type in a month of orders; it shows the yearly total. Here's what you need to know that you can't guess: [what counts as takeout for us]. Build a first version I can look at, then we'll improve it together.</div>
+            </div></details>
+
+          <details class="xcard"><summary><span class="xc-title">Something that feels like magic</span>
+            <span class="xc-line">A thing you didn't think you could make.</span></summary>
+            <div class="xcard-more">
+              <h5>Idea starters</h5>
+              <ul>
+                <li>A choose-your-own-adventure bedtime story starring your kids' stuffed animals</li>
+                <li>A little drum machine you can play with your keyboard</li>
+                <li>A game you loved as a kid, rebuilt with your own house rules</li>
+              </ul>
+              <h5>A starter prompt</h5>
+              <div class="sample-prompt">I want to build a small choose-your-own-adventure story for my kids, ages [ages]. The heroes are their stuffed animals: [names and personalities]. Every path ends happily. Build a first version I can look at, then we'll improve it together.</div>
+            </div></details>
+        </div>
+
+        <p class="body">
+          Can't decide? Pick the one you'd most like to show someone tonight. A work idea is fine too —
+          just build it with made-up or public example information, never anything confidential.
+        </p>
+
+        <!-- Step 2 -->
+        <h2 class="sec"><span class="sec-kicker">Step 2 · Right-size it</span>Small enough to finish today</h2>
+        <p class="body">
+          The most common first-build mistake isn't a bad idea. It's a big one — the kind that eats your
+          afternoon and still feels unfinished. Something that does <strong>one thing well, for people
+          you know</strong>, is the right size. You can always add more later. Sort these to get a feel
+          for it; disagreeing with us is allowed.
+        </p>
+
+        <div class="sorter" data-choices="a:Too big|b:About right|c:Too small">
+          <div class="sort-item" data-answer="a"><p class="sort-text">An app that runs my whole household</p><template class="fb">Lots of separate jobs hide in there: calendars, chores, meals, money, reminders. Each one would be a fine build on its own. Pick the one that bugs you most and start there.</template></div>
+          <div class="sort-item" data-answer="b"><p class="sort-text">A page that turns my kids' chores into a points game</p><template class="fb">One clear job, for people you know, built on details only you have — which chores, how many points, what the points buy. Very doable today.</template></div>
+          <div class="sort-item" data-answer="a"><p class="sort-text">A tool that answers every HR question at my company</p><template class="fb">"Every" is the warning word. It would need every policy, kept up to date, and getting one wrong has real costs. A smaller cousin works well: a page that explains one process people keep asking you about — using only what's already public.</template></div>
+          <div class="sort-item" data-answer="b"><p class="sort-text">A one-page explainer of my team's acronyms, with a little quiz</p><template class="fb">Specific, useful, and finishable. You know what the acronyms mean; Claude knows how to make a quiz. That's a good split of the work.</template></div>
+          <div class="sort-item" data-answer="c"><p class="sort-text">A reminder that says hello</p><template class="fb">Sweet, but there's not much to learn from it. Claude will get it right the first time, and you won't need to bring anything only you know. Stretch it a little: a morning page that greets you and shows the three things you wanted to get done today.</template></div>
+          <div class="sort-item" data-answer="b"><p class="sort-text">A planner for our garden bed: size, frost dates, what to sow when</p><template class="fb">Right on. One bed, one season, details you already know. A past class built something very close to this — you'll meet it in Step 5.</template></div>
+        </div>
+
+        <div class="concept-intro">
+          <p class="ci-label">A helpful way to think about it</p>
+          <h3>A sketch, not a blueprint</h3>
           <p>
-            Pick one of the four prompts on the left. The best first builds are embarrassingly
-            specific — a tool only your family needs, a page that answers one question you keep
-            re-explaining, a toy that makes one person laugh. Specific beats impressive.
+            In a lot of serious work, nothing starts without a written plan, a review and a signature.
+            That's right when mistakes can hurt someone. But the habit can follow you home and stop you
+            trying small things at all.
+          </p>
+          <p>
+            A first build is a sketch on a napkin. It takes minutes, nobody depends on it, and it shows
+            you what a plan can't: what you actually wanted, and what you forgot to say.
+            <strong>You don't need permission, a plan, or a technical background to start. You need
+            something small and true.</strong> The checking still matters — it just comes later, if the
+            sketch ever becomes something people rely on.
           </p>
         </div>
 
-        <div class="activity">
-          <h4><span class="step-n">2</span>Give Claude what only you know</h4>
-          <p>
-            The same lesson from Module 02 applies: the thing that makes it yours is the context
-            you bring. Tell Claude who it's for, what it needs to do, and the details that live only
-            in your head. Then build, look, correct, build again.
-          </p>
+        <!-- Step 3 -->
+        <h2 class="sec"><span class="sec-kicker">Step 3 · Brief Claude</span>Tell it what only you know</h2>
+        <p class="body">
+          You've done this before. In Module 01, a good brief said what it's for, what to use, and what
+          you want back. In Module 02, the most useful knowledge was the kind nobody wrote down.
+          Building works the same way. Here's a brief to fill in — click each highlighted part to see
+          why it's there.
+        </p>
+
+        <div class="annotated">
+          <div class="sample-prompt ap-body"><span class="ap-seg" data-ap="1">I want to build a small [web page / tool / game]</span> <span class="ap-seg" data-ap="2">that [does one specific thing]</span> <span class="ap-seg" data-ap="3">for [who it's for].</span> <span class="ap-seg" data-ap="4">Here's what you need to know that you can't guess: [the details only you have].</span> <span class="ap-seg" data-ap="5">Build a first version I can look at, then we'll improve it together.</span></div>
+          <p class="ap-hint">Click a highlighted part to see why it's there.</p>
+          <div class="ap-callout"></div>
+          <ol class="ap-notes">
+            <li data-ap="1"><b>Small, and a kind of thing.</b> "Small" sets the scope. Naming the form tells Claude to build something you can click, not write an essay about your idea.</li>
+            <li data-ap="2"><b>One specific thing.</b> The most useful line in the brief. "Turns chores into a points game" is a clear target. "Helps around the house" makes Claude guess — and its guess will be the average house.</li>
+            <li data-ap="3"><b>Who it's for.</b> A page for an eight-year-old looks nothing like one for your book club. Say who will use it, and how — on a phone, or printed on the fridge.</li>
+            <li data-ap="4"><b>What only you know.</b> This is where it becomes yours. Claude knows how to build a points game. It doesn't know the dog needs walking twice a day, or that screen time is the prize that works in your house. Leave this out and you'll get something that works but feels like nobody's.</li>
+            <li data-ap="5"><b>Ask for a first version.</b> Claude starts building, and you know to expect something rough. Want it to check first? Add: "Before you build, ask me up to three questions." Like a good contractor who asks before picking up a hammer.</li>
+          </ol>
         </div>
-        <div class="sample-prompt">I want to build a small [web page / tool / toy] that [does one specific
-thing] for [who it's for]. Here's what you need to know that you can't
-guess: [the details only you have]. Build a first version I can look at,
-then we'll fix it together.</div>
+
+        <div class="reveal">
+          <p class="reveal-k">Make a guess</p>
+          <p class="reveal-q">Before you look: someone wants a page that turns their kids' chores into a points game. What does Claude need to know that it can't guess?</p>
+          <textarea class="reveal-guess" placeholder="Your guess (just for you)…"></textarea>
+          <button class="reveal-btn">Reveal</button>
+          <div class="reveal-body" hidden>
+            <p>Here's what only the parent knows:</p>
+            <ul class="body">
+              <li><b>Which chores</b>, and which child does which.</li>
+              <li><b>Points for each</b> — are the dreaded ones worth more?</li>
+              <li><b>What points buy:</b> screen time, a later bedtime, ice cream.</li>
+              <li><b>The kids' ages</b>, so the words and the look fit.</li>
+              <li><b>Where it lives:</b> a tablet in the kitchen, or the fridge door.</li>
+            </ul>
+            <p>Claude will invent every one of these if you don't say — the average family's answers. Yours are better.</p>
+          </div>
+        </div>
+
+        <p class="body">
+          <strong>Now go.</strong> Paste your filled-in brief into Claude and send it. A page should
+          appear in a panel next to the chat — an <strong>artifact</strong>, like the one you built in
+          Module 05. Got a wall of code instead? Reply: "Please show this as a page I can preview."
+          Still stuck? Wave to your facilitator.
+        </p>
+
+        <!-- Step 4 -->
+        <h2 class="sec"><span class="sec-kicker">Step 4 · Build, look, repeat</span>What to say when it isn't right yet</h2>
+        <p class="body">
+          First versions are rough. Something sits in the wrong place, a button does nothing. That isn't
+          failure. It's the first pancake — the one that teaches you how hot the pan is.
+        </p>
+        <p class="body">
+          The <strong>build loop</strong>: look at what Claude made, try it the way the person it's for
+          would, then say what's off. Claude can't see your screen, so describe exactly what happened.
+          Here's what to say in the three moments everyone hits:
+        </p>
+
+        <div class="tabs">
+          <div class="tab-bar">
+            <button class="tab active" data-tab="a">It's not what I meant</button>
+            <button class="tab" data-tab="b">Something's broken</button>
+            <button class="tab" data-tab="c">It's close!</button>
+          </div>
+          <div class="tab-panel" data-panel="a">
+            <p>The page works, but it isn't the thing in your head. Claude filled a gap with a guess. Name the gap:</p>
+            <div class="sample-prompt">This isn't quite what I meant. I pictured [how you imagined it]. The most important thing is [the one thing]. Keep [what you like] and change [what's off].</div>
+            <p>Be as plain as you'd be with a colleague. "Too busy — make it feel like a picture book" is a perfectly good instruction.</p>
+          </div>
+          <div class="tab-panel" data-panel="b">
+            <p>A button doesn't respond, a total looks wrong, something disappears. Tell Claude three things: what you did, what happened, and what you expected.</p>
+            <div class="sample-prompt">When I click [the button], [what happened]. I expected [what you wanted]. Please fix that, and don't change anything else.</div>
+            <p>That last line keeps a small fix from turning into a redesign. Still broken after two tries? Say so plainly: "Still not working. Let's try a simpler way to do this."</p>
+          </div>
+          <div class="tab-panel" data-panel="c">
+            <p>The fun part. Ask for one or two changes at a time, so you can see what each one did.</p>
+            <div class="sample-prompt">This is close. Two changes: [first change] and [second change]. Then tell me one thing you'd add if this were yours.</div>
+            <p>Sometimes Claude's idea is one you'll love. You still decide. And when it's good enough for the person it's for, stop. Good enough today beats perfect never.</p>
+          </div>
+        </div>
+
+        <div class="quiz-grid">
+          <div class="quiz">
+            <p class="quiz-k">Quick check</p>
+            <p class="quiz-q">Your first version is clunky and a button doesn't work. What now?</p>
+            <div class="quiz-opts">
+              <button class="quiz-opt">Start a new chat and write the whole brief again from scratch.<template class="fb">You'd throw away everything Claude already knows about your idea. Starting fresh can help much later, if a chat gets tangled after many changes — but a broken button is a normal first-round fix.</template></button>
+              <button class="quiz-opt" data-correct="true">Tell Claude exactly what happened and what you expected.<template class="fb">That's the build loop, working as it should. A clunky first version isn't a sign you did something wrong — it's the starting point. Clear feedback (what you clicked, what happened, what you wanted) gets you a fix fast.</template></button>
+              <button class="quiz-opt">Stop — this probably needs someone more technical.<template class="fb">Nothing here needs technical skill. Telling Claude a button is broken is like telling a colleague the printer jammed. Everyone's first version has a broken button or two.</template></button>
+            </div>
+          </div>
+          <div class="quiz">
+            <p class="quiz-k">Quick check</p>
+            <p class="quiz-q">Which opening request gives Claude the most useful start?</p>
+            <div class="quiz-opts">
+              <button class="quiz-opt">"Make me something fun for my family."<template class="fb">Claude will make something — the average family's something. There's no one specific thing in it, and nothing only you know.</template></button>
+              <button class="quiz-opt" data-correct="true">"A points game for my two kids' chores. Dishes are worth more than feeding the cat, and points buy screen time."<template class="fb">One specific thing, who it's for, and details only you have. That's a brief Claude can build from.</template></button>
+              <button class="quiz-opt">"Here are twenty features I might want someday."<template class="fb">That's a plan for a big build. Start with the one feature that matters most, and add the rest round by round.</template></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 5 -->
+        <h2 class="sec"><span class="sec-kicker">Step 5 · For a little nerve</span>What a past class made</h2>
+        <p class="body">
+          Another group reached this same checkpoint and built things for their own lives. Here are
+          three of them, with the direction each one came from.
+        </p>
 
         <div class="concept-intro sneak-peek">
-          <p class="ci-label">For a little nerve</p>
-          <h3>From a past cohort</h3>
-          <p><strong>Beat 75%</strong> — a hands-on game showing why entangled particles beat any
-          pre-agreed strategy (classical play tops out at 75%, quantum at ~85%). <em>Answers a
-          question.</em></p>
-          <p><strong>Bed Buddies</strong> — a garden-bed planner: enter the bed size and frost
-          dates, pick seeds, get a layout and a sowing calendar. <em>Sparks joy.</em></p>
-          <p><strong>Showbirds</strong> — a planning page for a bird-of-paradise costume party:
-          three looks, a shared checklist, an idea board. <em>Sparks joy.</em></p>
+          <p class="ci-label">From a past class</p>
+          <h3>Three things people made</h3>
+          <p><strong>Beat 75%: a hands‑on test of Bell's theorem.</strong> An interactive game that shows
+          why entangled particles beat any pre-agreed strategy: classical play tops out at 75%, quantum
+          at about 85%. <em>Something that answers a question.</em></p>
+          <p><strong>Bed Buddies.</strong> A garden bed planner for families: enter the bed's size and
+          frost dates, pick seeds, and it lays out the bed and the season's sowing calendar.
+          <em>Something that sparks joy.</em></p>
+          <p><strong>Showbirds.</strong> A planning page for a bird-of-paradise costume party: three
+          looks, a shared shopping checklist and an idea board for the group. <em>Something that sparks
+          joy.</em></p>
+        </div>
+
+        <p class="body">
+          Notice what they share. Each does one main thing, for someone in particular. And each rests on
+          something its maker brought: an idea from physics, a real garden bed, the plan for a real
+          party. None of these takes a technical background to build. It takes knowing what you want.
+        </p>
+
+        <!-- ── After the build ── -->
+        <details class="deep">
+          <summary>Under the hood, in plain English</summary>
+          <div class="deep-body">
+            <p>
+              When you ask Claude to build a page, it writes <strong>code</strong> — the instructions a
+              web browser follows to draw the page and make the buttons work. You don't need to read it.
+              You judge the page, the way you'd judge a meal without knowing how the oven works.
+            </p>
+            <p>
+              Each change rewrites part of that code, and sometimes a fix for one thing quietly breaks
+              another. That's why "don't change anything else" is so useful — and why it's worth clicking
+              through the whole page after each round.
+            </p>
+            <p>
+              Two honest limits. Claude can't see your screen, so "the total says $0 after I add an
+              order" beats "it's broken." And Claude may say it fixed something when it didn't — it's
+              describing what the fix <em>should</em> do. Check for yourself. You're the one who knows
+              what "working" means.
+            </p>
+            <p>
+              If a long chat gets tangled, start fresh: ask Claude for "a short summary of what we built
+              and what we decided," and paste it into a new chat.
+            </p>
+          </div>
+        </details>
+
+        <div class="transfer">
+          <p class="tr-label">Try it at work</p>
+          <p>The same move works for small tools at work. A few that tend to be about the right size:</p>
+          <p>
+            <strong>An acronym explainer</strong> for a long protocol or SOP, with a short self-quiz for
+            new team members.<br />
+            <strong>A one-page timeline</strong> of a project's milestones to put up at a team meeting.<br />
+            <strong>A step-by-step checklist</strong> for a procedure you explain to someone new every few
+            months.<br />
+            <strong>A reading tracker</strong> for the papers on one question, tagged so you can see the
+            gaps at a glance.
+          </p>
+          <p>
+            Two ground rules. Build with made-up or public example information — keep anything
+            confidential, and anything that could identify a person, out of tools your organization
+            hasn't approved for it. And treat what you build as a sketch: if it ever informs a real
+            decision, a qualified person checks it against the source first.
+          </p>
         </div>
 
         <div class="takeaway">
-          <p>When you've got something — even half-working — come back and write down what happened.
-          The questions on the right are the whole point of the checkpoint: they're where the doing
-          turns into something you'll remember.</p>
+          <p><strong>You're a builder now.</strong> You had an idea, told Claude what only you knew, and
+          went round the loop until it was good enough. That's the whole skill. You just did it.</p>
+          <p>You didn't need permission, a plan, or a technical background. You needed something small
+          and true, and the nerve to look at a rough first version and say what was off — the same
+          judgment you use every time you review a draft.</p>
+          <p>So far, Claude has been <em>making</em> things with you. In Part 2 it starts <em>doing</em>
+          things — taking on whole jobs and making some calls along the way. Everything you practiced
+          here still applies. You'll just need it more.</p>
         </div>
 
         <div class="closing-call">
-          <p class="cc-label">Then → Part 2</p>
-          <p>Next, Claude stops <strong>answering</strong> and starts <strong>doing</strong>. Part 2
-          is agents, parallel workstreams, skills, and how you'd ever trust any of it.</p>
+          <p class="cc-label">Before Part 2 →</p>
+          <p>Take a few minutes for the <strong>reflections</strong> on the right — they become part of
+          your final report. Keep your build open: you may be asked to show it to one or two people
+          nearby, and rough is completely fine. When you're done, look up — your facilitator will bring
+          the room together for a short debrief.</p>
         </div>
       </div>
     </section>
@@ -122,45 +410,45 @@ then we'll fix it together.</div>
     <!-- ── LAND (right) ─────────────────────────────────────── -->
     <section class="col land">
       <div class="land-block">
-        <p class="label">Your build</p>
+        <p class="label">Reflect</p>
 
         <div class="reflect-q">
           <p class="q-text">What I'm going to build, and what I'll give Claude to start</p>
-          <p class="q-hint">A sentence is plenty. Write it before you start.</p>
+          <p class="q-hint">Write this before you start. One sentence on the idea, plus two or three details only you know.</p>
           <textarea rows="3" placeholder="I'm going to build…"></textarea>
         </div>
 
         <div class="reflect-q" data-optional>
           <p class="q-text">A link to what you built (optional)</p>
-          <p class="q-hint">Paste it if you have one — not required.</p>
+          <p class="q-hint">Only if you want to. If you share a link, assume anyone who has it can see the page — so check what's on it first.</p>
           <textarea rows="2" placeholder="https://…"></textarea>
         </div>
 
         <div class="reflect-q">
           <p class="q-text">What did you set out to build, and what did you end up with?</p>
-          <p class="q-hint">The gap between the plan and the thing.</p>
-          <textarea rows="4" placeholder="Your answer…"></textarea>
+          <p class="q-hint">A gap between the plan and the thing is normal — and interesting. What changed along the way?</p>
+          <textarea rows="4" placeholder="In your own words…"></textarea>
         </div>
 
         <div class="reflect-q">
           <p class="q-text">Where did the difference come from?</p>
-          <p class="q-hint">What moved it — a prompt, a correction, a detail you added?</p>
-          <textarea rows="3" placeholder="Your answer…"></textarea>
+          <p class="q-hint">A detail you added? A correction? Something Claude suggested, or a moment you changed your mind?</p>
+          <textarea rows="3" placeholder="In your own words…"></textarea>
         </div>
 
         <div class="reflect-q">
           <p class="q-text">Was your idea too big, about right, or too small? What would you do differently next time?</p>
-          <p class="q-hint">Right-sizing is a skill too.</p>
-          <textarea rows="3" placeholder="Your answer…"></textarea>
+          <p class="q-hint">Right-sizing is a skill too. Honest beats impressive.</p>
+          <textarea rows="3" placeholder="In your own words…"></textarea>
         </div>
 
         <div class="reflect-q">
           <p class="q-text">What did you know that you had to tell Claude, or wish you had told it sooner?</p>
-          <p class="q-hint">The context only you had.</p>
-          <textarea rows="3" placeholder="Your answer…"></textarea>
+          <p class="q-hint">The context only you had — the details that made it yours.</p>
+          <textarea rows="3" placeholder="In your own words…"></textarea>
         </div>
 
-        <p class="can-say">You can now say: you can turn an idea of your own into a real thing with AI.</p>
+        <p class="can-say">You can now say: I can turn an idea of my own into something real with AI.</p>
       </div>
     </section>
   </main>
@@ -171,6 +459,7 @@ then we'll fix it together.</div>
   <script src="assets/registry.js"></script>
   <script src="assets/chrome.js"></script>
   <script src="assets/sync.js"></script>
+  <script src="assets/learn.js"></script>
   <script src="assets/course.js"></script>
 </body>
 </html>

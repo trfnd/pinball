@@ -8,6 +8,7 @@
   <meta name="robots" content="noindex,nofollow" />
   <link rel="stylesheet" href="assets/course.css" />
   <link rel="stylesheet" href="assets/extra.css" />
+  <link rel="stylesheet" href="assets/learn.css" />
   <script>
     /* gate guard — redirect before paint if the course wasn't entered */
     (function () {
@@ -29,95 +30,315 @@
       <p class="module-id">Module 05 · Part 1 — Build the business</p>
       <h1 class="question">Can people actually see it?</h1>
 
+      <div class="bigidea">
+        <p class="bi-k">The big idea</p>
+        <p class="bi-v">You can take an idea all the way to something people can see — and the five-step pattern you just used works far beyond lemonade.</p>
+      </div>
+      <div class="meta-chips">
+        <span class="chip">About 20 minutes</span>
+        <span class="chip">Claude can build a web page for you</span>
+      </div>
+
       <div class="frame-row">
-        <div class="k">Scenario</div>
-        <div class="v">Everything so far — the customer, the corner, the price, the brand — becomes one thing you can send someone: a simple website for the stand.</div>
+        <div class="k">The situation</div>
+        <div class="v">Your customer, your corner, your price and your brand are about to become one thing you can send someone: a simple web page for the stand.</div>
       </div>
       <div class="frame-row">
-        <div class="k">Your role</div>
-        <div class="v">You decide what to show, what to cut, and when it's good enough to share.</div>
+        <div class="k">Your part</div>
+        <div class="v">Claude does the building. You decide what to show, what to cut, and when it's good enough to share.</div>
       </div>
       <div class="frame-row">
-        <div class="k">What you'll practice</div>
-        <div class="v">Turning five modules of decisions into one artifact — and noticing which of those decisions actually surface.</div>
+        <div class="k">You'll learn</div>
+        <div class="v">How to go from a first pass to a version you'd actually share — and how to notice what Claude chose to put first.</div>
       </div>
 
       <div class="frame-row tool">
         <div class="k">Tool</div>
-        <div class="v">Claude, building a one-page site.</div>
+        <div class="v">Claude — ideally the same chat where you built Modules 01–04.</div>
       </div>
       <div class="inputs" style="margin-top:22px;border-bottom:none;padding-bottom:0;">
-        <p class="inputs-intro">Bring your whole Part 1 build into the chat:</p>
+        <p class="inputs-intro">You'll bring everything you've made so far:</p>
         <div class="folder-block">
           <div class="folder-head">
-            <span class="folder-name">everything_from_part1</span>
-            <span class="folder-purpose">your whole build</span>
+            <span class="folder-name">your Part 1 decisions</span>
           </div>
-          <div class="file-row">
-            <span class="fname">personas, corner, price, brand</span>
-            <span class="fdesc">the outputs of Modules 01–04</span>
-          </div>
+          <p class="fdesc" style="margin:0;">Your three personas (01), your corner (02), your price (03) and your brand book (04). No new files this time.</p>
         </div>
         <details class="how">
-          <summary>Don't know where to find it?</summary>
+          <summary>Where do I find it?</summary>
           <div class="how-body">
-            Paste or attach your Part 1 outputs — the personas, the corner, the price, the brand — or just keep going in the same chat where you built them.
+            If you've worked in one chat all along, just keep going there — Claude can already see it all. If you started fresh chats, copy the main result from each module (a few lines each is plenty) and paste them into one new chat. Your reflection answers on the right of each module are a good reminder of what you decided.
           </div>
         </details>
       </div>
+
+      <dl class="terms">
+        <p class="t-head">Words to know</p>
+        <dt>First pass</dt>
+        <dd>The first version of something. It's made to be looked at and improved, not to be perfect.</dd>
+        <dt>Iterate</dt>
+        <dd>Make it, look at it, say what's off, and go again. Each round gets you a little closer.</dd>
+        <dt>Artifact</dt>
+        <dd>Something Claude builds that you can open and share — a page, a document, a small app. It usually appears in a panel next to the chat.</dd>
+      </dl>
     </section>
 
     <!-- ── WORK (middle) ────────────────────────────────────── -->
     <section class="col work">
       <div class="inner">
         <p class="scene">
-          This is where the work stops being notes and becomes something real. The first draft
-          comes back fast and fine — and generic. The interesting part is what you ask it to
-          change, and which of your earlier decisions quietly dominate the page while others
-          barely show up at all.
+          Four modules ago, all you had was interview notes: Megan's melting-down twins, Janelle's
+          $1.50 kids' size, Hansen's quiet tip about hot afternoons on the waterfront. Since then
+          you've chosen a customer, a corner, a price and a voice. Now it all becomes one page you
+          could send someone tonight. The first draft will appear in seconds and look fine. The
+          interesting part is what you change — and which decisions take over while others quietly
+          disappear.
         </p>
 
-        <div class="activity">
-          <h4><span class="step-n">1</span>Get it standing</h4>
-          <p>Bring in everything from Part 1 and ask for the simplest possible version — a site that exists:</p>
+        <div class="factbar">
+          <div class="fact"><div class="fact-n">4</div><div class="fact-l">decisions: customer, corner, price, brand</div></div>
+          <div class="fact"><div class="fact-n">1</div><div class="fact-l">page to hold them all</div></div>
+          <div class="fact"><div class="fact-n">2+</div><div class="fact-l">rounds to a version you'd share</div></div>
+          <div class="fact"><div class="fact-n">5</div><div class="fact-l">steps you can reuse anywhere</div></div>
         </div>
+
+        <!-- Step 1 -->
+        <h2 class="sec"><span class="sec-kicker">Step 1 · Try it</span>Ask for the whole thing at once</h2>
+        <p class="body">Go back to the chat where you built Modules 01–04 (or paste your decisions into a new one) and type:</p>
         <div class="code-prompt">Build a one-page website for my lemonade stand using everything we decided: the customer, the corner, the price, and the brand.</div>
-        <p class="activity">
-          It comes back fast, and it works. It's also a clean default template that could belong to
-          any stand in any town — a generic header, a stock photo, your decisions flattened into
-          placeholder copy. That's fine. You needed something standing before you could make it yours.
+        <p class="body">
+          In a few seconds, a page appears — usually in a panel next to the chat. That's an
+          <strong>artifact</strong>: something Claude built that you can open and click around in.
+          If you get a wall of code instead, reply: "Please show this as a page I can preview." Still
+          stuck? Wave to your facilitator.
+        </p>
+        <p class="body">Here's the kind of thing you'll probably see:</p>
+
+        <div class="claude-out">
+          <div class="co-head">Claude · sample response</div>
+          <div class="co-body">
+            <p>I've built a one-page website for your stand. Here's what's on it:</p>
+            <ul>
+              <li><b>Header</b> — your stand's name on a sunny yellow banner: "Fresh-squeezed daily!"</li>
+              <li><b>Menu</b> — Classic, Strawberry and Mint lemonade, with prices.</li>
+              <li><b>Why choose us</b> — quality ingredients, friendly service, great value.</li>
+              <li><b>Find us</b> — a map pin and your hours.</li>
+              <li><b>About us</b> — a cheerful paragraph about loving lemonade.</li>
+            </ul>
+            <p>Would you like me to adjust the colors, add photos, or include a contact form?</p>
+          </div>
+        </div>
+        <p class="co-verdict">What to notice: it's pleasant, it works, and it looks like a template. Check two things: which decisions got the most space, and whether anything appeared that you never decided — like those extra flavors.</p>
+
+        <p class="body">
+          Yours will look different — it's built from your decisions. But most first passes share
+          that feel: friendly, tidy, a bit template-y. <strong>Take a moment — you just made a
+          website.</strong> From interview notes to a page you can click, in one sentence.
         </p>
 
-        <div class="activity">
-          <h4><span class="step-n">2</span>Make it the version you'd share</h4>
-          <p>Now push it from fine to yours. Name the changes you want, and ask to see what moved:</p>
-        </div>
-        <div class="sample-prompt">Good start. Now make three changes: give it a look that matches my brand's
-voice (not a default template), lead with the real story — a small family
-stand on the waterfront — and cut anything that's taking over the page for no
-reason. Show me a before/after of what you changed.</div>
-        <p class="activity">
-          Now it reads like your stand — the waterfront story up top, your brand's voice in the copy,
-          the filler gone. And the before/after is the useful part: it shows you which of your Part 1
-          decisions actually made it onto the page, and which ones you'd assumed were there but weren't.
+        <!-- Step 2 -->
+        <h2 class="sec"><span class="sec-kicker">Step 2 · What's going on</span>Claude chose what to put first</h2>
+        <p class="body">
+          Claude had four modules of conversation — personas, a map, a cost sheet, a brand book —
+          and one page to fill. So it made choices: what goes at the top, what gets big,
+          and what gets left out.
+        </p>
+        <p class="body">
+          Those choices aren't random, but they aren't yours either. Some details tend to get more
+          weight: the <strong>vivid</strong> ones, the ones that came up <strong>again and
+          again</strong>, and the <strong>most recent</strong>. Your brand book is the newest thing in
+          the chat, so it can end up shaping the whole page — while the customer you worked hardest on
+          shrinks to one line.
         </p>
 
         <div class="concept-intro">
-          <p class="ci-label">The shape underneath</p>
-          <h3>The five-module pattern</h3>
+          <p class="ci-label">A helpful way to think about it</p>
+          <h3>A talented designer who skimmed your notes</h3>
           <p>
-            Customer → location → price → brand → launch isn't just this course. It's a reusable shape
-            for almost any small venture: figure out who it's for, where it lives, what it costs, how it
-            sounds, and how people see it. You just ran it end to end with AI.
+            Picture a quick designer with good taste who skimmed your notes on the train. They'll make
+            something attractive in no time. But they grabbed what jumped out:
+            the bright quote, the word you kept repeating, the last page in the pile.
           </p>
+          <p>
+            They can't know that the line about a $1.50 kids' size was the most important thing in the
+            file. <strong>Not unless you say so.</strong>
+          </p>
+        </div>
+
+        <p class="body">
+          If someone else has ever summarized work you know inside out, you know this feeling. Every
+          sentence is accurate; the emphasis is still wrong. It's a decision nobody handed over.
+          Deciding what matters most stays your job.
+        </p>
+
+        <!-- Step 3 -->
+        <h2 class="sec"><span class="sec-kicker">Step 3 · Try it again</span>Make it the version you'd share</h2>
+        <p class="body">
+          A first pass is made to be improved. Here's a follow-up that asks for three changes. Click
+          each highlighted part to see what it does — then paste it into the same chat.
+        </p>
+
+        <div class="annotated">
+          <div class="sample-prompt ap-body"><span class="ap-seg" data-ap="1">Good start. Now make three changes:</span> <span class="ap-seg" data-ap="2">give it a look that matches my brand's
+voice (not a default template),</span> <span class="ap-seg" data-ap="3">lead with the real story — a small family
+stand on the waterfront —</span> and <span class="ap-seg" data-ap="4">cut anything that's taking over the page for
+no reason.</span> <span class="ap-seg" data-ap="5">Show me a before/after of what you changed.</span></div>
+          <p class="ap-hint">Click a highlighted part to see why it's there.</p>
+          <div class="ap-callout"></div>
+          <ol class="ap-notes">
+            <li data-ap="1"><b>Keep what works, and count the changes.</b> "Good start" asks for a revision, not a brand-new page. "Three" keeps it focused and easy to check.</li>
+            <li data-ap="2"><b>Point back to your own work.</b> You made a brand book in Module 04. This tells Claude to use it — and names what you don't want: a default template.</li>
+            <li data-ap="3"><b>You choose what goes first.</b> The one decision Claude couldn't make for you. What sits at the top is what people remember. If your story is different, use your own words here.</li>
+            <li data-ap="4"><b>Permission to remove.</b> First passes tend to include a bit of everything. Cutting often helps more than adding — and Claude tends not to cut unless you ask.</li>
+            <li data-ap="5"><b>Show your work.</b> Like asking for quotes in Module 01: you can check every change, and spot any you didn't ask for.</li>
+          </ol>
+        </div>
+
+        <p class="body">Run it, then flip between the two versions:</p>
+        <div class="tabs">
+          <div class="tab-bar">
+            <button class="tab" data-tab="a">First pass</button>
+            <button class="tab active" data-tab="b">Version you'd share</button>
+          </div>
+          <div class="tab-panel" data-panel="a">
+            <p><b>At the top:</b> the stand's name and "Fresh-squeezed daily!" on a bright yellow banner.</p>
+            <p><b>In the middle:</b> a menu with two flavors you never chose, and a "Why choose us" row.</p>
+            <p><b>At the bottom:</b> a map pin, some hours, and an offer to add a contact form.</p>
+            <p><b>Missing:</b> who it's for, why this corner, the family behind the table.</p>
+          </div>
+          <div class="tab-panel" data-panel="b">
+            <p><b>At the top:</b> a small family stand on the waterfront path — cold lemonade for hot afternoons.</p>
+            <p><b>The look:</b> the name, colors and voice from your brand book, instead of the default yellow.</p>
+            <p><b>The menu:</b> only what you decided — your price, and the kids' size if you chose one.</p>
+            <p><b>Find us:</b> "On the waterfront path, next to where the ice cream truck parks" — open when your customers are there.</p>
+            <p><b>Cut:</b> "Why choose us," the extra flavors, the contact form.</p>
+          </div>
+        </div>
+        <p class="co-verdict">What to notice: the second version isn't fancier. It's clearer about who it's for — and it leaves more out.</p>
+
+        <p class="body">
+          Most good pages take a few rounds. <strong>That's normal</strong> — it's how the work gets
+          done. Here's what makes each round count:
+        </p>
+        <ul class="body">
+          <li><strong>Say what, and where.</strong> "The price is buried — move it up next to the name" beats "make it better."</li>
+          <li><strong>Say why.</strong> "…because parents decide fast" gives Claude a reason it can apply to the rest of the page.</li>
+          <li><strong>One change at a time, if it gets messy.</strong> If an edit breaks something that was fine, slow down.</li>
+          <li><strong>Ask what it emphasized, and why.</strong> The answer shows how it read your notes. Treat it as a second opinion, not a perfect record.</li>
+        </ul>
+
+        <!-- Step 4 -->
+        <h2 class="sec"><span class="sec-kicker">Step 4 · Click and learn</span>The five-step pattern, anywhere</h2>
+        <p class="body">
+          Step back for a moment. Over five modules you worked out <strong>who it's for</strong>
+          (Customer), <strong>where it lives</strong> (Location), <strong>what it costs</strong>
+          (Price), <strong>how it sounds</strong> (Brand) and <strong>how people see it</strong>
+          (Launch). That's the bigger idea here: you can take an idea all the way to something people
+          can see — and the pattern works far beyond lemonade. Try it on four projects. Jot down
+          your steps, then reveal ours.
+        </p>
+
+        <div class="reveal-row">
+          <div class="reveal">
+            <p class="reveal-k">Make a guess</p>
+            <p class="reveal-q">Try the pattern on: a weekend food truck — what would each step be?</p>
+            <textarea class="reveal-guess" placeholder="Your five steps (just for you)…"></textarea>
+            <button class="reveal-btn">Reveal</button>
+            <div class="reveal-body" hidden>
+              <p><b>Customer:</b> who's hungry where you'd park.</p>
+              <p><b>Location:</b> which lots and events, on which days — and which need a permit.</p>
+              <p><b>Price:</b> what a meal costs you vs. what the place down the street charges.</p>
+              <p><b>Brand:</b> a name, a look, a short menu.</p>
+              <p><b>Launch:</b> a page with this week's schedule, and an opening-day post.</p>
+            </div>
+          </div>
+          <div class="reveal">
+            <p class="reveal-k">Make a guess</p>
+            <p class="reveal-q">Try the pattern on: a new internal tool or service at work — what would each step be?</p>
+            <textarea class="reveal-guess" placeholder="Your five steps (just for you)…"></textarea>
+            <button class="reveal-btn">Reveal</button>
+            <div class="reveal-body" hidden>
+              <p><b>Customer:</b> which team has the problem, and what they do about it today.</p>
+              <p><b>Location:</b> where they'd find it — a shared folder, a weekly meeting.</p>
+              <p><b>Price:</b> the time and effort it takes to switch, and what it saves.</p>
+              <p><b>Brand:</b> a plain name and one sentence on what it does.</p>
+              <p><b>Launch:</b> a one-page guide, a short announcement, a person to ask.</p>
+            </div>
+          </div>
+          <div class="reveal">
+            <p class="reveal-k">Make a guess</p>
+            <p class="reveal-q">Try the pattern on: a neighborhood event — what would each step be?</p>
+            <textarea class="reveal-guess" placeholder="Your five steps (just for you)…"></textarea>
+            <button class="reveal-btn">Reveal</button>
+            <div class="reveal-body" hidden>
+              <p><b>Customer:</b> who would come — families, retirees, new neighbors?</p>
+              <p><b>Location:</b> the park, a closed street, the community center.</p>
+              <p><b>Price:</b> free, a donation or a ticket — and what it costs to put on.</p>
+              <p><b>Brand:</b> a name and a flyer people would stop to read.</p>
+              <p><b>Launch:</b> a sign-up page and a message for the neighborhood group.</p>
+            </div>
+          </div>
+          <div class="reveal">
+            <p class="reveal-k">Make a guess</p>
+            <p class="reveal-q">Try the pattern on: a career change — what would each step be?</p>
+            <textarea class="reveal-guess" placeholder="Your five steps (just for you)…"></textarea>
+            <button class="reveal-btn">Reveal</button>
+            <div class="reveal-body" hidden>
+              <p><b>Customer:</b> who would hire someone with your background.</p>
+              <p><b>Location:</b> which companies or teams.</p>
+              <p><b>Price:</b> your rate, based on real numbers, not a hunch.</p>
+              <p><b>Brand:</b> your story, in one paragraph.</p>
+              <p><b>Launch:</b> an updated profile, and five messages to real people.</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="body">
+          Notice how the words stretch. "Price" can mean time or effort. "Location" can be a shared
+          folder. But the order holds: it's hard to launch well before you know who it's for.
+        </p>
+
+        <div class="quiz">
+          <p class="quiz-k">Quick check</p>
+          <p class="quiz-q">Your page leads with something you mentioned once, in passing. What's the best fix?</p>
+          <div class="quiz-opts">
+            <button class="quiz-opt">Start over in a new chat with a shorter prompt.<template class="fb">You'd lose everything Claude already knows about your stand. The problem isn't the chat — it's that nobody told Claude what matters most.</template></button>
+            <button class="quiz-opt" data-correct="true">Tell Claude what matters most, in what order — and ask what it emphasized and why.<template class="fb">That fixes this page, and it shows you how Claude read your notes, so your next request lands better. One clear sentence about priorities beats ten small edits.</template></button>
+            <button class="quiz-opt">Delete that detail from your notes.<template class="fb">It might work once, but you lose information — and the next passing detail can take its place. Saying what matters most fixes the cause.</template></button>
+            <button class="quiz-opt">Leave it. Claude probably knows what customers want.<template class="fb">Claude doesn't know your customers — you met them. It put first what stood out in the conversation, not what matters most to your stand.</template></button>
+          </div>
+        </div>
+
+        <!-- Step 5 -->
+        <h2 class="sec"><span class="sec-kicker">Step 5 · Quick check</span>Make sure it clicked</h2>
+        <div class="quiz-grid">
+          <div class="quiz">
+            <p class="quiz-k">Quick check</p>
+            <p class="quiz-q">When is a first pass done?</p>
+            <div class="quiz-opts">
+              <button class="quiz-opt">When it looks polished.<template class="fb">Polish is the easy part — Claude makes almost everything look polished in seconds. A good-looking page can still say the wrong thing.</template></button>
+              <button class="quiz-opt" data-correct="true">When it reflects your decisions and you'd be comfortable sending it.<template class="fb">That's the test. Not perfect — yours, and good enough to share. Looking polished is not the same thing.</template></button>
+              <button class="quiz-opt">When Claude says it's finished.<template class="fb">Claude will happily call any version done. Only you know whether it says what you meant.</template></button>
+              <button class="quiz-opt">After exactly three rounds of changes.<template class="fb">Some pages are ready after one round, some take five. Check the decisions, not the number of rounds.</template></button>
+            </div>
+          </div>
+          <div class="quiz">
+            <p class="quiz-k">Quick check</p>
+            <p class="quiz-q">Claude drafts a one-page summary for a review meeting. It's accurate, but the main finding is buried in paragraph four. What's the most useful next message?</p>
+            <div class="quiz-opts">
+              <button class="quiz-opt">"Make it better."<template class="fb">Claude will change something, but it has to guess what "better" means — and it may change the parts that were already right.</template></button>
+              <button class="quiz-opt" data-correct="true">"Lead with the main finding in two sentences, then the supporting points. Cut the background to one line — the reviewers already know it."<template class="fb">It says what, where, and why. That's feedback Claude can act on — and it's exactly what you'd tell a colleague.</template></button>
+              <button class="quiz-opt">"Start over from scratch."<template class="fb">You'd throw away a draft that's mostly right. The problem is emphasis, not content — so fix the emphasis.</template></button>
+            </div>
+          </div>
         </div>
 
         <!-- ── Checkpoint ── -->
         <div class="checkpoint">
           <p class="label">Checkpoint</p>
           <p class="check-q">
-            Does the finished site reflect the decisions you actually made — or did some earlier
-            output quietly take over the page?
+            Does the finished page reflect the decisions you actually made — or did some earlier
+            output quietly take over?
           </p>
           <div class="check-choices">
             <button class="check-btn" data-action="pass">It reflects my decisions</button>
@@ -125,38 +346,97 @@ reason. Show me a before/after of what you changed.</div>
           </div>
 
           <div class="helper" id="helper">
-            <p class="help-q">See what the model weighted</p>
+            <p class="help-q">That happens a lot — noticing it is the skill. Here's a nudge.</p>
             <div class="help-choice">
-              <button class="help-btn" data-toggle="h1">Audit the page</button>
+              <button class="help-btn" data-toggle="h1">Find out what took over</button>
               <div class="help-body" id="h1">
                 <p>Paste this into the same chat and read the answer carefully:</p>
                 <div class="sample-prompt">Which of my earlier decisions show up most on this page, and which
-barely show up at all? If anything is prominent that I didn't emphasize,
+barely show up? If anything is prominent that I didn't emphasize,
 tell me why it's there.</div>
                 <p class="skill-note">
-                  What shows up most is a clue to what the model weighted — sometimes it's not what
-                  you'd have chosen.
+                  What shows up most is a clue to what Claude weighted — often the most vivid or recent
+                  thing, not the most important. One sentence usually fixes it: "The most important
+                  thing on this page is ___. Put it first."
                 </p>
+              </div>
+            </div>
+            <div class="help-choice">
+              <button class="help-btn" data-toggle="h2">It still looks like a template</button>
+              <div class="help-body" id="h2">
+                <p>Try this in the same chat:</p>
+                <div class="sample-prompt">This still looks like it could belong to any lemonade stand. Use the
+name, colors and voice from my brand book. For anything on the page
+that could belong to any stand, either rewrite it so it could only
+be mine, or cut it.</div>
               </div>
             </div>
           </div>
         </div>
 
-        <p class="check-confirmed">A site you'd actually send someone — your decisions, not the template's.</p>
+        <p class="check-confirmed">A page you'd actually send someone — your decisions, not the template's.</p>
 
         <!-- ── After the checkpoint ── -->
         <div class="post-checkpoint">
+          <details class="deep">
+            <summary>Under the hood, in plain English</summary>
+            <div class="deep-body">
+              <p>
+                Claude reads the whole conversation, but a page has limited room, so it has to choose.
+                A vivid quote, a repeated word, the last thing you talked about — these tend to pull
+                harder. Not because Claude decided they matter most, but because <strong>nothing in the
+                conversation said what mattered most.</strong> The fix isn't a cleverer prompt. It's
+                saying plainly what matters, and in what order.
+              </p>
+              <p>
+                And the rounds of feedback? That's how good work has always been made. Designers show
+                drafts. Writers revise. Long documents go through rounds of review before anyone signs
+                them. Claude just makes each round faster, so you can afford more of them.
+              </p>
+              <p>
+                One honest caution: when drafts are this fast and polished, it's tempting to stop at
+                "looks fine." Before you send anything, read it once as the person receiving it would.
+              </p>
+            </div>
+          </details>
+
+          <div class="transfer">
+            <p class="tr-label">Try it at work</p>
+            <p>
+              Pick one project from your own work — a new standard operating procedure, a section of a
+              protocol, a report, the aims page of a funding proposal. Write five lines:
+            </p>
+            <p>
+              <strong>Customer:</strong> who reads it, and what decision it helps them make.<br />
+              <strong>Location:</strong> where they'll meet it — a meeting, a shared folder, an inbox.<br />
+              <strong>Price:</strong> what it asks of them — time, effort, change.<br />
+              <strong>Brand:</strong> the tone, and the one message it must carry.<br />
+              <strong>Launch:</strong> the first version you'd show, and to whom.
+            </p>
+            <p>
+              Give them to Claude, ask for a first pass, and iterate. Two ground rules: keep
+              confidential information — and anything that could identify a person — out of tools your
+              organization hasn't approved for it. And the person qualified to sign off still signs
+              off. The judgment stays with you.
+            </p>
+          </div>
+
           <div class="takeaway">
-            <p>You took a project from <strong>idea to shareable, start to finish</strong>, with AI.
-            The pattern transfers; the website is just this run of it.</p>
-            <p>Keep that in mind — the Checkpoint ahead asks you to run the same shape on something
-            of your own.</p>
+            <p><strong>You took an idea all the way to something people can see.</strong> Four modules
+            ago you had interview notes. Now you have a page you could send someone. That's not small.</p>
+            <p>What made it good wasn't the first draft. It was you saying what was off: what goes
+            first, what to cut, what matters most — the same judgment you use whenever you review a
+            draft at work.</p>
+            <p>Who it's for, where it lives, what it costs, how it sounds, how people see it — those
+            five steps work far beyond lemonade. The pattern is yours to reuse.</p>
           </div>
 
           <div class="closing-call">
-            <p class="cc-label">Part 1 done — one more step →</p>
-            <p>Answer the three <strong>reflections</strong>, then cross into the Checkpoint: build
-            something for your own life before Part 2 turns to agents.</p>
+            <p class="cc-label">Part 1 is done →</p>
+            <p>Take a few minutes for the three <strong>reflections</strong> on the right — they go into
+            your final report. Next is the <strong>Checkpoint</strong>: you'll use the same pattern to
+            build something for your own life. When you're done here, look up — your facilitator will
+            bring the room together for a short debrief.</p>
           </div>
         </div>
       </div>
@@ -169,23 +449,23 @@ tell me why it's there.</div>
 
         <div class="reflect-q">
           <p class="q-text">What did you ask Claude to change between the first pass and the version you'd actually share?</p>
-          <p class="q-hint">The edits that made it yours.</p>
-          <textarea rows="3" placeholder="In a sentence or two…"></textarea>
+          <p class="q-hint">A sentence or two. The look, the order, what you cut — whatever made it yours.</p>
+          <textarea rows="3" placeholder="In your own words…"></textarea>
         </div>
 
         <div class="reflect-q">
           <p class="q-text">Looking at the final website — which of your earlier outputs ended up showing up most? Which barely showed up?</p>
-          <p class="q-hint">What dominated, what vanished.</p>
-          <textarea rows="4" placeholder="Your answer…"></textarea>
+          <p class="q-hint">What took over the top of the page, and what shrank to a line or vanished? There's no wrong answer.</p>
+          <textarea rows="4" placeholder="In your own words…"></textarea>
         </div>
 
         <div class="reflect-q">
           <p class="q-text">What's a project of your own where this five-module pattern would apply?</p>
-          <p class="q-hint">Think past lemonade.</p>
-          <textarea rows="3" placeholder="Your answer…"></textarea>
+          <p class="q-hint">Think past lemonade — a document, a new service, something you've been putting off. Five short lines is plenty.</p>
+          <textarea rows="3" placeholder="In your own words…"></textarea>
         </div>
 
-        <p class="can-say">You can now say: you can take a project from idea to shareable with AI, start to finish.</p>
+        <p class="can-say">You can now say: I can take a project from idea to something shareable with AI, start to finish.</p>
       </div>
     </section>
   </main>
@@ -196,6 +476,7 @@ tell me why it's there.</div>
   <script src="assets/registry.js"></script>
   <script src="assets/chrome.js"></script>
   <script src="assets/sync.js"></script>
+  <script src="assets/learn.js"></script>
   <script src="assets/course.js"></script>
 </body>
 </html>
