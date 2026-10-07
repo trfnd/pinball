@@ -8,6 +8,7 @@
   <meta name="robots" content="noindex,nofollow" />
   <link rel="stylesheet" href="assets/course.css" />
   <link rel="stylesheet" href="assets/extra.css" />
+  <link rel="stylesheet" href="assets/learn.css" />
   <script>
     /* gate guard — redirect before paint if the course wasn't entered */
     (function () {
@@ -29,17 +30,26 @@
       <p class="module-id">Module 01 · Part 1 — Build the business</p>
       <h1 class="question">Who is this lemonade actually for?</h1>
 
+      <div class="bigidea">
+        <p class="bi-k">The big idea</p>
+        <p class="bi-v">Claude knows a lot about the world — and nothing about you. The skill isn't in the AI. It's in how you brief it.</p>
+      </div>
+      <div class="meta-chips">
+        <span class="chip">About 15 minutes</span>
+        <span class="chip">Claude open in another tab</span>
+      </div>
+
       <div class="frame-row">
-        <div class="k">Scenario</div>
-        <div class="v">It's summer in the Lakeside neighborhood and you're opening a lemonade stand. Before a price, before a corner, before a name — you need to know who buys it.</div>
+        <div class="k">The situation</div>
+        <div class="v">You're opening a lemonade stand in Lakeside this summer. Before you choose a price or a corner, you need to know who's actually going to buy.</div>
       </div>
       <div class="frame-row">
-        <div class="k">Your role</div>
-        <div class="v">Founder. You decide who this is built for — Claude doesn't know your neighborhood yet.</div>
+        <div class="k">Your part</div>
+        <div class="v">You're the founder. Claude is your new assistant — quick, eager to help, and brand new to Lakeside.</div>
       </div>
       <div class="frame-row">
-        <div class="k">What you'll practice</div>
-        <div class="v">Turning a vague ask into a prompt that gives you something you can actually use.</div>
+        <div class="k">You'll learn</div>
+        <div class="v">Why a vague question gets a vague answer — and the three things that turn it into a useful one.</div>
       </div>
 
       <div class="frame-row tool">
@@ -47,131 +57,289 @@
         <div class="v">Claude — a normal chat window.</div>
       </div>
       <div class="inputs" style="margin-top:22px;border-bottom:none;padding-bottom:0;">
-        <p class="inputs-intro">Bring this file into the chat:</p>
+        <p class="inputs-intro">You'll bring one file into the chat:</p>
         <div class="folder-block">
           <div class="folder-head">
             <span class="folder-name">customer_interviews.docx</span>
-            <span class="folder-purpose">12 street interviews</span>
           </div>
-          <div class="file-row">
-            <span class="fname">12 intercept interviews</span>
-            <span class="fdesc">soccer parents, a jogger, teens, retirees, a market regular, a party planner, even Hansen the competitor</span>
-          </div>
+          <p class="fdesc" style="margin:0;">Twelve short street interviews — parents, a jogger, teens, retirees, a market regular, a party planner, and even Hansen, the competition.</p>
         </div>
         <details class="how">
-          <summary>Don't know where to find it?</summary>
+          <summary>Where do I find it?</summary>
           <div class="how-body">
-            It's in your course files, next to this handout. Drag <code>customer_interviews.docx</code> straight into the Claude chat, or open it and paste the text.
+            It's in your course files. In Claude, click the paperclip (or drag the file into the chat). If attaching doesn't work, open the file, copy all the text, and paste it in.
           </div>
         </details>
       </div>
+
+      <dl class="terms">
+        <p class="t-head">Words to know</p>
+        <dt>Prompt</dt>
+        <dd>Whatever you type to Claude. It works best when you treat it like a brief to a colleague, not a search box.</dd>
+        <dt>Persona</dt>
+        <dd>A short sketch of one kind of customer: who they are, what they want, and what makes them buy.</dd>
+        <dt>Context</dt>
+        <dd>Everything Claude knows about your situation. At the start of a new chat, that's nothing — until you add it.</dd>
+      </dl>
     </section>
 
     <!-- ── WORK (middle) ────────────────────────────────────── -->
     <section class="col work">
       <div class="inner">
         <p class="scene">
-          Twelve people, five minutes each, a $5 gift card for their time. A soccer mom whose
-          twins are melting down after the game. A jogger who calls lemonade “a sugar bomb.” A
-          retiree couple anchored on 1962 prices. A group of teens who split one cup four ways.
-          Their answers to “what would you pay?” ran from a dollar to six. Somewhere in there is
-          your customer.
+          Twelve people, five minutes each, a $5 gift card for their time. Megan, whose twins melt
+          down after every soccer game. Derek the jogger, who calls lemonade "a sugar bomb." Doris,
+          who still remembers paying a dime in 1962. A group of teens who split one cup four ways.
+          And Hansen, who sells $6 lemonade at the farmers market and then quietly tells you where
+          the real opportunity is — "Don't tell anybody I said that." Somewhere in these
+          conversations is your customer.
         </p>
 
-        <div class="activity">
-          <h4><span class="step-n">1</span>Ask the obvious way first</h4>
-          <p>Open Claude, bring in the interviews, and ask the way most people would:</p>
+        <div class="factbar">
+          <div class="fact"><div class="fact-n">12</div><div class="fact-l">people interviewed around the neighborhood</div></div>
+          <div class="fact"><div class="fact-n">$1–$6</div><div class="fact-l">what they said they'd pay for the same cup</div></div>
+          <div class="fact"><div class="fact-n">1</div><div class="fact-l">business customer hiding in the notes</div></div>
+          <div class="fact"><div class="fact-n">1</div><div class="fact-l">person who won't buy at any price</div></div>
         </div>
+
+        <!-- Step 1 -->
+        <h2 class="sec"><span class="sec-kicker">Step 1 · Try it</span>Ask the way most people would</h2>
+        <p class="body">Open Claude, attach the interviews, and type the question almost everyone types first:</p>
         <div class="code-prompt">Here are 12 customer interviews for a lemonade stand.
 Give me some customer personas.</div>
-        <p class="activity">
-          You'll get personas. They'll also be the kind of thing you could have written without
-          reading a single interview — “Busy Parent,” “Health-Conscious Adult,” “Budget Teen.”
-          True, and useless for a decision.
+        <p class="body">You'll get something back in seconds. It will probably look a lot like this:</p>
+
+        <div class="claude-out">
+          <div class="co-head">Claude · sample response</div>
+          <div class="co-body">
+            <p>Based on the interviews, here are four customer personas:</p>
+            <p><b>1. The Busy Parent</b> — Values convenience and quick refreshment for their kids. Price-conscious but willing to pay for quality.</p>
+            <p><b>2. The Health-Conscious Adult</b> — Prefers lower-sugar options and natural ingredients.</p>
+            <p><b>3. The Budget-Minded Teen</b> — Price-sensitive, often buys with friends.</p>
+            <p><b>4. The Nostalgic Senior</b> — Enjoys the tradition of a neighborhood lemonade stand.</p>
+          </div>
+        </div>
+        <p class="co-verdict">What to notice: nothing here is wrong. But you could have written it without reading a single interview. It doesn't tell you where to stand, what to charge, or who to skip.</p>
+
+        <p class="body">Don't worry if yours looks like this. <strong>Everyone's first try does.</strong> That's exactly what this module is about.</p>
+
+        <!-- Step 2 -->
+        <h2 class="sec"><span class="sec-kicker">Step 2 · What's going on</span>Why a vague question gets a vague answer</h2>
+        <p class="body">
+          Imagine stopping a stranger on the street and asking, "Can you recommend a restaurant?"
+          You'll probably hear about the most popular place in town. Now ask a friend who knows
+          you're vegetarian, have two kids, and want to spend under $40. Completely different answer.
+        </p>
+        <p class="body">
+          Claude works the same way. When your question leaves things out, Claude fills the gaps
+          with the <em>most typical</em> answer — the average customer of the average lemonade stand.
+          Not because it can't do better, but because you haven't told it what "better" means for you yet.
         </p>
 
         <div class="concept-intro">
-          <p class="ci-label">Why that felt thin</p>
-          <h3>Claude knows nothing about your situation unless you tell it</h3>
+          <p class="ci-label">A helpful way to think about Claude</p>
+          <h3>A brilliant colleague on their very first day</h3>
           <p>
-            It had the interviews, but not what you wanted <strong>back</strong>: how many personas,
-            how distinct, grounded in which details, for what decision. A vague ask gets a vague
-            answer. The fix isn't a better model — it's a better request.
+            Picture a capable new hire. They know a lot about business, people, and the world. They
+            know <strong>nothing</strong> about Lakeside, your stand, or the decision you're trying to make.
+            You wouldn't hand them a stack of interviews and say "do some personas." You'd brief them.
+          </p>
+          <p>A good brief has three parts:</p>
+          <p>
+            <strong>1. What it's for.</strong> The decision you're making.<br />
+            <strong>2. What to use.</strong> The material to work from — and anything to avoid.<br />
+            <strong>3. What you want back.</strong> The shape of a useful answer.
           </p>
         </div>
 
-        <div class="activity">
-          <h4><span class="step-n">2</span>Ask again, with the shape you want</h4>
-          <p>Tell it who it's for, what matters, and exactly what you want to see:</p>
-        </div>
-        <div class="sample-prompt">You're helping me plan a lemonade stand in the Lakeside neighborhood.
-Using only these 12 interviews, give me exactly THREE distinct customer
-personas — ones that would lead to different decisions, not three versions
-of the same person.
+        <!-- Step 3 -->
+        <h2 class="sec"><span class="sec-kicker">Step 3 · Try it again</span>Brief Claude like a new colleague</h2>
+        <p class="body">Here's the same request, written as a brief. Click each highlighted part to see what it does — then copy it into Claude.</p>
 
-For each, in the interviewees' own terms:
- • who they are and where on the map I'd find them
+        <div class="annotated">
+          <div class="sample-prompt ap-body"><span class="ap-seg" data-ap="1">You're helping me plan a lemonade stand in the Lakeside neighborhood.</span>
+<span class="ap-seg" data-ap="2">Using only these 12 interviews,</span> give me <span class="ap-seg" data-ap="3">exactly THREE distinct customer
+personas — ones that would lead to different decisions, not three versions
+of the same person.</span>
+
+<span class="ap-seg" data-ap="4">For each, in the interviewees' own terms:
+ • who they are, and where on the map I'd find them
  • the most they'd pay per cup, and what makes them walk away
  • what they drink instead if my stand isn't there
- • the one thing that would turn them into a regular
+ • the one thing that would turn them into a regular</span>
 
-Quote or cite the interview each persona is built from. Flag anyone who
-is not a customer at any price.</div>
+<span class="ap-seg" data-ap="5">Quote the interview each persona is built from.</span>
+<span class="ap-seg" data-ap="6">Flag anyone who is not a customer at any price.</span></div>
+          <p class="ap-hint">Click a highlighted part to see why it's there.</p>
+          <div class="ap-callout"></div>
+          <ol class="ap-notes">
+            <li data-ap="1"><b>What it's for.</b> Now Claude knows these personas are for a real decision about a real stand — not a marketing textbook. That one sentence changes what "useful" means.</li>
+            <li data-ap="2"><b>What to use.</b> "Only these interviews" keeps Claude on your evidence. Without it, Claude may mix in general ideas about "typical customers" from everything it has ever read.</li>
+            <li data-ap="3"><b>A clear number and a test.</b> "Three" keeps it focused. "Lead to different decisions" is the clever part: it stops Claude from giving you three slightly different versions of the same busy parent.</li>
+            <li data-ap="4"><b>What you want back.</b> Every line here is something you'll actually use in the next modules: where to stand, what to charge, who you're competing with, and how to win people back.</li>
+            <li data-ap="5"><b>Show your work.</b> Asking for quotes means you can check every claim against what a real person said. It also makes any guessing easy to spot.</li>
+            <li data-ap="6"><b>Permission to say no.</b> Good research includes the people who won't buy. Without this line, Claude tends to make everyone sound like a customer.</li>
+          </ol>
+        </div>
 
-        <p class="activity">
-          Now the three personas disagree with each other — a soccer-field parent who'll pay $5 for
-          cold-and-now, a price-anchored pickup parent who buys daily only at $2, a weekend strip
-          stroller who converts on impulse. That's a set you can price and place against.
+        <p class="body">Run it and compare the two answers side by side:</p>
+        <div class="tabs">
+          <div class="tab-bar">
+            <button class="tab" data-tab="a">First try</button>
+            <button class="tab active" data-tab="b">Second try</button>
+          </div>
+          <div class="tab-panel" data-panel="a">
+            <p><b>The Busy Parent · The Health-Conscious Adult · The Budget-Minded Teen · The Nostalgic Senior.</b></p>
+            <p>Each one sounds reasonable. None of them tells you where to go on Saturday morning, or what to write on the price sign.</p>
+          </div>
+          <div class="tab-panel" data-panel="b">
+            <div class="claude-out">
+              <div class="co-head">Claude · sample response</div>
+              <div class="co-body">
+                <p><b>1. The Post-Game Parent</b> — Soccer field (spot 2), weekend mornings. Will pay up to $5 if it's cold and right there. <span class="cite">"If it was cold and the cups were a decent size I wouldn't blink at five." — Megan</span> Instead: a warm cooler drink, or gas-station slushies. Becomes a regular if you're there every game day.</p>
+                <p><b>2. The Routine Pickup Parent</b> — School pickup, around 3pm on school days. Price decides how often: $2 means daily, $3 means Fridays, $4 means a treat. <span class="cite">— Janelle</span> Instead: powdered mix at home. Becomes a regular with a $1.50 kids' size.</p>
+                <p><b>3. The Weekend Stroller</b> — Commercial strip, weekend late mornings. Pays $3–5 on impulse if it tastes fresh and not too sweet. <span class="cite">"Four-fifty, five, if it was actually fresh." — Jamie</span> Instead: an iced latte. Becomes a regular with a "grown-up," less-sweet option.</p>
+                <p><b>Not a customer:</b> Derek, the jogger — not for regular lemonade at any price. Only a low-sugar version might work.</p>
+                <p><b>Worth a separate look:</b> Rebecca plans about two kids' parties a month and wants 40 cups or gallon jugs delivered. That's a different business.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="co-verdict">What to notice: now the three personas disagree with each other — different places, different prices, different reasons. That's exactly what makes them useful.</p>
+
+        <!-- Step 4 -->
+        <h2 class="sec"><span class="sec-kicker">Step 4 · Click and learn</span>Spot the made-up parts</h2>
+        <p class="body">
+          Here's something worth knowing early: Claude writes just as smoothly when it's guessing as
+          when it's sure. Below are seven statements from a set of personas. Some come straight from
+          the interviews. <strong>Three were made up.</strong> Click the ones you think nobody actually said.
         </p>
+        <div class="finder" data-label="Made-up claims found:">
+          <ul class="find-list">
+            <li data-miss="Backed by the interviews. Megan: &quot;If it was cold and the cups were a decent size I wouldn't blink at five.&quot;">Soccer parents will pay up to $5 for a cold cup right after the game.</li>
+            <li data-hit="&lt;b&gt;Made up.&lt;/b&gt; The teens talked about price, a cute chalkboard sign, and splitting one cup — nobody mentioned organic lemons. Details like this are how a persona gets filled in when there's no evidence.">Teens prefer organic, locally grown lemons.</li>
+            <li data-miss="Backed by the interviews. Janelle gave a clear step: $2 every day, $3 on Fridays, $4 as a once-a-week treat.">Pickup parents buy more often when the price drops.</li>
+            <li data-hit="&lt;b&gt;Made up — and backwards.&lt;/b&gt; Doris would pay $1–1.50 at most and makes her own for 40 cents. Hal would buy once, &quot;to be supportive.&quot; Hardly the most loyal customers.">Retirees will be the stand's most loyal customers.</li>
+            <li data-miss="Backed by the interviews. Derek would only consider a sugar-free or stevia version, &quot;maybe three bucks, four tops.&quot;">Some joggers would only buy a low-sugar version.</li>
+            <li data-miss="Backed by the interviews. Jamie: &quot;I'd pay for a good one… Four-fifty, five, if it was actually fresh.&quot;">Weekend strollers will pay $4.50–5 if it tastes fresh.</li>
+            <li data-hit="&lt;b&gt;Made up.&lt;/b&gt; Marcus says above $5 he feels &quot;had,&quot; and at $6 he says no. Priya only pays $6 because the market is a weekly ritual — she'd pay about $2 at a street stand.">Parents will happily pay $6, the same as at Hansen's.</li>
+          </ul>
+          <div class="finder-bar"><span class="finder-status"></span><button class="reveal-btn finder-show">Show me</button></div>
+          <div class="finder-msg"></div>
+          <div class="finder-done" hidden>
+            <strong>You found all three.</strong> That's one of the most useful habits you can build:
+            ask Claude to put a quote or source next to its claims. Then the made-up parts stand out on their own.
+          </div>
+        </div>
+
+        <!-- Step 5 -->
+        <h2 class="sec"><span class="sec-kicker">Step 5 · Quick check</span>Make sure it clicked</h2>
+        <div class="quiz-grid">
+          <div class="quiz">
+            <p class="quiz-k">Quick check</p>
+            <p class="quiz-q">Your first try gave you "The Busy Parent" and "The Health-Conscious Adult." What's the most likely reason?</p>
+            <div class="quiz-opts">
+              <button class="quiz-opt">Claude isn't good at marketing.<template class="fb">Claude is actually quite good at this. It just didn't know what you needed the personas for, or what to base them on.</template></button>
+              <button class="quiz-opt" data-correct="true">The prompt didn't say what the personas were for or what to base them on.<template class="fb">When you leave a gap, Claude fills it with the most typical answer. Fill the gaps, and the answer gets specific.</template></button>
+              <button class="quiz-opt">I need a more advanced AI.<template class="fb">It was the same Claude both times. The only thing that changed was the brief.</template></button>
+            </div>
+          </div>
+          <div class="quiz">
+            <p class="quiz-k">Quick check</p>
+            <p class="quiz-q">Which persona detail would help you most when choosing where to put your stand?</p>
+            <div class="quiz-opts">
+              <button class="quiz-opt">"Age 35–45."<template class="fb">Age alone doesn't tell you where people are, or when.</template></button>
+              <button class="quiz-opt" data-correct="true">"At the soccer field on Saturday mornings, right after the game."<template class="fb">A place and a time you can act on. That's the kind of detail a good brief asks for.</template></button>
+              <button class="quiz-opt">"Values quality and convenience."<template class="fb">That's true of nearly everyone. If a detail could describe anybody, it can't guide a decision.</template></button>
+            </div>
+          </div>
+        </div>
 
         <!-- ── Checkpoint ── -->
         <div class="checkpoint">
           <p class="label">Checkpoint</p>
           <p class="check-q">
-            Do your three personas each name a real spot on the map, a price ceiling, and the drink
-            they'd buy instead — and are they genuinely different from one another?
+            Look at the personas you got from Claude. Does each one name a real spot on the map, a
+            price limit, and what they'd drink instead — and are the three genuinely different?
           </p>
           <div class="check-choices">
-            <button class="check-btn" data-action="pass">Yes — three distinct, grounded personas</button>
-            <button class="check-btn ghost" data-action="stuck">Not really — they still feel generic</button>
+            <button class="check-btn" data-action="pass">Yes — three different, grounded personas</button>
+            <button class="check-btn ghost" data-action="stuck">Not quite — they still feel generic</button>
           </div>
 
           <div class="helper" id="helper">
-            <p class="help-q">Pull them back to the evidence</p>
+            <p class="help-q">That's normal. Here's a nudge.</p>
             <div class="help-choice">
-              <button class="help-btn" data-toggle="h1">Make them distinct and grounded</button>
+              <button class="help-btn" data-toggle="h1">Make them more different and more real</button>
               <div class="help-body" id="h1">
-                <p>Add this to your prompt and run it again:</p>
-                <div class="sample-prompt">Two of these feel like the same person. Replace the weakest one
-with a persona that would make me choose a DIFFERENT corner or price.
-For every claim, point to the interview it came from — if you can't,
-cut the claim.</div>
+                <p>Keep the same chat going and add this:</p>
+                <div class="sample-prompt">Two of these feel like the same person. Replace the weakest one with
+a persona that would make me choose a DIFFERENT corner or price.
+Next to every claim, put the interview it came from. If you can't
+point to one, take the claim out.</div>
                 <p class="skill-note">
-                  The interviews already hold the edges — Doris won't pay over $1.50, Rebecca wants
-                  gallon jugs for parties, Derek won't buy at any price without a low-sugar option.
-                  Make Claude use them.
+                  The interviews already have the interesting edges in them — Doris tops out at $1.50,
+                  Rebecca wants gallon jugs for parties, Derek won't buy without a low-sugar option.
+                  You're just asking Claude to use them.
                 </p>
               </div>
             </div>
           </div>
         </div>
 
-        <p class="check-confirmed">Three personas, grounded in what people actually said.</p>
+        <p class="check-confirmed">Three personas, built from what real people actually said.</p>
 
         <!-- ── After the checkpoint ── -->
         <div class="post-checkpoint">
+          <details class="deep">
+            <summary>Under the hood, in plain English</summary>
+            <div class="deep-body">
+              <p>
+                Claude learned from an enormous amount of writing — books, articles, conversations. When
+                you ask it something, it writes the answer that best fits everything it learned
+                <strong>plus</strong> everything you've told it in the chat.
+              </p>
+              <p>
+                If you tell it very little, the "best fit" is the most common answer: the average
+                customer of the average lemonade stand. Every detail you add narrows things down — these
+                twelve people, this neighborhood, this decision. That's why the same Claude gave you two
+                very different answers. Nothing about Claude changed. Your brief did.
+              </p>
+              <p>
+                One more thing: Claude doesn't sound less confident when it's guessing. That's not a
+                flaw to be afraid of — it's just something to know, the same way you'd know a new
+                colleague sometimes fills in blanks. Asking for quotes and sources is how you keep it honest.
+              </p>
+            </div>
+          </details>
+
+          <div class="transfer">
+            <p class="tr-label">Try it at work</p>
+            <p>
+              Think of something you regularly hand to a colleague — a summary of a few papers, a first
+              draft of a document section, a plan for next quarter. Next time you ask Claude, add the
+              three parts of a brief: <strong>what it's for</strong>, <strong>what to use</strong>, and
+              <strong>what you want back</strong> (for example: "a one-page summary for a colleague who
+              wasn't in the meeting, using only these three papers, with the key numbers in a table").
+              Most people are surprised by how big the difference is.
+            </p>
+          </div>
+
           <div class="takeaway">
-            <p><strong>Getting useful answers is a skill.</strong> It improves with practice. Claude
-            started with the same twelve interviews both times — what changed was how much you told
-            it about who it's for, what matters, and what you wanted back.</p>
-            <p>Hold onto your three personas. Every later module — where to stand, what to charge,
+            <p><strong>Getting useful answers is a skill — and you just practiced it.</strong> Same Claude,
+            same twelve interviews. The only thing that changed was your brief.</p>
+            <p>Notice that none of this was technical. It's what good managers already do when they
+            hand work to someone new. You've been building this skill your whole career — now it has a
+            new place to go.</p>
+            <p>Hold onto your three personas. Every module from here — where to stand, what to charge,
             how to sound — is a decision <em>about these people</em>.</p>
           </div>
 
           <div class="closing-call">
             <p class="cc-label">Before you move on →</p>
-            <p>Answer the three <strong>reflections</strong> on the right while it's fresh. They're
-            your takeaway from this module, and they go into your final report.</p>
+            <p>Take two minutes for the three <strong>reflections</strong> on the right. They're your
+            takeaway from this module, and they become part of your final report. When you're done,
+            look up — your facilitator will bring the room together for a short debrief.</p>
           </div>
         </div>
       </div>
@@ -184,23 +352,23 @@ cut the claim.</div>
 
         <div class="reflect-q">
           <p class="q-text">What did your first attempt produce?</p>
-          <p class="q-hint">The quick “give me some personas” version.</p>
-          <textarea rows="3" placeholder="In a sentence or two…"></textarea>
+          <p class="q-hint">A sentence is plenty. What did the quick version give you?</p>
+          <textarea rows="3" placeholder="In your own words…"></textarea>
         </div>
 
         <div class="reflect-q">
           <p class="q-text">What did you change in your second prompt?</p>
-          <p class="q-hint">What did you add about who it's for, or what you wanted back?</p>
-          <textarea rows="3" placeholder="Your answer…"></textarea>
+          <p class="q-hint">What did you add — what it's for, what to use, or what you wanted back?</p>
+          <textarea rows="3" placeholder="In your own words…"></textarea>
         </div>
 
         <div class="reflect-q">
           <p class="q-text">Looking at your final three personas — what's useful? What still feels generic?</p>
-          <p class="q-hint">Be honest about the parts that are still filler.</p>
-          <textarea rows="4" placeholder="Your answer…"></textarea>
+          <p class="q-hint">There's no wrong answer. Honest is more useful than polished.</p>
+          <textarea rows="4" placeholder="In your own words…"></textarea>
         </div>
 
-        <p class="can-say">You can now say: a useful answer starts with a specific question.</p>
+        <p class="can-say">You can now say: I know how to brief Claude so I get an answer I can actually use.</p>
       </div>
     </section>
   </main>
@@ -211,6 +379,7 @@ cut the claim.</div>
   <script src="assets/registry.js"></script>
   <script src="assets/chrome.js"></script>
   <script src="assets/sync.js"></script>
+  <script src="assets/learn.js"></script>
   <script src="assets/course.js"></script>
 </body>
 </html>

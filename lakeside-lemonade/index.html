@@ -8,10 +8,37 @@
   <meta name="robots" content="noindex,nofollow" />
   <link rel="stylesheet" href="assets/course.css" />
   <link rel="stylesheet" href="assets/extra.css" />
+  <link rel="stylesheet" href="assets/learn.css" />
   <style>
     body { display: block; }
     #gateView { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px; }
     .hidden { display: none !important; }
+    .home { max-width: 820px; }
+    .home h2.sec { margin-top: 56px; }
+    .journey { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 8px 0 10px; }
+    @media (max-width: 720px) { .journey { grid-template-columns: 1fr; } }
+    .jcard { background: var(--panel); border: 1px solid var(--rule); border-radius: 10px; padding: 22px 24px; }
+    .jcard .pc-label { font-size: 10.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin: 0 0 8px; }
+    .jcard h3 { font-family: var(--serif); font-weight: 500; font-size: 19px; margin: 0 0 6px; }
+    .jcard .jc-sub { font-size: 13.5px; color: var(--ink-soft); margin: 0 0 14px; line-height: 1.55; }
+    .jcard ol { list-style: none; margin: 0; padding: 0; }
+    .jcard li { display: grid; grid-template-columns: 30px 1fr; gap: 8px; padding: 9px 0; border-top: 1px solid var(--rule-soft); font-size: 13.5px; line-height: 1.5; color: var(--ink-soft); }
+    .jcard li b { color: var(--ink); font-weight: 600; }
+    .jcard li .n { font-family: var(--mono); font-size: 12px; color: var(--ink-faint); padding-top: 1px; }
+    .anatomy { display: grid; grid-template-columns: 1fr 1.6fr 1fr; gap: 0; border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; margin: 6px 0 8px; }
+    @media (max-width: 720px) { .anatomy { grid-template-columns: 1fr; } }
+    .anatomy div { padding: 18px 18px; font-size: 13.5px; line-height: 1.55; color: var(--ink-soft); background: var(--panel); }
+    .anatomy div + div { border-left: 1px solid var(--rule); }
+    @media (max-width: 720px) { .anatomy div + div { border-left: none; border-top: 1px solid var(--rule); } }
+    .anatomy b { display: block; color: var(--ink); font-size: 13px; margin-bottom: 4px; }
+    .anatomy .mid { background: #fdfcf9; }
+    .promises { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 8px 0 0; }
+    @media (max-width: 720px) { .promises { grid-template-columns: 1fr; } }
+    .promise { padding: 14px 16px; border-left: 3px solid var(--accent); background: var(--acc-soft); border-radius: 0 6px 6px 0; font-size: 14px; line-height: 1.55; }
+    .promise b { display: block; margin-bottom: 2px; }
+    .flow { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 6px 0 4px; }
+    .flow .step { background: var(--panel); border: 1px solid var(--rule); border-radius: 30px; padding: 8px 16px; font-size: 13.5px; }
+    .flow .arrow { color: var(--ink-faint); }
   </style>
 </head>
 <body>
@@ -19,7 +46,7 @@
   <div id="gateView">
     <div class="gate2">
       <svg class="g-mark" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <circle cx="12" cy="12" r="10" fill="#f5d563" stroke="#161616" stroke-width="1.5"/>
+        <circle cx="12" cy="12" r="10" fill="#f5d563" stroke="#141413" stroke-width="1.5"/>
         <line x1="12" y1="2.5" x2="12" y2="21.5" stroke="#a87800" stroke-width="0.8"/>
         <line x1="2.5" y1="12" x2="21.5" y2="12" stroke="#a87800" stroke-width="0.8"/>
         <line x1="5" y1="5" x2="19" y2="19" stroke="#a87800" stroke-width="0.6"/>
@@ -27,21 +54,21 @@
       </svg>
       <p class="g-name">Lakeside Lemonade</p>
       <form id="gateForm">
-        <input type="password" placeholder="Password" autocomplete="current-password" autofocus />
+        <input type="password" placeholder="Workshop password" autocomplete="current-password" autofocus />
         <input type="submit" value="Enter" />
         <label class="remember"><input type="checkbox" id="gateRemember" checked /> Keep me signed in</label>
       </form>
       <p class="g-err" id="gateError"></p>
-      <p class="g-hint">A short GenAI course, from a lemonade stand.</p>
+      <p class="g-hint">A hands-on workshop on working well with AI.</p>
     </div>
   </div>
 
-  <!-- ── Landing (revealed after the gate) ──────────────────── -->
+  <!-- ── Landing (after the gate) ───────────────────────────── -->
   <div id="homeView" class="hidden">
     <header class="strip">
       <a class="brand" href="index.html">
         <svg class="brand-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <circle cx="12" cy="12" r="10" fill="#f5d563" stroke="#161616" stroke-width="1.5"/>
+          <circle cx="12" cy="12" r="10" fill="#f5d563" stroke="#141413" stroke-width="1.5"/>
           <line x1="12" y1="2.5" x2="12" y2="21.5" stroke="#a87800" stroke-width="0.8"/>
           <line x1="2.5" y1="12" x2="21.5" y2="12" stroke="#a87800" stroke-width="0.8"/>
         </svg>
@@ -51,52 +78,111 @@
 
     <div class="home">
       <svg class="home-mark" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <circle cx="12" cy="12" r="10" fill="#f5d563" stroke="#161616" stroke-width="1.5"/>
+        <circle cx="12" cy="12" r="10" fill="#f5d563" stroke="#141413" stroke-width="1.5"/>
         <line x1="12" y1="2.5" x2="12" y2="21.5" stroke="#a87800" stroke-width="0.8"/>
         <line x1="2.5" y1="12" x2="21.5" y2="12" stroke="#a87800" stroke-width="0.8"/>
         <line x1="5" y1="5" x2="19" y2="19" stroke="#a87800" stroke-width="0.6"/>
         <line x1="5" y1="19" x2="19" y2="5" stroke="#a87800" stroke-width="0.6"/>
       </svg>
-      <h1>From a lemonade stand to GenAI strategy</h1>
-      <p class="home-tag">Ten short modules. One small business. Everything you'd actually do with AI.</p>
-      <p class="home-by">A hands-on course · adapted from the HBS Executive Education original</p>
+      <h1>Welcome. Let's open a lemonade stand.</h1>
+      <p class="home-tag">A hands-on workshop on working well with AI — no technical background needed.</p>
+      <p class="home-by">Adapted from the Harvard Business School Executive Education course <em>Lakeside Lemonade</em></p>
 
-      <p class="home-lede">
-        You'll plan a real lemonade stand in the Lakeside neighborhood — who it's for, where it
-        stands, what it charges, how it sounds, and how it launches — and in doing it you'll learn
-        the moves that matter with AI: <strong>prompting, local expertise, clarifying questions,
-        skills, agents, and agent swarms</strong>. Each module ends with a short reflection; at the
-        end you hand in <strong>one report, in your own words</strong>.
+      <!-- What this is about -->
+      <h2 class="sec"><span class="sec-kicker">What this is all about</span>AI isn't magic, and it isn't useless. It's a new kind of colleague.</h2>
+      <p class="body">
+        Most people try an AI tool a few times, get something bland or slightly wrong, and quietly
+        decide it's either overhyped or not for them. That's a shame, because the gap between a
+        disappointing answer and a genuinely useful one usually has very little to do with the
+        technology. It has to do with <strong>how we work with it</strong> — what we tell it, what
+        we ask for, what we check, and what we never hand over.
+      </p>
+      <p class="body">
+        The good news: that's a human skill, not a technical one. If you've ever briefed a new
+        colleague, reviewed someone's draft, or decided who on your team should handle what, you
+        already have most of it. Today you'll practice turning that experience into a way of
+        working with Claude.
+      </p>
+      <p class="body">
+        <strong>Why a lemonade stand?</strong> Because nobody's career depends on it, so it's safe
+        to experiment and get things wrong. And yet the decisions are real — who to sell to, where
+        to stand, what to charge, how to keep the books — and the data behind them is real too:
+        twelve interviews, a full cost sheet, a survey of every drink in town. Every habit you
+        build on the stand travels straight back to your own work.
       </p>
 
-      <div class="parts">
-        <div class="part-card">
-          <p class="pc-label">Part 1 · Build the business</p>
-          <h3>Working with AI, step by step</h3>
+      <div class="factbar">
+        <div class="fact"><div class="fact-n">10</div><div class="fact-l">short modules, plus a checkpoint and a bonus</div></div>
+        <div class="fact"><div class="fact-n">6</div><div class="fact-l">ways to organize a team of AI helpers</div></div>
+        <div class="fact"><div class="fact-n">1</div><div class="fact-l">report at the end — the whole day, in your words</div></div>
+        <div class="fact"><div class="fact-n">0</div><div class="fact-l">lines of code you'll need to write</div></div>
+      </div>
+
+      <!-- How the day works -->
+      <h2 class="sec"><span class="sec-kicker">How the workshop works</span>One module at a time, together</h2>
+      <div class="flow">
+        <span class="step">Do a module (15–25 min)</span><span class="arrow">→</span>
+        <span class="step">Write your reflections</span><span class="arrow">→</span>
+        <span class="step">Look up for the debrief</span><span class="arrow">→</span>
+        <span class="step">Next module</span>
+      </div>
+      <p class="body" style="margin-top:14px;">
+        Keep Claude open in another browser tab — you'll go back and forth between this page and
+        Claude. When everyone has finished a module, your facilitator brings the room together to
+        talk about what happened and what it means for real work. Then on to the next one.
+      </p>
+
+      <p class="body">Every module page has the same three parts:</p>
+      <div class="anatomy">
+        <div><b>Left · The setup</b>The situation, your part in it, the big idea, and a few words worth knowing.</div>
+        <div class="mid"><b>Middle · Do it</b>Step-by-step: try something in Claude, see what happens, understand why, try it again — with things to click, guess, sort and discover along the way.</div>
+        <div><b>Right · Reflect</b>Two or three short questions. Your answers save as you type and become your report.</div>
+      </div>
+
+      <!-- The journey -->
+      <h2 class="sec"><span class="sec-kicker">The journey</span>From asking good questions to designing how AI works</h2>
+      <div class="journey">
+        <div class="jcard">
+          <p class="pc-label">Part 1 · Working with Claude</p>
+          <h3>Getting answers you can actually use</h3>
+          <p class="jc-sub">You'll build the whole business, one decision at a time.</p>
           <ol>
-            <li><b>Customer</b> — personas from real interviews</li>
-            <li><b>Location</b> — your knowledge vs. Claude's pick</li>
-            <li><b>Price</b> — clarifying questions &amp; the cost sheet</li>
-            <li><b>Brand</b> — a Skill writes your brand book</li>
-            <li><b>Launch</b> — build the website</li>
-            <li><b>Checkpoint</b> — build something for your own life</li>
+            <li><span class="n">01</span><span><b>Customer</b> — why a vague question gets a vague answer, and how to brief Claude like a new colleague</span></li>
+            <li><span class="n">02</span><span><b>Location</b> — what you know that was never written down, and why it matters more now</span></li>
+            <li><span class="n">03</span><span><b>Price</b> — getting Claude to ask before it answers, and reading its sources with a raised eyebrow</span></li>
+            <li><span class="n">04</span><span><b>Brand</b> — using a Skill: an expert's method in a box, made yours</span></li>
+            <li><span class="n">05</span><span><b>Launch</b> — from idea to something people can see</span></li>
+            <li><span class="n">✱</span><span><b>Checkpoint</b> — build something small for your own life</span></li>
           </ol>
         </div>
-        <div class="part-card">
-          <p class="pc-label">Part 2 · Agents &amp; systems</p>
-          <h3>When AI stops answering and starts doing</h3>
+        <div class="jcard">
+          <p class="pc-label">Part 2 · Claude doing the work</p>
+          <h3>Agents, teams of agents, and trust</h3>
+          <p class="jc-sub">You'll hand Claude real tasks — and learn how to stay in charge.</p>
           <ol>
-            <li><b>Books</b> — an agent that acts (classify-and-act)</li>
-            <li><b>Expand</b> — parallel workstreams (fan-out-and-synthesize)</li>
-            <li><b>Skill</b> — package your expertise</li>
-            <li><b>Trust</b> — verification &amp; the six swarm patterns</li>
-            <li><b>Finale</b> — your deployment brief + report</li>
-            <li><b>Bonus</b> — bring agents into your world</li>
+            <li><span class="n">06</span><span><b>Books</b> — when AI stops answering and starts doing</span></li>
+            <li><span class="n">07</span><span><b>Expand</b> — why a team of Claudes can beat one</span></li>
+            <li><span class="n">08</span><span><b>Skill</b> — bottling your own expertise (and what won't fit)</span></li>
+            <li><span class="n">09</span><span><b>Trust</b> — designing checks, and the six shapes AI teams come in</span></li>
+            <li><span class="n">10</span><span><b>Finale</b> — your deployment brief, and handing in your report</span></li>
+            <li><span class="n">✱</span><span><b>Bonus</b> — bringing an agent into your real tools, safely</span></li>
           </ol>
         </div>
       </div>
 
-      <a class="home-cta" href="01-customer.html">Begin — Module 01 →</a>
+      <!-- Promises -->
+      <h2 class="sec"><span class="sec-kicker">Before you start</span>A few things to know</h2>
+      <div class="promises">
+        <div class="promise"><b>First tries are supposed to be rough.</b>Everyone's first answer from Claude is generic. Seeing why — and fixing it — is the lesson.</div>
+        <div class="promise"><b>There are no wrong reflections.</b>Honest beats polished. Short is fine. Nobody is grading you.</div>
+        <div class="promise"><b>Bring your real work in.</b>The stand is practice. Whenever a page asks "what about your work?", think of something real.</div>
+        <div class="promise"><b>Keep confidential things out.</b>Use the course files today. Don't paste anything sensitive into a tool your organization hasn't approved.</div>
+      </div>
+
+      <div style="margin-top:44px;">
+        <a class="home-cta" href="01-customer.html">Begin — Module 01: Customer →</a>
+      </div>
+      <p class="home-by" style="margin-top:18px;">Your answers stay in this browser until you hand in your report at the end.</p>
     </div>
   </div>
 

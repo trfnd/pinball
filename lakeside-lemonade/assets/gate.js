@@ -83,7 +83,11 @@
     var kind = opts.kind || 'participant';
 
     // Already in? Skip straight through.
-    if (hasAccess(kind) && opts.onSuccess) { location.replace(opts.onSuccess); return; }
+    if (hasAccess(kind) && opts.onSuccess) {
+      if (typeof opts.onSuccess === 'function') opts.onSuccess();
+      else location.replace(opts.onSuccess);
+      return;
+    }
 
     form.addEventListener('submit', async function (e) {
       e.preventDefault();
