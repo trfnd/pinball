@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Price · Lakeside Lemonade</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="stylesheet" href="assets/course.css" />
+  <link rel="stylesheet" href="assets/extra.css" />
+  <script>
+    /* gate guard — redirect before paint if the course wasn't entered */
+    (function () {
+      var K = 'lemonade.gate.participant';
+      try {
+        var v = sessionStorage.getItem(K) || localStorage.getItem(K);
+        var ok = v && (v === 'session' || (parseInt(v, 10) > Date.now()));
+        if (!ok) location.replace('index.html#locked');
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body data-slug="03-price" data-module="3">
+  <div id="siteHeader"></div>
+
+  <main>
+    <!-- ── FRAME (left) ─────────────────────────────────────── -->
+    <section class="col frame">
+      <p class="module-id">Module 03 · Part 1 — Build the business</p>
+      <h1 class="question">What do you charge per cup?</h1>
+
+      <div class="frame-row">
+        <div class="k">Scenario</div>
+        <div class="v">You have a full cost sheet — ingredients, supplies, permits — and a survey of every other drink in town. Somewhere between what a cup costs you and what the next vendor charges is your price.</div>
+      </div>
+      <div class="frame-row">
+        <div class="k">Your role</div>
+        <div class="v">You hold the targets: the profit you want, the cup size, how sweet, cash or card.</div>
+      </div>
+      <div class="frame-row">
+        <div class="k">What you'll practice</div>
+        <div class="v">Letting the model ask you the right questions before it runs — and reading its citations critically.</div>
+      </div>
+
+      <div class="frame-row tool">
+        <div class="k">Tool</div>
+        <div class="v">Claude — with the cost sheet and the competitor survey.</div>
+      </div>
+      <div class="inputs" style="margin-top:22px;border-bottom:none;padding-bottom:0;">
+        <p class="inputs-intro">Bring these two files into the chat:</p>
+        <div class="folder-block">
+          <div class="folder-head">
+            <span class="folder-name">pricing_inputs</span>
+            <span class="folder-purpose">two workbooks</span>
+          </div>
+          <div class="file-row">
+            <span class="fname">ingredient_and_supply_costs.xlsx</span>
+            <span class="fdesc">lemons, sugar, ice, cups, permits, plus recipe yields</span>
+          </div>
+          <div class="file-row">
+            <span class="fname">competitor_beverage_pricing.xlsx</span>
+            <span class="fdesc">40 drinks across 8 vendors — Hansen's $6, gas-station soda $1</span>
+          </div>
+        </div>
+        <details class="how">
+          <summary>Don't know where to find them?</summary>
+          <div class="how-body">
+            Both files are in your course files, next to this handout. Drag <code>ingredient_and_supply_costs.xlsx</code> and <code>competitor_beverage_pricing.xlsx</code> straight into the Claude chat.
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ── WORK (middle) ────────────────────────────────────── -->
+    <section class="col work">
+      <div class="inner">
+        <p class="scene">
+          Numbers everywhere, and none of them obvious. Lemons run from $0.79 a piece at the
+          grocery down to $0.40 in a food-service case. Hansen anchors the top at $6; the
+          gas-station $1 soda refill sits at the floor. Janelle, from the interviews, basically
+          handed you a step function: at $2 she buys daily, at $3 she rations it to Fridays, at $4
+          it's a once-a-week treat. Your price lives somewhere inside all of that.
+        </p>
+
+        <div class="activity">
+          <h4><span class="step-n">1</span>Ask for a number, cold</h4>
+          <p>Bring in both workbooks and ask the way most people would:</p>
+        </div>
+        <div class="code-prompt">Here's my cost sheet and a competitor survey. What should I charge per cup?</div>
+        <p class="activity">
+          You'll get a number, and it'll sound sure of itself. But to produce it, Claude had to
+          quietly decide a cup size, a sweetness, that your water is free from the tap, and a
+          margin — none of which you told it. A confident figure, built on four guesses you never
+          saw.
+        </p>
+
+        <div class="activity">
+          <h4><span class="step-n">2</span>Make it ask first</h4>
+          <p>Before it calculates anything, make it surface the decisions it would otherwise make for you:</p>
+        </div>
+        <div class="sample-prompt">Before you calculate anything, ask me the questions you need answered to price
+a cup of lemonade from these two files — target profit, per-cup or by-size,
+which sourcing scenario, cash or card, which corner. Then stop and wait for my
+answers.</div>
+
+        <p class="activity">
+          Now it comes back with questions instead of a number. Answer them — these are your
+          targets, not its:
+        </p>
+        <div class="sample-prompt">Good. Now: cup size 12 oz, mid-tier sourcing, mostly card, the waterfront
+corner, and I want at least $1.50 profit per cup. Compute my cost-per-cup and
+the price FLOOR, then recommend a price. Cite the file and cell behind every
+number, and list each assumption you made that I didn't give you.</div>
+
+        <p class="activity">
+          You get a cost-per-cup, a floor, and a recommended price — each one traced back to a
+          cell you can open, and a short list of the things it assumed on its own. That last list
+          is the part worth reading twice.
+        </p>
+
+        <div class="concept-intro">
+          <p class="ci-label">Read the citation twice</p>
+          <h3>A citation shows where — not why</h3>
+          <p>
+            A citation tells you which file a number came from. It doesn't tell you why that number
+            was chosen. The cost sheet quietly lets you assume free tap water, which swings your
+            margin a lot. A note says to treat the $1 soda refill as the lowest price you compete
+            with — with no reason given. Claude will cite both perfectly. Someone still has to
+            decide whether they're right, and count that checking as real work.
+          </p>
+        </div>
+
+        <!-- ── Checkpoint ── -->
+        <div class="checkpoint">
+          <p class="label">Checkpoint</p>
+          <p class="check-q">
+            Can you point to the one assumption in Claude's price that, if it's wrong, would blow up
+            your margin?
+          </p>
+          <div class="check-choices">
+            <button class="check-btn" data-action="pass">Yes — I found it</button>
+            <button class="check-btn ghost" data-action="stuck">I'm trusting the number</button>
+          </div>
+
+          <div class="helper" id="helper">
+            <p class="help-q">Find the load-bearing assumption</p>
+            <div class="help-choice">
+              <button class="help-btn" data-toggle="h1">Pressure-test the price</button>
+              <div class="help-body" id="h1">
+                <p>Make Claude show you which assumption the price actually leans on:</p>
+                <div class="sample-prompt">Which single assumption, if wrong, moves my profit the most? Show the price
+with tap water vs. filtered, and with 1/2 vs. 3/4 of a lemon per cup.</div>
+                <p class="skill-note">
+                  Water and lemons-per-cup are the quiet ones. The recipe-yield tab even warns the
+                  real batch runs 10–20% off the book yield.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="check-confirmed">A price you can defend — floor, number, and the assumption it rests on.</p>
+
+        <!-- ── After the checkpoint ── -->
+        <div class="post-checkpoint">
+          <div class="takeaway">
+            <p>The questions a model asks first are part of the answer. Clarifying up front is what
+            stands between you and a confident, wrong number.</p>
+            <p>And a cited figure still needs a human to decide it was the right figure. The
+            citation points at a cell; it doesn't tell you the cell was correct.</p>
+          </div>
+
+          <div class="closing-call">
+            <p class="cc-label">Before you move on →</p>
+            <p>Answer the three <strong>reflections</strong> on the right while it's fresh. They're
+            your takeaway from this module, and they go into your final report.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── LAND (right) ─────────────────────────────────────── -->
+    <section class="col land">
+      <div class="land-block">
+        <p class="label">Reflect</p>
+
+        <div class="reflect-q">
+          <p class="q-text">What clarifying questions did Claude ask you before it started?</p>
+          <p class="q-hint">List the ones that mattered.</p>
+          <textarea rows="3" placeholder="In a sentence or two…"></textarea>
+        </div>
+
+        <div class="reflect-q">
+          <p class="q-text">Were those good questions to ask? How would the output have been worse if Claude had just skipped them and guessed?</p>
+          <p class="q-hint">Picture the version with no questions.</p>
+          <textarea rows="4" placeholder="Your answer…"></textarea>
+        </div>
+
+        <div class="reflect-q">
+          <p class="q-text">Anything in the cost sheet that surprised you, or looked worth a closer look?</p>
+          <p class="q-hint">A number, a note, a gap.</p>
+          <textarea rows="3" placeholder="Your answer…"></textarea>
+        </div>
+
+        <p class="can-say">You can now say: the questions a model asks first are part of the answer.</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="siteFooter"></div>
+
+  <script src="assets/config.js"></script>
+  <script src="assets/registry.js"></script>
+  <script src="assets/chrome.js"></script>
+  <script src="assets/sync.js"></script>
+  <script src="assets/course.js"></script>
+</body>
+</html>

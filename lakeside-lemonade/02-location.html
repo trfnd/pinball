@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Location · Lakeside Lemonade</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="stylesheet" href="assets/course.css" />
+  <link rel="stylesheet" href="assets/extra.css" />
+  <script>
+    /* gate guard — redirect before paint if the course wasn't entered */
+    (function () {
+      var K = 'lemonade.gate.participant';
+      try {
+        var v = sessionStorage.getItem(K) || localStorage.getItem(K);
+        var ok = v && (v === 'session' || (parseInt(v, 10) > Date.now()));
+        if (!ok) location.replace('index.html#locked');
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body data-slug="02-location" data-module="2">
+  <div id="siteHeader"></div>
+
+  <main>
+    <!-- ── FRAME (left) ─────────────────────────────────────── -->
+    <section class="col frame">
+      <p class="module-id">Module 02 · Part 1 — Build the business</p>
+      <h1 class="question">Which corner gets the stand?</h1>
+
+      <div class="frame-row">
+        <div class="k">Scenario</div>
+        <div class="v">Eight possible spots sit across the Lakeside neighborhood — the soccer field, the waterfront path, the school at pickup, the farmers market, the commercial strip, the city park, and two quiet residential streets. Only one is your opening corner.</div>
+      </div>
+      <div class="frame-row">
+        <div class="k">Your role</div>
+        <div class="v">You know this neighborhood. Claude only knows what you tell it and what's on the map.</div>
+      </div>
+      <div class="frame-row">
+        <div class="k">What you'll practice</div>
+        <div class="v">Giving the model the local knowledge that was never written down — and keeping the final call for yourself.</div>
+      </div>
+
+      <div class="frame-row tool">
+        <div class="k">Tool</div>
+        <div class="v">Claude — with the neighborhood map and your Module 01 personas.</div>
+      </div>
+      <div class="inputs" style="margin-top:22px;border-bottom:none;padding-bottom:0;">
+        <p class="inputs-intro">Bring these into the chat:</p>
+        <div class="folder-block">
+          <div class="folder-head">
+            <span class="folder-name">neighborhood_map.png</span>
+            <span class="folder-purpose">8 numbered corners</span>
+          </div>
+          <div class="file-row">
+            <span class="fname">map of Lakeside</span>
+            <span class="fdesc">the 8 candidate locations, numbered 1–8, with a legend</span>
+          </div>
+          <div class="file-row">
+            <span class="fname">your 3 personas</span>
+            <span class="fdesc">from Module 01</span>
+          </div>
+        </div>
+        <details class="how">
+          <summary>Don't know where to find these?</summary>
+          <div class="how-body">
+            The map is on this page — click it to zoom. Bring your personas in from the last chat.
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ── WORK (middle) ────────────────────────────────────── -->
+    <section class="col work">
+      <div class="inner">
+        <figure class="lift">
+          <a class="lift-frame" id="mapFrame" role="button" tabindex="0" aria-label="Expand the neighborhood map">
+            <img src="assets/map.png" alt="Lakeside neighborhood map with 8 numbered candidate stand locations" />
+          </a>
+          <figcaption>The eight candidate corners. Click to zoom.</figcaption>
+        </figure>
+        <div class="lift-backdrop" id="mapBackdrop"></div>
+        <div class="lift-stage" id="mapLifted"><img src="assets/map.png" alt="Lakeside neighborhood map, enlarged" /></div>
+
+        <p class="scene">
+          Eight corners, eight different afternoons. Thirsty kids pour off the soccer field
+          (location 2) the moment a game ends, and their parents will pay for cold-and-now. The
+          waterfront path runs with joggers and walkers all week, and nobody out there sells a
+          cold drink. School pickup is a daily, price-sensitive crush. And at the farmers market,
+          Hansen already owns Sunday at $6 a cup. The map in front of you shows roads and foot
+          traffic — it shows none of that.
+        </p>
+
+        <div class="activity">
+          <h4><span class="step-n">1</span>Ask for the best corner, cold</h4>
+          <p>Open Claude, drop in the map, and ask it flat — the way most people would start:</p>
+        </div>
+        <div class="code-prompt">Here's a map of 8 possible locations for a lemonade stand.
+Which location is best?</div>
+        <p class="activity">
+          It will answer, and the answer will sound reasonable. But all it has is the map, so it
+          rewards foot traffic and picks something plausible — blind to who's actually there at
+          3pm and to who already owns the corner.
+        </p>
+
+        <div class="activity">
+          <h4><span class="step-n">2</span>Hand it what only you know</h4>
+          <p>Bring your three personas back in, add the local facts, and ask it to rank with reasons:</p>
+        </div>
+        <div class="sample-prompt">Rank these 8 corners for my OPENING lemonade stand. Use my three personas
+and these local facts:
+ • Soccer field (2): packed weekend mornings, kids parched after games; parents pay up for cold-and-now.
+ • Waterfront path (5): joggers and walkers all week; nobody sells cold lemonade here today.
+ • School pickup (near 2): daily crowd, very price-sensitive; busy ~3pm on schooldays only.
+ • Farmers market (near 6): Hansen already sells hand-squeezed at $6 Sat/Sun — his turf.
+ • Residential streets (7, 8): no permit needed, but almost no passersby.
+Give me the top 2 with the trade-offs, and then tell me what local knowledge
+you're still missing that would change the ranking.</div>
+
+        <p class="activity">
+          Now the ranking comes back reasoned — it can weigh the soccer field's cold-and-now
+          crowd against Hansen's hold on the market, and it can name what it still doesn't know.
+          Same map as a minute ago; what changed is everything you handed it.
+        </p>
+
+        <div class="concept-intro">
+          <p class="ci-label">Why your head still matters</p>
+          <h3>Local knowledge still matters</h3>
+          <p>
+            Much of what a corner is really like was never written down — who's there at 3pm, who
+            already owns Sunday, where a permit is or isn't needed. Claude can only work with what
+            you give it. That part has to come from you.
+          </p>
+        </div>
+
+        <!-- ── Checkpoint ── -->
+        <div class="checkpoint">
+          <p class="label">Checkpoint</p>
+          <p class="check-q">
+            Did your final pick come from the map and the numbers alone — or from something you
+            know that never made it into the chat?
+          </p>
+          <div class="check-choices">
+            <button class="check-btn" data-action="pass">It came from what I know</button>
+            <button class="check-btn ghost" data-action="stuck">I just took Claude's pick</button>
+          </div>
+
+          <div class="helper" id="helper">
+            <p class="help-q">Surface what it assumed</p>
+            <div class="help-choice">
+              <button class="help-btn" data-toggle="h1">Make its assumptions visible</button>
+              <div class="help-body" id="h1">
+                <p>Ask it this, then read the list against what you know:</p>
+                <div class="sample-prompt">List every assumption you made about these corners that I did NOT
+tell you. Mark the ones that, if wrong, would change your top pick.</div>
+                <p class="skill-note">
+                  Hansen flat-out said he'd never sell at the soccer field or the school — wrong
+                  customer for him, perfect for you. That kind of read isn't on the map.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="check-confirmed">Your corner — chosen with what you know, not just what Claude could see.</p>
+
+        <!-- ── After the checkpoint ── -->
+        <div class="post-checkpoint">
+          <div class="takeaway">
+            <p><strong>AI is only as good as the context you bring it.</strong> You compared
+            Claude's pick with your own, and the difference was the local knowledge you added.</p>
+            <p>A convincing ranking built on what it could see is still blind to what it couldn't.</p>
+          </div>
+
+          <div class="closing-call">
+            <p class="cc-label">Before you move on →</p>
+            <p>Answer the three <strong>reflections</strong> on the right while your corner is
+            fresh in mind. They're your takeaway from this module, and they go into your final
+            report.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── LAND (right) ─────────────────────────────────────── -->
+    <section class="col land">
+      <div class="land-block">
+        <p class="label">Reflect</p>
+
+        <div class="reflect-q">
+          <p class="q-text">Which corner did you choose — and did it match Claude's pick?</p>
+          <p class="q-hint">Name the spot and whether you agreed.</p>
+          <textarea rows="3" placeholder="In a sentence or two…"></textarea>
+        </div>
+
+        <div class="reflect-q">
+          <p class="q-text">What did you know about these corners that never made it into the chat?</p>
+          <p class="q-hint">The local detail that tipped it.</p>
+          <textarea rows="3" placeholder="Your answer…"></textarea>
+        </div>
+
+        <div class="reflect-q">
+          <p class="q-text">In the era of AI, do people still need to build their own expertise — and how?</p>
+          <p class="q-hint">Your honest take.</p>
+          <textarea rows="4" placeholder="Your answer…"></textarea>
+        </div>
+
+        <p class="can-say">You can now say: the model is only as good as the context you bring it.</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="siteFooter"></div>
+
+  <script src="assets/config.js"></script>
+  <script src="assets/registry.js"></script>
+  <script src="assets/chrome.js"></script>
+  <script src="assets/sync.js"></script>
+  <script src="assets/course.js"></script>
+</body>
+</html>

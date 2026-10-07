@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Founder · Lakeside Lemonade</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="stylesheet" href="assets/course.css" />
+  <link rel="stylesheet" href="assets/extra.css" />
+  <style> body { display: block; } .hidden { display: none !important; } </style>
+</head>
+<body>
+  <!-- ── Founder gate ───────────────────────────────────────── -->
+  <div id="founderGate" class="founder-gate">
+    <div class="gate2">
+      <svg class="g-mark" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="12" cy="12" r="10" fill="#f5d563" stroke="#161616" stroke-width="1.5"/>
+        <line x1="12" y1="2.5" x2="12" y2="21.5" stroke="#a87800" stroke-width="0.8"/>
+        <line x1="2.5" y1="12" x2="21.5" y2="12" stroke="#a87800" stroke-width="0.8"/>
+      </svg>
+      <p class="g-name">Founder dashboard</p>
+      <form id="founderForm">
+        <input type="password" placeholder="Founder password" autocomplete="current-password" autofocus />
+        <input type="submit" value="Open dashboard" />
+      </form>
+      <p class="g-err" id="founderError"></p>
+      <p class="g-hint">Private — participant reports land here.</p>
+    </div>
+  </div>
+
+  <!-- ── Dashboard ──────────────────────────────────────────── -->
+  <div id="founderView" class="hidden">
+    <header class="strip">
+      <a class="brand" href="index.html">
+        <svg class="brand-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="12" cy="12" r="10" fill="#f5d563" stroke="#161616" stroke-width="1.5"/>
+          <line x1="12" y1="2.5" x2="12" y2="21.5" stroke="#a87800" stroke-width="0.8"/>
+          <line x1="2.5" y1="12" x2="21.5" y2="12" stroke="#a87800" stroke-width="0.8"/>
+        </svg>
+        <span>Lakeside Lemonade</span><span class="sub">· Founder</span>
+      </a>
+    </header>
+
+    <div class="founder-wrap">
+      <div class="founder-head">
+        <h1>Submitted reports</h1>
+        <span class="fh-sub" id="fhSub"></span>
+      </div>
+
+      <div class="founder-tools">
+        <label class="file">Import report file(s)
+          <input type="file" id="importFile" accept=".json,application/json" multiple hidden />
+        </label>
+        <button id="exportAll" type="button">Export all (.json)</button>
+        <button id="refresh" type="button">Refresh</button>
+        <button id="clearAll" type="button">Clear all</button>
+        <span class="founder-stat" id="stat"></span>
+      </div>
+
+      <div class="sub-list">
+        <div class="sub-index" id="subIndex"></div>
+        <div class="sub-detail" id="subDetail">
+          <p class="sd-empty">Select a participant to read their report.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/config.js"></script>
+  <script src="assets/registry.js"></script>
+  <script src="assets/gate.js"></script>
+  <script src="assets/sync.js"></script>
+  <script src="assets/pdf.js"></script>
+  <script>
+    (function () {
+      var gate = document.getElementById('founderGate');
+      var view = document.getElementById('founderView');
+      function esc(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+      function modules(){ return window.LEMONADE_MODULES || []; }
+
+      function reveal(){ gate.classList.add('hidden'); view.classList.remove('hidden'); render(); }
+
+      if (window.LemonadeGate && LemonadeGate.hasAccess('founder')) { reveal(); }
+      if (window.LemonadeGate) {
+        LemonadeGate.bindForm({ formId:'founderForm', kind:'founder', errorId:'founderError',
+          errorText:'That founder password didn’t work.', onSuccess: reveal });
+      } else { reveal(); }
+
+      var selected = null;
+
+      function fmtDate(iso){ try { return new Date(iso).toLocaleString(); } catch(e){ return iso||''; } }
+      function answered(r){ return (r.answers||[]).filter(function(a){ return (a.answer||'').trim(); }).length; }
+
+      function renderIndex(subs){
+        var idx = document.getElementById('subIndex');
+        if (!subs.length){ idx.innerHTML = '<p class="sd-empty" style="text-align:left;padding:14px 0;">No reports yet.</p>'; return; }
+        idx.innerHTML = subs.map(function(r,i){
+          var name = (r.learner&&r.learner.name)||'(no name)';
+          var email = (r.learner&&r.learner.email)||'';
+          var cls = 'sub-item' + (selected===i?' active':'');
+          return '<button class="'+cls+'" data-i="'+i+'">'
+            + '<div class="si-name">'+esc(name)+'</div>'
+            + '<div class="si-meta">'+esc(email)+' · '+answered(r)+' answers · '+esc(fmtDate(r.submittedAt))+'</div>'
+            + '</button>';
+        }).join('');
+        Array.prototype.forEach.call(idx.querySelectorAll('.sub-item'), function(btn){
+          btn.addEventListener('click', function(){ selected = parseInt(btn.dataset.i,10); render(); });
+        });
+      }
+
+      function renderDetail(r){
+        var box = document.getElementById('subDetail');
+        if (!r){ box.innerHTML = '<p class="sd-empty">Select a participant to read their report.</p>'; return; }
+        var byMod = {};
+        (r.answers||[]).forEach(function(a){ (byMod[a.module]=byMod[a.module]||[]).push(a); });
+        var html = '<div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:10px;margin-bottom:18px;">'
+          + '<div><div style="font-family:var(--serif);font-size:22px;">'+esc((r.learner&&r.learner.name)||'—')+'</div>'
+          + '<div style="font-size:12.5px;color:var(--ink-faint);">'+esc((r.learner&&r.learner.email)||'')+' · '+esc(fmtDate(r.submittedAt))+'</div></div>'
+          + '<button class="sub-item" style="width:auto;border:1px solid var(--rule);" id="printOne">Print / PDF</button></div>';
+
+        modules().forEach(function(m){
+          var rows = (byMod[m.n]||[]).filter(function(a){ return (a.answer||'').trim(); });
+          if (!rows.length) return;
+          rows.sort(function(a,b){ return a.q-b.q; });
+          html += '<div class="sd-mod"><p class="sd-eyebrow">'+esc(m.eyebrow)+'</p>';
+          rows.forEach(function(a){
+            var head = (m.subheads && m.subheads[a.q]) || a.question || '';
+            html += '<p class="sd-q">'+esc(head)+'</p><p class="sd-a">'+esc(a.answer)+'</p>';
+          });
+          html += '</div>';
+        });
+        box.innerHTML = html;
+        var pb = document.getElementById('printOne');
+        if (pb) pb.addEventListener('click', function(){
+          if (window.LemonadePDF) window.LemonadePDF.render(window.LemonadePDF.openWindow(), r);
+        });
+      }
+
+      function render(){
+        var subs = (window.LemonadeSync && window.LemonadeSync.listSubmissions()) || [];
+        if (selected!=null && selected>=subs.length) selected = subs.length?0:null;
+        document.getElementById('stat').textContent = subs.length + (subs.length===1?' report':' reports');
+        document.getElementById('fhSub').textContent = 'Lakeside Lemonade · GenAI Strategy & Execution';
+        renderIndex(subs);
+        renderDetail(selected!=null?subs[selected]:null);
+      }
+
+      // Tools
+      document.getElementById('refresh').addEventListener('click', render);
+      document.getElementById('clearAll').addEventListener('click', function(){
+        if (confirm('Remove all imported/saved reports from this browser? This cannot be undone.')){
+          window.LemonadeSync.clearSubmissions(); selected=null; render();
+        }
+      });
+      document.getElementById('exportAll').addEventListener('click', function(){
+        var subs = window.LemonadeSync.listSubmissions();
+        var blob = new Blob([JSON.stringify(subs,null,2)], {type:'application/json'});
+        var a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+        a.download = 'lakeside-lemonade-reports.json'; document.body.appendChild(a); a.click(); a.remove();
+        setTimeout(function(){ URL.revokeObjectURL(a.href); }, 2000);
+      });
+      document.getElementById('importFile').addEventListener('change', function(e){
+        var files = Array.prototype.slice.call(e.target.files||[]);
+        var done = 0, added = 0, bad = 0;
+        if (!files.length) return;
+        files.forEach(function(f){
+          var reader = new FileReader();
+          reader.onload = function(){
+            try {
+              var obj = JSON.parse(reader.result);
+              var list = Array.isArray(obj) ? obj : [obj];
+              list.forEach(function(rep){ try { window.LemonadeSync.importReport(rep); added++; } catch(err){ bad++; } });
+            } catch(err){ bad++; }
+            if (++done === files.length){ render(); alert('Imported '+added+' report(s)'+(bad?(' · '+bad+' could not be read'):'')); e.target.value=''; }
+          };
+          reader.readAsText(f);
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

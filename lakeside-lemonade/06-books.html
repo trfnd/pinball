@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Books · Lakeside Lemonade</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="stylesheet" href="assets/course.css" />
+  <link rel="stylesheet" href="assets/extra.css" />
+  <script>
+    /* gate guard — redirect before paint if the course wasn't entered */
+    (function () {
+      var K = 'lemonade.gate.participant';
+      try {
+        var v = sessionStorage.getItem(K) || localStorage.getItem(K);
+        var ok = v && (v === 'session' || (parseInt(v, 10) > Date.now()));
+        if (!ok) location.replace('index.html#locked');
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body data-slug="06-books" data-module="6">
+  <div id="siteHeader"></div>
+
+  <main>
+    <!-- ── FRAME (left) ─────────────────────────────────────── -->
+    <section class="col frame">
+      <p class="module-id">Module 06 · Part 2 — Agents &amp; systems</p>
+      <h1 class="question">What happens when AI stops answering and starts doing?</h1>
+
+      <div class="frame-row">
+        <div class="k">Scenario</div>
+        <div class="v">A week of messy sales notes and receipts has to become closed books — not advice about how to do bookkeeping, but the actual closed ledger.</div>
+      </div>
+      <div class="frame-row">
+        <div class="k">Your role</div>
+        <div class="v">You set the task, decide what access to hand over, and name the one call you want checked with you first.</div>
+      </div>
+      <div class="frame-row">
+        <div class="k">What you'll practice</div>
+        <div class="v">Watching the same Claude move from answering to acting — and catching the decisions it makes where your instructions run out.</div>
+      </div>
+
+      <div class="frame-row tool">
+        <div class="k">Tool</div>
+        <div class="v">Claude as an agent, with your files.</div>
+      </div>
+      <div class="inputs" style="margin-top:22px;border-bottom:none;padding-bottom:0;">
+        <p class="inputs-intro">Hand the agent this folder:</p>
+        <div class="folder-block">
+          <div class="folder-head">
+            <span class="folder-name">week_of_sales</span>
+            <span class="folder-purpose">the raw week</span>
+          </div>
+          <div class="file-row">
+            <span class="fname">daily sales notes</span>
+            <span class="fdesc">scribbled cup counts and cash totals, one per day</span>
+          </div>
+          <div class="file-row">
+            <span class="fname">ingredient_and_supply_costs.xlsx</span>
+            <span class="fdesc">to book costs against</span>
+          </div>
+        </div>
+        <details class="how">
+          <summary>Not sure what to hand over?</summary>
+          <div class="how-body">
+            Give Claude the whole <code>week_of_sales</code> folder and let it read the daily notes and
+            the cost sheet itself — don't paste them in one at a time. The point is that it works from
+            your files, not from a description of them.
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ── WORK (middle) ────────────────────────────────────── -->
+    <section class="col work">
+      <div class="inner">
+        <p class="scene">
+          It's the same Claude on all three rungs — what changes is what you hand it, and how much of
+          the job it finishes without you. Hidden in the week are two problems: Saturday's cash came up
+          $32 short of the cups sold, and one day lists 45 lemons when every other day shows about 30.
+          Will your run catch them?
+        </p>
+
+        <p class="activity" style="margin-bottom:12px;">
+          Three ways to ask the same Claude about the same week. Watch what each one actually leaves you
+          holding.
+        </p>
+
+        <div class="rungs">
+          <div class="rung">
+            <div class="rn">Ask how<span class="tag">Answer</span></div>
+            <p>“How would I close the books for a week of lemonade sales?” You get a tidy explanation. Nothing is done.</p>
+          </div>
+          <div class="rung">
+            <div class="rn">Ask it to do it<span class="tag">Act</span></div>
+            <p>“Close the books for this week.” It produces a ledger — and makes calls you never specified: a $0 starting balance, one row per cup size, how to handle a day that doesn't reconcile.</p>
+          </div>
+          <div class="rung">
+            <div class="rn">Let it act, then audit<span class="tag">Act + check</span></div>
+            <p>Give it the files, let it flag anything inconsistent, and ask it to keep a log of what it changed.</p>
+          </div>
+        </div>
+
+        <div class="activity">
+          <h4><span class="step-n">1</span>Run it, then interrogate it</h4>
+          <p>Give it the files and ask for the job done — the closed ledger, not a how-to:</p>
+        </div>
+        <div class="code-prompt">Close the books for this week from these daily notes and the cost sheet.
+Flag anything that doesn't reconcile.</div>
+
+        <div class="activity">
+          <h4><span class="step-n">2</span>Ask what it decided</h4>
+          <p>An agent won't volunteer the calls it made along the way. So ask — and ask for what you can check, not just an explanation:</p>
+        </div>
+        <div class="sample-prompt">What calls did you have to make to close these books that I didn't tell
+you how to handle? List each one and what you assumed. Then show me the
+files you started from and a log of every change you made.</div>
+
+        <div class="concept-intro">
+          <p class="ci-label">The part to watch</p>
+          <h3>Where instructions stop, it decides</h3>
+          <p>
+            An agent tries to finish the job rather than come back with questions. Where your
+            instructions run out, it makes the call itself. For routine work that's the point — nobody
+            wants to be asked how to book a bag of sugar. The risk is exactly where your business does
+            things its own way, for reasons that were never written down. And when you ask an agent what
+            it decided, it writes an explanation afterwards — it doesn't keep a record. So ask for what
+            you can check: the files it started from, and a log of what it changed.
+          </p>
+        </div>
+
+        <p class="note-line">
+          This is the first agent pattern — classify-and-act: sort each line into the right bucket, then
+          take the matching action. You'll meet the whole family of patterns in Module 09.
+        </p>
+
+        <!-- ── Checkpoint ── -->
+        <div class="checkpoint">
+          <p class="label">Checkpoint</p>
+          <p class="check-q">
+            Did your run catch BOTH problems — Saturday's $32 shortfall and the 45-lemon day?
+          </p>
+          <div class="check-choices">
+            <button class="check-btn" data-action="pass">Caught both</button>
+            <button class="check-btn ghost" data-action="stuck">Missed one (or both)</button>
+          </div>
+
+          <div class="helper" id="helper">
+            <p class="help-q">Make it check its own work</p>
+            <div class="help-choice">
+              <button class="help-btn" data-toggle="h1">Force a reconciliation</button>
+              <div class="help-body" id="h1">
+                <p>Add this and run it again — it makes the checking explicit instead of hoped for:</p>
+                <div class="sample-prompt">For each day, reconcile cups sold against cash taken, and flag any
+input that's an outlier versus the other days. Show your working,
+don't just fix it silently.</div>
+                <p class="skill-note">
+                  An agent that quietly “fixes” a $32 gap is more dangerous than one that flags it. You
+                  want the flag, not the patch.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="check-confirmed">Books closed — and you know which calls were yours and which were the agent's.</p>
+
+        <!-- ── After the checkpoint ── -->
+        <div class="post-checkpoint">
+          <div class="takeaway">
+            <p>The difference between answering and acting is <strong>access</strong> — and the decisions
+            that come with it. An agent finishes the job; the judgment calls it makes where your
+            instructions stop are the thing to watch, and the only defence is asking for what you can
+            check.</p>
+          </div>
+
+          <div class="closing-call">
+            <p class="cc-label">Before you move on →</p>
+            <p>Answer the three <strong>reflections</strong> on the right while it's fresh. They're your
+            takeaway from this module, and they go into your final report.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── LAND (right) ─────────────────────────────────────── -->
+    <section class="col land">
+      <div class="land-block">
+        <p class="label">Reflect</p>
+
+        <div class="reflect-q">
+          <p class="q-text">It was the same Claude on all three rungs. In your own words — what did you have to give it to turn it from something that answers into something that acts?</p>
+          <p class="q-hint">What changed between the rungs?</p>
+          <textarea rows="4" placeholder="Your answer…"></textarea>
+        </div>
+
+        <div class="reflect-q">
+          <p class="q-text">Did you catch Claude making a decision for you — a judgment call you never spelled out? If you're not sure, ask it directly: “what calls did you have to make to close these books?” Then look at its answer — would you have made them the same way?</p>
+          <p class="q-hint">Name one call it made.</p>
+          <textarea rows="5" placeholder="Your answer…"></textarea>
+        </div>
+
+        <div class="reflect-q">
+          <p class="q-text">Think of a task that repeats in your real work. What access and what permission would you have to hand an agent for it to actually do that task — and what's the one decision you'd want it to check with you first?</p>
+          <p class="q-hint">Be concrete about the access.</p>
+          <textarea rows="5" placeholder="Your answer…"></textarea>
+        </div>
+
+        <p class="can-say">You can now say: the difference between answering and acting is access — and the decisions that come with it.</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="siteFooter"></div>
+
+  <script src="assets/config.js"></script>
+  <script src="assets/registry.js"></script>
+  <script src="assets/chrome.js"></script>
+  <script src="assets/sync.js"></script>
+  <script src="assets/course.js"></script>
+</body>
+</html>

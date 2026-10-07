@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Checkpoint · Lakeside Lemonade</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="stylesheet" href="assets/course.css" />
+  <link rel="stylesheet" href="assets/extra.css" />
+  <script>
+    (function () {
+      var K = 'lemonade.gate.participant';
+      try {
+        var v = sessionStorage.getItem(K) || localStorage.getItem(K);
+        var ok = v && (v === 'session' || (parseInt(v, 10) > Date.now()));
+        if (!ok) location.replace('index.html#locked');
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body data-slug="checkpoint" data-module="51">
+  <div id="siteHeader"></div>
+
+  <main>
+    <!-- ── FRAME (left) ─────────────────────────────────────── -->
+    <section class="col frame">
+      <p class="module-id">Checkpoint · Between the parts</p>
+      <h1 class="question">What would you build for your own life?</h1>
+
+      <div class="frame-row">
+        <div class="k">Where you are</div>
+        <div class="v">Part 1 is done. You ran the whole shape — customer, corner, price, brand, launch — on a lemonade stand. Before Part 1 turns into Part 2 (agents and systems), run it on something that's actually yours.</div>
+      </div>
+      <div class="frame-row">
+        <div class="k">Your role</div>
+        <div class="v">Builder. No case, no files from us — your idea, your knowledge, your call on when it's good enough.</div>
+      </div>
+      <div class="frame-row">
+        <div class="k">Time</div>
+        <div class="v">About 20–30 minutes. One sitting. Don't over-scope it.</div>
+      </div>
+
+      <div class="frame-row tool">
+        <div class="k">Tool</div>
+        <div class="v">Claude — however you like to work with it.</div>
+      </div>
+      <div class="inputs" style="margin-top:22px;border-bottom:none;padding-bottom:0;">
+        <p class="inputs-intro">Pick one of four:</p>
+        <div class="folder-block">
+          <div class="file-row"><span class="fname">Sparks joy</span><span class="fdesc">a small delight, for you or someone you know</span></div>
+          <div class="file-row"><span class="fname">Makes life easier</span><span class="fdesc">a nuisance you'd happily never do by hand again</span></div>
+          <div class="file-row"><span class="fname">Answers a question</span><span class="fdesc">something you've wondered and could show</span></div>
+          <div class="file-row"><span class="fname">Feels like magic</span><span class="fdesc">a thing you didn't think you could make</span></div>
+        </div>
+        <details class="how">
+          <summary>Directions adapted from…</summary>
+          <div class="how-body">
+            Karen Brennan's <em>Vibe Coding</em> course, Harvard Graduate School of Education.
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ── WORK (middle) ────────────────────────────────────── -->
+    <section class="col work">
+      <div class="inner">
+        <p class="scene">
+          You just took a project from nothing to a shareable website, with AI, in five short
+          steps. That pattern wasn't about lemonade. It's about <em>you</em> being able to make a
+          real thing out of an idea now — so make one. Not for a grade. Because you can.
+        </p>
+
+        <div class="activity">
+          <h4><span class="step-n">1</span>Choose something small and true</h4>
+          <p>
+            Pick one of the four prompts on the left. The best first builds are embarrassingly
+            specific — a tool only your family needs, a page that answers one question you keep
+            re-explaining, a toy that makes one person laugh. Specific beats impressive.
+          </p>
+        </div>
+
+        <div class="activity">
+          <h4><span class="step-n">2</span>Give Claude what only you know</h4>
+          <p>
+            The same lesson from Module 02 applies: the thing that makes it yours is the context
+            you bring. Tell Claude who it's for, what it needs to do, and the details that live only
+            in your head. Then build, look, correct, build again.
+          </p>
+        </div>
+        <div class="sample-prompt">I want to build a small [web page / tool / toy] that [does one specific
+thing] for [who it's for]. Here's what you need to know that you can't
+guess: [the details only you have]. Build a first version I can look at,
+then we'll fix it together.</div>
+
+        <div class="concept-intro sneak-peek">
+          <p class="ci-label">For a little nerve</p>
+          <h3>From a past cohort</h3>
+          <p><strong>Beat 75%</strong> — a hands-on game showing why entangled particles beat any
+          pre-agreed strategy (classical play tops out at 75%, quantum at ~85%). <em>Answers a
+          question.</em></p>
+          <p><strong>Bed Buddies</strong> — a garden-bed planner: enter the bed size and frost
+          dates, pick seeds, get a layout and a sowing calendar. <em>Sparks joy.</em></p>
+          <p><strong>Showbirds</strong> — a planning page for a bird-of-paradise costume party:
+          three looks, a shared checklist, an idea board. <em>Sparks joy.</em></p>
+        </div>
+
+        <div class="takeaway">
+          <p>When you've got something — even half-working — come back and write down what happened.
+          The questions on the right are the whole point of the checkpoint: they're where the doing
+          turns into something you'll remember.</p>
+        </div>
+
+        <div class="closing-call">
+          <p class="cc-label">Then → Part 2</p>
+          <p>Next, Claude stops <strong>answering</strong> and starts <strong>doing</strong>. Part 2
+          is agents, parallel workstreams, skills, and how you'd ever trust any of it.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── LAND (right) ─────────────────────────────────────── -->
+    <section class="col land">
+      <div class="land-block">
+        <p class="label">Your build</p>
+
+        <div class="reflect-q">
+          <p class="q-text">What I'm going to build, and what I'll give Claude to start</p>
+          <p class="q-hint">A sentence is plenty. Write it before you start.</p>
+          <textarea rows="3" placeholder="I'm going to build…"></textarea>
+        </div>
+
+        <div class="reflect-q" data-optional>
+          <p class="q-text">A link to what you built (optional)</p>
+          <p class="q-hint">Paste it if you have one — not required.</p>
+          <textarea rows="2" placeholder="https://…"></textarea>
+        </div>
+
+        <div class="reflect-q">
+          <p class="q-text">What did you set out to build, and what did you end up with?</p>
+          <p class="q-hint">The gap between the plan and the thing.</p>
+          <textarea rows="4" placeholder="Your answer…"></textarea>
+        </div>
+
+        <div class="reflect-q">
+          <p class="q-text">Where did the difference come from?</p>
+          <p class="q-hint">What moved it — a prompt, a correction, a detail you added?</p>
+          <textarea rows="3" placeholder="Your answer…"></textarea>
+        </div>
+
+        <div class="reflect-q">
+          <p class="q-text">Was your idea too big, about right, or too small? What would you do differently next time?</p>
+          <p class="q-hint">Right-sizing is a skill too.</p>
+          <textarea rows="3" placeholder="Your answer…"></textarea>
+        </div>
+
+        <div class="reflect-q">
+          <p class="q-text">What did you know that you had to tell Claude, or wish you had told it sooner?</p>
+          <p class="q-hint">The context only you had.</p>
+          <textarea rows="3" placeholder="Your answer…"></textarea>
+        </div>
+
+        <p class="can-say">You can now say: you can turn an idea of your own into a real thing with AI.</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="siteFooter"></div>
+
+  <script src="assets/config.js"></script>
+  <script src="assets/registry.js"></script>
+  <script src="assets/chrome.js"></script>
+  <script src="assets/sync.js"></script>
+  <script src="assets/course.js"></script>
+</body>
+</html>

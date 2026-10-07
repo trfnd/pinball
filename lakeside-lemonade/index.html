@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Lakeside Lemonade</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="stylesheet" href="assets/course.css" />
+  <link rel="stylesheet" href="assets/extra.css" />
+  <style>
+    body { display: block; }
+    #gateView { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px; }
+    .hidden { display: none !important; }
+  </style>
+</head>
+<body>
+  <!-- ── Gate ───────────────────────────────────────────────── -->
+  <div id="gateView">
+    <div class="gate2">
+      <svg class="g-mark" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="12" cy="12" r="10" fill="#f5d563" stroke="#161616" stroke-width="1.5"/>
+        <line x1="12" y1="2.5" x2="12" y2="21.5" stroke="#a87800" stroke-width="0.8"/>
+        <line x1="2.5" y1="12" x2="21.5" y2="12" stroke="#a87800" stroke-width="0.8"/>
+        <line x1="5" y1="5" x2="19" y2="19" stroke="#a87800" stroke-width="0.6"/>
+        <line x1="5" y1="19" x2="19" y2="5" stroke="#a87800" stroke-width="0.6"/>
+      </svg>
+      <p class="g-name">Lakeside Lemonade</p>
+      <form id="gateForm">
+        <input type="password" placeholder="Password" autocomplete="current-password" autofocus />
+        <input type="submit" value="Enter" />
+        <label class="remember"><input type="checkbox" id="gateRemember" checked /> Keep me signed in</label>
+      </form>
+      <p class="g-err" id="gateError"></p>
+      <p class="g-hint">A short GenAI course, from a lemonade stand.</p>
+    </div>
+  </div>
+
+  <!-- ── Landing (revealed after the gate) ──────────────────── -->
+  <div id="homeView" class="hidden">
+    <header class="strip">
+      <a class="brand" href="index.html">
+        <svg class="brand-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="12" cy="12" r="10" fill="#f5d563" stroke="#161616" stroke-width="1.5"/>
+          <line x1="12" y1="2.5" x2="12" y2="21.5" stroke="#a87800" stroke-width="0.8"/>
+          <line x1="2.5" y1="12" x2="21.5" y2="12" stroke="#a87800" stroke-width="0.8"/>
+        </svg>
+        <span>Lakeside Lemonade</span><span class="sub">· GenAI Strategy &amp; Execution</span>
+      </a>
+    </header>
+
+    <div class="home">
+      <svg class="home-mark" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="12" cy="12" r="10" fill="#f5d563" stroke="#161616" stroke-width="1.5"/>
+        <line x1="12" y1="2.5" x2="12" y2="21.5" stroke="#a87800" stroke-width="0.8"/>
+        <line x1="2.5" y1="12" x2="21.5" y2="12" stroke="#a87800" stroke-width="0.8"/>
+        <line x1="5" y1="5" x2="19" y2="19" stroke="#a87800" stroke-width="0.6"/>
+        <line x1="5" y1="19" x2="19" y2="5" stroke="#a87800" stroke-width="0.6"/>
+      </svg>
+      <h1>From a lemonade stand to GenAI strategy</h1>
+      <p class="home-tag">Ten short modules. One small business. Everything you'd actually do with AI.</p>
+      <p class="home-by">A hands-on course · adapted from the HBS Executive Education original</p>
+
+      <p class="home-lede">
+        You'll plan a real lemonade stand in the Lakeside neighborhood — who it's for, where it
+        stands, what it charges, how it sounds, and how it launches — and in doing it you'll learn
+        the moves that matter with AI: <strong>prompting, local expertise, clarifying questions,
+        skills, agents, and agent swarms</strong>. Each module ends with a short reflection; at the
+        end you hand in <strong>one report, in your own words</strong>.
+      </p>
+
+      <div class="parts">
+        <div class="part-card">
+          <p class="pc-label">Part 1 · Build the business</p>
+          <h3>Working with AI, step by step</h3>
+          <ol>
+            <li><b>Customer</b> — personas from real interviews</li>
+            <li><b>Location</b> — your knowledge vs. Claude's pick</li>
+            <li><b>Price</b> — clarifying questions &amp; the cost sheet</li>
+            <li><b>Brand</b> — a Skill writes your brand book</li>
+            <li><b>Launch</b> — build the website</li>
+            <li><b>Checkpoint</b> — build something for your own life</li>
+          </ol>
+        </div>
+        <div class="part-card">
+          <p class="pc-label">Part 2 · Agents &amp; systems</p>
+          <h3>When AI stops answering and starts doing</h3>
+          <ol>
+            <li><b>Books</b> — an agent that acts (classify-and-act)</li>
+            <li><b>Expand</b> — parallel workstreams (fan-out-and-synthesize)</li>
+            <li><b>Skill</b> — package your expertise</li>
+            <li><b>Trust</b> — verification &amp; the six swarm patterns</li>
+            <li><b>Finale</b> — your deployment brief + report</li>
+            <li><b>Bonus</b> — bring agents into your world</li>
+          </ol>
+        </div>
+      </div>
+
+      <a class="home-cta" href="01-customer.html">Begin — Module 01 →</a>
+    </div>
+  </div>
+
+  <script src="assets/config.js"></script>
+  <script src="assets/registry.js"></script>
+  <script src="assets/gate.js"></script>
+  <script>
+    (function () {
+      var gate = document.getElementById('gateView');
+      var home = document.getElementById('homeView');
+      function reveal() { gate.classList.add('hidden'); home.classList.remove('hidden'); }
+      if (window.LemonadeGate && LemonadeGate.hasAccess('participant')) { reveal(); }
+      if (window.LemonadeGate) {
+        LemonadeGate.bindForm({ formId: 'gateForm', kind: 'participant',
+          errorId: 'gateError', rememberId: 'gateRemember', onSuccess: reveal });
+      } else { reveal(); }
+    })();
+  </script>
+</body>
+</html>

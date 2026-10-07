@@ -1,0 +1,1136 @@
+/* ============================================================
+   course.css — shared chrome and content styles for M1-M7
+   Bespoke per-page styles remain inline in each page.
+   ============================================================ */
+
+/* ───────────────────────  TOKENS  ─────────────────────── */
+:root {
+  --ink:        #161616;
+  --ink-soft:   #555555;
+  --ink-faint:  #9a9892;
+  --paper:      #fbfaf6;
+  --panel:      #ffffff;
+  --rule:       #ebe8df;
+  --rule-soft:  #f1efe8;
+  --accent:     #e6a700;
+
+  --serif: "Iowan Old Style", "Iowan", "Charter", "Georgia", serif;
+  --sans:  -apple-system, BlinkMacSystemFont, "Inter", "SF Pro Text", system-ui, sans-serif;
+  --mono:  ui-monospace, "SF Mono", "JetBrains Mono", Menlo, monospace;
+}
+
+/* ───────────────────────  BASELINE  ─────────────────────── */
+* { box-sizing: border-box; }
+html, body {
+  margin: 0; padding: 0;
+  font-family: var(--sans);
+  background: var(--paper);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-size: 16px;
+  line-height: 1.55;
+}
+html { scroll-padding-top: 70px; }
+body { min-height: 100vh; display: flex; flex-direction: column; }
+
+/* ───────────────────────  TOP STRIP  ─────────────────────── */
+header.strip {
+  display: flex; align-items: center; gap: 32px;
+  padding: 14px 40px;
+  border-bottom: 1px solid var(--rule);
+  background: var(--panel);
+  flex-shrink: 0;
+  position: sticky; top: 0; z-index: 10;
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 13px; font-weight: 600;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+  text-decoration: none;
+}
+.brand-icon { width: 20px; height: 20px; flex-shrink: 0; }
+.brand .sub {
+  color: var(--ink-faint); font-weight: 400; margin-left: 4px;
+}
+.brand:hover .sub { color: var(--ink-soft); }
+
+/* ───────────────────────  MODNAV  ─────────────────────── */
+.modnav {
+  display: flex; gap: 28px; margin-left: auto;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+.modnav a {
+  color: var(--ink-faint);
+  text-decoration: none;
+  display: flex; flex-direction: column; gap: 2px;
+  letter-spacing: 0.02em;
+  align-items: flex-start;
+}
+.modnav a .num { font-weight: 600; font-size: 13px; }
+.modnav a .lbl { font-size: 11px; }
+.modnav a.active { color: var(--ink); position: relative; }
+.modnav a.active .num::after {
+  content: ""; position: absolute;
+  left: 0; right: 0; bottom: -16px;
+  height: 2px; background: var(--accent);
+}
+.modnav a:hover { color: var(--ink); }
+.modnav a.done { color: var(--ink-soft); }
+.modnav .part-divider {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--ink-faint);
+  font-weight: 700;
+  padding-left: 16px;
+  position: relative;
+  align-self: center;
+  margin-top: 1px;
+}
+.modnav .part-divider::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 50%;
+  transform: translateY(-50%);
+  width: 1px; height: 22px;
+  background: var(--rule);
+}
+
+/* The Part 1 checkpoint is the one stop that isn't a numbered module: it shows
+   its word at every width, including the compact rail where labels are hidden. */
+/* Checkpoint and Bonus are stops without a module number: an asterisk stands in
+   for the number, sized and nudged so it sits on the numbers' line. */
+.modnav a.checkpoint-link .num,
+.modnav a.optional .num { font-size: 16px; line-height: 20px; }   /* same 20px box as a module number, so nothing shifts */
+.modnav a.checkpoint-link .lbl { font-weight: 600; letter-spacing: 0.02em; }
+
+.modnav-wrap { margin-left: auto; position: relative; display: flex; align-items: center; }
+
+/* Narrow-screen toggle: hidden until the rail stops fitting (see breakpoints). */
+.modnav-toggle {
+  display: none;
+  align-items: center; gap: 8px;
+  font: inherit; font-size: 12px;
+  color: var(--ink); background: var(--panel);
+  border: 1px solid var(--rule); border-radius: 4px;
+  padding: 7px 11px; cursor: pointer;
+}
+.modnav-toggle:hover { border-color: var(--ink-faint); }
+.modnav-toggle .mt-chev { width: 12px; height: 12px; color: var(--ink-faint); transition: transform 0.15s ease; }
+.modnav-toggle[aria-expanded="true"] .mt-chev { transform: rotate(180deg); }
+
+/* ── Between about 900px and 1400px the labels go, the numbers stay ──
+   The full rail needs ~1390px with the brand and both part dividers;
+   numbers alone need ~600px. */
+@media (max-width: 1399px) {
+  header.strip { gap: 16px; padding: 14px 22px; }
+  .brand .sub { display: none; }          /* the tagline costs ~90px we need here */
+  .modnav { gap: 13px; }
+  .modnav a .lbl { display: none; }
+  .modnav a.active .lbl,
+  .modnav a.checkpoint-link .lbl,
+  .modnav a.optional .lbl { display: block; }
+  .modnav .part-divider { padding-left: 12px; font-size: 9px; letter-spacing: 0.12em; }
+}
+
+/* ── Below that, the rail becomes a menu ── */
+@media (max-width: 899px) {
+  header.strip { padding: 12px 18px; }
+  .modnav-toggle { display: inline-flex; }
+  .modnav {
+    display: none;
+    position: absolute; right: 0; top: calc(100% + 10px);
+    flex-direction: column; gap: 1px;
+    width: 250px; max-height: 70vh; overflow-y: auto;
+    padding: 10px; background: var(--panel);
+    border: 1px solid var(--rule); border-radius: 8px;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+    z-index: 60;
+  }
+  .modnav.open { display: flex; }
+  .modnav a {
+    flex-direction: row; align-items: baseline; gap: 10px;
+    padding: 9px 10px; border-radius: 4px;
+  }
+  .modnav a:hover { background: var(--rule-soft); }
+  .modnav a .num { min-width: 22px; }
+  .modnav a .lbl, .modnav a.active .lbl { display: block; font-size: 13px; }
+  .modnav a.active { background: var(--rule-soft); }
+  .modnav a.active .num { color: var(--accent); }
+  .modnav a.active .num::after { display: none; }   /* the underline is for the rail */
+  .modnav a.checkpoint-link { align-self: stretch; padding-left: 42px; }
+  .modnav .part-divider {
+    align-self: stretch; padding: 12px 10px 4px 10px; margin-top: 6px;
+    border-top: 1px solid var(--rule);
+  }
+  .modnav .part-divider::before { display: none; }
+}
+
+/* Optional-module indicators (modnav + index card).
+   Used by the M9 Skill module which sits outside the required path. */
+.modnav a.optional .num,
+.modnav a.optional .lbl {
+  color: var(--ink-faint);
+}
+.modnav a.optional:hover .num,
+.modnav a.optional:hover .lbl { color: var(--ink-soft); }
+.modnav a.optional .opt-mark {
+  color: var(--ink-faint);
+  margin-left: 1px;
+  font-size: 10px;
+  vertical-align: super;
+  line-height: 0;
+}
+
+.modules-list li.optional a {
+  /* slightly demote the optional card visually */
+  background: var(--rule-soft);
+}
+.modules-list li.optional .opt-tag {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 1px 7px;
+  background: var(--panel);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  font-family: var(--sans);
+  font-size: 9.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ink-faint);
+  vertical-align: 2px;
+}
+
+/* ───────────────────────  MAIN GRID  ─────────────────────── */
+main {
+  display: grid;
+  grid-template-columns: 22% 1fr 22%;
+  flex: 1;
+  min-height: 0;
+}
+.col {
+  padding: 48px 44px 56px;
+}
+.col.frame { border-right: 1px solid var(--rule); }
+.col.land  { border-left:  1px solid var(--rule); background: #fcfbf6; }
+.col.work  {
+  padding-left: 64px; padding-right: 64px;
+}
+.col.work > .inner {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* ───────────────────────  SECTION LABEL  ─────────────────────── */
+.label {
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ink-faint);
+  font-weight: 600;
+  margin: 0 0 14px 0;
+}
+
+/* ───────────────────────  FRAME (left)  ─────────────────────── */
+.module-id {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--ink-faint);
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+h1.question {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+  margin: 0 0 38px 0;
+  color: var(--ink);
+}
+.frame-row { margin-bottom: 24px; }
+.frame-row .k {
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ink-faint);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.frame-row .v {
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+.frame-row.tool {
+  margin-top: 32px;
+  padding-top: 22px;
+  border-top: 1px solid var(--rule);
+}
+.frame-row.tool .v { font-weight: 500; }
+
+/* "Don't know where to find it?" disclosure */
+details.how { margin-top: 10px; }
+details.how summary {
+  list-style: none;
+  cursor: pointer;
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  display: inline-flex; align-items: center; gap: 6px;
+  user-select: none;
+}
+details.how summary::-webkit-details-marker { display: none; }
+details.how summary::before {
+  content: "+";
+  display: inline-block;
+  width: 12px; text-align: center;
+  color: var(--ink-faint);
+  font-weight: 500;
+}
+details.how[open] summary::before { content: "−"; }
+details.how summary:hover { color: var(--ink); }
+details.how .how-body {
+  margin-top: 10px;
+  padding-left: 18px;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  border-left: 1px solid var(--rule);
+}
+details.how .how-body code {
+  font-family: var(--mono);
+  font-size: 12px;
+  background: var(--rule-soft);
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+
+/* ───────────────────────  WORK PROSE  ─────────────────────── */
+.scene {
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--ink);
+  margin: 0 0 36px 0;
+  letter-spacing: -0.003em;
+}
+.activity {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--ink);
+  margin: 0 0 44px 0;
+}
+.activity em { font-style: italic; color: var(--ink); }
+.activity code {
+  font-family: var(--mono);
+  font-size: 14px;
+  background: var(--rule-soft);
+  padding: 1px 5px;
+  border-radius: 3px;
+  color: var(--ink);
+}
+.activity strong { font-weight: 600; }
+.activity + .activity { margin-top: 0; }
+
+/* ───────────────────────  INPUTS / FILE LIST  ─────────────────────── */
+.inputs {
+  margin: 0 0 36px 0;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--rule);
+}
+.inputs-intro {
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin: 0 0 14px 0;
+}
+.inputs-intro code {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  background: var(--rule-soft);
+  padding: 1px 5px;
+  border-radius: 3px;
+  color: var(--ink);
+}
+.folder-block {
+  background: var(--rule-soft);
+  border-radius: 4px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+}
+.folder-head {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+.folder-name {
+  font-family: var(--mono);
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.folder-purpose {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+.file-row {
+  display: grid;
+  grid-template-columns: minmax(0, 270px) 1fr;
+  gap: 14px;
+  padding: 3px 0 3px 16px;
+  align-items: baseline;
+  position: relative;
+}
+.file-row::before {
+  content: "·";
+  position: absolute;
+  left: 4px;
+  color: var(--ink-faint);
+  font-size: 14px;
+}
+.fname {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  color: var(--ink);
+  word-break: break-word;
+}
+.fdesc {
+  color: var(--ink-soft);
+  font-size: 12.5px;
+  font-style: italic;
+}
+.file-actions {
+  display: flex; justify-content: flex-end;
+  margin-bottom: 0;
+}
+.file-actions a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--ink-soft);
+  padding-bottom: 1px;
+  font-size: 12.5px;
+}
+.file-actions a:hover { border-bottom-color: var(--ink); }
+
+/* ───────────────────────  CONCEPT INTRO  ─────────────────────── */
+.concept-intro {
+  margin: 0 0 36px 0;
+  padding: 22px 24px;
+  background: var(--panel);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+}
+.concept-intro.sneak-peek {
+  background: var(--rule-soft);
+}
+.concept-intro.sneak-peek .ci-label {
+  color: var(--ink-soft);
+}
+.concept-intro .ci-label {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 13px;
+  color: var(--ink-faint);
+  margin: 0 0 8px 0;
+  letter-spacing: 0.01em;
+}
+.concept-intro h3 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 19px;
+  margin: 0 0 14px 0;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+}
+.concept-intro p {
+  margin: 0 0 12px 0;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+.concept-intro p:last-child { margin-bottom: 0; }
+.concept-intro p strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* ───────────────────────  WATCH BEAT  ─────────────────────── */
+.watch-beat {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--ink);
+  margin: 0 0 38px 0;
+  padding: 16px 0 0 0;
+  border-top: 1px dashed var(--rule);
+}
+.watch-beat .lead {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 14.5px;
+  color: var(--ink-faint);
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+}
+.watch-beat p {
+  margin: 0;
+  font-size: 15px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+.watch-beat strong { color: var(--ink); font-weight: 500; }
+.watch-beat em { font-style: italic; }
+
+/* ───────────────────────  CODE PROMPT  ─────────────────────── */
+.code-prompt {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  background: var(--rule-soft);
+  padding: 16px 18px;
+  border-radius: 4px;
+  line-height: 1.65;
+  color: var(--ink);
+  margin: 0 0 22px 0;
+  white-space: pre-wrap;
+}
+
+/* ───────────────────────  CHECKPOINT  ─────────────────────── */
+.checkpoint {
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: 28px 0;
+  margin: 0 0 40px 0;
+}
+.checkpoint .label { margin-bottom: 14px; }
+.check-q {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 16.5px;
+  line-height: 1.45;
+  margin: 0 0 18px 0;
+  color: var(--ink);
+  letter-spacing: -0.003em;
+}
+.check-choices { display: flex; gap: 10px; flex-wrap: wrap; }
+.check-btn {
+  font: inherit;
+  font-size: 13px;
+  padding: 10px 18px;
+  background: var(--panel);
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+  letter-spacing: 0.005em;
+}
+.check-btn:hover { background: var(--ink); color: var(--panel); }
+.check-btn.ghost {
+  border-color: var(--rule);
+  color: var(--ink-soft);
+  background: transparent;
+}
+.check-btn.ghost:hover {
+  border-color: var(--ink-soft);
+  background: var(--rule-soft);
+  color: var(--ink);
+}
+.helper {
+  margin-top: 26px;
+  padding-top: 22px;
+  border-top: 1px dashed var(--rule);
+  display: none;
+}
+.helper.open { display: block; }
+.help-q {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 15px;
+  margin: 0 0 14px 0;
+  color: var(--ink);
+}
+.help-choice { margin-bottom: 12px; }
+.help-choice:last-of-type { margin-bottom: 20px; }
+.help-btn {
+  font: inherit;
+  font-size: 13px;
+  padding: 10px 14px;
+  background: transparent;
+  border: 1px solid var(--rule);
+  color: var(--ink);
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.18s ease, border-color 0.18s ease;
+}
+.help-btn:hover { background: var(--rule-soft); border-color: var(--ink-faint); }
+.help-btn::after { content: "+"; color: var(--ink-faint); font-weight: 500; margin-left: 12px; }
+.help-btn.expanded::after { content: "−"; }
+.help-body {
+  display: none;
+  margin-top: 10px;
+  padding: 14px 0 4px 16px;
+  border-left: 1px solid var(--rule);
+}
+.help-body.open { display: block; }
+.help-body p {
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin: 0 0 10px 0;
+}
+.help-body p.skill-note {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 1.55;
+  padding-left: 12px;
+  border-left: 1px solid var(--ink-soft);
+  margin-top: 12px;
+}
+.sample-prompt {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  background: var(--rule-soft);
+  padding: 12px 14px;
+  border-radius: 4px;
+  line-height: 1.6;
+  color: var(--ink);
+  margin: 0 0 10px 0;
+  white-space: pre-wrap;
+}
+
+/* ──────────────────  PROMPT COPY BUTTON  ──────────────────
+   Injected by course.js into every .sample-prompt / .code-prompt block.
+   An in-flow chip on its own line at the bottom-right of the block (so it
+   never overlaps the prompt text). Mirrors .check-btn: small uppercase
+   label, fills with ink on hover, turns accent on a successful copy. */
+.copy-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+  margin: 14px 0 0 auto;
+  padding: 5px 10px 5px 9px;
+  font-family: var(--sans);
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  color: var(--ink-soft);
+  cursor: pointer;
+  transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+}
+.copy-btn:hover {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}
+.copy-btn.copied,
+.copy-btn.copied:hover {
+  background: var(--paper);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.copy-btn svg { display: block; flex-shrink: 0; }
+.check-confirmed {
+  display: none;
+  padding: 20px 0;
+  margin: 0 0 40px 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 14.5px;
+  color: var(--ink-soft);
+  text-align: center;
+  letter-spacing: -0.003em;
+}
+.check-confirmed::before {
+  content: "✓ ";
+  color: var(--ink);
+  font-style: normal;
+  margin-right: 4px;
+}
+body.checkpoint-passed .checkpoint { display: none; }
+body.checkpoint-passed .check-confirmed { display: block; }
+
+.post-checkpoint {
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+body.checkpoint-passed .post-checkpoint {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+body:not(.checkpoint-passed) .post-checkpoint {
+  visibility: hidden;
+  max-height: 0;
+  overflow: hidden;
+  margin: 0;
+}
+
+/* ───────────────────────  TAKEAWAY  ─────────────────────── */
+.takeaway {
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--ink);
+  margin: 0 0 44px 0;
+  padding-left: 16px;
+  border-left: 2px solid var(--ink);
+}
+.takeaway em { font-style: italic; }
+.takeaway p { margin: 0 0 14px 0; }
+.takeaway p:last-child { margin-bottom: 0; }
+.takeaway code {
+  font-family: var(--mono);
+  font-size: 13.5px;
+  background: var(--rule-soft);
+  padding: 2px 6px;
+  border-radius: 3px;
+  color: var(--ink);
+}
+.takeaway strong { font-weight: 600; }
+
+/* ───────────────────────  SAVE INSTRUCTION  ─────────────────────── */
+.save { margin: 0 0 32px 0; }
+.save .k {
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ink-faint);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.save .body {
+  font-size: 15px;
+  color: var(--ink);
+  line-height: 1.55;
+}
+.save code {
+  font-family: var(--mono);
+  font-size: 13.5px;
+  background: var(--rule-soft);
+  padding: 2px 6px;
+  border-radius: 3px;
+  color: var(--ink);
+}
+
+/* ───────────────────────  LAND (right) / REFLECT  ─────────────────────── */
+.land-block { margin-bottom: 32px; }
+.land-block h3 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: -0.003em;
+  margin: 0 0 10px 0;
+  color: var(--ink);
+}
+.reflect-input {
+  margin-top: 12px;
+  width: 100%;
+  min-height: 92px;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 10px 12px;
+  font: inherit;
+  font-size: 14px;
+  line-height: 1.55;
+  background: var(--panel);
+  color: var(--ink);
+  resize: vertical;
+}
+.reflect-input:focus { outline: 1px solid var(--ink-soft); border-color: var(--ink-soft); }
+
+.reflect-q { margin-bottom: 16px; }
+.reflect-q:last-child { margin-bottom: 0; }
+.reflect-q .q-text {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--ink);
+  margin: 0 0 6px 0;
+}
+.reflect-q .q-hint {
+  font-size: 12.5px;
+  color: var(--ink-faint);
+  margin: 0 0 6px 0;
+  font-style: italic;
+}
+.reflect-q textarea {
+  width: 100%;
+  min-height: 54px;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: 8px 10px;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.5;
+  background: var(--panel);
+  color: var(--ink);
+  resize: vertical;
+}
+.reflect-q textarea:focus {
+  outline: 1px solid var(--ink-soft);
+  border-color: var(--ink-soft);
+}
+
+.can-say {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--ink);
+  padding-left: 14px;
+  border-left: 1px solid var(--ink-soft);
+  margin-top: 12px;
+}
+
+.next {
+  font-size: 13px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+.next .arrow { color: var(--ink-faint); margin: 0 4px; }
+.next a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+}
+
+/* ───────────────────────  CLOSING CALL (M5-M8)  ─────────────────────── */
+/* "Before you move on →" callout at the bottom of the Work column —
+   points learners to the Land panel (Reflect + Hand in) so they don't
+   hit the bottom of the middle column and think they're done. Accent
+   left rule + soft tinted background make it noticed without shouting. */
+.closing-call {
+  margin: 28px 0 0 0;
+  padding: 18px 22px;
+  background: var(--rule-soft);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 4px 4px 0;
+}
+.closing-call .cc-label {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--ink);
+  margin: 0 0 8px 0;
+  letter-spacing: -0.005em;
+}
+.closing-call p {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin: 0;
+}
+.closing-call strong { color: var(--ink); font-weight: 600; }
+.closing-call em { font-style: italic; color: var(--ink); }
+
+/* ───────────────────────  FOOTER RAIL — GRID (M1-M5)  ─────────────────────── */
+footer.rail {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  border-top: 1px solid var(--rule);
+  background: var(--panel);
+  flex-shrink: 0;
+}
+footer.rail .progress {
+  padding: 8px 40px 6px;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  text-align: center;
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+}
+footer.rail nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid var(--rule);
+}
+footer.rail nav.next-only { grid-template-columns: 1fr; }
+footer.rail nav.prev-only { grid-template-columns: 1fr; }
+footer.rail nav a {
+  display: block;
+  padding: 16px 40px;
+  text-decoration: none;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 16px;
+  line-height: 1.4;
+  transition: background 0.15s ease;
+}
+footer.rail nav a.prev {
+  background: var(--paper);
+  border-right: 1px solid var(--rule);
+  color: var(--ink-soft);
+  text-align: left;
+}
+footer.rail nav a.prev:hover {
+  background: #fff6d8;
+  color: var(--ink);
+}
+footer.rail nav a.next {
+  background: #fff6d8;
+  color: var(--ink);
+  text-align: right;
+}
+footer.rail nav a.next:hover { background: #ffefb6; }
+footer.rail nav.prev-only a.prev {
+  border-right: none;
+  text-align: center;
+}
+
+/* ───────────────────────  REFLECTION GUARD  ─────────────────────── */
+@keyframes reflect-pulse {
+  0%, 100% { background: var(--panel); border-color: var(--rule); }
+  50%      { background: #fff6d8;       border-color: var(--accent); }
+}
+.reflect-q textarea.pulse {
+  animation: reflect-pulse 0.7s ease-in-out 2;
+}
+.reflect-toast {
+  position: fixed;
+  bottom: 80px;
+  right: 24px;
+  max-width: 340px;
+  padding: 14px 18px;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 13.5px;
+  line-height: 1.5;
+  border-radius: 4px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 1000;
+}
+.reflect-toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ───────────────────────  CHECKPOINT: M5 SAVE + CONTINUE CARD  ─────────────────────── */
+/* Shared field / button / status pieces (assets/checkpoint.js) */
+.cp-field {
+  display: block; width: 100%;
+  border: 1px solid var(--rule); border-radius: 4px;
+  padding: 9px 11px; margin-bottom: 9px;
+  font: inherit; font-size: 13px; line-height: 1.5;
+  background: var(--panel); color: var(--ink);
+}
+.cp-field:focus { outline: 1px solid var(--ink-soft); border-color: var(--ink-soft); }
+.cp-btn { width: 100%; text-align: center; margin-top: 4px; }
+.cp-btn:disabled { border-color: var(--rule); color: var(--ink-faint); background: transparent; cursor: default; }
+.cp-status { font-size: 12.5px; line-height: 1.45; margin: 10px 0 0; color: var(--ink-soft); }
+.cp-status.ok { color: #2f6b3a; }
+.cp-status.ok::before { content: "✓ "; font-weight: 600; }
+.cp-status.error { color: #a1321f; }
+
+/* M5 save box */
+.save-progress {
+  padding: 18px 18px 16px;
+  background: var(--panel);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+}
+.save-progress .sp-blurb { font-size: 13px; line-height: 1.55; color: var(--ink-soft); margin: 0 0 12px; }
+@keyframes cp-pulse {
+  0%, 100% { border-color: var(--rule); box-shadow: none; }
+  50%      { border-color: var(--accent); box-shadow: 0 0 0 3px #fff0c2; }
+}
+.save-progress.cp-pulse { animation: cp-pulse 0.7s ease-in-out 2; }
+
+/* Continue-your-work card on M6–M11 (new browser only) */
+html.classlock-pending { overflow: hidden; }
+html.classlock-pending body > *:not(header.strip):not(.classlock) {
+  filter: blur(6px);
+  pointer-events: none;
+  user-select: none;
+}
+.classlock {
+  position: fixed; left: 0; right: 0; bottom: 0; top: 0;
+  z-index: 900;
+  display: flex; align-items: center; justify-content: center;
+  padding: 24px 16px;
+  background: rgba(40, 40, 36, 0.28);
+  animation: cl-fade 0.25s ease-out;
+}
+@keyframes cl-fade { from { opacity: 0; } to { opacity: 1; } }
+.cl-card {
+  width: 100%; max-width: 380px;
+  padding: 28px 28px 24px;
+  background: var(--panel);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.14);
+}
+.cl-card .label { margin-bottom: 10px; }
+.cl-title {
+  font-family: var(--serif); font-weight: 500;
+  font-size: 22px; line-height: 1.25; letter-spacing: -0.005em;
+  margin: 0 0 8px; color: var(--ink);
+}
+.cl-text { font-size: 13.5px; line-height: 1.55; color: var(--ink-soft); margin: 0 0 18px; }
+.cl-fresh {
+  display: block; margin: 14px auto 0; padding: 4px 6px;
+  font: inherit; font-size: 12.5px; color: var(--ink-faint);
+  background: none; border: 0; cursor: pointer;
+  text-decoration: underline; text-underline-offset: 3px;
+}
+.cl-fresh:hover { color: var(--ink); }
+
+/* ───────────────────────  VIDEO LAZY EMBED (M4, M5)  ─────────────────────── */
+.video-link { margin: 0 0 36px 0; }
+.video-toggle {
+  font: inherit;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  text-align: left;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  background: transparent;
+  border: 1px solid var(--rule);
+  padding: 10px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+.video-toggle:hover {
+  background: var(--panel);
+  border-color: var(--ink-faint);
+  color: var(--ink);
+}
+.video-toggle .play {
+  display: inline-flex;
+  align-items: center; justify-content: center;
+  width: 22px; height: 22px;
+  border: 1px solid var(--ink-faint);
+  border-radius: 50%;
+  color: var(--ink-faint);
+  font-size: 9px;
+  padding-left: 2px;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+.video-toggle:hover .play {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+.video-toggle .chev {
+  margin-left: auto;
+  color: var(--ink-faint);
+  font-size: 11px;
+  transition: transform 0.25s ease;
+}
+.video-link.open .video-toggle {
+  background: var(--panel);
+  border-color: var(--ink-faint);
+  color: var(--ink);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-color: transparent;
+}
+.video-link.open .play {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+.video-link.open .chev {
+  transform: rotate(180deg);
+  color: var(--ink);
+}
+.video-embed {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.45s ease;
+  border: 1px solid var(--ink-faint);
+  border-top: none;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  background: var(--panel);
+}
+.video-link.open .video-embed {
+  max-height: 460px;
+}
+.video-embed iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
+.video-thumb {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  aspect-ratio: 16 / 9;
+  background: #0a0a0a;
+  overflow: hidden;
+}
+.video-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.2s;
+}
+.video-thumb:hover img { opacity: 0.85; }
+.play-overlay {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  display: flex;
+  align-items: center; justify-content: center;
+  font-size: 22px;
+  padding-left: 5px;
+  transition: background 0.2s, transform 0.2s;
+  pointer-events: none;
+}
+.video-thumb:hover .play-overlay {
+  background: rgba(230, 0, 0, 0.95);
+  transform: translate(-50%, -50%) scale(1.05);
+}
+.video-thumb-note {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 8px 12px;
+  background: linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0));
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 11.5px;
+  text-align: right;
+  letter-spacing: 0.01em;
+  pointer-events: none;
+}

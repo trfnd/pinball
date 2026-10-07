@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Trust · Lakeside Lemonade</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="stylesheet" href="assets/course.css" />
+  <link rel="stylesheet" href="assets/extra.css" />
+  <script>
+    (function () {
+      var K = 'lemonade.gate.participant';
+      try {
+        var v = sessionStorage.getItem(K) || localStorage.getItem(K);
+        var ok = v && (v === 'session' || (parseInt(v, 10) > Date.now()));
+        if (!ok) location.replace('index.html#locked');
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body data-slug="09-trust" data-module="9">
+  <div id="siteHeader"></div>
+
+  <main>
+    <!-- ── FRAME (left) ─────────────────────────────────────── -->
+    <section class="col frame">
+      <p class="module-id">Module 09 · Part 2 — Agents &amp; systems</p>
+      <h1 class="question">How do you trust what you can't watch?</h1>
+
+      <div class="frame-row">
+        <div class="k">Scenario</div>
+        <div class="v">Your weekly recap now runs itself. But you won't be watching every run. So you build the recap two ways — once plainly, once with an independent check — and decide which you'd actually hand to someone else.</div>
+      </div>
+      <div class="frame-row">
+        <div class="k">Your role</div>
+        <div class="v">The one who signs off. You decide what gets checked, against what, and who answers when it's wrong.</div>
+      </div>
+      <div class="frame-row">
+        <div class="k">What you'll practice</div>
+        <div class="v">Designing reliability into the work — and learning the six shapes agents get put together in.</div>
+      </div>
+
+      <div class="frame-row tool">
+        <div class="k">Tool</div>
+        <div class="v">Claude — one plain run, one with a verifier.</div>
+      </div>
+      <div class="inputs" style="margin-top:22px;border-bottom:none;padding-bottom:0;">
+        <p class="inputs-intro">Carry forward:</p>
+        <div class="folder-block">
+          <div class="file-row"><span class="fname">your week of books</span><span class="fdesc">the closed ledger from Module 06, errors and all</span></div>
+          <div class="file-row"><span class="fname">the recap task</span><span class="fdesc">"summarize the week: sales, costs, what stood out"</span></div>
+        </div>
+        <details class="how">
+          <summary>Don't have the ledger handy?</summary>
+          <div class="how-body">
+            Any week of numbers works — reuse Module 06's, or paste a few days of sales and costs. The point is the <em>check</em>, not the data.
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ── WORK (middle) ────────────────────────────────────── -->
+    <section class="col work">
+      <div class="inner">
+        <p class="scene">
+          A recap is easy to produce and easy to get quietly wrong — a number transposed, a bad day
+          averaged away, the $32 Saturday from Module 06 smoothed over. If you're going to hand this
+          off and stop watching, "it looks right" isn't enough. You need a run that catches its own
+          mistakes before they reach anyone who matters.
+        </p>
+
+        <div class="activity">
+          <h4><span class="step-n">1</span>Produce it the plain way</h4>
+          <p>One pass, straight through:</p>
+        </div>
+        <div class="code-prompt">Summarize this week of lemonade books: total sales, total costs,
+and anything that stood out.</div>
+
+        <div class="activity">
+          <h4><span class="step-n">2</span>Produce it again, with a verifier that tries to break it</h4>
+          <p>Now put an independent check between the work and you:</p>
+        </div>
+        <div class="sample-prompt">Do it in two roles that don't see each other's reasoning.
+ • WRITER: produce the weekly recap from the books.
+ • VERIFIER: take ONLY the writer's recap and the raw books, and try to
+   prove it wrong — recompute the totals, check every day reconciles, flag
+   anything smoothed over or unsupported.
+Then show me: the recap, the verifier's findings, and what changed because
+of them.</div>
+
+        <div class="concept-intro">
+          <p class="ci-label">The real lesson of Part 2</p>
+          <h3>Reliability is designed</h3>
+          <p>
+            A better model doesn't make the work reliable. What makes it reliable is how the work is
+            <strong>set up around</strong> the model: who does which part, what gets checked, against
+            what, and who signs off. That has to be designed <em>before</em> the work starts — not
+            bolted on after something goes wrong.
+          </p>
+        </div>
+
+        <!-- ── The six-pattern swarm grid (centrepiece) ── -->
+        <p class="label" style="margin-top:8px;">Six shapes agents get put together in</p>
+        <p class="activity" style="margin-bottom:12px;">
+          You've now built two of these yourself. There's a small, reusable family — each one fits a
+          different job. The skill isn't knowing a model; it's choosing the shape.
+        </p>
+
+        <div class="swarm-grid">
+          <div class="swarm-card">
+            <div class="sc-name">1 · Classify-and-act</div>
+            <svg viewBox="0 0 140 54" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <circle cx="13" cy="27" r="5"/><line x1="18" y1="27" x2="43" y2="27"/>
+              <rect x="45" y="20" width="14" height="14" rx="1" transform="rotate(45 52 27)"/>
+              <line x1="63" y1="27" x2="82" y2="11"/><line x1="63" y1="27" x2="82" y2="27"/><line x1="63" y1="27" x2="82" y2="43"/>
+              <rect x="82" y="6" width="18" height="10" rx="2"/><rect x="82" y="22" width="18" height="10" rx="2"/><rect x="82" y="38" width="18" height="10" rx="2"/>
+            </svg>
+            <p class="sc-for">Sort each item into a bucket, then take the matching action. Triage, routing, closing the books. <em>You met this in Module 06.</em></p>
+          </div>
+
+          <div class="swarm-card built">
+            <div class="sc-name">2 · Fan-out-and-synthesize <span class="sc-built">· Built · M07</span></div>
+            <svg viewBox="0 0 140 54" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <circle cx="12" cy="27" r="5"/>
+              <line x1="17" y1="27" x2="39" y2="12"/><line x1="17" y1="27" x2="40" y2="27"/><line x1="17" y1="27" x2="39" y2="42"/>
+              <circle cx="46" cy="12" r="5"/><circle cx="46" cy="27" r="5"/><circle cx="46" cy="42" r="5"/>
+              <line x1="51" y1="12" x2="86" y2="27"/><line x1="52" y1="27" x2="86" y2="27"/><line x1="51" y1="42" x2="86" y2="27"/>
+              <circle cx="93" cy="27" r="6"/>
+            </svg>
+            <p class="sc-for">Split into parallel specialists, then one reconciles them. Research, a go/no-go, anything with genuinely distinct parts.</p>
+          </div>
+
+          <div class="swarm-card built">
+            <div class="sc-name">3 · Adversarial verification <span class="sc-built">· Built · M09</span></div>
+            <svg viewBox="0 0 140 54" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="7" y="20" width="18" height="14" rx="2"/>
+              <line x1="25" y1="27" x2="44" y2="12"/><line x1="25" y1="27" x2="45" y2="27"/><line x1="25" y1="27" x2="44" y2="42"/>
+              <circle cx="50" cy="12" r="5"/><circle cx="50" cy="27" r="5"/><circle cx="50" cy="42" r="5"/>
+              <line x1="55" y1="12" x2="86" y2="27"/><line x1="55" y1="27" x2="86" y2="27"/><line x1="55" y1="42" x2="86" y2="27"/>
+              <circle cx="94" cy="27" r="7"/><path d="M90.5 27 l2.5 2.6 l4.5 -5.4" stroke-width="1.6"/>
+            </svg>
+            <p class="sc-for">Independent reviewers, blind to each other, try to prove the work wrong before you trust it. High-stakes checks.</p>
+          </div>
+
+          <div class="swarm-card">
+            <div class="sc-name">4 · Generate-and-filter</div>
+            <svg viewBox="0 0 140 54" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <circle cx="11" cy="9" r="3"/><circle cx="11" cy="20" r="3"/><circle cx="11" cy="31" r="3"/><circle cx="11" cy="42" r="3"/><circle cx="11" cy="51" r="3"/>
+              <line x1="20" y1="7" x2="66" y2="23"/><line x1="20" y1="53" x2="66" y2="33"/>
+              <line x1="66" y1="23" x2="66" y2="33"/>
+              <line x1="66" y1="28" x2="88" y2="28"/>
+              <circle cx="96" cy="22" r="4"/><circle cx="96" cy="34" r="4"/>
+            </svg>
+            <p class="sc-for">Produce many candidates, then filter hard to the few good ones. Naming, designs, a wall of options.</p>
+          </div>
+
+          <div class="swarm-card">
+            <div class="sc-name">5 · Tournament</div>
+            <svg viewBox="0 0 140 54" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <circle cx="11" cy="8" r="3"/><circle cx="11" cy="22" r="3"/><circle cx="11" cy="36" r="3"/><circle cx="11" cy="50" r="3"/>
+              <path d="M14 8 H40 V22 H14 M27 15 H52"/>
+              <path d="M14 36 H40 V50 H14 M27 43 H52"/>
+              <circle cx="58" cy="15" r="3.5"/><circle cx="58" cy="43" r="3.5"/>
+              <path d="M62 15 H92 V43 H62 M77 29 H108"/>
+              <circle cx="116" cy="29" r="5"/>
+            </svg>
+            <p class="sc-for">Compare candidates head-to-head in rounds until one wins. Picking the single best of many.</p>
+          </div>
+
+          <div class="swarm-card">
+            <div class="sc-name">6 · Loop-until-done</div>
+            <svg viewBox="0 0 140 54" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <circle cx="44" cy="27" r="9"/>
+              <path d="M44 9 A18 18 0 1 0 60 20"/>
+              <path d="M60 20 l1.5 -6 l-6 1.5" stroke-width="1.6"/>
+              <line x1="53" y1="27" x2="86" y2="27"/>
+              <circle cx="96" cy="27" r="7"/><path d="M92.5 27 l2.5 2.6 l4.5 -5.4" stroke-width="1.6"/>
+            </svg>
+            <p class="sc-for">Repeat until a stated condition is met. Cleanups, "keep going until every test passes."</p>
+          </div>
+        </div>
+
+        <p class="note-line">
+          How do you decide which to use? Match the shape to the job — one item to route (1), a big
+          question with distinct parts (2), a result you can't afford to get wrong (3), a space to
+          explore (4), one best pick (5), or a target to grind toward (6). None of it is the model.
+          It's the design around it.
+        </p>
+
+        <!-- ── Checkpoint ── -->
+        <div class="checkpoint">
+          <p class="label">Checkpoint</p>
+          <p class="check-q">
+            Could you hand the verified recap to someone to run without you — and name the one check
+            that would catch the mistake before it reached them?
+          </p>
+          <div class="check-choices">
+            <button class="check-btn" data-action="pass">Yes — I can name the check</button>
+            <button class="check-btn ghost" data-action="stuck">Not yet</button>
+          </div>
+
+          <div class="helper" id="helper">
+            <p class="help-q">Make the check real</p>
+            <div class="help-choice">
+              <button class="help-btn" data-toggle="h1">Design the one check that matters</button>
+              <div class="help-body" id="h1">
+                <p>Ask for the single verification that would have caught Module 06's errors:</p>
+                <div class="sample-prompt">What's the ONE check that, if it ran every time, would have caught
+the $32 Saturday and the 45-lemon day on its own? Write it as a rule the
+verifier runs before any recap is released.</div>
+                <p class="skill-note">
+                  A check you can state in one sentence — and that would have caught the last real
+                  mistake — is worth more than a verifier that "looks it over."
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="check-confirmed">A recap you'd trust unwatched — because the check is designed in, not hoped for.</p>
+
+        <div class="post-checkpoint">
+          <div class="takeaway">
+            <p><strong>Reliability is designed.</strong> The verified recap isn't more trustworthy
+            because the model got smarter — it's trustworthy because you put an independent check
+            between the work and the world, and decided who signs off.</p>
+            <p>And when it does go wrong one day: <em>someone</em> answers for it. Part of designing
+            the system is naming who — before you need to.</p>
+          </div>
+
+          <div class="closing-call">
+            <p class="cc-label">Before you move on →</p>
+            <p>Answer the three <strong>reflections</strong>. Next is the Finale: you'll turn all of
+            this into a short deployment brief for your own world.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── LAND (right) ─────────────────────────────────────── -->
+    <section class="col land">
+      <div class="land-block">
+        <p class="label">Reflect</p>
+
+        <div class="reflect-q">
+          <p class="q-text">You produced the recap two ways. Which version would you trust enough to hand to someone else to run without you watching — and why?</p>
+          <p class="q-hint">Plain run, or the one with the verifier?</p>
+          <textarea rows="4" placeholder="Your answer…"></textarea>
+        </div>
+
+        <div class="reflect-q">
+          <p class="q-text">In your organization, who would answer for it if an AI tool quietly got something wrong and no one caught it — and does that person know it's them?</p>
+          <p class="q-hint">Name the role, honestly.</p>
+          <textarea rows="4" placeholder="Your answer…"></textarea>
+        </div>
+
+        <div class="reflect-q">
+          <p class="q-text">Pick one real task you'd hand to an AI agent. What's the one check you'd build in so a mistake gets caught before it reaches anyone who matters?</p>
+          <p class="q-hint">One task, one concrete check.</p>
+          <textarea rows="4" placeholder="Your answer…"></textarea>
+        </div>
+
+        <p class="can-say">You can now say: reliability is something you design around the model, not something you hope the model has.</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="siteFooter"></div>
+
+  <script src="assets/config.js"></script>
+  <script src="assets/registry.js"></script>
+  <script src="assets/chrome.js"></script>
+  <script src="assets/sync.js"></script>
+  <script src="assets/course.js"></script>
+</body>
+</html>

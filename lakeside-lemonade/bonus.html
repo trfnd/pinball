@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Bonus · Lakeside Lemonade</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="stylesheet" href="assets/course.css" />
+  <link rel="stylesheet" href="assets/extra.css" />
+  <script>
+    (function () {
+      var K = 'lemonade.gate.participant';
+      try {
+        var v = sessionStorage.getItem(K) || localStorage.getItem(K);
+        var ok = v && (v === 'session' || (parseInt(v, 10) > Date.now()));
+        if (!ok) location.replace('index.html#locked');
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body data-slug="bonus" data-module="12">
+  <div id="siteHeader"></div>
+
+  <main>
+    <!-- ── FRAME (left) ─────────────────────────────────────── -->
+    <section class="col frame">
+      <p class="module-id">Bonus · Part 2 — Agents &amp; systems</p>
+      <h1 class="question">Bring an agent into your real tools</h1>
+
+      <div class="frame-row">
+        <div class="k">Scenario</div>
+        <div class="v">So far the agent worked on our files. This time, give Claude access to one of <em>your</em> actual tools — your inbox, your calendar, your documents — on a small, low-stakes task, and watch what access makes possible.</div>
+      </div>
+      <div class="frame-row">
+        <div class="k">Your role</div>
+        <div class="v">The one who grants access. You decide what it can read, what it can do, and what it must ask before doing.</div>
+      </div>
+      <div class="frame-row">
+        <div class="k">What you'll practice</div>
+        <div class="v">Deciding access <em>before</em> the agent touches anything real — the habit that keeps all of this safe.</div>
+      </div>
+
+      <div class="frame-row tool">
+        <div class="k">Tool</div>
+        <div class="v">Claude with a connector to a real tool of yours.</div>
+      </div>
+      <div class="inputs" style="margin-top:22px;border-bottom:none;padding-bottom:0;">
+        <p class="inputs-intro">Keep it low-stakes:</p>
+        <div class="folder-block">
+          <div class="file-row"><span class="fname">a small real task</span><span class="fdesc">tidy a label, draft (not send) a reply, summarize this week's calendar</span></div>
+          <div class="file-row"><span class="fname">one tool</span><span class="fdesc">inbox, calendar, or a folder — just one, to start</span></div>
+        </div>
+        <details class="how">
+          <summary>Haven't tried it yet?</summary>
+          <div class="how-body">
+            That's fine — read on and plan it. The reflection works whether you tried it before class, for the first time just now, or not yet at all.
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ── WORK (middle) ────────────────────────────────────── -->
+    <section class="col work">
+      <div class="inner">
+        <p class="scene">
+          There's a moment the first time an agent reaches into your real inbox and actually does the
+          thing — files the email, finds the conflict, drafts the note — where it stops feeling like a
+          chat and starts feeling like a colleague. That moment is exactly where the care has to start.
+        </p>
+
+        <div class="activity">
+          <h4><span class="step-n">1</span>Try one small thing</h4>
+          <p>
+            Give Claude access to a single tool and a task you could undo in a second — draft a reply
+            without sending, summarize your week, propose labels for a few emails. Notice what it got
+            right, and the one place you were glad you were watching.
+          </p>
+        </div>
+
+        <div class="concept-intro">
+          <p class="ci-label">The whole point in one line</p>
+          <h3>Access is where the risk comes from</h3>
+          <p>
+            The access that makes an agent useful is the same access that makes it risky. A model that
+            can read your inbox to help you can also read your inbox. One that can send on your behalf
+            can send the wrong thing on your behalf. You don't manage that after the fact — you decide
+            it up front.
+          </p>
+        </div>
+
+        <div class="activity">
+          <h4><span class="step-n">2</span>Decide access before it touches anything real</h4>
+          <p>Three questions, every time, before you connect an agent to something that matters:</p>
+        </div>
+
+        <div class="swarm-grid" style="grid-template-columns:1fr;">
+          <div class="swarm-card">
+            <div class="sc-name">Read — what can it see?</div>
+            <p class="sc-for">The narrowest set that does the job. A single folder, not the whole drive. This week's calendar, not your life.</p>
+          </div>
+          <div class="swarm-card">
+            <div class="sc-name">Do — what can it change on its own?</div>
+            <p class="sc-for">Which actions are fine unattended (label, draft, sort) and which must stop and ask first (send, delete, pay, accept).</p>
+          </div>
+          <div class="swarm-card">
+            <div class="sc-name">Check — how will you know what it did?</div>
+            <p class="sc-for">A log you can read after the fact: what it touched, what it changed. An explanation written afterwards is not a record.</p>
+          </div>
+        </div>
+
+        <div class="takeaway">
+          <p>This is the same lesson from every agent module, now pointed at your real tools. In
+          Module 06 an agent made calls where your instructions stopped. In Module 09 you designed a
+          check so a mistake couldn't slip past. Access is the version of that you decide <em>first</em>,
+          before anything is at stake.</p>
+        </div>
+
+        <div class="closing-call">
+          <p class="cc-label">That's the course →</p>
+          <p>Two quick reflections on the right, and you're done. If you came straight here, loop back
+          to the <strong>Finale</strong> to hand in your report.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── LAND (right) ─────────────────────────────────────── -->
+    <section class="col land">
+      <div class="land-block">
+        <p class="label">Reflect</p>
+
+        <div class="reflect-q">
+          <p class="q-text">Did you try it before class, for the first time, or skip it? What surprised you?</p>
+          <p class="q-hint">Whatever you did — what stood out?</p>
+          <textarea rows="4" placeholder="Your answer…"></textarea>
+        </div>
+
+        <div class="reflect-q">
+          <p class="q-text">Before an agent touches real data, what will you let it read, what will you let it do, and how will you check what it did?</p>
+          <p class="q-hint">Read · do · check — for one real tool of yours.</p>
+          <textarea rows="5" placeholder="Your answer…"></textarea>
+        </div>
+
+        <p class="can-say">You can now say: with agents, access is the thing you decide first.</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="siteFooter"></div>
+
+  <script src="assets/config.js"></script>
+  <script src="assets/registry.js"></script>
+  <script src="assets/chrome.js"></script>
+  <script src="assets/sync.js"></script>
+  <script src="assets/course.js"></script>
+</body>
+</html>

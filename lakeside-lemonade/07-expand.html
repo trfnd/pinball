@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Expand · Lakeside Lemonade</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="stylesheet" href="assets/course.css" />
+  <link rel="stylesheet" href="assets/extra.css" />
+  <script>
+    /* gate guard — redirect before paint if the course wasn't entered */
+    (function () {
+      var K = 'lemonade.gate.participant';
+      try {
+        var v = sessionStorage.getItem(K) || localStorage.getItem(K);
+        var ok = v && (v === 'session' || (parseInt(v, 10) > Date.now()));
+        if (!ok) location.replace('index.html#locked');
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body data-slug="07-expand" data-module="7">
+  <div id="siteHeader"></div>
+
+  <main>
+    <!-- ── FRAME (left) ─────────────────────────────────────── -->
+    <section class="col frame">
+      <p class="module-id">Module 07 · Part 2 — Agents &amp; systems</p>
+      <h1 class="question">Why would a team of agents beat one?</h1>
+
+      <div class="frame-row">
+        <div class="k">Scenario</div>
+        <div class="v">You're weighing a second stand across town. One agent can work it up — or several specialists can run in parallel and one can pull it together.</div>
+      </div>
+      <div class="frame-row">
+        <div class="k">Your role</div>
+        <div class="v">You decide the split: which workstreams run at once, and who synthesizes at the end.</div>
+      </div>
+      <div class="frame-row">
+        <div class="k">What you'll practice</div>
+        <div class="v">Running the same question two ways — one window versus parallel workstreams — and feeling the difference in how grounded the answer is.</div>
+      </div>
+
+      <div class="frame-row tool">
+        <div class="k">Tool</div>
+        <div class="v">Claude orchestrating sub-agents.</div>
+      </div>
+      <div class="inputs" style="margin-top:22px;border-bottom:none;padding-bottom:0;">
+        <p class="inputs-intro">Bring your Part 1 work back into the chat:</p>
+        <div class="folder-block">
+          <div class="folder-head">
+            <span class="folder-name">second_stand</span>
+            <span class="folder-purpose">the question</span>
+          </div>
+          <div class="file-row">
+            <span class="fname">your Part 1 work</span>
+            <span class="fdesc">personas, pricing, costs, corners</span>
+          </div>
+          <div class="file-row">
+            <span class="fname">the new question</span>
+            <span class="fdesc">should we open a second stand, and where?</span>
+          </div>
+        </div>
+        <details class="how">
+          <summary>Don't know where to find it?</summary>
+          <div class="how-body">
+            Reuse everything from Part 1 — the personas, the price, the cost sheet, the corner you picked. This is a new decision laid on top of it, not a fresh start.
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ── WORK (middle) ────────────────────────────────────── -->
+    <section class="col work">
+      <div class="inner">
+        <p class="scene">
+          Picture a hard operation. You could ask one general surgeon to do all of it — or bring in
+          sub-specialists who each handle their part at the same time, while someone leads. A go/no-go
+          on a second stand is the same shape: one agent digs up demand, one runs the numbers, one
+          scouts the competition, one names what would make it fail — and one pulls it into a
+          recommendation.
+        </p>
+
+        <figure class="lift">
+          <svg viewBox="0 0 520 150" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"
+               style="display:block;width:100%;max-width:520px;height:auto;margin:0 auto;background:var(--panel);border:1px solid var(--rule);border-radius:6px;padding:16px;">
+            <!-- input node -->
+            <circle cx="40" cy="75" r="13"/>
+            <text x="40" y="106" text-anchor="middle" font-size="11" fill="currentColor" stroke="none">Question</text>
+            <!-- fan-out lines: question → four workers -->
+            <line x1="53" y1="75" x2="198" y2="22"/>
+            <line x1="53" y1="75" x2="198" y2="57"/>
+            <line x1="53" y1="75" x2="198" y2="92"/>
+            <line x1="53" y1="75" x2="198" y2="127"/>
+            <!-- four parallel worker nodes -->
+            <circle cx="205" cy="22" r="7"/>
+            <circle cx="205" cy="57" r="7"/>
+            <circle cx="205" cy="92" r="7"/>
+            <circle cx="205" cy="127" r="7"/>
+            <text x="218" y="26" font-size="11" fill="currentColor" stroke="none">Demand</text>
+            <text x="218" y="61" font-size="11" fill="currentColor" stroke="none">Costs</text>
+            <text x="218" y="96" font-size="11" fill="currentColor" stroke="none">Competition</text>
+            <text x="218" y="131" font-size="11" fill="currentColor" stroke="none">Risks</text>
+            <!-- fan-in lines: four workers → synthesis -->
+            <line x1="300" y1="22" x2="464" y2="75"/>
+            <line x1="300" y1="57" x2="464" y2="75"/>
+            <line x1="300" y1="92" x2="464" y2="75"/>
+            <line x1="300" y1="127" x2="464" y2="75"/>
+            <!-- synthesis node -->
+            <circle cx="478" cy="75" r="14"/>
+            <text x="478" y="107" text-anchor="middle" font-size="11" fill="currentColor" stroke="none">Synthesis</text>
+          </svg>
+          <figcaption>Fan-out, then synthesize.</figcaption>
+        </figure>
+
+        <div class="activity">
+          <h4><span class="step-n">1</span>One window, whole question</h4>
+          <p>Open Claude, bring your Part 1 work back in, and ask the whole thing in one go:</p>
+        </div>
+        <div class="code-prompt">Should I open a second lemonade stand, and where?
+Work up the whole analysis.</div>
+        <p class="activity">
+          You'll get one coherent answer — demand, costs, competition, risks, a recommendation, all in
+          a single pass. But each part gets only a slice of the attention. The numbers are thin because
+          the window was also doing demand; the competition read is a sentence because it was also
+          weighing risk.
+        </p>
+
+        <div class="activity">
+          <h4><span class="step-n">2</span>Split it, then synthesize</h4>
+          <p>Now ask for the same decision as four focused passes that run in parallel, then one that reconciles them:</p>
+        </div>
+        <div class="sample-prompt">Run this as four parallel workstreams, each as its own focused pass:
+ 1) demand — who'd buy at a second location, from my personas
+ 2) costs — the real cost-per-cup and setup for a second stand
+ 3) competition — who already sells there and at what price
+ 4) risks — what would make this fail
+Then synthesize the four into a single go/no-go with the trade-offs, and note
+where the workstreams disagreed.</div>
+
+        <p class="activity">
+          Each pass comes back with its full attention spent on one thing — and the synthesis has to
+          hold all four at once, including the place where the demand read and the risk read pull in
+          opposite directions. That disagreement is the part you most want to see.
+        </p>
+
+        <div class="concept-intro">
+          <p class="ci-label">The pattern</p>
+          <h3>Fan-out-and-synthesize</h3>
+          <p>
+            Split the work into parallel specialist workstreams, then have one pass reconcile them.
+            It's better-grounded because each piece is done with full attention instead of a slice of
+            one, and the synthesis has to account for all of them — including where they disagree.
+            Same model as the one-window run; different shape around it.
+          </p>
+        </div>
+
+        <!-- ── Checkpoint ── -->
+        <div class="checkpoint">
+          <p class="label">Checkpoint</p>
+          <p class="check-q">
+            In your split, was each workstream genuinely doing something different — or four versions
+            of the same look?
+          </p>
+          <div class="check-choices">
+            <button class="check-btn" data-action="pass">Four real, different passes</button>
+            <button class="check-btn ghost" data-action="stuck">They overlapped a lot</button>
+          </div>
+
+          <div class="helper" id="helper">
+            <p class="help-q">Sharpen the division of labour</p>
+            <div class="help-choice">
+              <button class="help-btn" data-toggle="h1">Make the splits distinct</button>
+              <div class="help-body" id="h1">
+                <p>Add this and run it again:</p>
+                <div class="sample-prompt">These workstreams overlap. Redraw them so each one has information or a
+method the others don't, and tell me which single workstream would change
+the decision most if it's wrong.</div>
+                <p class="skill-note">
+                  If two workstreams would always agree, they're one workstream. The value is in the
+                  parts that can disagree.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="check-confirmed">One recommendation — built from four passes that actually pulled their weight.</p>
+
+        <!-- ── After the checkpoint ── -->
+        <div class="post-checkpoint">
+          <div class="takeaway">
+            <p>For a big question, <strong>how you divide the work is part of the answer</strong>.
+            Parallel specialists then a synthesis beats one window doing everything — when the parts
+            are genuinely different.</p>
+            <p>And the flip side matters: when the task is small, one-shot, or needs a single coherent
+            voice, splitting it just adds overhead. Keep it in one window then.</p>
+          </div>
+
+          <div class="closing-call">
+            <p class="cc-label">Before you move on →</p>
+            <p>Answer the three <strong>reflections</strong> on the right while it's fresh. They're
+            your takeaway from this module, and they go into your final report.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── LAND (right) ─────────────────────────────────────── -->
+    <section class="col land">
+      <div class="land-block">
+        <p class="label">Reflect</p>
+
+        <div class="reflect-q">
+          <p class="q-text">It was the same LLM in both runs. In your own words, what actually changed when you asked for parallel workstreams — and why would that give a better-grounded answer?</p>
+          <p class="q-hint">What did the split buy you?</p>
+          <textarea rows="4" placeholder="In a sentence or two…"></textarea>
+        </div>
+
+        <div class="reflect-q">
+          <p class="q-text">Think back to a recent project at work and the people it took to finish — the one who dug up information, the one who ran the numbers, the one who pulled it all together. Picture that as an agentic system: which roles would run in parallel, and who synthesizes at the end? Is it fan-out-and-synthesize, like you just built — or a different shape?</p>
+          <p class="q-hint">Map real roles to workstreams.</p>
+          <textarea rows="5" placeholder="Your answer…"></textarea>
+        </div>
+
+        <div class="reflect-q">
+          <p class="q-text">When would you not split into a team — when is keeping everything in one window actually the better call?</p>
+          <p class="q-hint">Name the case where splitting hurts.</p>
+          <textarea rows="3" placeholder="Your answer…"></textarea>
+        </div>
+
+        <p class="can-say">You can now say: for big questions, how you divide the work is part of the answer.</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="siteFooter"></div>
+
+  <script src="assets/config.js"></script>
+  <script src="assets/registry.js"></script>
+  <script src="assets/chrome.js"></script>
+  <script src="assets/sync.js"></script>
+  <script src="assets/course.js"></script>
+</body>
+</html>

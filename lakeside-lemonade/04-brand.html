@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Brand · Lakeside Lemonade</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="stylesheet" href="assets/course.css" />
+  <link rel="stylesheet" href="assets/extra.css" />
+  <script>
+    /* gate guard — redirect before paint if the course wasn't entered */
+    (function () {
+      var K = 'lemonade.gate.participant';
+      try {
+        var v = sessionStorage.getItem(K) || localStorage.getItem(K);
+        var ok = v && (v === 'session' || (parseInt(v, 10) > Date.now()));
+        if (!ok) location.replace('index.html#locked');
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body data-slug="04-brand" data-module="4">
+  <div id="siteHeader"></div>
+
+  <main>
+    <!-- ── FRAME (left) ─────────────────────────────────────── -->
+    <section class="col frame">
+      <p class="module-id">Module 04 · Part 1 — Build the business</p>
+      <h1 class="question">What does the stand sound like?</h1>
+
+      <div class="frame-row">
+        <div class="k">Scenario</div>
+        <div class="v">Your stand needs a name, a look, and a voice — a little brand book — and you are not a brand designer. You don't even know what goes in one.</div>
+      </div>
+      <div class="frame-row">
+        <div class="k">Your role</div>
+        <div class="v">You bring the taste and the corrections. The method comes from a Skill.</div>
+      </div>
+      <div class="frame-row">
+        <div class="k">What you'll practice</div>
+        <div class="v">Running a Skill — someone else's packaged method — and finding where the generic kit ends and you begin.</div>
+      </div>
+
+      <div class="frame-row tool">
+        <div class="k">Tool</div>
+        <div class="v">Claude, running a brand-book Skill.</div>
+      </div>
+      <div class="inputs" style="margin-top:22px;border-bottom:none;padding-bottom:0;">
+        <p class="inputs-intro">Bring these into the chat:</p>
+        <div class="folder-block">
+          <div class="folder-head">
+            <span class="folder-name">your_part1_work</span>
+            <span class="folder-purpose">what the Skill builds on</span>
+          </div>
+          <div class="file-row">
+            <span class="fname">your personas + corner + price</span>
+            <span class="fdesc">from Modules 01–03</span>
+          </div>
+          <div class="file-row">
+            <span class="fname">a brand-book Skill</span>
+            <span class="fdesc">a packaged method for building a brand book</span>
+          </div>
+        </div>
+        <details class="how">
+          <summary>Don't know where to start?</summary>
+          <div class="how-body">
+            Point Claude at the brand-book <code>Skill</code> (or install it), then give it your Part 1 decisions.
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ── WORK (middle) ────────────────────────────────────── -->
+    <section class="col work">
+      <div class="inner">
+        <p class="scene">
+          You don't know what belongs in a brand book — a palette? a tone? a tagline? The Skill
+          does. It runs a short interview, asks about your corner and your customer, and hands
+          back a name, colours, and a voice. The first pass usually looks slick and a little
+          soulless.
+        </p>
+
+        <div class="activity">
+          <h4><span class="step-n">1</span>Run the Skill</h4>
+          <p>Point Claude at the brand-book Skill and ask for the obvious thing:</p>
+        </div>
+        <div class="code-prompt">Use the brand-book Skill to create a brand book for my lemonade stand.</div>
+        <p class="activity">
+          The first result often reads like a generic kit: tasteful, plausible, and true of almost
+          any lemonade stand.
+        </p>
+
+        <div class="activity">
+          <h4><span class="step-n">2</span>Make it yours</h4>
+          <p>Feed it the specifics only you have:</p>
+        </div>
+        <div class="sample-prompt">This feels generic. Rebuild it around what's actually true for my stand:
+my corner is the waterfront path, my customers are joggers and weekend
+families, and my story is a small family business, not a national brand.
+Give it a voice that would sound wrong coming from any other stand — and
+tell me which choices you changed and why.</div>
+
+        <p class="activity">
+          Now the brand book says something only your stand could say. The name, the colours, the
+          voice all point back at the waterfront path and the family behind the table.
+        </p>
+
+        <div class="concept-intro">
+          <p class="ci-label">Where it comes from</p>
+          <h3>A skill is one person's method, written down</h3>
+          <p>
+            That's how you got a brand book without knowing what goes in one — you ran someone
+            else's method. Whether a Skill is any good depends on who wrote it and whether it was
+            tested on cases where the right answer is already known. And when everyone installs the
+            same kit, the work gets better and more alike: your competitors can run the exact same
+            Skill. What you corrected or added is the only part nobody else has.
+          </p>
+        </div>
+
+        <p class="note-line">
+          In a study of 293 fiction writers, AI-suggested ideas made stories better-rated but more
+          similar to each other; a field experiment with 758 consultants found the same — better
+          ideas, less variety. (Doshi &amp; Hauser, <em>Science Advances</em> 2024; Dell'Acqua
+          et al., <em>Organization Science</em> 2026.)
+        </p>
+
+        <!-- ── Checkpoint ── -->
+        <div class="checkpoint">
+          <p class="label">Checkpoint</p>
+          <p class="check-q">
+            Does your brand book now hold at least one thing that's true only for your stand — not
+            for any lemonade stand?
+          </p>
+          <div class="check-choices">
+            <button class="check-btn" data-action="pass">Yes — there's something only mine has</button>
+            <button class="check-btn ghost" data-action="stuck">It still reads generic</button>
+          </div>
+
+          <div class="helper" id="helper">
+            <p class="help-q">Push past the kit</p>
+            <div class="help-choice">
+              <button class="help-btn" data-toggle="h1">Force a specific choice</button>
+              <div class="help-body" id="h1">
+                <p>Add this and run it again:</p>
+                <div class="sample-prompt">Name three brand choices here that would be WRONG for a different
+lemonade stand two corners away. If you can't, the brand book is
+still generic — fix that.</div>
+                <p class="skill-note">
+                  The Skill gives you the scaffolding fast. The part that's worth anything is what
+                  you pushed back on.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="check-confirmed">A brand book with your fingerprints on it, not just the kit's.</p>
+
+        <!-- ── After the checkpoint ── -->
+        <div class="post-checkpoint">
+          <div class="takeaway">
+            <p>A <strong>Skill gives you a method; you still supply the judgment.</strong> The
+            scaffolding is commodity — your competitors can install it tomorrow. The edge is the
+            correction only you could make.</p>
+            <p>(Hold onto that thought: in Module 08 you'll write a Skill of your own.)</p>
+          </div>
+
+          <div class="closing-call">
+            <p class="cc-label">Before you move on →</p>
+            <p>Answer the three <strong>reflections</strong> on the right while it's fresh. They're
+            your takeaway from this module, and they go into your final report.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── LAND (right) ─────────────────────────────────────── -->
+    <section class="col land">
+      <div class="land-block">
+        <p class="label">Reflect</p>
+
+        <div class="reflect-q">
+          <p class="q-text">What's one question the Skill asked that you wouldn't have thought to ask yourself?</p>
+          <p class="q-hint">The prompt that caught you off guard.</p>
+          <textarea rows="3" placeholder="In a sentence or two…"></textarea>
+        </div>
+
+        <div class="reflect-q">
+          <p class="q-text">Looking at your brand book — does it feel like you, or like a generic kit?</p>
+          <p class="q-hint">Be honest about the ratio.</p>
+          <textarea rows="3" placeholder="Your answer…"></textarea>
+        </div>
+
+        <div class="reflect-q">
+          <p class="q-text">What's one recurring task at your work — something you do over and over — that you could imagine packaging into a Skill?</p>
+          <p class="q-hint">The thing you explain to every new hire.</p>
+          <textarea rows="3" placeholder="Your answer…"></textarea>
+        </div>
+
+        <p class="can-say">You can now say: a Skill gives you a method; you still supply the judgment.</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="siteFooter"></div>
+
+  <script src="assets/config.js"></script>
+  <script src="assets/registry.js"></script>
+  <script src="assets/chrome.js"></script>
+  <script src="assets/sync.js"></script>
+  <script src="assets/course.js"></script>
+</body>
+</html>

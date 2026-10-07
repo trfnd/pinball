@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Finale · Lakeside Lemonade</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="stylesheet" href="assets/course.css" />
+  <link rel="stylesheet" href="assets/extra.css" />
+  <script>
+    (function () {
+      var K = 'lemonade.gate.participant';
+      try {
+        var v = sessionStorage.getItem(K) || localStorage.getItem(K);
+        var ok = v && (v === 'session' || (parseInt(v, 10) > Date.now()));
+        if (!ok) location.replace('index.html#locked');
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body data-slug="10-finale" data-module="10">
+  <div id="siteHeader"></div>
+
+  <main>
+    <!-- ── FRAME (left) ─────────────────────────────────────── -->
+    <section class="col frame">
+      <p class="module-id">Module 10 · Part 2 — Finale</p>
+      <h1 class="question">Where does this land in your world?</h1>
+
+      <div class="frame-row">
+        <div class="k">Scenario</div>
+        <div class="v">The lemonade stand was practice. The last step is to turn everything you've done into a short, honest brief for bringing AI into something real — your own work.</div>
+      </div>
+      <div class="frame-row">
+        <div class="k">Your role</div>
+        <div class="v">The person who'd actually have to answer for it. Not a pitch — a plan you'd defend.</div>
+      </div>
+      <div class="frame-row">
+        <div class="k">What you'll produce</div>
+        <div class="v">Five short answers about your world, and one report — the whole course, in your words — handed in to the founder.</div>
+      </div>
+
+      <div class="frame-row tool">
+        <div class="k">The brief, in five parts</div>
+        <div class="v">the problem · the data · the human checkpoint · the owner · who loses</div>
+      </div>
+      <div class="inputs" style="margin-top:22px;border-bottom:none;padding-bottom:0;">
+        <p class="inputs-intro">You've already got what you need:</p>
+        <div class="folder-block">
+          <div class="file-row"><span class="fname">everything you wrote</span><span class="fdesc">ten modules of reflections, saved as you went</span></div>
+          <div class="file-row"><span class="fname">your own context</span><span class="fdesc">the work only you know from the inside</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── WORK (middle) ────────────────────────────────────── -->
+    <section class="col work">
+      <div class="inner">
+        <p class="scene">
+          You've prompted, placed, priced, branded, launched, built, delegated, split, packaged, and
+          verified — on a stand that sells cold lemonade on a hot day. None of that was really about
+          lemonade. It was about the moves that matter when AI meets real work. So: your work. Where
+          would you actually bring this in, and what would have to be true for you to trust it?
+        </p>
+
+        <p class="activity">
+          Answer the five parts of the brief on the right — short is fine, honest is the point.
+          They map to the hardest questions the course raised: what's the real problem, where does
+          the data live, where does a human have to stay in the loop, who owns it, and who could
+          lose if it goes wrong. Together they're your deployment brief.
+        </p>
+
+        <div class="concept-intro">
+          <p class="ci-label">What you're really writing</p>
+          <h3>A plan someone would have to answer for</h3>
+          <p>
+            Anyone can be excited about AI. The useful thing is a brief that names the problem worth
+            solving, respects where the data really lives, keeps a human at the checkpoint that
+            matters, puts a name on the owner, and is honest about who bears the risk. That's the
+            difference between a demo and a deployment.
+          </p>
+        </div>
+
+        <!-- ── Hand-in ── -->
+        <div class="save" style="margin-top:36px;">
+          <div class="k">Hand in your report</div>
+          <div class="body">When your five answers are in, put the whole course together and send it to the founder.</div>
+        </div>
+
+        <div class="save-progress handin" id="handin">
+          <p class="sp-blurb">
+            This assembles every reflection you wrote — all ten modules and the checkpoint — into one
+            report: <em>“The whole course, in your words.”</em> It's saved for the founder, opened as
+            a printable PDF, and offered as a file you can send along.
+          </p>
+          <div class="hi-row">
+            <input class="cp-field" id="hiName" type="text" placeholder="Your name" autocomplete="name" />
+            <input class="cp-field" id="hiEmail" type="email" placeholder="Your email" autocomplete="email" />
+          </div>
+          <button class="check-btn cp-btn" id="hiSave" type="button">Put together my report</button>
+          <p class="cp-status" id="hiStatus" role="status" aria-live="polite" hidden></p>
+          <div class="file-actions" style="justify-content:flex-start;gap:18px;margin-top:12px;">
+            <a id="hiView" href="javascript:void(0)" hidden>Open the PDF again</a>
+            <a id="hiDownload" href="javascript:void(0)" hidden>Download report file (.json)</a>
+          </div>
+          <p class="deliver-note">
+            Everything is stored in this browser. If the founder set up a backend, your report is
+            also delivered automatically; otherwise, send them the downloaded file and they'll import
+            it into the dashboard.
+          </p>
+        </div>
+
+        <div class="closing-call" style="margin-top:28px;">
+          <p class="cc-label">One more, if you like →</p>
+          <p>There's a short <strong>Bonus</strong> on bringing agents into your real tools — and the
+          one rule that keeps that safe.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── LAND (right) ─────────────────────────────────────── -->
+    <section class="col land">
+      <div class="land-block">
+        <p class="label">Your deployment brief</p>
+
+        <div class="reflect-q">
+          <p class="q-text">In your world — the problem</p>
+          <p class="q-hint">What real problem would you actually point AI at? Why that one?</p>
+          <textarea rows="5" placeholder="Your answer…"></textarea>
+        </div>
+
+        <div class="reflect-q">
+          <p class="q-text">In your world — the data</p>
+          <p class="q-hint">Where does the relevant information live, who controls it, and what are you allowed to use?</p>
+          <textarea rows="5" placeholder="Your answer…"></textarea>
+        </div>
+
+        <div class="reflect-q">
+          <p class="q-text">In your world — the human checkpoint</p>
+          <p class="q-hint">Where must a person stay in the loop — the moment a suggestion becomes a decision?</p>
+          <textarea rows="5" placeholder="Your answer…"></textarea>
+        </div>
+
+        <div class="reflect-q">
+          <p class="q-text">In your world — the owner</p>
+          <p class="q-hint">Who owns this after the first demo — with the authority and time to keep it right?</p>
+          <textarea rows="5" placeholder="Your answer…"></textarea>
+        </div>
+
+        <div class="reflect-q">
+          <p class="q-text">In your world — who loses</p>
+          <p class="q-hint">Whose job, budget, or standing changes — and how will you keep them heard?</p>
+          <textarea rows="5" placeholder="Your answer…"></textarea>
+        </div>
+
+        <p class="can-say">You can now say: you can tell a demo from a deployment — and write the brief for one.</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="siteFooter"></div>
+
+  <script src="assets/config.js"></script>
+  <script src="assets/registry.js"></script>
+  <script src="assets/chrome.js"></script>
+  <script src="assets/sync.js"></script>
+  <script src="assets/pdf.js"></script>
+  <script src="assets/handin.js"></script>
+  <script src="assets/course.js"></script>
+</body>
+</html>

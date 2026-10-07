@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Launch · Lakeside Lemonade</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="stylesheet" href="assets/course.css" />
+  <link rel="stylesheet" href="assets/extra.css" />
+  <script>
+    /* gate guard — redirect before paint if the course wasn't entered */
+    (function () {
+      var K = 'lemonade.gate.participant';
+      try {
+        var v = sessionStorage.getItem(K) || localStorage.getItem(K);
+        var ok = v && (v === 'session' || (parseInt(v, 10) > Date.now()));
+        if (!ok) location.replace('index.html#locked');
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body data-slug="05-launch" data-module="5">
+  <div id="siteHeader"></div>
+
+  <main>
+    <!-- ── FRAME (left) ─────────────────────────────────────── -->
+    <section class="col frame">
+      <p class="module-id">Module 05 · Part 1 — Build the business</p>
+      <h1 class="question">Can people actually see it?</h1>
+
+      <div class="frame-row">
+        <div class="k">Scenario</div>
+        <div class="v">Everything so far — the customer, the corner, the price, the brand — becomes one thing you can send someone: a simple website for the stand.</div>
+      </div>
+      <div class="frame-row">
+        <div class="k">Your role</div>
+        <div class="v">You decide what to show, what to cut, and when it's good enough to share.</div>
+      </div>
+      <div class="frame-row">
+        <div class="k">What you'll practice</div>
+        <div class="v">Turning five modules of decisions into one artifact — and noticing which of those decisions actually surface.</div>
+      </div>
+
+      <div class="frame-row tool">
+        <div class="k">Tool</div>
+        <div class="v">Claude, building a one-page site.</div>
+      </div>
+      <div class="inputs" style="margin-top:22px;border-bottom:none;padding-bottom:0;">
+        <p class="inputs-intro">Bring your whole Part 1 build into the chat:</p>
+        <div class="folder-block">
+          <div class="folder-head">
+            <span class="folder-name">everything_from_part1</span>
+            <span class="folder-purpose">your whole build</span>
+          </div>
+          <div class="file-row">
+            <span class="fname">personas, corner, price, brand</span>
+            <span class="fdesc">the outputs of Modules 01–04</span>
+          </div>
+        </div>
+        <details class="how">
+          <summary>Don't know where to find it?</summary>
+          <div class="how-body">
+            Paste or attach your Part 1 outputs — the personas, the corner, the price, the brand — or just keep going in the same chat where you built them.
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ── WORK (middle) ────────────────────────────────────── -->
+    <section class="col work">
+      <div class="inner">
+        <p class="scene">
+          This is where the work stops being notes and becomes something real. The first draft
+          comes back fast and fine — and generic. The interesting part is what you ask it to
+          change, and which of your earlier decisions quietly dominate the page while others
+          barely show up at all.
+        </p>
+
+        <div class="activity">
+          <h4><span class="step-n">1</span>Get it standing</h4>
+          <p>Bring in everything from Part 1 and ask for the simplest possible version — a site that exists:</p>
+        </div>
+        <div class="code-prompt">Build a one-page website for my lemonade stand using everything we decided: the customer, the corner, the price, and the brand.</div>
+        <p class="activity">
+          It comes back fast, and it works. It's also a clean default template that could belong to
+          any stand in any town — a generic header, a stock photo, your decisions flattened into
+          placeholder copy. That's fine. You needed something standing before you could make it yours.
+        </p>
+
+        <div class="activity">
+          <h4><span class="step-n">2</span>Make it the version you'd share</h4>
+          <p>Now push it from fine to yours. Name the changes you want, and ask to see what moved:</p>
+        </div>
+        <div class="sample-prompt">Good start. Now make three changes: give it a look that matches my brand's
+voice (not a default template), lead with the real story — a small family
+stand on the waterfront — and cut anything that's taking over the page for no
+reason. Show me a before/after of what you changed.</div>
+        <p class="activity">
+          Now it reads like your stand — the waterfront story up top, your brand's voice in the copy,
+          the filler gone. And the before/after is the useful part: it shows you which of your Part 1
+          decisions actually made it onto the page, and which ones you'd assumed were there but weren't.
+        </p>
+
+        <div class="concept-intro">
+          <p class="ci-label">The shape underneath</p>
+          <h3>The five-module pattern</h3>
+          <p>
+            Customer → location → price → brand → launch isn't just this course. It's a reusable shape
+            for almost any small venture: figure out who it's for, where it lives, what it costs, how it
+            sounds, and how people see it. You just ran it end to end with AI.
+          </p>
+        </div>
+
+        <!-- ── Checkpoint ── -->
+        <div class="checkpoint">
+          <p class="label">Checkpoint</p>
+          <p class="check-q">
+            Does the finished site reflect the decisions you actually made — or did some earlier
+            output quietly take over the page?
+          </p>
+          <div class="check-choices">
+            <button class="check-btn" data-action="pass">It reflects my decisions</button>
+            <button class="check-btn ghost" data-action="stuck">Something took over</button>
+          </div>
+
+          <div class="helper" id="helper">
+            <p class="help-q">See what the model weighted</p>
+            <div class="help-choice">
+              <button class="help-btn" data-toggle="h1">Audit the page</button>
+              <div class="help-body" id="h1">
+                <p>Paste this into the same chat and read the answer carefully:</p>
+                <div class="sample-prompt">Which of my earlier decisions show up most on this page, and which
+barely show up at all? If anything is prominent that I didn't emphasize,
+tell me why it's there.</div>
+                <p class="skill-note">
+                  What shows up most is a clue to what the model weighted — sometimes it's not what
+                  you'd have chosen.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="check-confirmed">A site you'd actually send someone — your decisions, not the template's.</p>
+
+        <!-- ── After the checkpoint ── -->
+        <div class="post-checkpoint">
+          <div class="takeaway">
+            <p>You took a project from <strong>idea to shareable, start to finish</strong>, with AI.
+            The pattern transfers; the website is just this run of it.</p>
+            <p>Keep that in mind — the Checkpoint ahead asks you to run the same shape on something
+            of your own.</p>
+          </div>
+
+          <div class="closing-call">
+            <p class="cc-label">Part 1 done — one more step →</p>
+            <p>Answer the three <strong>reflections</strong>, then cross into the Checkpoint: build
+            something for your own life before Part 2 turns to agents.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── LAND (right) ─────────────────────────────────────── -->
+    <section class="col land">
+      <div class="land-block">
+        <p class="label">Reflect</p>
+
+        <div class="reflect-q">
+          <p class="q-text">What did you ask Claude to change between the first pass and the version you'd actually share?</p>
+          <p class="q-hint">The edits that made it yours.</p>
+          <textarea rows="3" placeholder="In a sentence or two…"></textarea>
+        </div>
+
+        <div class="reflect-q">
+          <p class="q-text">Looking at the final website — which of your earlier outputs ended up showing up most? Which barely showed up?</p>
+          <p class="q-hint">What dominated, what vanished.</p>
+          <textarea rows="4" placeholder="Your answer…"></textarea>
+        </div>
+
+        <div class="reflect-q">
+          <p class="q-text">What's a project of your own where this five-module pattern would apply?</p>
+          <p class="q-hint">Think past lemonade.</p>
+          <textarea rows="3" placeholder="Your answer…"></textarea>
+        </div>
+
+        <p class="can-say">You can now say: you can take a project from idea to shareable with AI, start to finish.</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="siteFooter"></div>
+
+  <script src="assets/config.js"></script>
+  <script src="assets/registry.js"></script>
+  <script src="assets/chrome.js"></script>
+  <script src="assets/sync.js"></script>
+  <script src="assets/course.js"></script>
+</body>
+</html>
