@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Skill · Lakeside Lemonade</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="stylesheet" href="assets/course.css" />
+  <link rel="stylesheet" href="assets/extra.css" />
+  <script>
+    /* gate guard — redirect before paint if the course wasn't entered */
+    (function () {
+      var K = 'lemonade.gate.participant';
+      try {
+        var v = sessionStorage.getItem(K) || localStorage.getItem(K);
+        var ok = v && (v === 'session' || (parseInt(v, 10) > Date.now()));
+        if (!ok) location.replace('index.html#locked');
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body data-slug="08-skill" data-module="8">
+  <div id="siteHeader"></div>
+
+  <main>
+    <!-- ── FRAME (left) ─────────────────────────────────────── -->
+    <section class="col frame">
+      <p class="module-id">Module 08 · Part 2 — Agents &amp; systems</p>
+      <h1 class="question">Can you bottle what you know?</h1>
+
+      <div class="frame-row">
+        <div class="k">Scenario</div>
+        <div class="v">There's a thing you do the same way every time — say, your weekly stand recap. You're going to package it into a Skill so anyone, or an agent, can run it the way you would.</div>
+      </div>
+      <div class="frame-row">
+        <div class="k">Your role</div>
+        <div class="v">You supply the expertise. The Skill only carries what you manage to put in it.</div>
+      </div>
+      <div class="frame-row">
+        <div class="k">What you'll practice</div>
+        <div class="v">Writing a Skill from your own method — and finding exactly where your judgment refuses to fit in the box.</div>
+      </div>
+
+      <div class="frame-row tool">
+        <div class="k">Tool</div>
+        <div class="v">Claude, with a skill-creator.</div>
+      </div>
+      <div class="inputs" style="margin-top:22px;border-bottom:none;padding-bottom:0;">
+        <p class="inputs-intro">Bring these into the chat:</p>
+        <div class="folder-block">
+          <div class="folder-head">
+            <span class="folder-name">your_method</span>
+            <span class="folder-purpose">what you repeat</span>
+          </div>
+          <div class="file-row">
+            <span class="fname">a task you do often</span>
+            <span class="fdesc">the weekly recap, a pricing check, an outreach note</span>
+          </div>
+          <div class="file-row">
+            <span class="fname">one worked example</span>
+            <span class="fdesc">a case where you already know the right answer</span>
+          </div>
+        </div>
+        <details class="how">
+          <summary>Don't have these ready?</summary>
+          <div class="how-body">
+            You don't need a file. Describe the task to Claude in your own words — what you do, in what order, and why. Then bring one example you can grade it against: a case where you already know the right answer.
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ── WORK (middle) ────────────────────────────────────── -->
+    <section class="col work">
+      <div class="inner">
+        <p class="scene">
+          In Module 04 you ran someone else's Skill. Now you write one. Claude does almost all
+          the mechanical work — the structure, the wording, the steps. And it's still only as
+          good as the expertise you put in, because a Skill holds your conclusions, not the
+          judgment that produced them.
+        </p>
+
+        <div class="activity">
+          <h4><span class="step-n">1</span>Draft the Skill</h4>
+          <p>Open Claude with the skill-creator and describe the recap you run every week — in what order, and what you're looking for each time. Then ask it to build the Skill:</p>
+        </div>
+        <div class="code-prompt">Help me turn my weekly lemonade-stand recap into a reusable Skill: the steps I follow, what goes in, what comes out.</div>
+        <p class="activity">
+          In a minute you'll have a tidy Skill — named steps, an input list, a clean output
+          format. It looks finished. It isn't tested yet.
+        </p>
+
+        <div class="activity">
+          <h4><span class="step-n">2</span>Test it where you know the answer</h4>
+          <p>Hand it a week you've already reviewed in your own head — one where you already know what the right recap looks like:</p>
+        </div>
+        <div class="sample-prompt">Here's a real week I've already reviewed myself. Run the Skill on it and show
+the output. Then I'll tell you where it's wrong — and each correction is a
+piece of my judgment the Skill was missing. Fold those in and show me the
+diff.</div>
+        <p class="activity">
+          The output will be close, but not right. Every place it's wrong is a place your
+          judgment lived and the Skill didn't — so each correction you make is a piece of you
+          the box left out.
+        </p>
+
+        <div class="concept-intro">
+          <p class="ci-label">The limit</p>
+          <h3>What a skill can't hold</h3>
+          <p>
+            A Skill holds your conclusions, not the judgment behind them. Your price was right
+            for your corner that summer — written down, it quietly becomes the price for everyone,
+            everywhere. Watch what gets left out when you compress a method into steps. Some of
+            what you know can be bottled. Some of it can't, no matter how carefully you try.
+          </p>
+        </div>
+
+        <!-- ── Checkpoint ── -->
+        <div class="checkpoint">
+          <p class="label">Checkpoint</p>
+          <p class="check-q">
+            Did your Skill pass the week you'd already judged yourself — and what did you have to
+            add to make it pass?
+          </p>
+          <div class="check-choices">
+            <button class="check-btn" data-action="pass">It passed once I added my judgment</button>
+            <button class="check-btn ghost" data-action="stuck">It still gets my case wrong</button>
+          </div>
+
+          <div class="helper" id="helper">
+            <p class="help-q">Find the missing judgment</p>
+            <div class="help-choice">
+              <button class="help-btn" data-toggle="h1">Name what it can't see</button>
+              <div class="help-body" id="h1">
+                <p>Put your output next to your corrected version and ask:</p>
+                <div class="sample-prompt">Compare your output to my corrected version. What piece of judgment did I apply
+that isn't written anywhere in the Skill? State it as a rule — and tell me if
+it even CAN be stated as a rule.</div>
+                <p class="skill-note">
+                  The corrections are the expertise. If a correction can't be written as a rule,
+                  that's the part of you that doesn't travel.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="check-confirmed">A Skill that runs your method — plus a clear-eyed list of what it still can't carry.</p>
+
+        <!-- ── After the checkpoint ── -->
+        <div class="post-checkpoint">
+          <div class="takeaway">
+            <p><strong>In the era of AI your hard-won expertise is worth more, not less</strong> —
+            it's the scarce input a Skill can't generate on its own. But some of it won't fit in
+            the box. Knowing which is which is its own kind of expertise.</p>
+          </div>
+
+          <div class="closing-call">
+            <p class="cc-label">Before you move on →</p>
+            <p>Answer the three <strong>reflections</strong> on the right while it's fresh. They're
+            your takeaway from this module, and they go into your final report.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── LAND (right) ─────────────────────────────────────── -->
+    <section class="col land">
+      <div class="land-block">
+        <p class="label">Reflect</p>
+
+        <div class="reflect-q">
+          <p class="q-text">Claude did almost all the work here — yet the skill was only as good as the expertise you put in. In the era of AI, is your own hard-won expertise worth more, less, or just something different?</p>
+          <p class="q-hint">Argue your side.</p>
+          <textarea rows="4" placeholder="Your answer…"></textarea>
+        </div>
+
+        <div class="reflect-q">
+          <p class="q-text">Name one thing you know how to do that would package well into a skill — and one that wouldn't, no matter how you tried. What's the difference between them?</p>
+          <p class="q-hint">Two examples, one contrast.</p>
+          <textarea rows="4" placeholder="Your answer…"></textarea>
+        </div>
+
+        <div class="reflect-q">
+          <p class="q-text">Whose expertise on your team — yours, or someone else's — is locked in one head and should travel? Name it.</p>
+          <p class="q-hint">Be specific about whose, and what.</p>
+          <textarea rows="3" placeholder="Your answer…"></textarea>
+        </div>
+
+        <p class="can-say">You can now say: a Skill moves your method; your judgment is what makes it worth moving.</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="siteFooter"></div>
+
+  <script src="assets/config.js"></script>
+  <script src="assets/registry.js"></script>
+  <script src="assets/chrome.js"></script>
+  <script src="assets/sync.js"></script>
+  <script src="assets/course.js"></script>
+</body>
+</html>
