@@ -68,12 +68,12 @@
           <div class="folder-head">
             <span class="folder-name">One worked example</span>
           </div>
-          <p class="fdesc" style="margin:0;">A case where you already know the right answer. Here, it's the week of sales notes from Module 06. It's printed in Step 3, ready to copy.</p>
+          <p class="fdesc" style="margin:0;">A case where you already know the right answer. Here, it's the week of sales notes from Module 06, printed in Step 3 and ready to copy. Keep the cost sheet from Module 03 (ingredient_and_supply_costs.xlsx) handy too.</p>
         </div>
         <details class="how">
           <summary>No skill-creator? Not sure where Skills live?</summary>
           <div class="how-body">
-            You don't need anything special today. Ask Claude to write the Skill as a short instruction file right in the chat. To run it, paste it at the top of a new chat with the week's notes and say "Follow this Skill." For this exercise that works the same way — a Skill is written instructions Claude follows. If you'd like to install it properly later, your facilitator can show you where Skills are switched on in Claude's settings.
+            You don't need anything special today. Ask Claude to write the Skill as a short instruction file right in the chat, then keep going in that same chat — Claude can follow it from there. A Skill is just written instructions Claude follows. To reuse it another day, paste it at the top of a new chat and say "Follow this Skill." If you'd like to install it properly later, your facilitator can show you where Skills are switched on in Claude's settings.
           </div>
         </details>
       </div>
@@ -94,9 +94,9 @@
       <div class="inner">
         <p class="scene">
           In Module 04 you used someone else's Skill — a branding expert's method in a box. Now you
-          write one. Every Sunday you sit down with the week's notes and do the same thing: add it up,
-          see what stood out, decide what to watch. In Module 06, you found a Saturday that
-          came up $32 short and a Thursday with 45 lemons when most days had about 30. Claude will do
+          write one. Every Sunday night you sit down with the week's notes and do the same thing: add
+          it up, see what stood out, decide what to watch. Back in Module 06, that same week turned up
+          a Saturday $32 short and a Thursday with 45 lemons when most days had about 30. Claude will do
           most of the writing today. The Skill will still only be as good as what you know.
         </p>
 
@@ -123,7 +123,10 @@
           <li>Work out what each cup cost us, using the cost sheet.</li>
           <li>Name one thing to watch next week.</li>
         </ul>
-        <p class="body">A few questions later, you'll have a draft. It will probably look something like this:</p>
+        <p class="body">
+          Short answers are fine. If the questions keep coming, you can say, "That's enough for now —
+          write the first draft." Your draft will probably look something like this:
+        </p>
 
         <div class="claude-out">
           <div class="co-head">Claude · sample response</div>
@@ -186,17 +189,10 @@
 
         <!-- Step 3 -->
         <h2 class="sec"><span class="sec-kicker">Step 3 · Test it</span>Grade it on a week you've already judged</h2>
-        <p class="body">You already have a good <strong>test case</strong>: the week from Module 06. Copy it into the chat:</p>
-        <div class="sample-prompt">Lakeside Lemonade — sales notes, one week
-Small cup $4 · Large cup $5
-
-Tue — slow, cloudy. Small 22, large 15. Cash counted $163. Lemons bought 30.
-Wed — pickup rush ~3pm. Small 31, large 18. Cash counted $214. Lemons bought 30.
-Thu — hot!! Small 36, large 25. Cash counted $269. Lemons bought 45.
-Fri — soccer tourney setup. Small 38, large 30. Cash counted $302. Lemons bought 32.
-Sat — SLAMMED — rough count. Small ~58, large ~56. Cash counted $480. Lemons bought 30.
-Sun — market day, Hansen busy. Small 41, large 33. Cash counted $329. Lemons bought 30.</div>
-        <p class="body">Then send this. Click each highlighted part to see why it's there:</p>
+        <p class="body">
+          You already have a good <strong>test case</strong>: the week from Module 06. Stay in the same
+          chat. Here's the message you'll send — click each highlighted part to see why it's there:
+        </p>
 
         <div class="annotated">
           <div class="sample-prompt ap-body"><span class="ap-seg" data-ap="1">Here's a real week I've already reviewed myself.</span> <span class="ap-seg" data-ap="2">Run the Skill on it and show me the output. Then I'll tell you where it's wrong</span> — <span class="ap-seg" data-ap="3">each correction is a piece of my judgment the Skill was missing.</span> <span class="ap-seg" data-ap="4">Add those to the Skill and show me what changed.</span></div>
@@ -210,6 +206,20 @@ Sun — market day, Hansen busy. Small 41, large 33. Cash counted $329. Lemons b
           </ol>
         </div>
 
+        <p class="body">
+          Copy the prompt, paste the week's notes underneath it, attach the cost sheet, and send it all
+          as one message:
+        </p>
+        <div class="sample-prompt">Lakeside Lemonade — sales notes, one week
+Small cup $4 · Large cup $5
+
+Tue — slow, cloudy. Small 22, large 15. Cash counted $163. Lemons bought 30.
+Wed — pickup rush ~3pm. Small 31, large 18. Cash counted $214. Lemons bought 30.
+Thu — hot!! Small 36, large 25. Cash counted $269. Lemons bought 45.
+Fri — soccer tourney setup. Small 38, large 30. Cash counted $302. Lemons bought 32.
+Sat — SLAMMED — rough count. Small ~58, large ~56. Cash counted $480. Lemons bought 30.
+Sun — market day, Hansen busy. Small 41, large 33. Cash counted $329. Lemons bought 30.</div>
+
         <p class="body">The first run will probably look something like this:</p>
         <div class="claude-out">
           <div class="co-head">Claude · sample response</div>
@@ -219,7 +229,7 @@ Sun — market day, Hansen busy. Small 41, large 33. Cash counted $329. Lemons b
               <li>Cups sold: 403 · Cash: $1,757</li>
               <li>Best day: Saturday — 114 cups, $480</li>
               <li>Worst day: Tuesday — 37 cups, $163</li>
-              <li>Cost per cup: about $0.42 (lemons and cups, from the cost sheet)</li>
+              <li>Cost per cup: about $0.67 (from the cost sheet)</li>
             </ul>
             <p><b>One thing to watch:</b> Saturday was your biggest day by far. Bring extra cups and ice next weekend.</p>
           </div>
@@ -228,7 +238,8 @@ Sun — market day, Hansen busy. Small 41, large 33. Cash counted $329. Lemons b
 
         <p class="body">
           Now be the grader. Tell Claude each of those misses in your own words — and what you'd want
-          done instead. Then compare the Skill before and after:
+          done instead. For example: <em>"Saturday's cups add up to $512, but the cash says $480. Any
+          gap over $10 gets flagged, never smoothed over."</em> Then compare the Skill before and after:
         </p>
 
         <div class="tabs">
@@ -242,12 +253,12 @@ Sun — market day, Hansen busy. Small 41, large 33. Cash counted $329. Lemons b
 2. Name the best day and the worst day.
 3. Work out the cost per cup from the cost sheet.
 4. End with one thing to watch next week.</div>
-            <p>Four tidy steps — and blind to everything you caught in Module 06.</p>
+            <p>Four tidy steps — and blind to both problems hiding in that week.</p>
           </div>
           <div class="tab-panel" data-panel="b">
             <div class="sample-prompt"><b>Check first
 - For each day, compare the cash with cups × price. If cash and cup counts disagree by more than $10, flag it — never pick one silently.
-- If a day's lemons are far from the usual (about 30), ask why before booking them.</b>
+- If a day's lemons are far from the usual (about 30), ask why — don't just record them.</b>
 
 Steps
 1. Total the cups and cash for each day, and for the week.
@@ -263,7 +274,7 @@ Steps
         </div>
         <p class="co-verdict">What to notice: the Skill didn't get smarter on its own — you put your judgment in, one correction at a time. And look at the last section. You can't write down how to tell a miscount from missing cash. But you can write down that it isn't the Skill's call — the next best thing to bottling it.</p>
 
-        <p class="body">Run the updated Skill on the same week. If it flags Saturday, asks about Thursday and notes each day's weather or event, it passes.</p>
+        <p class="body">Last, ask Claude to run the updated Skill on the same week. If it flags Saturday, asks about Thursday and notes each day's weather or event, it passes.</p>
 
         <!-- Step 4 -->
         <h2 class="sec"><span class="sec-kicker">Step 4 · Click and learn</span>What bottles, and what won't travel</h2>
@@ -296,8 +307,9 @@ Steps
 
         <p class="body">
           All three can be true at once. A Skill makes your method easier to share — and easier to copy.
-          It can't copy the part you couldn't put into words. Now try the same move on your own work:
+          It can't copy the part you couldn't put into words.
         </p>
+        <p class="body">Here's the same move for your own work. Try it now if you have a few spare minutes, or keep it for later:</p>
         <div class="sample-prompt">Help me turn [a task I do the same way every time] into a Skill. Ask me how I do it, step by step, and what good looks like. Then write it up, and test it on this example where I already know the answer: [example].</div>
         <p class="body">
           Use an example you're allowed to share. Never paste confidential or patient-identifiable
@@ -356,10 +368,10 @@ Steps
               </div>
             </div>
             <div class="help-choice">
-              <button class="help-btn" data-toggle="h2">Claude says the Skill already handles it</button>
+              <button class="help-btn" data-toggle="h2">It keeps missing the same thing</button>
               <div class="help-body" id="h2">
                 <p>Point to the exact miss, with the numbers:</p>
-                <div class="sample-prompt">Saturday's cups add up to $512 and the box held $480. Your recap didn't mention it. Add a rule so it always would, then run it on this week again.</div>
+                <div class="sample-prompt">Saturday's cups add up to $512 and the cash box held $480. Your recap didn't mention it. Add a rule so it always would, then run it on this week again.</div>
                 <p class="skill-note">"It's wrong" is hard to act on. "It missed the $32 gap" is a rule waiting to be written.</p>
               </div>
             </div>
@@ -435,7 +447,7 @@ Steps
 
         <div class="reflect-q">
           <p class="q-text">Claude did almost all the work here — yet the skill was only as good as the expertise you put in. In the era of AI, is your own hard-won expertise worth more, less, or just something different?</p>
-          <p class="q-hint">There's no right answer. Pick a side and say why — the three quotes in Step 4 might help you decide.</p>
+          <p class="q-hint">There's no right answer. Pick one — more, less or different — and say why. The three quotes in Step 4 might help.</p>
           <textarea rows="4" placeholder="In your own words…"></textarea>
         </div>
 

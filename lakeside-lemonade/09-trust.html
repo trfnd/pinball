@@ -41,7 +41,7 @@
 
       <div class="frame-row">
         <div class="k">The situation</div>
-        <div class="v">Your weekly recap now runs without you. Before you hand it off, you'll produce it two ways — plain, and with an independent check — and decide which one you'd trust to someone else.</div>
+        <div class="v">Your weekly recap is about to run without you. Before you hand it off, you'll produce it two ways — plain, and with an independent check — and decide which one you'd trust to run unwatched.</div>
       </div>
       <div class="frame-row">
         <div class="k">Your part</div>
@@ -54,7 +54,7 @@
 
       <div class="frame-row tool">
         <div class="k">Tool</div>
-        <div class="v">Claude — a normal chat works. If yours can start helpers (Claude Cowork or Claude Code), the checker can get its own desk.</div>
+        <div class="v">Claude — a normal chat works. If yours can start separate helpers (for example, Claude Cowork or Claude Code), the verifier can be one of them.</div>
       </div>
       <div class="inputs" style="margin-top:22px;border-bottom:none;padding-bottom:0;">
         <p class="inputs-intro">You'll bring two things into the chat:</p>
@@ -93,8 +93,8 @@
     <section class="col work">
       <div class="inner">
         <p class="scene">
-          Every Monday, someone needs one short note: what came in, what went out, what stood out. A
-          recap is easy to produce — and easy to get quietly wrong. A number transposed. The $32
+          Every Monday, your investor gets one short note: what came in, what went out, what stood out.
+          A recap is easy to produce — and easy to get quietly wrong. Two digits swapped. The $32
           Saturday smoothed over. Thursday's 45 lemons explained by a reason nobody wrote down. Soon
           you won't be reading every run. If you're going to stop watching, "it looks right" isn't
           enough.
@@ -111,7 +111,7 @@
         <h2 class="sec"><span class="sec-kicker">Step 1 · Try it</span>Make the recap two ways</h2>
         <p class="body">
           Open Claude. If your Module 06 chat is still open, keep going there. If not, start a fresh
-          chat, attach the cost sheet, and paste in the week's notes:
+          chat, attach the cost sheet, and paste in the week's notes (the Copy button grabs them all):
         </p>
         <div class="sample-prompt">Lakeside Lemonade — sales notes, one week
 Small cup $4 · Large cup $5
@@ -149,10 +149,11 @@ VERIFIER: <span class="ap-seg" data-ap="3">take ONLY the writer's recap and the 
         </div>
 
         <p class="body">
-          In a normal chat, one Claude plays both roles, so the wall between them is thin — it still
-          tends to catch more than "look it over." In Claude Cowork or Claude Code, ask for the verifier
-          as a separate helper. <strong>For a truly blind check,</strong> give a fresh chat only the recap
-          and the raw notes. It can't agree with reasoning it never saw.
+          An honest note: in a normal chat, one Claude plays both roles, so the wall between them is
+          thin. It still tends to catch more than "look it over." In Claude Cowork or Claude Code, ask for
+          the verifier as a separate helper. <strong>Have a spare minute? Try a truly blind check.</strong>
+          Open a fresh chat, paste in only the recap and the raw notes, and give it just the VERIFIER
+          line. It can't agree with reasoning it never saw.
         </p>
 
         <p class="body">Then compare your two recaps:</p>
@@ -174,7 +175,7 @@ VERIFIER: <span class="ap-seg" data-ap="3">take ONLY the writer's recap and the 
                 <p><b>What stood out:</b> Saturday was the best day by far at $480. Thursday's heat lifted sales, and you stocked up with 45 lemons to keep up. A strong week overall.</p>
               </div>
             </div>
-            <p>Every sum is right. But Saturday's cups add up to $512, not $480, and nothing says so. Thursday got a reason nobody wrote down.</p>
+            <p>Each total is right on its own. Now check them against each other: 226 small and 177 large cups come to $1,789, not $1,757. The $32 gap is all Saturday's — its cups add up to $512, the box held $480 — and the recap never says so. Thursday got a reason nobody wrote down.</p>
           </div>
           <div class="tab-panel" data-panel="b">
             <div class="claude-out">
@@ -183,7 +184,7 @@ VERIFIER: <span class="ap-seg" data-ap="3">take ONLY the writer's recap and the 
                 <h5>Recap</h5>
                 <ul>
                   <li>Sales: $1,757 cash counted, from 403 cups. The cups add up to $1,789 — see Saturday.</li>
-                  <li>Costs recorded: $167.42 for lemons and cups. Sugar and ice aren't in the notes.</li>
+                  <li>Costs: $167.42 for lemons and cups, priced from the cost sheet. Sugar and ice aren't in the notes, so they aren't counted.</li>
                 </ul>
                 <h5>Verifier's findings</h5>
                 <ul>
@@ -201,7 +202,7 @@ VERIFIER: <span class="ap-seg" data-ap="3">take ONLY the writer's recap and the 
             </div>
           </div>
         </div>
-        <p class="co-verdict">What to notice: same Claude, same notes. The second recap isn't smarter — it was checked against the raw numbers by a pass whose only job was to find the problem. Yours may catch both problems, one, or neither. Runs differ; that's why you design the check.</p>
+        <p class="co-verdict">What to notice: same Claude, same notes. The second recap isn't smarter — it was checked against the raw numbers by a pass whose only job was to find the problem. Your own checked run may catch both problems, one, or neither. Runs differ — that's why you design the check.</p>
 
         <!-- Step 2 -->
         <h2 class="sec"><span class="sec-kicker">Step 2 · What's going on</span>Why "check your own work" isn't enough</h2>
@@ -261,7 +262,7 @@ VERIFIER: <span class="ap-seg" data-ap="3">take ONLY the writer's recap and the 
               <h5>At the stand</h5>
               <p>Sort each line of the notes into sale, cost or "ask me" — then book it.</p>
               <h5>At work</h5>
-              <p>Routing emails, tickets or invoices. A first sort of abstracts into include, exclude and "not sure."</p>
+              <p>Routing emails, tickets or invoices. Or a first pass over a stack of abstracts: include, exclude or "not sure" — with a person checking the calls.</p>
               <h5>Watch out for</h5>
               <p>Always keep an "unsure — ask a human" bucket, or odd items get forced into the nearest one.</p>
               <h5>How to ask</h5>
@@ -402,8 +403,8 @@ VERIFIER: <span class="ap-seg" data-ap="3">take ONLY the writer's recap and the 
         </div>
 
         <!-- Step 4 -->
-        <h2 class="sec"><span class="sec-kicker">Step 4 · Click and learn</span>Match the job to the shape</h2>
-        <p class="body">Six jobs at the stand. Which shape fits each one?</p>
+        <h2 class="sec"><span class="sec-kicker">Step 4 · Your turn</span>Match the job to the shape</h2>
+        <p class="body">Six jobs at the stand. Pick the shape you think fits each one — you'll see our reasoning after every pick. Some could go more than one way; it's the thinking that counts.</p>
         <div class="sorter" data-choices="a:Classify-and-act|b:Fan-out|c:Verify|d:Generate-and-filter|e:Tournament|f:Loop-until-done">
           <div class="sort-item" data-answer="a"><p class="sort-text">400 customer emails — complaints, catering requests and spam. Each needs a different reply.</p><template class="fb">Lots of items, a few kinds of reply: sort, then act. Keep a bucket for "not sure — a person reads this," so an odd email never gets a canned answer.</template></div>
           <div class="sort-item" data-answer="b"><p class="sort-text">Should we open a second stand? Demand, costs, competition, risks.</p><template class="fb">A big question with genuinely different parts. It's the one you built in Module 07: a helper per part, then a synthesis that says where they disagree.</template></div>
@@ -474,9 +475,10 @@ VERIFIER: <span class="ap-seg" data-ap="3">take ONLY the writer's recap and the 
 the $32 Saturday and the 45-lemon day on its own? Write it as a rule
 the verifier runs before any recap goes out.</div>
                 <p class="skill-note">
-                  The two problems need different checks. Saturday fails a sum. Thursday adds up — it's
-                  just unlike the other days. A good rule covers both. If your verifier caught neither,
-                  run it again in a fresh chat with only the recap and the raw notes.
+                  A hint: the two problems fail in different ways. Saturday fails a sum. Thursday adds
+                  up — it's just unlike the other days. So a good rule asks two things: does every day
+                  add up, and does any day look out of line with the rest? If your verifier caught
+                  neither, run it again in a fresh chat with only the recap and the raw notes.
                 </p>
               </div>
             </div>
@@ -518,10 +520,12 @@ the verifier runs before any recap goes out.</div>
               <strong>where would the check go?</strong>
             </p>
             <p>
-              A literature summary for a grant aims page is a fan-out; the check confirms every claim against the paper it cites. A report drafted from a
-              data listing needs a verifier that recomputes the key counts from the listing, not the
-              draft. A protocol or SOP checked for internal consistency can loop until every date, number
-              and definition in the summary matches the body — with a stop rule.
+              A literature summary for a grant aims page fits fan-out: one helper per question. The check
+              goes at the end — every claim confirmed against the paper it cites. A report drafted from a
+              data listing needs a verifier that recomputes the key counts from the listing itself, not
+              from the draft. And checking a protocol or SOP for internal consistency can loop: compare
+              every date, number and definition in the summary against the body, fix, recheck — with a
+              stop rule, and every change shown to you.
             </p>
             <p>
               Two rules travel with every shape. Only give AI tools material you're allowed to use in

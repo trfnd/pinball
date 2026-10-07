@@ -142,8 +142,7 @@ Work up the whole analysis.</div>
         <h2 class="sec"><span class="sec-kicker">Step 2 · What's going on</span>Why one window spreads thin</h2>
         <p class="body">
           Claude had one go at the whole question, so demand, costs, competition and risks all had to
-          share a single reply. Each got a sentence or two. Nothing in it is wrong. It's just spread
-          thin.
+          share a single reply. Each part got a slice of attention, and none of them got enough.
         </p>
         <p class="body">
           There's a second, quieter problem. Everything you brought in — interviews, map, cost sheet,
@@ -161,10 +160,10 @@ Work up the whole analysis.</div>
         <figure class="lift">
           <svg viewBox="0 0 520 150" fill="none" stroke="currentColor" stroke-width="1.5" role="img"
                aria-label="One question fans out to four workstreams — demand, costs, competition and risks — which all feed back into one synthesis."
-               style="display:block;width:100%;max-width:520px;height:auto;margin:0 auto;color:var(--ink);background:var(--panel);border:1px solid var(--rule);border-radius:6px;padding:16px;">
+               style="display:block;width:100%;max-width:520px;height:auto;margin:0 auto;color:var(--ink);background:var(--panel);border:1px solid var(--rule);border-radius:6px;padding:12px;">
             <!-- the question -->
             <circle cx="40" cy="75" r="13"/>
-            <text x="40" y="106" text-anchor="middle" font-size="11" fill="currentColor" stroke="none">Question</text>
+            <text x="40" y="106" text-anchor="middle" font-size="13" fill="currentColor" stroke="none">Question</text>
             <!-- fan out: question to four workstreams -->
             <line x1="53" y1="75" x2="190" y2="22"/>
             <line x1="53" y1="75" x2="190" y2="57"/>
@@ -172,13 +171,13 @@ Work up the whole analysis.</div>
             <line x1="53" y1="75" x2="190" y2="127"/>
             <!-- four workstreams, side by side in time -->
             <rect x="190" y="10" width="112" height="24" rx="5"/>
-            <text x="246" y="26" text-anchor="middle" font-size="11" fill="currentColor" stroke="none">Demand</text>
+            <text x="246" y="26" text-anchor="middle" font-size="13" fill="currentColor" stroke="none">Demand</text>
             <rect x="190" y="45" width="112" height="24" rx="5"/>
-            <text x="246" y="61" text-anchor="middle" font-size="11" fill="currentColor" stroke="none">Costs</text>
+            <text x="246" y="61" text-anchor="middle" font-size="13" fill="currentColor" stroke="none">Costs</text>
             <rect x="190" y="80" width="112" height="24" rx="5"/>
-            <text x="246" y="96" text-anchor="middle" font-size="11" fill="currentColor" stroke="none">Competition</text>
+            <text x="246" y="96" text-anchor="middle" font-size="13" fill="currentColor" stroke="none">Competition</text>
             <rect x="190" y="115" width="112" height="24" rx="5"/>
-            <text x="246" y="131" text-anchor="middle" font-size="11" fill="currentColor" stroke="none">Risks</text>
+            <text x="246" y="131" text-anchor="middle" font-size="13" fill="currentColor" stroke="none">Risks</text>
             <!-- pull back together -->
             <line x1="302" y1="22" x2="464" y2="75"/>
             <line x1="302" y1="57" x2="464" y2="75"/>
@@ -186,7 +185,7 @@ Work up the whole analysis.</div>
             <line x1="302" y1="127" x2="464" y2="75"/>
             <!-- the synthesis -->
             <circle cx="478" cy="75" r="14" style="fill:var(--acc-soft);"/>
-            <text x="478" y="107" text-anchor="middle" font-size="11" fill="currentColor" stroke="none">Synthesis</text>
+            <text x="478" y="107" text-anchor="middle" font-size="13" fill="currentColor" stroke="none">Synthesis</text>
           </svg>
           <figcaption>Fan out, then synthesize: four parts worked at the same time, then one pass that pulls them together — disagreements included.</figcaption>
         </figure>
@@ -217,7 +216,7 @@ Work up the whole analysis.</div>
 
         <!-- Step 3 -->
         <h2 class="sec"><span class="sec-kicker">Step 3 · Try it again</span>Split the work, then pull it together</h2>
-        <p class="body">Here's the same question, written as four jobs and a synthesis. Click each highlighted part to see what it does — then copy it into the same chat.</p>
+        <p class="body">Here's the same question, split into four separate jobs — <em>workstreams</em> — plus a synthesis. Click each highlighted part to see what it does, then copy the prompt into the same chat.</p>
 
         <div class="annotated">
           <div class="sample-prompt ap-body"><span class="ap-seg" data-ap="1">Run this as four separate workstreams, each as its own focused pass:</span>
@@ -232,7 +231,7 @@ Work up the whole analysis.</div>
           <ol class="ap-notes">
             <li data-ap="1"><b>Separate passes.</b> This is the fan-out. "Separate" and "focused" tell Claude not to blend the parts into one essay, but to give each its own full attention — ideally its own helper.</li>
             <li data-ap="2"><b>Uses your earlier work.</b> "Using my personas" points the demand helper at the people you already found — Megan, Marcus, Janelle — not a generic "busy parent." Same for "the real cost per cup" below: you worked that out in Module 03.</li>
-            <li data-ap="3"><b>Each has a clear job.</b> Four questions that need different files and different thinking. Costs needs the cost sheet. Competition needs the price survey. Risks needs a skeptic.</li>
+            <li data-ap="3"><b>Each has a clear job.</b> Together with demand, that's four questions that need different files and different thinking. Costs needs the cost sheet. Competition needs the price survey. Risks needs a skeptic.</li>
             <li data-ap="4"><b>The synthesis.</b> The head chef. Without it you'd get four reports to stitch together yourself. "Go/no-go with the trade-offs" asks for a decision, not a summary.</li>
             <li data-ap="5"><b>Where they disagreed — the most useful line.</b> Left alone, a synthesis tends to smooth everything into one tidy story. Asking for the disagreements keeps the tensions on the table. That's usually where the real decision lives.</li>
           </ol>
@@ -240,9 +239,9 @@ Work up the whole analysis.</div>
 
         <p class="body">How it runs depends on which Claude you have open:</p>
         <ul class="body">
-          <li><strong>Claude Cowork or Claude Code:</strong> paste it in. You may see it start several helpers at once — those are sub-agents. Give it a few minutes.</li>
+          <li><strong>Claude Cowork or Claude Code:</strong> paste it in. You may see it start several helpers at once — those are sub-agents. Give it a few minutes. If it works through the parts one by one instead, add: "Use a separate sub-agent for each workstream."</li>
           <li><strong>A normal chat:</strong> paste it in. Claude will work the four parts one after another in the same window — already a big step up.</li>
-          <li><strong>Want the real thing in a normal chat?</strong> If you have time, open four new chats, give each only its own job and files, then paste the four answers into a fifth and ask for the go/no-go. You're the head chef.</li>
+          <li><strong>Want the real thing in a normal chat?</strong> If you have time, open four new chats, give each only its own job and files, then paste the four answers into a fifth and ask for the go/no-go. You're running the kitchen.</li>
         </ul>
 
         <p class="body">Then compare the two runs:</p>
@@ -260,11 +259,11 @@ Work up the whole analysis.</div>
               <div class="co-head">Claude · sample response</div>
               <div class="co-body">
                 <h5>Demand</h5>
-                <p>City Park (corner 3) is the strongest second spot that won't steal from your first. Marcus is there "Two, three times a week in summer. Weekends always." Price isn't his worry: "Honestly anything under five and I'm not really thinking about it." Skip the school: Janelle was interviewed in the last week of school, and pickup disappears for summer.</p>
+                <p>City Park (corner 3) is the strongest second spot, and its playground crowd is different from your waterfront regulars. Marcus is there "Two, three times a week in summer. Weekends always." Price isn't his worry: "Honestly anything under five and I'm not really thinking about it." Skip the school: Janelle was interviewed in the last week of school, and pickup disappears for summer.</p>
                 <h5>Costs</h5>
-                <p>Cost per cup barely changes — same recipe. Setup is the real cost: a second cooler, juicer, two pitchers, cash box, table and chalkboard sign come to about $187. City Park adds the $30 permit and $75 insurance — roughly $290 before the first cup. The cost sheet doesn't say whether one permit or rider covers two stands. Ask the town clerk.</p>
+                <p>Cost per cup barely changes — same recipe. Setup is the real cost: a second cooler, juicer, two pitchers, cash box, table and chalkboard sign come to about $187. City Park adds the $30 permit and $75 insurance — roughly $290 before the first cup. The cost sheet doesn't say whether one permit or one rider covers two stands. Ask the town clerk about the permit, and your insurance broker about the rider.</p>
                 <h5>Competition</h5>
-                <p>The price survey didn't cover City Park — a gap worth a walk-by. The ice cream truck's listed beat is the waterfront and soccer field. The real rival is in parents' bags: Marcus's Costco juice boxes, "like 30 cents a box."</p>
+                <p>The price survey didn't cover City Park — a gap worth a walk-by. The ice cream truck's listed beat is the waterfront and soccer field. The real rival comes from home: Marcus buys juice boxes in 40-packs at Costco, "like 30 cents a box."</p>
                 <h5>Risks</h5>
                 <p>Two stands, one of you — who runs the second? The interviews lean toward weekend daytime, so weekday demand is a guess. Mixed lemonade left out over 2 hours should be thrown away: two sites, two sets of batches to time.</p>
                 <h5>Go / no-go</h5>
@@ -274,14 +273,14 @@ Work up the whole analysis.</div>
             </div>
           </div>
         </div>
-        <p class="co-verdict">What to notice: in these samples, both runs picked City Park. The difference is everything around the pick — real prices, real people, an honest gap in the evidence, and a disagreement worth hearing before you spend $290. Splitting didn't make Claude smarter. It made it look harder at each part.</p>
+        <p class="co-verdict">What to notice: in these samples, both runs picked City Park. The difference is everything around the pick — real prices, real people, an honest gap in the evidence, and a disagreement worth hearing before you spend $290. That's what "better-grounded" means: more of the answer is tied to something you can check. Splitting didn't make Claude smarter. It made it look harder at each part.</p>
 
         <!-- Step 4 -->
         <h2 class="sec"><span class="sec-kicker">Step 4 · Click and learn</span>Team, or one window?</h2>
         <p class="body">
           Splitting isn't free. Each helper reads its own files and writes its own answer, so a team
-          uses more of your plan and gives you more to read. Sometimes that's worth it. Sometimes it's
-          a committee meeting about a thank-you note.
+          uses more of your Claude allowance and gives you more to read. Sometimes that's worth it.
+          Sometimes it's like calling a committee meeting to sign a birthday card.
         </p>
         <p class="body">Sort these six jobs. Would you split each one into a team, or keep it in one window?</p>
 
@@ -333,9 +332,9 @@ Work up the whole analysis.</div>
             <p class="quiz-k">Quick check</p>
             <p class="quiz-q">What's the biggest downside of splitting the work into a team?</p>
             <div class="quiz-opts">
-              <button class="quiz-opt">There isn't one — more helpers is always better.<template class="fb">Splitting has real costs. A thank-you note written by four helpers is four notes, not a better one.</template></button>
-              <button class="quiz-opt">Claude can only run one helper at a time.<template class="fb">Some versions of Claude can run several at once, and in a normal chat you can do it by hand. The real limits are cost, coordination and the synthesis — not the count.</template></button>
-              <button class="quiz-opt" data-correct="true">It takes more time and cost to coordinate, helpers can miss each other's context, and a lazy synthesis can paper over disagreements.<template class="fb">That's why you split only when it pays — and why the synthesis is the role to watch. Asking it to name the disagreements is your best protection.</template></button>
+              <button class="quiz-opt">Each helper is a cut-down version of Claude, so every part is a little less reliable.<template class="fb">Each helper is the same Claude, just with a narrower job and a clean page. If anything, that helps each part. The real downsides are cost, coordination and the synthesis.</template></button>
+              <button class="quiz-opt">Claude can only run one helper at a time, so splitting never saves time.<template class="fb">Some versions of Claude can run several helpers at once, and in a normal chat you can do it by hand with separate chats. The real limits are cost, coordination and the synthesis.</template></button>
+              <button class="quiz-opt" data-correct="true">It costs more and takes more coordinating, helpers can miss each other's context, and a lazy synthesis can paper over the disagreements.<template class="fb">That's why you split only when it pays — and why the synthesis is the role to watch. Asking it to name the disagreements is your best protection.</template></button>
             </div>
           </div>
         </div>
@@ -403,7 +402,7 @@ Work up the whole analysis.</div>
               </p>
               <p>
                 And a team costs more. Every helper reads and writes on its own, so it uses more of your
-                plan and gives you more to check. Split when the parts are big and different enough to
+                Claude allowance and gives you more to check. Split when the parts are big and different enough to
                 pay for it.
               </p>
             </div>
@@ -417,11 +416,11 @@ Work up the whole analysis.</div>
             </p>
             <p>
               Next time you face a question that size, try the split. Take a literature summary for a
-              grant aims page: one helper per question — what's known, what's still open, which methods
-              others used — each working only from the papers you hand it, and one synthesis that says
-              where the papers disagree. Or a consistency check on a long protocol or SOP: one helper per
-              section, all checking the same short list (dates, numbers, definitions), and one pass that
-              gathers every mismatch.
+              grant aims page: one helper per strand of the literature, each working only from the papers
+              you hand it, and one synthesis that says what's settled, what's still open, and where the
+              papers disagree. Or a consistency check on a long protocol or SOP: one helper per section
+              lists every number, date and defined term it finds, and one final pass lines the lists up
+              and flags each mismatch for you to resolve.
             </p>
             <p>
               Two rules carry over from the last module. Only hand helpers material you're allowed to
@@ -466,7 +465,7 @@ Work up the whole analysis.</div>
 
         <div class="reflect-q">
           <p class="q-text">Think back to a recent project at work and the people it took to finish — the one who dug up information, the one who ran the numbers, the one who pulled it all together. Picture that as an agentic system: which roles would run in parallel, and who synthesizes at the end? Is it fan-out-and-synthesize, like you just built — or a different shape?</p>
-          <p class="q-hint">Roles, not names. Who worked at the same time as someone else — and who had to wait for everyone before they could start?</p>
+          <p class="q-hint">"Agentic system" just means a set of AI helpers, each with its own job. Roles, not names: who worked at the same time as someone else — and who had to wait for everyone before they could start?</p>
           <textarea rows="5" placeholder="In your own words…"></textarea>
         </div>
 
