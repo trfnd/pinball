@@ -42,7 +42,7 @@
 
       <div class="frame-row">
         <div class="k">The situation</div>
-        <div class="v">You have a full cost sheet — ingredients, supplies, permits — and a survey of every drink sold in town. Somewhere between what a cup costs you and what everyone else charges is your price.</div>
+        <div class="v">You have a full cost sheet — ingredients, supplies, permits — and a survey of drink prices around town. Somewhere between what a cup costs you and what everyone else charges is your price.</div>
       </div>
       <div class="frame-row">
         <div class="k">Your part</div>
@@ -69,12 +69,12 @@
           <div class="folder-head">
             <span class="folder-name" style="word-break:break-word;">competitor_beverage_pricing.xlsx</span>
           </div>
-          <p class="fdesc" style="margin:0;">More than 40 drinks from 8 vendors around town, from Hansen's $6 cup to the gas station's $1 refill.</p>
+          <p class="fdesc" style="margin:0;">More than 40 drinks from 8 vendors around town — including Hansen's $6 cup and the gas station's $1 refill.</p>
         </div>
         <details class="how">
           <summary>Where do I find them?</summary>
           <div class="how-body">
-            They're in your course files. In Claude, click the paperclip (or drag both files into the chat). If a spreadsheet won't attach, open it, copy everything on each sheet, and paste it in — one sheet at a time is fine.
+            They're in your course files. In Claude, click the paperclip (or drag both files into the chat). If a spreadsheet won't attach, open it, copy everything on each sheet, and paste it in — one sheet at a time is fine. Include the notes sheets: some of the most important details live there.
           </div>
         </details>
       </div>
@@ -84,7 +84,7 @@
         <dt>Clarifying question</dt>
         <dd>A question Claude asks before it answers, so it doesn't have to guess.</dd>
         <dt>Assumption</dt>
-        <dd>Something treated as true without anyone checking or agreeing to it — like "the water is free."</dd>
+        <dd>Something treated as true without anyone checking or agreeing to it — like "you'll use free tap water."</dd>
         <dt>Citation</dt>
         <dd>Where a number came from: the file, the sheet, the row. Like a receipt, it shows where — not why.</dd>
         <dt>Price floor</dt>
@@ -106,8 +106,8 @@
         <div class="factbar">
           <div class="fact"><div class="fact-n">40+</div><div class="fact-l">drinks from 8 vendors in the price survey</div></div>
           <div class="fact"><div class="fact-n">$0.40–0.79</div><div class="fact-l">for one lemon, depending on where you buy it</div></div>
-          <div class="fact"><div class="fact-n">$1–$6</div><div class="fact-l">from the gas-station refill to Hansen's cup</div></div>
-          <div class="fact"><div class="fact-n">$105</div><div class="fact-l">permit plus insurance at most public corners</div></div>
+          <div class="fact"><div class="fact-n">$1–$6</div><div class="fact-l">the gas-station refill vs. Hansen's classic cup</div></div>
+          <div class="fact"><div class="fact-n">$105</div><div class="fact-l">permit plus insurance at every public-property corner</div></div>
         </div>
 
         <!-- Step 1 -->
@@ -131,7 +131,7 @@
             <p>At $3.50, that's about $2.83 profit per cup — an 81% margin. It matches the bakery's 12 oz house lemonade and sits well below Hansen's $6, so you'll look like good value.</p>
           </div>
         </div>
-        <p class="co-verdict">What to notice: it sounds certain, and the math adds up. But to get there, Claude quietly decided a lot of things for you — and none of those decisions are on the page.</p>
+        <p class="co-verdict">What to notice: it sounds certain, and the math adds up. But to get there, Claude quietly decided a lot of things for you — and never said which parts were its choices.</p>
 
         <div class="reveal">
           <p class="reveal-k">Make a guess</p>
@@ -150,7 +150,7 @@
               7. No card fees (Square takes 2.6% + $0.10 a swipe).<br />
               8. No cooler, juicer, table or sign.
             </p>
-            <p>Every one of them is reasonable. Not one of them shows up in the answer unless you go looking.</p>
+            <p>Each one is a choice you might have made differently. A few peek through if you look closely — "Water: $0.00" — but none is flagged as a choice. The rest simply aren't there.</p>
           </div>
         </div>
 
@@ -188,7 +188,7 @@
 
         <!-- Step 3 -->
         <h2 class="sec"><span class="sec-kicker">Step 3 · Try it again</span>Ask Claude to ask you first</h2>
-        <p class="body">Start a fresh chat, attach both files again, and try this instead. Click each highlighted part to see what it does — then copy it into Claude.</p>
+        <p class="body">Start a fresh chat (so the first answer doesn't color the second), attach both files again, and try this instead. Click each highlighted part to see what it does — then copy it into Claude.</p>
 
         <div class="annotated">
           <div class="sample-prompt ap-body"><span class="ap-seg" data-ap="1">Before you calculate anything,</span> <span class="ap-seg" data-ap="2">ask me the questions you need
@@ -198,14 +198,14 @@ card, which corner.</span> <span class="ap-seg" data-ap="4">Then stop and wait f
           <p class="ap-hint">Click a highlighted part to see why it's there.</p>
           <div class="ap-callout"></div>
           <ol class="ap-notes">
-            <li data-ap="1"><b>Order matters.</b> Putting this first means the questions come <em>before</em> the math. Tucked at the end, it may arrive after Claude has started answering.</li>
+            <li data-ap="1"><b>Order matters.</b> Leading with this tells Claude what comes first: questions, then math. Tack the same line onto the end of a long request and it reads like an afterthought — and Claude may treat it as one.</li>
             <li data-ap="2"><b>Turns guesses into choices.</b> Every question Claude asks is a decision it would otherwise have made quietly for you. Now you make it — out loud, on the page.</li>
             <li data-ap="3"><b>A head start.</b> A few examples show the kind of questions you mean. Claude will usually add good ones of its own, like tap or filtered water, or which days you'll sell.</li>
             <li data-ap="4"><b>Stop and wait.</b> Without this line, Claude often asks its questions and then answers them itself in the same reply — right back where you started.</li>
           </ol>
         </div>
 
-        <p class="body">This time Claude comes back with questions, not a number. Answer them in your own words — they're your targets, not Claude's. Then compare:</p>
+        <p class="body">This time Claude comes back with questions, not a number. Answer them in your own words — they're your targets, not Claude's. Not sure what to say? The second tab has example answers you can borrow. Then compare:</p>
         <div class="tabs">
           <div class="tab-bar">
             <button class="tab active" data-tab="a">What Claude asked</button>
@@ -271,10 +271,10 @@ even the small ones.</div>
         <p class="body">
           This calculator runs on the same cost workbook you gave Claude. Each setting is a
           question Claude should ask before suggesting a price — so as you click, you're answering
-          them yourself. Nothing breaks. Try these:
+          them yourself. Try these three:
         </p>
         <ol class="body">
-          <li>Switch the <strong>water</strong> from tap to filtered. Watch the cost per cup, and the note below it.</li>
+          <li>Switch the <strong>water</strong> from tap to filtered. Watch the water line jump from $0.00, then read the note marked "The quiet one."</li>
           <li>Switch the <strong>corner</strong> to City Park, and read the note that appears.</li>
           <li>Drag <strong>your price</strong> up and down, and watch who in the interviews says yes.</li>
         </ol>
@@ -333,7 +333,7 @@ even the small ones.</div>
           </div>
           <div class="quiz">
             <p class="quiz-k">Quick check</p>
-            <p class="quiz-q">Which costs do teams most often forget?</p>
+            <p class="quiz-q">According to the cost workbook, which costs do teams most often forget?</p>
             <div class="quiz-opts">
               <button class="quiz-opt">Lemons.<template class="fb">Lemons are the cost everyone thinks of first. They're right at the top of the sheet.</template></button>
               <button class="quiz-opt">Cups and napkins.<template class="fb">They're small and easy to miss, but most people remember you need something to pour into.</template></button>
@@ -388,9 +388,12 @@ price with tap vs. filtered water, and with ½ vs ¾ of a lemon per cup.</div>
             <summary>Under the hood, in plain English</summary>
             <div class="deep-body">
               <p>
-                <strong>Why Claude answers instead of asking.</strong> Helpful usually means
-                answering, so Claude fills gaps with sensible defaults. For a birthday card, that's
-                exactly what you want. For a price, those defaults are your business decisions.
+                <strong>Why Claude answers instead of asking.</strong> Most people who ask a
+                question want an answer, not a questionnaire — so Claude is shaped to answer. When a
+                detail is missing, it picks the most common, sensible choice and keeps going. For a
+                birthday-card verse, that's exactly what you want. For a price, those "sensible
+                choices" are your business decisions. Claude can ask very good questions. It just
+                needs to be invited.
               </p>
               <p>
                 <strong>Why "show your sources" helps — but doesn't settle it.</strong> Citations
@@ -402,9 +405,11 @@ price with tap vs. filtered water, and with ½ vs ¾ of a lemon per cup.</div>
               <p>
                 <strong>Who checks the work.</strong> Only a few people know how each file was built
                 and why. AI produces analysis faster than they can check it. So someone has to decide
-                which work gets checked — and count that checking as real work. In your own job,
-                that's whoever knows why a cut-off was set where it is, or why a dataset was trimmed
-                the way it was.
+                which work gets checked — and count that checking as real work. In Lakeside, that's
+                the team who walked the market and wrote the price notes: Claude can quote their
+                notes perfectly, but only they know why they wrote them. In your own job, it's
+                whoever knows why a cut-off was set where it is, or why a dataset was trimmed the
+                way it was.
               </p>
             </div>
           </details>
@@ -417,9 +422,10 @@ price with tap vs. filtered water, and with ½ vs ¾ of a lemon per cup.</div>
           <div class="transfer">
             <p class="tr-label">Try it at work</p>
             <p>
-              Next time you ask Claude for any number — a budget, a forecast, a quote, a timeline —
-              start with one line: <strong>"Before you answer, ask me what you need to know."</strong>
-              Then answer its questions yourself.
+              Next time you ask Claude for any number — a budget, an enrollment forecast, a
+              timeline — start with one line: <strong>"Before you answer, ask me what you need to
+              know."</strong> Then answer its questions yourself. The arithmetic is rarely the
+              problem. The inputs, and who chose them, are.
             </p>
             <p>
               It works for long documents too. Drafting a protocol section or an SOP? Ask Claude
@@ -427,20 +433,22 @@ price with tap vs. filtered water, and with ½ vs ¾ of a lemon per cup.</div>
               change. Often the questions are the most useful part.
             </p>
             <p>
-              When Claude cites a source, spot-check one or two, and ask why that number was the
-              right one. The usual rules still apply: confidential or identifiable data goes only
-              into tools your organization has approved for it, and the final sign-off stays with
-              the qualified person who owns the work.
+              When Claude cites a source, spot-check one or two: does the source really say that,
+              and is it the right number for your question? The usual rules still apply:
+              confidential or identifiable data goes only into tools your organization has approved
+              for it, and the final sign-off stays with the qualified person who owns the work.
             </p>
           </div>
 
           <div class="takeaway">
             <p><strong>The questions are part of the answer.</strong> Same two files, same Claude.
             The first time, it guessed for you. The second time, it asked — and the price became yours.</p>
-            <p>A citation tells you <em>where</em> a number came from, not <em>why</em> it was the right
-            one. Deciding that is the checking that matters — and you just did it.</p>
-            <p>None of this needed formulas. It needed you to know what you want, and to say so —
-            a skill you already have.</p>
+            <p>A confident number isn't the same as a right one. A citation tells you <em>where</em> a
+            number came from, not <em>why</em> it was the right one. Deciding that is the checking that
+            matters — and you just did it.</p>
+            <p>None of this was technical. It's what you already do when you scope work with a
+            colleague: agree on the inputs before anyone runs the numbers. Now you can do the same
+            with Claude.</p>
           </div>
 
           <div class="closing-call">
